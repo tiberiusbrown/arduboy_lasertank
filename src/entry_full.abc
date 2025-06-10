@@ -2,31 +2,60 @@ import level;
 
 import levels.tutorial_objects;
 import levels.tutorial_beginner;
-//import levels.tutorial_tricks;
+import levels.tutorial_tricks;
 //import levels.standard;
 
-levelset_t[2] prog LEVELSETS =
+levelset_t[3] prog LEVELSETS =
 {
     {
         "Tutorial: Basic Objects",
-        "These sixteen levels are the basic training levels for new "
-        "Players who don't know the objects being used in the game. The "
-        "Description of each game object can be found in \"LaserTank "
-        "Help\". (In the game, click on \"Help\" -> \"Index\" -> \"Game "
-        "Objects\".) The description and the basic uses of all game "
-        "objects are covered in the sixteen levels.",
+        "These sixteen levels are the basic\n"
+        "training levels for new players who\n"
+        "don't know the objects being used in\n"
+        "the game.\n"
+        "\n"
+        "The description of each game object\n"
+        "can be found in the in-game help, and\n"
+        "the basic uses of all game objects are\n"
+        "covered here.",
+        9,
         LEVELS_TUTORIAL_OBJECTS
     },
     {
         "Tutorial: Beginner",
-        "These tutorial levels were designed for complete beginners in "
-        "LaserTank. The levels were arranged in accordance with the "
-        "tutorial concept.\n\n"
-        "The players should have read the help information available from "
-        "the main menu. It is also suggested that the new players have tried/played "
-        "\"Tutorial: Basic Objects\", the sixteen levels that introduce the "
-        "LaserTank game objects.",
+        "These tutorial levels were designed\n"
+        "for complete beginners in  LaserTank.\n"
+        "\n"
+        "The levels were arranged in\n"
+        "accordance with the tutorial concept.\n"
+        "\n"
+        "The players should have read the help\n"
+        "information available from the main\n"
+        "menu. It is also suggested that the\n"
+        "new players have tried/played\n"
+        "\"Tutorial: Basic Objects\", the sixteen\n"
+        "levels that introduce the LaserTank\n"
+        "game objects.",
+        13,
         LEVELS_TUTORIAL_BEGINNER
+    },
+    {
+        "Tutorial: Tricks",
+        "This is a collection of levels that shows\n"
+        "tricks used in some levels of the\n"
+        "existing level sets. Some levels can't\n"
+        "be solved without using the tricks.\n\n"
+        "There are also levels to show\n"
+        "LaserTank rules that can be different\n"
+        "with beginners' logical expectation.\n\n"
+        "All levels in this set are usually very\n"
+        "short because the authors have\n"
+        "arranged the relevant objects to be\n"
+        "ready for the trick. The solution and\n"
+        "the explanation of each level are\n"
+        "given by the author in the \"Hint\" box.",
+        15,
+        LEVELS_TUTORIAL_TRICKS
     },
 };
 

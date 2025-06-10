@@ -15,9 +15,10 @@ void loop()
     
     switch(state)
     {
-        case(STATE_MENU  ) menu();
-        case(STATE_SELECT) select();
-        case(STATE_PLAY  ) play();
+        case(STATE_MENU      ) menu();
+        case(STATE_SELECT_SET) select_set_ui();
+        case(STATE_SELECT    ) select_level_ui();
+        case(STATE_PLAY      ) play();
     }
 
     ++frame;
@@ -29,7 +30,8 @@ void main()
     $set_frame_rate(30);
     save_valid = $load();
 
-    state = STATE_SELECT;
+    state = STATE_SELECT_SET;
+    select_set = 2;
     
     while(true)
         loop();

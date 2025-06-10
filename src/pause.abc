@@ -1,0 +1,6 @@
+import vars;
+
+void pause()
+{
+    $set_text_font(FONT_PIXELOIDSANSBOLD)
+}

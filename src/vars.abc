@@ -1,9 +1,13 @@
 enum
 {
     STATE_MENU,
+    STATE_HELP,
+    STATE_CREDITS,
+    STATE_SELECT_SET,
     STATE_SELECT,
     STATE_PLAY,
     STATE_PAUSE,
+    STATE_HINT,
     STATE_DEATH,
     STATE_WIN,
 };
@@ -11,10 +15,17 @@ u8 state;
 
 bool save_valid;
 
-saved u8 select_index;
+saved u8 select_set;
+
+i8 set_descy;
+u8 current_set;
+u16 current_level;
+
+u8 menu_index;
 
 constexpr sprites TILES = sprites{ 8x8 "img/tiles.png" };
 constexpr sprites ARROWS = sprites{ 9x9 "img/arrows.png" };
+constexpr sprites LASERS = sprites{ 8x8 "img/lasers.png" };
 
 // tiles
 constexpr u8 T_TANK        = 0xdc;
@@ -42,7 +53,7 @@ constexpr u8 T_FIRST_BLOCKING = 0x50;
 u8 frame;
 
 // tank position
-u8 tx, ty;
+u8 tankx, tanky;
 
 // tank direction
 enum
@@ -52,7 +63,13 @@ enum
     DIR_D,
     DIR_L
 };
-u8 tdir;
+u8 tankdir;
+
+// animation state
+bool shooting;
+u8 shootx, shooty, shootdir;
+u8 anim_frame;
+saved u8 anim_frames = 4;
 
 // camera offset
 i8 offy, targety;
@@ -66,6 +83,9 @@ u8[4] repeat_counts;
 u8 btns_pressed;
 constexpr u8 INITIAL_TICKS = 12;
 constexpr u8 REPEAT_TICKS = 4;
+
+constexpr u32 PAUSE_PRESS_MS = 400;
+u32 b_pressed_time;
 
 // RAM copy of level
 u8[256] tiles;
@@ -83,5 +103,6 @@ struct levelset_t
 {
     char[] prog& name;
     char[] prog& desc;
+    u8 desc_lines;
     level_t[] prog& levels;
 };

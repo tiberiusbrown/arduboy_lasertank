@@ -7,18 +7,58 @@ u16 inc_amount(u8 index)
     return 10;
 }
 
-void select()
+void select_set_ui()
 {
     constexpr u8 num_sets = len(LEVELSETS);
-    levelset_t prog& set = LEVELSETS[select_index];
+    levelset_t prog& set = LEVELSETS[select_set];
+    u16 num_levels = len(set.levels);
+
+    if(select_set > 0 && btn_just_pressed(LEFT_BUTTON))
+        select_set -= 1;
+    if(select_set < num_sets - 1 && btn_just_pressed(RIGHT_BUTTON))
+        select_set += 1;
+
+    $set_text_font(FONT_BR5D);
+    i8 miny = 0;
+    i8 maxy = 0;
+    if(set.desc_lines > 7)
+        maxy = set.desc_lines * 7 - 51;
+
+    if($pressed(  UP_BUTTON)) set_descy -= 1;
+    if($pressed(DOWN_BUTTON)) set_descy += 1;
+    if(set_descy < miny) set_descy = miny;
+    if(set_descy > maxy) set_descy = maxy;
+
+    $draw_text(0, 19 - set_descy, set.desc);
+
+    u8 arrow_off = ((frame >> 4) & 1);
+
+    $draw_filled_rect(0, 0, 128, 14, BLACK);
+    $draw_filled_rect(0, 10, 128, 2, WHITE);
+    if(select_set > 0)
+        $draw_sprite(  0 - arrow_off, -1, ARROWS, 3);
+    if(select_set < num_sets - 1)
+        $draw_sprite(119 + arrow_off, -1, ARROWS, 1);
+
+    {
+        $set_text_font(FONT_PIXELOIDSANS);
+        u8 w = $text_width(set.name);
+        $draw_text(64 - w/2, 7, set.name);
+    }
+
+    if($just_pressed(A_BUTTON))
+        state = STATE_SELECT;
+    if($just_pressed(B_BUTTON))
+        state = STATE_MENU;
+}
+
+void select_level_ui()
+{
+    constexpr u8 num_sets = len(LEVELSETS);
+    levelset_t prog& set = LEVELSETS[select_set];
     level_t[] prog& levels = set.levels;
     u16 num_levels = len(levels);
-    i16 select_level = select_levels[select_index];
-
-    if(select_index > 0 && btn_just_pressed(LEFT_BUTTON))
-        select_index -= 1;
-    if(select_index < num_sets - 1 && btn_just_pressed(RIGHT_BUTTON))
-        select_index += 1;
+    i16 select_level = select_levels[select_set];
 
     if(btn_just_pressed(UP_BUTTON))
         select_level -= inc_amount(0);
@@ -28,44 +68,48 @@ void select()
         select_level = 0;
     if(select_level >= num_levels)
         select_level = num_levels - 1;
-    select_levels[select_index] = u16(select_level);
+    select_levels[select_set] = u16(select_level);
 
+    $draw_filled_rect(0, 10, 128, 2, WHITE);
     {
-        $set_text_font(FONT_PIXELOIDSANSBOLD);
-        char[40] name = set.name;
-        $wrap_text(name, 100);
-        u8 w = $text_width(name);
-        $draw_text(64 - w/2, 7, name);
+        $set_text_font(FONT_PIXELOIDSANS);
+        u8 w = $text_width(set.name);
+        $draw_text(64 - w/2, 7, set.name);
     }
 
-    $draw_filled_rect(0, 21, 128, 2, WHITE);
-    if(select_index > 0)
-        $draw_sprite(  0 - ((frame >> 4) & 1), 5, ARROWS, 0);
-    if(select_index < num_sets - 1)
-        $draw_sprite(119 + ((frame >> 4) & 1), 5, ARROWS, 1);
+    u8 arrow_off = ((frame >> 4) & 1);
 
     level_t prog& level = levels[select_level];
     {
         $set_text_font(FONT_PIXELOIDSANS);
         char[40] name = level.name;
-        $wrap_text(name, 128);
+        $wrap_text(name, 117);
         $draw_text(0, 32, name);
     }
+
+    if(select_level > 0)
+        $draw_sprite(120, 13 - arrow_off, ARROWS, 0);
+    if(select_level < num_levels - 1)
+        $draw_sprite(120, 46 + arrow_off, ARROWS, 2);
+
+    $draw_hline(0, 56, 128, WHITE);
+    $set_text_font(FONT_BR5D);
+    $draw_textf(0, 63, "%u/%u", select_level + 1, num_levels);
     {
-        $set_text_font(FONT_BR5D);
         u8 w = $text_width(level.author);
-        $draw_text(129 - w, 53, level.author);
+        $draw_text(129 - w, 63, level.author);
     }
 
-    $draw_hline(0, 57, 128, WHITE);
-    $draw_textf(0, 64, "Set %u/%u", select_index + 1, num_sets);
+    if($just_pressed(A_BUTTON))
     {
-        char[32] buf;
-        $format(buf, "Level %u/%u", select_level + 1, num_levels);
-        u8 w = $text_width(buf);
-        $draw_text(129 - w, 64, buf);
+        current_set = select_set;
+        current_level = select_level;
+        load_level();
+        state = STATE_PLAY;
     }
-    //$draw_textf(0, 64, "Set %u/%u    Level %u/%u",
-    //    select_index + 1, num_sets,
-    //    select_level + 1, num_levels);
+
+    if($just_pressed(B_BUTTON))
+    {
+        state = STATE_SELECT_SET;
+    }
 }

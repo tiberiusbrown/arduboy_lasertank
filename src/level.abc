@@ -1,15 +1,33 @@
 import vars;
 
-void load_level(level_t prog& level)
+void adjust_to_tank()
 {
+    constexpr u8 D = 32;
+    i16 dy = tanky * 8;
+    i16 dx = tankx * 8;
+    i16 miny = dy - 64 + D;
+    i16 maxy = dy + 8 - D;
+    if(targety < miny) targety = miny;
+    if(targety > maxy) targety = maxy;
+}
+
+void load_level()
+{
+    level_t prog& level = LEVELSETS[current_set].levels[current_level];
     tiles = level.tiles;
-    tdir = DIR_U;
+    tankdir = DIR_U;
     for(u16 i = 0; i < 256; ++i)
         if(tiles[i] == T_TANK)
         {
             tiles[i] = T_DIRT;
-            tx = i & 15;
-            ty = i >> 4;
+            tankx = i & 15;
+            tanky = i >> 4;
             break;
         }
+    offy = 32;
+    targety = 0;
+    adjust_to_tank();
+    if(targety <  0) targety =  0;
+    if(targety > 64) targety = 64;
+    offy = targety;
 }

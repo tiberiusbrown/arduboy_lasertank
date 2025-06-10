@@ -13,5 +13,5 @@ void render_level()
             $draw_sprite(c * 8, y, TILES, row[c] + off);
         }
     }
-    $draw_sprite(tx * 8, ty * 8 - offy, TILES, T_TANK + tdir);
+    $draw_sprite(tankx * 8, tanky * 8 - offy, TILES, T_TANK + tankdir);
 }

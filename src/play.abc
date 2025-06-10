@@ -1,19 +1,46 @@
 import input;
+import level;
 import render;
 
 void play()
 {
-    if(btn_just_pressed(UP_BUTTON))
-        process_tank_move(DIR_U, 0, -1);
-    if(btn_just_pressed(RIGHT_BUTTON))
-        process_tank_move(DIR_R, 1, 0);
-    if(btn_just_pressed(DOWN_BUTTON))
-        process_tank_move(DIR_D, 0, 1);
-    if(btn_just_pressed(LEFT_BUTTON))
-        process_tank_move(DIR_L, -1, 0);
+    if(tiles[tanky * 16 + tankx] == T_FLAG)
+    {
+        render_level();
+        constexpr u8 W = 50;
+        constexpr u8 H = 15;
+        constexpr u8 X = 64 - W / 2;
+        constexpr u8 Y = 32 - H / 2;
+        $draw_filled_rect(X, Y, W, H, BLACK);
+        $draw_rect(X + 1, Y + 1, W - 2, H - 2, WHITE);
+        $set_text_font(FONT_PIXELOIDSANSBOLD);
+        $draw_text(42, 35, "Victory!");
+        return;
+    }
+
+    if(!$pressed(B_BUTTON))
+    {
+        if(btn_just_pressed(UP_BUTTON))
+            process_tank_move(DIR_U, 0, -1);
+        if(btn_just_pressed(RIGHT_BUTTON))
+            process_tank_move(DIR_R, 1, 0);
+        if(btn_just_pressed(DOWN_BUTTON))
+            process_tank_move(DIR_D, 0, 1);
+        if(btn_just_pressed(LEFT_BUTTON))
+            process_tank_move(DIR_L, -1, 0);
+    }
 
     if($just_pressed(B_BUTTON))
+    {
         can_pan = true;
+        b_pressed_time = $millis();
+    }
+
+    if($just_released(B_BUTTON) && $millis() < b_pressed_time + PAUSE_PRESS_MS)
+    {
+        state = STATE_PAUSE;
+    }
+
     if(can_pan && $pressed(B_BUTTON))
     {
         constexpr i8 PAN_SPEED = 3;
@@ -38,27 +65,16 @@ void play()
     }
 }
 
-void adjust_to_tank()
-{
-    constexpr u8 D = 32;
-    i16 dy = ty * 8;
-    i16 dx = tx * 8;
-    i16 miny = dy - 64 + D;
-    i16 maxy = dy + 8 - D;
-    if(targety < miny) targety = miny;
-    if(targety > maxy) targety = maxy;
-}
-
 void process_tank_move(u8 dir, i8 dx, i8 dy)
 {
-    if(tdir != dir)
+    if(tankdir != dir)
     {
-        tdir = dir;
+        tankdir = dir;
         return;
     }
 
-    u8 nx = tx + dx;
-    u8 ny = ty + dy;
+    u8 nx = tankx + dx;
+    u8 ny = tanky + dy;
     if(nx >= 16 || ny >= 16)
         return;
 
@@ -67,6 +83,6 @@ void process_tank_move(u8 dir, i8 dx, i8 dy)
     if(tiles[ni] >= T_FIRST_BLOCKING)
         return;
 
-    tx = nx;
-    ty = ny;
+    tankx = nx;
+    tanky = ny;
 }
