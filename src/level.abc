@@ -11,23 +11,61 @@ void adjust_to_tank()
     if(targety > maxy) targety = maxy;
 }
 
+bool solid(u8 x, u8 y)
+{
+    if(x >= 16 || y >= 16)
+        return true;
+    u8 i = y * 16 + x;
+    return tiles[i] >= T_FIRST_SOLID || objects[i] >= T_FIRST_SOLID;
+}
+
+// whether a block can be pushed here
+bool pushable(u8 x, u8 y)
+{
+    if(x >= 16 || y >= 16)
+        return false;
+    u8 i = y * 16 + x;
+    return tiles[i] == T_WATER || tiles[i] < T_FIRST_SOLID || objects[i] < T_FIRST_SOLID;
+}
+
+bool opaque(u8 x, u8 y)
+{
+    if(x >= 16 || y >= 16)
+        return true;
+    u8 i = y * 16 + x;
+    return tiles[i] >= T_FIRST_OPAQUE || objects[i] >= T_FIRST_OPAQUE;
+}
+
 void load_level()
 {
     level_t prog& level = LEVELSETS[current_set].levels[current_level];
     tiles = level.tiles;
+    $memset(objects, T_DIRT);
     tankdir = DIR_U;
     for(u16 i = 0; i < 256; ++i)
-        if(tiles[i] == T_TANK)
+    {
+        switch(tiles[i])
         {
-            tiles[i] = T_DIRT;
-            tankx = i & 15;
-            tanky = i >> 4;
-            break;
+            case(T_TANK)
+            {
+                tiles[i] = T_DIRT;
+                objects[i] = T_TANK;
+                tankx = i & 15;
+                tanky = i >> 4;
+            }
+            case(T_BLOCK_MOVE, T_ANTITANK ... T_ANTITANK + 15, T_MIRROR ... T_MIRROR + 15)
+            {
+                objects[i] = tiles[i];
+                tiles[i] = T_DIRT;
+            }
         }
+    }
     offy = 32;
     targety = 0;
     adjust_to_tank();
     if(targety <  0) targety =  0;
     if(targety > 64) targety = 64;
     offy = targety;
+    shooting = false;
+    moving = false;
 }

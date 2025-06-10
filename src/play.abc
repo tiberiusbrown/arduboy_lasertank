@@ -7,27 +7,101 @@ void play()
     if(tiles[tanky * 16 + tankx] == T_FLAG)
     {
         render_level();
-        constexpr u8 W = 50;
-        constexpr u8 H = 15;
+        constexpr u8 W = 52;
+        constexpr u8 H = 17;
         constexpr u8 X = 64 - W / 2;
         constexpr u8 Y = 32 - H / 2;
         $draw_filled_rect(X, Y, W, H, BLACK);
-        $draw_rect(X + 1, Y + 1, W - 2, H - 2, WHITE);
+        $draw_filled_rect(X + 1, Y + 1, W - 2, H - 2, WHITE);
+        $draw_filled_rect(X + 3, Y + 3, W - 6, H - 6, BLACK);
         $set_text_font(FONT_PIXELOIDSANSBOLD);
         $draw_text(42, 35, "Victory!");
+        if($just_pressed(B_BUTTON))
+            state = STATE_SELECT;
+        else if($just_pressed(A_BUTTON))
+        {
+            current_level += 1;
+            if(current_level >= len(LEVELSETS[current_set].levels))
+            {
+                current_level -= 1;
+                state = STATE_SELECT;
+            }
+            else
+            {
+                load_level();
+                state = STATE_PLAY;
+            }
+            select_levels[current_set] = current_level;
+        }
         return;
     }
 
-    if(!$pressed(B_BUTTON))
+    if(anim_frame != 0)
+        anim_frame -= 1;
+    bool anim = anim_frame == 0;
+
+    if(moving && anim)
     {
-        if(btn_just_pressed(UP_BUTTON))
-            process_tank_move(DIR_U, 0, -1);
-        if(btn_just_pressed(RIGHT_BUTTON))
-            process_tank_move(DIR_R, 1, 0);
-        if(btn_just_pressed(DOWN_BUTTON))
-            process_tank_move(DIR_D, 0, 1);
-        if(btn_just_pressed(LEFT_BUTTON))
-            process_tank_move(DIR_L, -1, 0);
+        u8 nx = movex + DIRX[movedir];
+        u8 ny = movey + DIRY[movedir];
+        if(pushable(nx, ny))
+        {
+            u8 ni = ny * 16 + nx;
+            u8& obj0 = objects[movey * 16 + movex];
+            u8& obj1 = objects[ny * 16 + nx];
+            obj1 = obj0;
+            obj0 = T_DIRT;
+            if(tiles[ni] == T_WATER)
+            {
+                tiles[ni] = T_WATER_FILL;
+                obj1 = T_DIRT;
+            }
+            moving = false;
+        }
+        else
+        {
+            moving = false;
+        }
+    }
+
+    if(shooting && anim)
+    {
+        u8 si = shooty * 16 + shootx;
+        u8 t = tiles[si];
+        u8 obj = objects[si];
+        if(!opaque(shootx, shooty))
+        {
+            shootx += DIRX[shootdir];
+            shooty += DIRY[shootdir];
+            shooting = shootx < 16 && shooty < 16;
+            anim_frame = anim_frames;
+        }
+        else
+        {
+            u8 si = shooty * 16 + shootx;
+            u8 obj = objects[si];
+            shooting = false;
+            switch(obj)
+            {
+                case(T_BLOCK_MOVE)
+                {
+                    moving = true;
+                    movex = shootx;
+                    movey = shooty;
+                    movedir = shootdir;
+                }
+            }
+        }
+    }
+
+    bool busy = shooting || moving;
+
+    if(!busy && $just_pressed(A_BUTTON))
+    {
+        shootx = tankx + DIRX[tankdir];
+        shooty = tanky + DIRY[tankdir];
+        shootdir = tankdir;
+        shooting = shootx < 16 && shooty < 16;
     }
 
     if($just_pressed(B_BUTTON))
@@ -39,6 +113,18 @@ void play()
     if($just_released(B_BUTTON) && $millis() < b_pressed_time + PAUSE_PRESS_MS)
     {
         state = STATE_PAUSE;
+    }
+
+    if(!busy && !$pressed(B_BUTTON))
+    {
+        if(btn_just_pressed(UP_BUTTON))
+            process_tank_move(DIR_U, 0, -1);
+        if(btn_just_pressed(RIGHT_BUTTON))
+            process_tank_move(DIR_R, 1, 0);
+        if(btn_just_pressed(DOWN_BUTTON))
+            process_tank_move(DIR_D, 0, 1);
+        if(btn_just_pressed(LEFT_BUTTON))
+            process_tank_move(DIR_L, -1, 0);
     }
 
     if(can_pan && $pressed(B_BUTTON))
@@ -75,13 +161,12 @@ void process_tank_move(u8 dir, i8 dx, i8 dy)
 
     u8 nx = tankx + dx;
     u8 ny = tanky + dy;
-    if(nx >= 16 || ny >= 16)
+
+    if(solid(nx, ny))
         return;
 
-    u8 ni = ny * 16 + nx;
-
-    if(tiles[ni] >= T_FIRST_BLOCKING)
-        return;
+    objects[tanky * 16 + tankx] = T_DIRT;
+    objects[ny * 16 + nx] = T_TANK;
 
     tankx = nx;
     tanky = ny;
