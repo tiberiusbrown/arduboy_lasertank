@@ -1,0 +1,72 @@
+import input;
+import render;
+
+void play()
+{
+    if(btn_just_pressed(UP_BUTTON))
+        process_tank_move(DIR_U, 0, -1);
+    if(btn_just_pressed(RIGHT_BUTTON))
+        process_tank_move(DIR_R, 1, 0);
+    if(btn_just_pressed(DOWN_BUTTON))
+        process_tank_move(DIR_D, 0, 1);
+    if(btn_just_pressed(LEFT_BUTTON))
+        process_tank_move(DIR_L, -1, 0);
+
+    if($just_pressed(B_BUTTON))
+        can_pan = true;
+    if(can_pan && $pressed(B_BUTTON))
+    {
+        constexpr i8 PAN_SPEED = 3;
+        if($pressed(UP_BUTTON  )) targety -= PAN_SPEED;
+        if($pressed(DOWN_BUTTON)) targety += PAN_SPEED;
+    }
+    else
+        adjust_to_tank();
+
+    if(targety <  0) targety =  0;
+    if(targety > 64) targety = 64;
+
+    if(offy < targety) offy += (targety - offy + 3) / 4;
+    if(offy > targety) offy -= (offy - targety + 3) / 4;
+
+    render_level();
+
+    if(can_pan && $pressed(B_BUTTON))
+    {
+        $draw_filled_rect(125, 0, 3, 64, BLACK);
+        $draw_filled_rect(126, offy / 2, 2, 32, WHITE);
+    }
+}
+
+void adjust_to_tank()
+{
+    constexpr u8 D = 32;
+    i16 dy = ty * 8;
+    i16 dx = tx * 8;
+    i16 miny = dy - 64 + D;
+    i16 maxy = dy + 8 - D;
+    if(targety < miny) targety = miny;
+    if(targety > maxy) targety = maxy;
+}
+
+void process_tank_move(u8 dir, i8 dx, i8 dy)
+{
+    if(tdir != dir)
+    {
+        tdir = dir;
+        return;
+    }
+
+    u8 nx = tx + dx;
+    u8 ny = ty + dy;
+    if(nx >= 16 || ny >= 16)
+        return;
+
+    u8 ni = ny * 16 + nx;
+
+    if(tiles[ni] >= T_FIRST_BLOCKING)
+        return;
+
+    tx = nx;
+    ty = ny;
+}

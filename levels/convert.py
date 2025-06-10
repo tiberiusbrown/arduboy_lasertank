@@ -157,8 +157,9 @@ def convert(fin, sym):
             f.write('        "%s",\n' % format_str(hint));
             f.write('        %u,\n' % diff);
             f.write('    },\n')
-        f.write('};\n')
+        f.write('};\n\n')
 
-convert('ObjectsTutorial.lvl', 'TUTORIAL_BASIC')
-convert('Tutor.lvl', 'TUTORIAL_ADVANCED')
+convert('ObjectsTutorial.lvl', 'TUTORIAL_OBJECTS')
+convert('Tutor-with-Playbacks.lvl', 'TUTORIAL_BEGINNER')
+convert('Tutor.lvl', 'TUTORIAL_TRICKS')
 convert('LaserTank.lvl', 'STANDARD')

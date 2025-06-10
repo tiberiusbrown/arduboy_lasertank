@@ -1,0 +1,71 @@
+import vars;
+
+u16 inc_amount(u8 index)
+{
+    u8 repeat = repeat_counts[index];
+    if(repeat < 10) return 1;
+    return 10;
+}
+
+void select()
+{
+    constexpr u8 num_sets = len(LEVELSETS);
+    levelset_t prog& set = LEVELSETS[select_index];
+    level_t[] prog& levels = set.levels;
+    u16 num_levels = len(levels);
+    i16 select_level = select_levels[select_index];
+
+    if(select_index > 0 && btn_just_pressed(LEFT_BUTTON))
+        select_index -= 1;
+    if(select_index < num_sets - 1 && btn_just_pressed(RIGHT_BUTTON))
+        select_index += 1;
+
+    if(btn_just_pressed(UP_BUTTON))
+        select_level -= inc_amount(0);
+    if(btn_just_pressed(DOWN_BUTTON))
+        select_level += inc_amount(2);
+    if(select_level < 0)
+        select_level = 0;
+    if(select_level >= num_levels)
+        select_level = num_levels - 1;
+    select_levels[select_index] = u16(select_level);
+
+    {
+        $set_text_font(FONT_PIXELOIDSANSBOLD);
+        char[40] name = set.name;
+        $wrap_text(name, 100);
+        u8 w = $text_width(name);
+        $draw_text(64 - w/2, 7, name);
+    }
+
+    $draw_filled_rect(0, 21, 128, 2, WHITE);
+    if(select_index > 0)
+        $draw_sprite(  0 - ((frame >> 4) & 1), 5, ARROWS, 0);
+    if(select_index < num_sets - 1)
+        $draw_sprite(119 + ((frame >> 4) & 1), 5, ARROWS, 1);
+
+    level_t prog& level = levels[select_level];
+    {
+        $set_text_font(FONT_PIXELOIDSANS);
+        char[40] name = level.name;
+        $wrap_text(name, 128);
+        $draw_text(0, 32, name);
+    }
+    {
+        $set_text_font(FONT_BR5D);
+        u8 w = $text_width(level.author);
+        $draw_text(129 - w, 53, level.author);
+    }
+
+    $draw_hline(0, 57, 128, WHITE);
+    $draw_textf(0, 64, "Set %u/%u", select_index + 1, num_sets);
+    {
+        char[32] buf;
+        $format(buf, "Level %u/%u", select_level + 1, num_levels);
+        u8 w = $text_width(buf);
+        $draw_text(129 - w, 64, buf);
+    }
+    //$draw_textf(0, 64, "Set %u/%u    Level %u/%u",
+    //    select_index + 1, num_sets,
+    //    select_level + 1, num_levels);
+}

@@ -1,81 +1,9 @@
-import vars;
+constexpr u8 NUM_LEVELSETS = len(LEVELSETS);
+saved u16[NUM_LEVELSETS] select_levels;
 
-import level;
-
-import levels.tutorial_basic;
-//import levels.tutorial_advanced;
-//import levels.standard;
-
-void render_level()
-{
-    u8 off = (frame >> 2) & 3;
-
-    for(u8 r = 0; r < 16; ++r)
-    {
-        u8[16] row = tiles[r*16 +: 16];
-        i16 y = r * 8 - offy;
-        if(y <= -8) continue;
-        if(y >= 64) break;
-        for(u8 c = 0; c < 16; ++c)
-        {
-            $draw_sprite(c * 8, y, TILES, row[c] + off);
-        }
-    }
-    $draw_sprite(tx * 8, ty * 8 - offy, TILES, T_TANK + tdir);
-}
-
-void adjust_to_tank()
-{
-    constexpr u8 D = 32;
-    i16 dy = ty * 8;
-    i16 dx = tx * 8;
-    i16 miny = dy - 64 + D;
-    i16 maxy = dy + 8 - D;
-    if(targety < miny) targety = miny;
-    if(targety > maxy) targety = maxy;
-}
-
-void process_button_repeat(u8 btn, bool pressed, u8 i)
-{
-    if(!pressed)
-    {
-        btn_ticks[i] = INITIAL_TICKS;
-        return;
-    }
-    if(btn_ticks[i] == 0)
-    {
-        btn_ticks[i] = REPEAT_TICKS;
-        btns_pressed |= btn;
-    }
-    btn_ticks[i] -= 1;
-}
-
-bool btn_pressed(u8 btn)
-{
-    return $just_pressed(btn) || (btns_pressed & btn);
-}
-
-void process_tank_move(u8 dir, i8 dx, i8 dy)
-{
-    if(tdir != dir)
-    {
-        tdir = dir;
-        return;
-    }
-
-    u8 nx = tx + dx;
-    u8 ny = ty + dy;
-    if(nx >= 16 || ny >= 16)
-        return;
-
-    u8 ni = ny * 16 + nx;
-
-    if(tiles[ni] >= T_FIRST_BLOCKING)
-        return;
-
-    tx = nx;
-    ty = ny;
-}
+import play;
+import menu;
+import select;
 
 void loop()
 {
@@ -84,39 +12,12 @@ void loop()
     process_button_repeat(RIGHT_BUTTON, $pressed(RIGHT_BUTTON), 1);
     process_button_repeat( DOWN_BUTTON, $pressed( DOWN_BUTTON), 2);
     process_button_repeat( LEFT_BUTTON, $pressed( LEFT_BUTTON), 3);
-
-    if(btn_pressed(UP_BUTTON))
-        process_tank_move(DIR_U, 0, -1);
-    if(btn_pressed(RIGHT_BUTTON))
-        process_tank_move(DIR_R, 1, 0);
-    if(btn_pressed(DOWN_BUTTON))
-        process_tank_move(DIR_D, 0, 1);
-    if(btn_pressed(LEFT_BUTTON))
-        process_tank_move(DIR_L, -1, 0);
-
-    if($just_pressed(B_BUTTON))
-        can_pan = true;
-    if(can_pan && $pressed(B_BUTTON))
+    
+    switch(state)
     {
-        constexpr i8 PAN_SPEED = 3;
-        if($pressed(UP_BUTTON  )) targety -= PAN_SPEED;
-        if($pressed(DOWN_BUTTON)) targety += PAN_SPEED;
-    }
-    else
-        adjust_to_tank();
-
-    if(targety <  0) targety =  0;
-    if(targety > 64) targety = 64;
-
-    if(offy < targety) offy += (targety - offy + 3) / 4;
-    if(offy > targety) offy -= (offy - targety + 3) / 4;
-
-    render_level();
-
-    if(can_pan && $pressed(B_BUTTON))
-    {
-        $draw_filled_rect(125, 0, 3, 64, BLACK);
-        $draw_filled_rect(126, offy / 2, 2, 32, WHITE);
+        case(STATE_MENU  ) menu();
+        case(STATE_SELECT) select();
+        case(STATE_PLAY  ) play();
     }
 
     ++frame;
@@ -126,11 +27,10 @@ void loop()
 void main()
 {
     $set_frame_rate(30);
+    save_valid = $load();
 
-    load_level(LEVELS_TUTORIAL_BASIC[0]);
+    state = STATE_SELECT;
     
     while(true)
-    {
         loop();
-    }
 }

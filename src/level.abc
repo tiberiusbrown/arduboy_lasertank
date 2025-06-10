@@ -1,3 +1,5 @@
+import vars;
+
 void load_level(level_t prog& level)
 {
     tiles = level.tiles;

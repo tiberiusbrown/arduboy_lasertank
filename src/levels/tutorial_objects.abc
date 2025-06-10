@@ -1,4 +1,4 @@
-level_t[16] prog LEVELS_TUTORIAL_BASIC =
+level_t[16] prog LEVELS_TUTORIAL_OBJECTS =
 {
     {
         {
@@ -385,3 +385,4 @@ level_t[16] prog LEVELS_TUTORIAL_BASIC =
         0,
     },
 };
+

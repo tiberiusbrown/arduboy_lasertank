@@ -1,4 +1,20 @@
-constexpr sprites TILES = sprites{ 8x8 "tiles.png" };
+enum
+{
+    STATE_MENU,
+    STATE_SELECT,
+    STATE_PLAY,
+    STATE_PAUSE,
+    STATE_DEATH,
+    STATE_WIN,
+};
+u8 state;
+
+bool save_valid;
+
+saved u8 select_index;
+
+constexpr sprites TILES = sprites{ 8x8 "img/tiles.png" };
+constexpr sprites ARROWS = sprites{ 9x9 "img/arrows.png" };
 
 // tiles
 constexpr u8 T_TANK        = 0xdc;
@@ -46,6 +62,7 @@ bool can_pan;
 
 // arrow button repeat ticks
 u8[4] btn_ticks;
+u8[4] repeat_counts;
 u8 btns_pressed;
 constexpr u8 INITIAL_TICKS = 12;
 constexpr u8 REPEAT_TICKS = 4;
@@ -60,4 +77,11 @@ struct level_t
     char[] prog& author;
     char[] prog& hint;
     u16 difficulty;
+};
+
+struct levelset_t
+{
+    char[] prog& name;
+    char[] prog& desc;
+    level_t[] prog& levels;
 };

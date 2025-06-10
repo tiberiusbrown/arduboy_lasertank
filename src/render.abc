@@ -1,0 +1,17 @@
+void render_level()
+{
+    u8 off = (frame >> 2) & 3;
+
+    for(u8 r = 0; r < 16; ++r)
+    {
+        u8[16] row = tiles[r*16 +: 16];
+        i16 y = r * 8 - offy;
+        if(y <= -8) continue;
+        if(y >= 64) break;
+        for(u8 c = 0; c < 16; ++c)
+        {
+            $draw_sprite(c * 8, y, TILES, row[c] + off);
+        }
+    }
+    $draw_sprite(tx * 8, ty * 8 - offy, TILES, T_TANK + tdir);
+}

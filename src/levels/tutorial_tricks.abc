@@ -1,4 +1,4 @@
-level_t[92] prog LEVELS_TUTORIAL_ADVANCED =
+level_t[92] prog LEVELS_TUTORIAL_TRICKS =
 {
     {
         {
@@ -2209,3 +2209,4 @@ level_t[92] prog LEVELS_TUTORIAL_ADVANCED =
         0,
     },
 };
+
