@@ -1,0 +1,15 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Arduboy File",
+            "type": "shell",
+            "command": "abcc src/main.abc --asm build/asm.txt -b build/fxdata.bin -u -a build/laser_tank.arduboy",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"]
+        }
+    ]
+}

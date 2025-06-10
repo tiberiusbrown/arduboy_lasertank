@@ -1,0 +1,63 @@
+constexpr sprites TILES = sprites{ 8x8 "tiles.png" };
+
+// tiles
+constexpr u8 T_TANK        = 0xdc;
+constexpr u8 T_DIRT        = 0x00;
+constexpr u8 T_ICE         = 0x40;
+constexpr u8 T_ICE_CRACKED = 0x44;
+constexpr u8 T_ANTITANK    = 0x90;
+constexpr u8 T_FLAG        = 0x04;
+constexpr u8 T_WATER       = 0x54;
+constexpr u8 T_WATER_FILL  = 0x08;
+constexpr u8 T_BLOCK       = 0x58;
+constexpr u8 T_BLOCK_MOVE  = 0x5c;
+constexpr u8 T_BLOCK_CRYS  = 0x68;
+constexpr u8 T_BLOCK_BRICK = 0x6c;
+constexpr u8 T_MIRROR      = 0x70;
+constexpr u8 T_MIRROR_ROT  = 0x80;
+constexpr u8 T_TUNNEL      = 0x20;
+constexpr u8 T_ONEWAY      = 0x10;
+constexpr u8 T_LETTERS     = 0xe0;
+constexpr u8 T_NUMBERS     = 0xf0;
+
+constexpr u8 T_FIRST_BLOCKING = 0x50;
+
+// frame counter for animations
+u8 frame;
+
+// tank position
+u8 tx, ty;
+
+// tank direction
+enum
+{
+    DIR_U,
+    DIR_R,
+    DIR_D,
+    DIR_L
+};
+u8 tdir;
+
+// camera offset
+i8 offy, targety;
+
+// whether we can press B to pan
+bool can_pan;
+
+// arrow button repeat ticks
+u8[4] btn_ticks;
+u8 btns_pressed;
+constexpr u8 INITIAL_TICKS = 12;
+constexpr u8 REPEAT_TICKS = 4;
+
+// RAM copy of level
+u8[256] tiles;
+
+struct level_t
+{
+    u8[256] tiles;
+    char[] prog& name;
+    char[] prog& author;
+    char[] prog& hint;
+    u16 difficulty;
+};

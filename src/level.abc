@@ -1,0 +1,13 @@
+void load_level(level_t prog& level)
+{
+    tiles = level.tiles;
+    tdir = DIR_U;
+    for(u16 i = 0; i < 256; ++i)
+        if(tiles[i] == T_TANK)
+        {
+            tiles[i] = T_DIRT;
+            tx = i & 15;
+            ty = i >> 4;
+            break;
+        }
+}
