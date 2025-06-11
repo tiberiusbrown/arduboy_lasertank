@@ -82,6 +82,7 @@ void load_level()
     shooting = false;
     moving = false;
     first_move = false;
+    in_water = false;
     dead = false;
     victory = false;
     just_moved = false;

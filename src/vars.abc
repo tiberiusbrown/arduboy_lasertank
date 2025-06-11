@@ -79,9 +79,10 @@ bool moving;
 u8 movex, movey, movedir, moveobj;
 
 u8 anim_frame;
-saved u8 anim_frames = 6;
+saved u8 anim_frames = 2;
 
 bool first_move;
+bool in_water;
 bool victory;
 bool dead;
 bool just_moved;
