@@ -91,4 +91,5 @@ void load_level()
     dead = false;
     victory = false;
     just_moved = false;
+    was_ice = false;
 }

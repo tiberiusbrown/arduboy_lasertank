@@ -52,13 +52,13 @@ void at_scan(u8 dir)
 
 void all_at_scans()
 {
-    at_scan(DIR_U);
     at_scan(DIR_R);
-    at_scan(DIR_D);
     at_scan(DIR_L);
+    at_scan(DIR_D);
+    at_scan(DIR_U);
 }
 
-void process_tank_tile()
+void process_tank_oneway()
 {
     u8 ti = tanky * 16 + tankx;
     if(objects[ti] >= T_FIRST_SOLID)
@@ -89,6 +89,7 @@ void tank_update()
     u8 t = tiles[tanki];
     bool prev_just_moved = just_moved;
     just_moved = false;
+    was_ice = false;
     switch(t)
     {
         case(T_TUNNEL ... T_TUNNEL + 31)
@@ -111,6 +112,7 @@ void tank_update()
         }
         case(T_ICE, T_ICE_CRACKED)
         {
+            was_ice = true;
             if(!prev_just_moved) break;
             if(t == T_ICE_CRACKED)
             {
@@ -121,6 +123,7 @@ void tank_update()
             u8 ny = tanky + DIRY[just_moved_dir];
             if(!solid(nx, ny))
             {
+                all_at_scans();
                 tankx = nx;
                 tanky = ny;
                 anim_frame = anim_frames;
@@ -131,8 +134,86 @@ void tank_update()
             victory = true;
     }
     all_at_scans();
-    process_tank_tile();
+    process_tank_oneway();
     all_at_scans();
+}
+
+void process_moved_obj()
+{
+    if(!moving)
+        return;
+    u8 mi = movey * 16 + movex;
+    moving = false;
+    switch(tiles[mi])
+    {
+        case(T_ICE_CRACKED)
+        {
+            tiles[mi] = T_WATER;
+            moving = true;
+        }
+        case(T_WATER)
+        {
+            if(objects[mi] == T_BLOCK_MOVE)
+                tiles[mi] = T_WATER_FILL;
+            objects[mi] = T_DIRT;
+        }
+    }
+    u8 nx = movex + DIRX[movedir];
+    u8 ny = movey + DIRY[movedir];
+    if(!solid(nx, ny))
+    {
+        u8 ni = ny * 16 + nx;
+        u8& obj0 = objects[mi];
+        u8& obj1 = objects[ny * 16 + nx];
+        obj1 = obj0;
+        obj0 = T_DIRT;
+        switch(tiles[ni])
+        {
+            case(T_WATER)
+            {
+                if(obj1 == T_BLOCK_MOVE)
+                    tiles[ni] = T_WATER_FILL;
+                obj1 = T_DIRT;
+            }
+            case(T_TUNNEL ... T_TUNNEL + 31)
+            {
+                u8 ti = find_other_tunnel(ni);
+                if(ti != ni && objects[ti] < T_FIRST_SOLID)
+                {
+                    objects[ti] = obj1;
+                    obj1 = T_DIRT;
+                }
+            }
+            case(T_ICE, T_ICE_CRACKED)
+            {
+                movex = nx;
+                movey = ny;
+                moving = true;
+            }
+        }
+    }
+    switch(tiles[mi])
+    {
+        case(T_TUNNEL ... T_TUNNEL + 31)
+        {
+            // if all of the following:
+            //     1. an object is moved off of a tunnel
+            //     2. there is exactly one other tunnel
+            //     3. there is an object on the other tunnel
+            // then the other object teleports
+            // relevant trick level: "16. Moving a Dead Anti-Tank"
+            u8 ti = u8(tiles[mi] - T_TUNNEL) >> 2;
+            if(num_tunnels[ti] == 2)
+            {
+                ti = find_other_tunnel(mi);
+                if(ti != mi && objects[ti] != T_DIRT)
+                {
+                    objects[mi] = objects[ti];
+                    objects[ti] = T_DIRT;
+                }
+            }
+        }
+    }
 }
 
 void play()
@@ -211,13 +292,17 @@ void play()
             if(obj == T_DIRT)
                 obj = tiles[si];
             shooting = false;
-            movex = shootx;
-            movey = shooty;
-            movedir = shootdir;
+            //moveobj = obj;
             switch(obj)
             {
                 case(T_BLOCK_MOVE)
+                {
+                    movex = shootx;
+                    movey = shooty;
+                    movedir = shootdir;
                     moving = true;
+                    process_moved_obj();
+                }
                 case(T_BLOCK_BRICK)
                     tiles[si] = T_DIRT;
                 case(T_MIRROR ... T_MIRROR + 15)
@@ -232,7 +317,11 @@ void play()
                     }
                     else
                     {
+                        movex = shootx;
+                        movey = shooty;
+                        movedir = shootdir;
                         moving = true;
+                        process_moved_obj();
                     }
                 }
                 case(T_MIRROR_ROT ... T_MIRROR_ROT + 15)
@@ -257,87 +346,24 @@ void play()
                     if(((tdir + 2) & 3) == shootdir)
                         objects[si] = T_ANTITANK_B + tdir * 4;
                     else
+                    {
+                        movex = shootx;
+                        movey = shooty;
+                        movedir = shootdir;
                         moving = true;
+                        process_moved_obj();
+                    }
+                }
+                case(T_ANTITANK_B ... T_ANTITANK_B + 15)
+                {
+                    moving = false;
                 }
             }
         }
     }
 
-    if(moving && anim)
-    {
-        u8 mi = movey * 16 + movex;
-        moving = false;
-        switch(tiles[mi])
-        {
-            case(T_ICE_CRACKED)
-            {
-                tiles[mi] = T_WATER;
-                moving = true;
-            }
-            case(T_WATER)
-            {
-                if(objects[mi] == T_BLOCK_MOVE)
-                    tiles[mi] = T_WATER_FILL;
-                objects[mi] = T_DIRT;
-            }
-        }
-        u8 nx = movex + DIRX[movedir];
-        u8 ny = movey + DIRY[movedir];
-        if(!solid(nx, ny))
-        {
-            u8 ni = ny * 16 + nx;
-            u8& obj0 = objects[mi];
-            u8& obj1 = objects[ny * 16 + nx];
-            obj1 = obj0;
-            obj0 = T_DIRT;
-            switch(tiles[ni])
-            {
-                case(T_WATER)
-                {
-                    if(obj1 == T_BLOCK_MOVE)
-                        tiles[ni] = T_WATER_FILL;
-                    obj1 = T_DIRT;
-                }
-                case(T_TUNNEL ... T_TUNNEL + 31)
-                {
-                    u8 ti = find_other_tunnel(ni);
-                    if(ti != ni && objects[ti] < T_FIRST_SOLID)
-                    {
-                        objects[ti] = obj1;
-                        obj1 = T_DIRT;
-                    }
-                }
-                case(T_ICE, T_ICE_CRACKED)
-                {
-                    movex = nx;
-                    movey = ny;
-                    moving = true;
-                }
-            }
-        }
-        switch(tiles[mi])
-        {
-            case(T_TUNNEL ... T_TUNNEL + 31)
-            {
-                // if all of the following:
-                //     1. an object is moved off of a tunnel
-                //     2. there is exactly one other tunnel
-                //     3. there is an object on the other tunnel
-                // then the other object teleports
-                // relevant trick level: "16. Moving a Dead Anti-Tank"
-                u8 ti = u8(tiles[mi] - T_TUNNEL) >> 2;
-                if(num_tunnels[ti] == 2)
-                {
-                    ti = find_other_tunnel(mi);
-                    if(ti != mi && objects[ti] != T_DIRT)
-                    {
-                        objects[mi] = objects[ti];
-                        objects[ti] = T_DIRT;
-                    }
-                }
-            }
-        }
-    }
+    if(anim)
+        process_moved_obj();
 
     if(anim)
     {
@@ -437,7 +463,5 @@ void process_tank_move(u8 dir)
     just_moved = true;
     just_moved_dir = dir;
 
-    all_at_scans();
-    process_tank_tile();
-    all_at_scans();
+    tank_update();
 }

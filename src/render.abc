@@ -18,8 +18,8 @@ void render_level()
         }
     }
 
-    if(moving)
-        $draw_sprite(movex * 8, movey * 8 - offy, TILES, moveobj);
+    //if(moving)
+    //    $draw_sprite(movex * 8, movey * 8 - offy, TILES, moveobj);
 
     if(shooting)
         $draw_sprite(shootx * 8, shooty * 8 - offy, LASERS, shootdir);
