@@ -86,7 +86,6 @@ bool in_water;
 bool victory;
 bool dead;
 bool just_moved;
-bool was_ice;
 u8 just_moved_dir;
 
 // camera offset

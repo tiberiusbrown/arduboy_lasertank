@@ -41,11 +41,11 @@ void main()
     state = STATE_SELECT_SET;
     select_set = 0;
 
-    //current_set = 2;
-    //current_level = 16;
-    //load_level();
-    //state = STATE_PLAY;
-    //anim_frames = 2;
+    current_set = 2;
+    current_level = 20;
+    load_level();
+    state = STATE_PLAY;
+    anim_frames = 3;
     
     while(true)
         loop();

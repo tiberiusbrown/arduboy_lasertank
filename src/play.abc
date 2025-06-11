@@ -60,10 +60,10 @@ void all_at_scans()
 
 void process_tank_oneway()
 {
-    u8 ti = tanky * 16 + tankx;
-    if(objects[ti] >= T_FIRST_SOLID)
+    u8 tanki = tanky * 16 + tankx;
+    if(objects[tanki] >= T_FIRST_SOLID)
         return;
-    u8 t = tiles[ti];
+    u8 t = tiles[tanki];
     switch(t)
     {
         case(T_ONEWAY ... T_ONEWAY + 15)
@@ -75,6 +75,7 @@ void process_tank_oneway()
             {
                 tankx = nx;
                 tanky = ny;
+                process_tank_tunnel();
                 just_moved = true;
                 just_moved_dir = dir;
                 anim_frame = anim_frames;
@@ -83,18 +84,17 @@ void process_tank_oneway()
     }
 }
 
-void tank_update()
+void process_tank_tunnel()
 {
     u8 tanki = tanky * 16 + tankx;
+    if(objects[tanki] >= T_FIRST_SOLID)
+        return;
     u8 t = tiles[tanki];
-    bool prev_just_moved = just_moved;
-    just_moved = false;
-    was_ice = false;
     switch(t)
     {
         case(T_TUNNEL ... T_TUNNEL + 31)
         {
-            if(!prev_just_moved) break;
+            if(!just_moved) break;
             u8 ti = find_other_tunnel(tanki);
             if(ti != tanki)
             {
@@ -110,9 +110,20 @@ void tank_update()
                 dead = true;
             }
         }
+    }
+}
+
+void tank_update()
+{
+    u8 tanki = tanky * 16 + tankx;
+    u8 t = tiles[tanki];
+    process_tank_tunnel();
+    bool prev_just_moved = just_moved;
+    just_moved = false;
+    switch(t)
+    {
         case(T_ICE, T_ICE_CRACKED)
         {
-            was_ice = true;
             if(!prev_just_moved) break;
             if(t == T_ICE_CRACKED)
             {
@@ -356,6 +367,7 @@ void play()
                 }
                 case(T_ANTITANK_B ... T_ANTITANK_B + 15)
                 {
+                    // Broken Anti-Tank braking (tricks 81-84)
                     moving = false;
                 }
             }
