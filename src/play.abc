@@ -48,15 +48,43 @@ void at_scan(u8 dir)
     }
 }
 
-void tank_just_moved()
+void all_at_scans()
+{
+    at_scan(DIR_U);
+    at_scan(DIR_R);
+    at_scan(DIR_D);
+    at_scan(DIR_L);
+}
+
+void process_oneway()
+{
+    u8 t = tiles[tanky * 16 + tankx];
+    if(!(t >= T_ONEWAY && t <= T_ONEWAY + 15))
+        return;
+    u8 dir = u8(t - T_ONEWAY) >> 2;
+    u8 nx = tankx + DIRX[dir];
+    u8 ny = tanky + DIRY[dir];
+    if(!solid(nx, ny))
+    {
+        tankx = nx;
+        tanky = ny;
+        just_moved = true;
+        just_moved_dir = dir;
+        anim_frame = anim_frames;
+    }
+}
+
+void tank_update(bool anim)
 {
     u8 tanki = tanky * 16 + tankx;
     u8 t = tiles[tanki];
+    bool prev_just_moved = just_moved;
     just_moved = false;
     switch(t)
     {
         case(T_TUNNEL ... T_TUNNEL + 31)
         {
+            if(!prev_just_moved) break;
             u8 ti = find_other_tunnel(tanki);
             if(ti != tanki)
             {
@@ -71,6 +99,7 @@ void tank_just_moved()
         }
         case(T_ICE, T_ICE_CRACKED)
         {
+            if(!prev_just_moved) break;
             if(t == T_ICE_CRACKED)
             {
                 tiles[tanki] = T_WATER;
@@ -82,41 +111,23 @@ void tank_just_moved()
             {
                 tankx = nx;
                 tanky = ny;
-                anim_frame = anim_frames;
+                if(anim) anim_frame = anim_frames;
                 just_moved = true;
             }
         }
-    }
-}
-
-void tank_update()
-{
-    u8 tanki = tanky * 16 + tankx;
-    u8 t = tiles[tanki];
-    switch(t)
-    {
+        case(T_FLAG)
+            victory = true;
         case(T_WATER)
             dead = true;
-        case(T_ONEWAY ... T_ONEWAY + 15)
-        {
-            u8 dir = u8(t - T_ONEWAY) >> 2;
-            u8 nx = tankx + DIRX[dir];
-            u8 ny = tanky + DIRY[dir];
-            if(!solid(nx, ny))
-            {
-                tankx = nx;
-                tanky = ny;
-                anim_frame = anim_frames;
-                just_moved = true;
-                just_moved_dir = dir;
-            }
-        }
     }
+    all_at_scans();
+    process_oneway();
+    all_at_scans();
 }
 
 void play()
 {
-    if(tiles[tanky * 16 + tankx] == T_FLAG)
+    if(victory)
     {
         render_level();
         constexpr u8 W = 52;
@@ -222,34 +233,17 @@ void play()
         }
     }
 
-    if(just_moved && anim)
-        tank_just_moved();
-
-    // scan for anti-tanks
-    if(anim && !shooting)
-    {
-        at_scan(DIR_U);
-        at_scan(DIR_R);
-        at_scan(DIR_D);
-        at_scan(DIR_L);
-    }
-
-    if(anim)
-        tank_update();
-
     if(shooting && anim)
     {
         u8 si = shooty * 16 + shootx;
         u8 t = tiles[si];
         u8 obj = objects[si];
-        if(shootx == tankx && shooty == tanky)
-        {
-            dead = true;
-        }
-        else if(!opaque(shootx, shooty))
+        if(!opaque(shootx, shooty))
         {
             shootx += DIRX[shootdir];
             shooty += DIRY[shootdir];
+            if(shootx == tankx && shooty == tanky)
+                dead = true;
             shooting = shootx < 16 && shooty < 16;
             anim_frame = anim_frames;
         }
@@ -267,6 +261,8 @@ void play()
             {
                 case(T_BLOCK_MOVE)
                     moving = true;
+                case(T_BLOCK_BRICK)
+                    tiles[si] = T_DIRT;
                 case(T_MIRROR ... T_MIRROR + 15)
                 {
                     u8 d = mirror_reflect((obj >> 2) & 3, shootdir);
@@ -310,6 +306,12 @@ void play()
         }
     }
 
+    if(anim)
+        tank_update(true);
+
+    //if(anim && shooting && shootx == tankx && shooty == tanky)
+    //    dead = true;
+
     bool busy = shooting || moving;
 
     if(!busy && $just_pressed(A_BUTTON))
@@ -336,11 +338,11 @@ void play()
     {
         if(btn_just_pressed(UP_BUTTON))
             process_tank_move(DIR_U);
-        if(btn_just_pressed(RIGHT_BUTTON))
+        else if(btn_just_pressed(RIGHT_BUTTON))
             process_tank_move(DIR_R);
-        if(btn_just_pressed(DOWN_BUTTON))
+        else if(btn_just_pressed(DOWN_BUTTON))
             process_tank_move(DIR_D);
-        if(btn_just_pressed(LEFT_BUTTON))
+        else if(btn_just_pressed(LEFT_BUTTON))
             process_tank_move(DIR_L);
     }
 
@@ -391,4 +393,8 @@ void process_tank_move(u8 dir)
 
     just_moved = true;
     just_moved_dir = dir;
+
+    all_at_scans();
+    process_oneway();
+    all_at_scans();
 }

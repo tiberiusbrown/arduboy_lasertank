@@ -83,5 +83,6 @@ void load_level()
     moving = false;
     first_move = false;
     dead = false;
+    victory = false;
     just_moved = false;
 }

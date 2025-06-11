@@ -18,12 +18,12 @@ void render_level()
         }
     }
 
-    if(!dead && (first_move || (frame & 15) >= 5))
-        $draw_sprite(tankx * 8, tanky * 8 - offy, TILES, T_TANK + tankdir);
-
     if(moving)
         $draw_sprite(movex * 8, movey * 8 - offy, TILES, moveobj);
 
     if(shooting)
         $draw_sprite(shootx * 8, shooty * 8 - offy, LASERS, shootdir);
+
+    if(!dead && (first_move || (frame & 15) >= 5))
+        $draw_sprite(tankx * 8, tanky * 8 - offy, TILES, T_TANK + tankdir);
 }

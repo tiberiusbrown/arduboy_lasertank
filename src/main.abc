@@ -40,6 +40,11 @@ void main()
 
     state = STATE_SELECT_SET;
     select_set = 0;
+
+    current_set = 2;
+    current_level = 5;
+    load_level();
+    state = STATE_PLAY;
     
     while(true)
         loop();
