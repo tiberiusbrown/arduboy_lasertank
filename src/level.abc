@@ -42,7 +42,7 @@ u8 find_other_tunnel(u8 i)
     u8 ti = 0;
     do
     {
-        if(ti != i && tiles[ti] == t)
+        if(ti != i && tiles[ti] == t && objects[ti] < T_FIRST_SOLID)
             return ti;
         ti += 1;
     } while(ti != 0);

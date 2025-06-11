@@ -42,7 +42,7 @@ void main()
     select_set = 0;
 
     current_set = 2;
-    current_level = 20;
+    current_level = 23;
     load_level();
     state = STATE_PLAY;
     anim_frames = 3;
