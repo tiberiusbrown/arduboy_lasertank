@@ -1,0 +1,8 @@
+import vars;
+
+void help()
+{
+    if($just_pressed(B_BUTTON))
+        state = STATE_MENU;
+
+}

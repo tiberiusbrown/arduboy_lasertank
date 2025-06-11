@@ -14,9 +14,15 @@ void select_set_ui()
     u16 num_levels = len(set.levels);
 
     if(select_set > 0 && btn_just_pressed(LEFT_BUTTON))
+    {
         select_set -= 1;
+        set_descy = 0;
+    }
     if(select_set < num_sets - 1 && btn_just_pressed(RIGHT_BUTTON))
+    {
         select_set += 1;
+        set_descy = 0;
+    }
 
     $set_text_font(FONT_BR5D);
     i8 miny = 0;

@@ -4,7 +4,7 @@ void menu()
 {
     if(menu_index > 0 && $just_pressed(UP_BUTTON))
         menu_index -= 1;
-    if(menu_index < 2 && $just_pressed(DOWN_BUTTON))
+    if(menu_index < 3 && $just_pressed(DOWN_BUTTON))
         menu_index += 1;
 
     if($just_pressed(A_BUTTON))
@@ -13,7 +13,8 @@ void menu()
         {
             case(0) state = STATE_SELECT_SET;
             case(1) state = STATE_HELP;
-            case(2) state = STATE_CREDITS;
+            case(2) state = STATE_SETTINGS;
+            case(3) state = STATE_CREDITS;
         }
     }
 
@@ -23,8 +24,9 @@ void menu()
 
     $set_text_font(FONT_PIXELOIDSANSBOLD);
     $draw_text(34, 30, "Select Level");
-    $draw_text(34, 44, "Help");
-    $draw_text(34, 58, "Credits");
+    $draw_text(34, 41, "Help");
+    $draw_text(34, 52, "Settings");
+    $draw_text(34, 63, "Credits");
 
-    $draw_filled_rect(24, menu_index * 14 + 24, 5, 5, WHITE);
+    $draw_filled_rect(24, menu_index * 11 + 24, 5, 5, WHITE);
 }

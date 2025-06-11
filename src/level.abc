@@ -36,27 +36,47 @@ bool opaque(u8 x, u8 y)
     return tiles[i] >= T_FIRST_OPAQUE || objects[i] >= T_FIRST_OPAQUE;
 }
 
+u8 find_other_tunnel(u8 i)
+{
+    u8 t = tiles[i];
+    u8 ti = u8(t - T_TUNNEL) >> 2;
+    u8 x = tunnels[ti*2];
+    if(x != i && tiles[x] == t) return x;
+    x = tunnels[ti*2+1];
+    if(x != i && tiles[x] == t) return x;
+    return i;
+}
+
 void load_level()
 {
     level_t prog& level = LEVELSETS[current_set].levels[current_level];
     tiles = level.tiles;
     $memset(objects, T_DIRT);
+    $memset(tunnels, 255);
     tankdir = DIR_U;
     for(u16 i = 0; i < 256; ++i)
     {
-        switch(tiles[i])
+        u8 t = tiles[i];
+        switch(t)
         {
             case(T_TANK)
             {
                 tiles[i] = T_DIRT;
-                objects[i] = T_TANK;
                 tankx = i & 15;
                 tanky = i >> 4;
             }
             case(T_BLOCK_MOVE, T_ANTITANK ... T_ANTITANK + 15, T_MIRROR ... T_MIRROR + 15)
             {
-                objects[i] = tiles[i];
+                objects[i] = t;
                 tiles[i] = T_DIRT;
+            }
+            case(T_TUNNEL ... T_TUNNEL + 31)
+            {
+                u8 ti = u8(t - T_TUNNEL) >> 2;
+                if(tunnels[ti*2] == 255)
+                    tunnels[ti*2] = i;
+                else
+                    tunnels[ti*2+1] = i;
             }
         }
     }
@@ -68,4 +88,6 @@ void load_level()
     offy = targety;
     shooting = false;
     moving = false;
+    first_move = false;
+    dead = false;
 }

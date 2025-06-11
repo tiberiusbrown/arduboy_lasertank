@@ -2,7 +2,11 @@ constexpr u8 NUM_LEVELSETS = len(LEVELSETS);
 saved u16[NUM_LEVELSETS] select_levels;
 
 import play;
+import pause;
 import menu;
+import help;
+import settings;
+import credits;
 import select;
 
 void loop()
@@ -16,9 +20,13 @@ void loop()
     switch(state)
     {
         case(STATE_MENU      ) menu();
+        case(STATE_HELP      ) help();
+        case(STATE_SETTINGS  ) settings();
+        case(STATE_CREDITS   ) credits();
         case(STATE_SELECT_SET) select_set_ui();
         case(STATE_SELECT    ) select_level_ui();
         case(STATE_PLAY      ) play();
+        case(STATE_PAUSE     ) pause();
     }
 
     ++frame;
@@ -31,7 +39,7 @@ void main()
     save_valid = $load();
 
     state = STATE_SELECT_SET;
-    select_set = 2;
+    select_set = 0;
     
     while(true)
         loop();

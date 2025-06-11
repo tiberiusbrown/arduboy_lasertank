@@ -2,6 +2,7 @@ enum
 {
     STATE_MENU,
     STATE_HELP,
+    STATE_SETTINGS,
     STATE_CREDITS,
     STATE_SELECT_SET,
     STATE_SELECT,
@@ -79,6 +80,9 @@ u8 movex, movey, movedir, moveobj;
 u8 anim_frame;
 saved u8 anim_frames = 1;
 
+bool first_move;
+bool dead;
+
 // camera offset
 i8 offy, targety;
 
@@ -98,6 +102,7 @@ u32 b_pressed_time;
 // RAM copy of level
 u8[256] tiles;
 u8[256] objects;
+u8[16] tunnels;
 
 struct level_t
 {

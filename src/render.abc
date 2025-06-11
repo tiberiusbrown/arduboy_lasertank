@@ -2,10 +2,6 @@ void render_level()
 {
     u8 off = (frame >> 2) & 3;
 
-    // temporarily remove tank
-    u8& t = objects[tanky * 16 + tankx];
-    t = T_DIRT;
-
     for(u8 r = 0; r < 16; ++r)
     {
         i16 y = r * 8 - offy;
@@ -22,9 +18,8 @@ void render_level()
         }
     }
 
-    t = T_TANK;
-
-    $draw_sprite(tankx * 8, tanky * 8 - offy, TILES, T_TANK + tankdir);
+    if(first_move || (frame & 15) >= 5)
+        $draw_sprite(tankx * 8, tanky * 8 - offy, TILES, T_TANK + tankdir);
 
     if(moving)
         $draw_sprite(movex * 8, movey * 8 - offy, TILES, moveobj);

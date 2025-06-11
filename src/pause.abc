@@ -2,5 +2,11 @@ import vars;
 
 void pause()
 {
-    $set_text_font(FONT_PIXELOIDSANSBOLD)
+    if($just_pressed(B_BUTTON))
+    {
+        state = STATE_PLAY;
+        can_pan = false;
+    }
+
+    $set_text_font(FONT_PIXELOIDSANSBOLD);
 }

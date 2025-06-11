@@ -2,6 +2,47 @@ import input;
 import level;
 import render;
 
+// returns dir if laser reflected
+// returns 4 otherwise
+u8 mirror_reflect(u8 mirror_dir, u8 laser_dir)
+{
+    // 0: reflects 1->0, 2->3
+    // 1: reflects 2->1, 3->0
+    // 2: reflects 3->2, 0->1
+    // 3: reflects 0->3, 1->2
+    u8 t = (u8(laser_dir - mirror_dir - 1) & 3);
+    if(t <= 1)
+        return t == 0 ? u8(laser_dir - 1) & 3 : u8(laser_dir + 1) & 3;
+    return 4;
+}
+
+void at_scan(i8 dx, i8 dy, u8 obj)
+{
+    // scan from tankx, tanky for obj
+}
+
+void tank_just_moved()
+{
+    u8 tanki = tanky * 16 + tankx;
+    switch(tiles[tanki])
+    {
+        case(T_TUNNEL ... T_TUNNEL + 31)
+        {
+            u8 ti = find_other_tunnel(tanki);
+            if(ti != tanki)
+            {
+                tanky = ti >> 4;
+                tankx = ti & 15;
+            }
+            else
+            {
+                // black hole
+                dead = true;
+            }
+        }
+    }
+}
+
 void play()
 {
     if(tiles[tanky * 16 + tankx] == T_FLAG)
@@ -29,10 +70,28 @@ void play()
             else
             {
                 load_level();
-                state = STATE_PLAY;
             }
             select_levels[current_set] = current_level;
         }
+        return;
+    }
+
+    if(dead)
+    {
+        render_level();
+        constexpr u8 W = 52;
+        constexpr u8 H = 17;
+        constexpr u8 X = 64 - W / 2;
+        constexpr u8 Y = 32 - H / 2;
+        $draw_filled_rect(X, Y, W, H, BLACK);
+        $draw_filled_rect(X + 1, Y + 1, W - 2, H - 2, WHITE);
+        $draw_filled_rect(X + 3, Y + 3, W - 6, H - 6, BLACK);
+        $set_text_font(FONT_PIXELOIDSANSBOLD);
+        $draw_text(42, 35, "Defeat");
+        if($just_pressed(B_BUTTON))
+            state = STATE_SELECT;
+        else if($just_pressed(A_BUTTON))
+            load_level();
         return;
     }
 
@@ -44,17 +103,28 @@ void play()
     {
         u8 nx = movex + DIRX[movedir];
         u8 ny = movey + DIRY[movedir];
-        if(pushable(nx, ny))
+        if(!solid(nx, ny))
         {
             u8 ni = ny * 16 + nx;
             u8& obj0 = objects[movey * 16 + movex];
             u8& obj1 = objects[ny * 16 + nx];
             obj1 = obj0;
             obj0 = T_DIRT;
-            if(tiles[ni] == T_WATER)
+            switch(tiles[ni])
             {
-                tiles[ni] = T_WATER_FILL;
-                obj1 = T_DIRT;
+                case(T_WATER)
+                {
+                    if(obj1 == T_BLOCK_MOVE)
+                        tiles[ni] = T_WATER_FILL;
+                    obj1 = T_DIRT;
+                }
+                case(T_TUNNEL ... T_TUNNEL + 31)
+                {
+                    u8 ti = find_other_tunnel(ni);
+                    if(ti != ni)
+                        objects[ti] = obj1;
+                    obj1 = T_DIRT;
+                }
             }
             moving = false;
         }
@@ -80,18 +150,58 @@ void play()
         {
             u8 si = shooty * 16 + shootx;
             u8 obj = objects[si];
+            if(obj == T_DIRT)
+                obj = tiles[si];
             shooting = false;
+            movex = shootx;
+            movey = shooty;
+            movedir = shootdir;
             switch(obj)
             {
                 case(T_BLOCK_MOVE)
-                {
                     moving = true;
-                    movex = shootx;
-                    movey = shooty;
-                    movedir = shootdir;
+                case(T_MIRROR ... T_MIRROR + 15)
+                {
+                    u8 d = mirror_reflect((obj >> 2) & 3, shootdir);
+                    if(d < 4)
+                    {
+                        shooting = true;
+                        shootdir = d;
+                        shootx += DIRX[shootdir];
+                        shooty += DIRY[shootdir];
+                    }
+                    else
+                    {
+                        moving = true;
+                    }
+                }
+                case(T_MIRROR_ROT ... T_MIRROR_ROT + 15)
+                {
+                    u8 d = mirror_reflect((obj >> 2) & 3, shootdir);
+                    if(d < 4)
+                    {
+                        shooting = true;
+                        shootdir = d;
+                        shootx += DIRX[shootdir];
+                        shooty += DIRY[shootdir];
+                    }
+                    else
+                    {
+                        // rotate clockwise
+                        tiles[si] = (obj & 0xf0) + ((obj + 4) & 0xc);
+                    }
                 }
             }
         }
+    }
+
+    // scan for anti-tanks
+    if(!shooting)
+    {
+        at_scan( 0, -1, T_ANTITANK + DIR_D * 4);
+        at_scan( 1,  0, T_ANTITANK + DIR_L * 4);
+        at_scan( 0,  1, T_ANTITANK + DIR_U * 4);
+        at_scan(-1,  0, T_ANTITANK + DIR_R * 4);
     }
 
     bool busy = shooting || moving;
@@ -102,6 +212,7 @@ void play()
         shooty = tanky + DIRY[tankdir];
         shootdir = tankdir;
         shooting = shootx < 16 && shooty < 16;
+        first_move = true;
     }
 
     if($just_pressed(B_BUTTON))
@@ -153,6 +264,8 @@ void play()
 
 void process_tank_move(u8 dir, i8 dx, i8 dy)
 {
+    first_move = true;
+
     if(tankdir != dir)
     {
         tankdir = dir;
@@ -165,9 +278,8 @@ void process_tank_move(u8 dir, i8 dx, i8 dy)
     if(solid(nx, ny))
         return;
 
-    objects[tanky * 16 + tankx] = T_DIRT;
-    objects[ny * 16 + nx] = T_TANK;
-
     tankx = nx;
     tanky = ny;
+
+    tank_just_moved();
 }
