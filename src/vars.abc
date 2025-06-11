@@ -107,6 +107,7 @@ u32 b_pressed_time;
 // RAM copy of level
 u8[256] tiles;
 u8[256] objects;
+u8[8] num_tunnels;
 
 struct level_t
 {

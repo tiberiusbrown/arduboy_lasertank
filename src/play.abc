@@ -58,24 +58,28 @@ void all_at_scans()
     at_scan(DIR_L);
 }
 
-void process_oneway()
+void process_tank_tile()
 {
     u8 ti = tanky * 16 + tankx;
     if(objects[ti] >= T_FIRST_SOLID)
         return;
     u8 t = tiles[ti];
-    if(!(t >= T_ONEWAY && t <= T_ONEWAY + 15))
-        return;
-    u8 dir = u8(t - T_ONEWAY) >> 2;
-    u8 nx = tankx + DIRX[dir];
-    u8 ny = tanky + DIRY[dir];
-    if(!solid(nx, ny))
+    switch(t)
     {
-        tankx = nx;
-        tanky = ny;
-        just_moved = true;
-        just_moved_dir = dir;
-        anim_frame = anim_frames;
+        case(T_ONEWAY ... T_ONEWAY + 15)
+        {
+            u8 dir = u8(t - T_ONEWAY) >> 2;
+            u8 nx = tankx + DIRX[dir];
+            u8 ny = tanky + DIRY[dir];
+            if(!solid(nx, ny))
+            {
+                tankx = nx;
+                tanky = ny;
+                just_moved = true;
+                just_moved_dir = dir;
+                anim_frame = anim_frames;
+            }
+        }
     }
 }
 
@@ -93,8 +97,11 @@ void tank_update(bool anim)
             u8 ti = find_other_tunnel(tanki);
             if(ti != tanki)
             {
-                tanky = ti >> 4;
-                tankx = ti & 15;
+                if(objects[ti] < T_FIRST_SOLID)
+                {
+                    tanky = ti >> 4;
+                    tankx = ti & 15;
+                }
             }
             else
             {
@@ -124,7 +131,7 @@ void tank_update(bool anim)
             victory = true;
     }
     all_at_scans();
-    process_oneway();
+    process_tank_tile();
     all_at_scans();
 }
 
@@ -294,15 +301,39 @@ void play()
                 case(T_TUNNEL ... T_TUNNEL + 31)
                 {
                     u8 ti = find_other_tunnel(ni);
-                    if(ti != ni)
+                    if(ti != ni && objects[ti] < T_FIRST_SOLID)
+                    {
                         objects[ti] = obj1;
-                    obj1 = T_DIRT;
+                        obj1 = T_DIRT;
+                    }
                 }
                 case(T_ICE, T_ICE_CRACKED)
                 {
                     movex = nx;
                     movey = ny;
                     moving = true;
+                }
+            }
+        }
+        switch(tiles[mi])
+        {
+            case(T_TUNNEL ... T_TUNNEL + 31)
+            {
+                // if all of the following:
+                //     1. an object is moved off of a tunnel
+                //     2. there is exactly one other tunnel
+                //     3. there is an object on the other tunnel
+                // then the other object teleports
+                // relevant trick level: "16. Moving a Dead Anti-Tank"
+                u8 ti = u8(tiles[mi] - T_TUNNEL) >> 2;
+                if(num_tunnels[ti] == 2)
+                {
+                    ti = find_other_tunnel(mi);
+                    if(ti != mi && objects[ti] != T_DIRT)
+                    {
+                        objects[mi] = objects[ti];
+                        objects[ti] = T_DIRT;
+                    }
                 }
             }
         }
@@ -314,6 +345,8 @@ void play()
 
         if(tiles[tanky * 16 + tankx] == T_WATER)
         {
+            // detecting a drowning tank is delayed by one tick
+            // relevant trick level: "8. Actually, Tanks Sink Slowly!"
             if(in_water)
                 dead = true;
             in_water = true;
@@ -405,6 +438,6 @@ void process_tank_move(u8 dir)
     just_moved_dir = dir;
 
     all_at_scans();
-    process_oneway();
+    process_tank_tile();
     all_at_scans();
 }

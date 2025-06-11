@@ -42,7 +42,7 @@ u8 find_other_tunnel(u8 i)
     u8 ti = 0;
     do
     {
-        if(ti != i && tiles[ti] == t && objects[ti] < T_FIRST_SOLID)
+        if(ti != i && tiles[ti] == t)
             return ti;
         ti += 1;
     } while(ti != 0);
@@ -54,6 +54,7 @@ void load_level()
     level_t prog& level = LEVELSETS[current_set].levels[current_level];
     tiles = level.tiles;
     $memset(objects, T_DIRT);
+    num_tunnels = {};
     tankdir = DIR_U;
     for(u16 i = 0; i < 256; ++i)
     {
@@ -70,6 +71,10 @@ void load_level()
             {
                 objects[i] = t;
                 tiles[i] = T_DIRT;
+            }
+            case(T_TUNNEL ... T_TUNNEL + 31)
+            {
+                num_tunnels[u8(t - T_TUNNEL) >> 2] += 1;
             }
         }
     }
