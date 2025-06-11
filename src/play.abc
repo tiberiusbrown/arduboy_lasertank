@@ -16,9 +16,36 @@ u8 mirror_reflect(u8 mirror_dir, u8 laser_dir)
     return 4;
 }
 
-void at_scan(i8 dx, i8 dy, u8 obj)
+void at_scan(u8 dir)
 {
+    if(shooting)
+        return;
+
     // scan from tankx, tanky for obj
+    i8 dx = DIRX[dir];
+    i8 dy = DIRY[dir];
+    dir = (dir + 2) & 3;
+    u8 obj = T_ANTITANK + dir * 4;
+    u8 x = tankx + dx;
+    u8 y = tanky + dy;
+    while(x < 16 && y < 16)
+    {
+        u8 i = y * 16 + x;
+        if(tiles[i] >= T_FIRST_SOLID)
+            break;
+        if(objects[i] == obj)
+        {
+            shootx = x - dx;
+            shooty = y - dy;
+            shootdir = dir;
+            shooting = true;
+            return;
+        }
+        if(objects[i] >= T_FIRST_SOLID)
+            break;
+        x += dx;
+        y += dy;
+    }
 }
 
 void tank_just_moved()
@@ -42,6 +69,32 @@ void tank_just_moved()
                 dead = true;
             }
         }
+        case(T_ICE, T_ICE_CRACKED)
+        {
+            if(t == T_ICE_CRACKED)
+            {
+                tiles[tanki] = T_WATER;
+                just_moved = true;
+            }
+            u8 nx = tankx + DIRX[just_moved_dir];
+            u8 ny = tanky + DIRY[just_moved_dir];
+            if(!solid(nx, ny))
+            {
+                tankx = nx;
+                tanky = ny;
+                anim_frame = anim_frames;
+                just_moved = true;
+            }
+        }
+    }
+}
+
+void tank_update()
+{
+    u8 tanki = tanky * 16 + tankx;
+    u8 t = tiles[tanki];
+    switch(t)
+    {
         case(T_WATER)
             dead = true;
         case(T_ONEWAY ... T_ONEWAY + 15)
@@ -55,23 +108,7 @@ void tank_just_moved()
                 tanky = ny;
                 anim_frame = anim_frames;
                 just_moved = true;
-            }
-        }
-        case(T_ICE, T_ICE_CRACKED)
-        {
-            if(t == T_ICE_CRACKED)
-            {
-                tiles[tanki] = T_WATER;
-                just_moved = true;
-            }
-            u8 nx = tankx + DIRX[tankdir];
-            u8 ny = tanky + DIRY[tankdir];
-            if(!solid(nx, ny))
-            {
-                tankx = nx;
-                tanky = ny;
-                anim_frame = anim_frames;
-                just_moved = true;
+                just_moved_dir = dir;
             }
         }
     }
@@ -188,12 +225,28 @@ void play()
     if(just_moved && anim)
         tank_just_moved();
 
+    // scan for anti-tanks
+    if(anim && !shooting)
+    {
+        at_scan(DIR_U);
+        at_scan(DIR_R);
+        at_scan(DIR_D);
+        at_scan(DIR_L);
+    }
+
+    if(anim)
+        tank_update();
+
     if(shooting && anim)
     {
         u8 si = shooty * 16 + shootx;
         u8 t = tiles[si];
         u8 obj = objects[si];
-        if(!opaque(shootx, shooty))
+        if(shootx == tankx && shooty == tanky)
+        {
+            dead = true;
+        }
+        else if(!opaque(shootx, shooty))
         {
             shootx += DIRX[shootdir];
             shooty += DIRY[shootdir];
@@ -245,17 +298,16 @@ void play()
                         tiles[si] = (obj & 0xf0) + ((obj + 4) & 0xc);
                     }
                 }
+                case(T_ANTITANK ... T_ANTITANK + 15)
+                {
+                    u8 tdir = u8(obj - T_ANTITANK) >> 2;
+                    if(((tdir + 2) & 3) == shootdir)
+                        objects[si] = T_ANTITANK_B + tdir * 4;
+                    else
+                        moving = true;
+                }
             }
         }
-    }
-
-    // scan for anti-tanks
-    if(!shooting)
-    {
-        at_scan( 0, -1, T_ANTITANK + DIR_D * 4);
-        at_scan( 1,  0, T_ANTITANK + DIR_L * 4);
-        at_scan( 0,  1, T_ANTITANK + DIR_U * 4);
-        at_scan(-1,  0, T_ANTITANK + DIR_R * 4);
     }
 
     bool busy = shooting || moving;
@@ -283,13 +335,13 @@ void play()
     if(!busy && !$pressed(B_BUTTON))
     {
         if(btn_just_pressed(UP_BUTTON))
-            process_tank_move(DIR_U, 0, -1);
+            process_tank_move(DIR_U);
         if(btn_just_pressed(RIGHT_BUTTON))
-            process_tank_move(DIR_R, 1, 0);
+            process_tank_move(DIR_R);
         if(btn_just_pressed(DOWN_BUTTON))
-            process_tank_move(DIR_D, 0, 1);
+            process_tank_move(DIR_D);
         if(btn_just_pressed(LEFT_BUTTON))
-            process_tank_move(DIR_L, -1, 0);
+            process_tank_move(DIR_L);
     }
 
     if(can_pan && $pressed(B_BUTTON))
@@ -316,7 +368,7 @@ void play()
     }
 }
 
-void process_tank_move(u8 dir, i8 dx, i8 dy)
+void process_tank_move(u8 dir)
 {
     first_move = true;
 
@@ -326,6 +378,8 @@ void process_tank_move(u8 dir, i8 dx, i8 dy)
         return;
     }
 
+    i8 dx = DIRX[dir];
+    i8 dy = DIRY[dir];
     u8 nx = tankx + dx;
     u8 ny = tanky + dy;
 
@@ -336,4 +390,5 @@ void process_tank_move(u8 dir, i8 dx, i8 dy)
     tanky = ny;
 
     just_moved = true;
+    just_moved_dir = dir;
 }
