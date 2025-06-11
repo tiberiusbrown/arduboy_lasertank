@@ -24,7 +24,9 @@ void at_scan(i8 dx, i8 dy, u8 obj)
 void tank_just_moved()
 {
     u8 tanki = tanky * 16 + tankx;
-    switch(tiles[tanki])
+    u8 t = tiles[tanki];
+    just_moved = false;
+    switch(t)
     {
         case(T_TUNNEL ... T_TUNNEL + 31)
         {
@@ -42,8 +44,37 @@ void tank_just_moved()
         }
         case(T_WATER)
             dead = true;
+        case(T_ONEWAY ... T_ONEWAY + 15)
+        {
+            u8 dir = u8(t - T_ONEWAY) >> 2;
+            u8 nx = tankx + DIRX[dir];
+            u8 ny = tanky + DIRY[dir];
+            if(!solid(nx, ny))
+            {
+                tankx = nx;
+                tanky = ny;
+                anim_frame = anim_frames;
+                just_moved = true;
+            }
+        }
+        case(T_ICE, T_ICE_CRACKED)
+        {
+            if(t == T_ICE_CRACKED)
+            {
+                tiles[tanki] = T_WATER;
+                just_moved = true;
+            }
+            u8 nx = tankx + DIRX[tankdir];
+            u8 ny = tanky + DIRY[tankdir];
+            if(!solid(nx, ny))
+            {
+                tankx = nx;
+                tanky = ny;
+                anim_frame = anim_frames;
+                just_moved = true;
+            }
+        }
     }
-    just_moved = false;
 }
 
 void play()
@@ -104,12 +135,28 @@ void play()
 
     if(moving && anim)
     {
+        u8 mi = movey * 16 + movex;
+        moving = false;
+        switch(tiles[mi])
+        {
+            case(T_ICE_CRACKED)
+            {
+                tiles[mi] = T_WATER;
+                moving = true;
+            }
+            case(T_WATER)
+            {
+                if(objects[mi] == T_BLOCK_MOVE)
+                    tiles[mi] = T_WATER_FILL;
+                objects[mi] = T_DIRT;
+            }
+        }
         u8 nx = movex + DIRX[movedir];
         u8 ny = movey + DIRY[movedir];
         if(!solid(nx, ny))
         {
             u8 ni = ny * 16 + nx;
-            u8& obj0 = objects[movey * 16 + movex];
+            u8& obj0 = objects[mi];
             u8& obj1 = objects[ny * 16 + nx];
             obj1 = obj0;
             obj0 = T_DIRT;
@@ -128,12 +175,13 @@ void play()
                         objects[ti] = obj1;
                     obj1 = T_DIRT;
                 }
+                case(T_ICE, T_ICE_CRACKED)
+                {
+                    movex = nx;
+                    movey = ny;
+                    moving = true;
+                }
             }
-            moving = false;
-        }
-        else
-        {
-            moving = false;
         }
     }
 

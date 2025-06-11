@@ -78,7 +78,7 @@ bool moving;
 u8 movex, movey, movedir, moveobj;
 
 u8 anim_frame;
-saved u8 anim_frames = 1;
+saved u8 anim_frames = 2;
 
 bool first_move;
 bool dead;
@@ -103,7 +103,6 @@ u32 b_pressed_time;
 // RAM copy of level
 u8[256] tiles;
 u8[256] objects;
-u8[16] tunnels;
 
 struct level_t
 {

@@ -39,11 +39,13 @@ bool opaque(u8 x, u8 y)
 u8 find_other_tunnel(u8 i)
 {
     u8 t = tiles[i];
-    u8 ti = u8(t - T_TUNNEL) >> 2;
-    u8 x = tunnels[ti*2];
-    if(x != i && tiles[x] == t) return x;
-    x = tunnels[ti*2+1];
-    if(x != i && tiles[x] == t) return x;
+    u8 ti = 0;
+    do
+    {
+        if(ti != i && tiles[ti] == t && objects[ti] < T_FIRST_SOLID)
+            return ti;
+        ti += 1;
+    } while(ti != 0);
     return i;
 }
 
@@ -52,7 +54,6 @@ void load_level()
     level_t prog& level = LEVELSETS[current_set].levels[current_level];
     tiles = level.tiles;
     $memset(objects, T_DIRT);
-    $memset(tunnels, 255);
     tankdir = DIR_U;
     for(u16 i = 0; i < 256; ++i)
     {
@@ -69,14 +70,6 @@ void load_level()
             {
                 objects[i] = t;
                 tiles[i] = T_DIRT;
-            }
-            case(T_TUNNEL ... T_TUNNEL + 31)
-            {
-                u8 ti = u8(t - T_TUNNEL) >> 2;
-                if(tunnels[ti*2] == 255)
-                    tunnels[ti*2] = i;
-                else
-                    tunnels[ti*2+1] = i;
             }
         }
     }
