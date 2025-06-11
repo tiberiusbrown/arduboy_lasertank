@@ -83,7 +83,7 @@ void process_tank_tile()
     }
 }
 
-void tank_update(bool anim)
+void tank_update()
 {
     u8 tanki = tanky * 16 + tankx;
     u8 t = tiles[tanki];
@@ -123,7 +123,7 @@ void tank_update(bool anim)
             {
                 tankx = nx;
                 tanky = ny;
-                if(anim) anim_frame = anim_frames;
+                anim_frame = anim_frames;
                 just_moved = true;
             }
         }
@@ -341,7 +341,7 @@ void play()
 
     if(anim)
     {
-        tank_update(true);
+        tank_update();
 
         if(tiles[tanky * 16 + tankx] == T_WATER)
         {
