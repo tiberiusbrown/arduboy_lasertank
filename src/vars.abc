@@ -82,6 +82,7 @@ saved u8 anim_frames = 1;
 
 bool first_move;
 bool dead;
+bool just_moved;
 
 // camera offset
 i8 offy, targety;

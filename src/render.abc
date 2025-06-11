@@ -18,7 +18,7 @@ void render_level()
         }
     }
 
-    if(first_move || (frame & 15) >= 5)
+    if(!dead && (first_move || (frame & 15) >= 5))
         $draw_sprite(tankx * 8, tanky * 8 - offy, TILES, T_TANK + tankdir);
 
     if(moving)

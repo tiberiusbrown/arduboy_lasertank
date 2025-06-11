@@ -90,4 +90,5 @@ void load_level()
     moving = false;
     first_move = false;
     dead = false;
+    just_moved = false;
 }

@@ -40,7 +40,10 @@ void tank_just_moved()
                 dead = true;
             }
         }
+        case(T_WATER)
+            dead = true;
     }
+    just_moved = false;
 }
 
 void play()
@@ -79,15 +82,15 @@ void play()
     if(dead)
     {
         render_level();
-        constexpr u8 W = 52;
-        constexpr u8 H = 17;
+        constexpr u8 W = 45;
+        constexpr u8 H = 15;
         constexpr u8 X = 64 - W / 2;
         constexpr u8 Y = 32 - H / 2;
         $draw_filled_rect(X, Y, W, H, BLACK);
         $draw_filled_rect(X + 1, Y + 1, W - 2, H - 2, WHITE);
         $draw_filled_rect(X + 3, Y + 3, W - 6, H - 6, BLACK);
         $set_text_font(FONT_PIXELOIDSANSBOLD);
-        $draw_text(42, 35, "Defeat");
+        $draw_text(46, 36, "Defeat");
         if($just_pressed(B_BUTTON))
             state = STATE_SELECT;
         else if($just_pressed(A_BUTTON))
@@ -133,6 +136,9 @@ void play()
             moving = false;
         }
     }
+
+    if(just_moved && anim)
+        tank_just_moved();
 
     if(shooting && anim)
     {
@@ -281,5 +287,5 @@ void process_tank_move(u8 dir, i8 dx, i8 dy)
     tankx = nx;
     tanky = ny;
 
-    tank_just_moved();
+    just_moved = true;
 }
