@@ -75,8 +75,9 @@ i8[4] prog DIRY = { -1, 0, 1, 0 };
 bool shooting;
 u8 shootx, shooty, shootdir;
 
-bool moving;
-u8 movex, movey, movedir, moveobj;
+struct moving_obj_t { u8 pos, dir; };
+moving_obj_t[15] moving_objects;
+u8 num_moving_objects;
 
 u8 anim_frame;
 saved u8 anim_frames = 2;

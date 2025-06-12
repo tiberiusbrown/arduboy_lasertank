@@ -1,6 +1,7 @@
 import input;
 import level;
 import render;
+import moving;
 
 // returns dir if laser reflected
 // returns 4 otherwise
@@ -150,90 +151,6 @@ void tank_update()
     all_at_scans();
 }
 
-void process_moved_obj()
-{
-    if(!moving)
-        return;
-    u8 mi = movey * 16 + movex;
-    moving = false;
-    switch(tiles[mi])
-    {
-        case(T_ICE_CRACKED)
-        {
-            tiles[mi] = T_WATER;
-            moving = true;
-        }
-        case(T_WATER)
-        {
-            if(objects[mi] == T_BLOCK_MOVE)
-                tiles[mi] = T_WATER_FILL;
-            objects[mi] = T_DIRT;
-        }
-    }
-    u8 nx = movex + DIRX[movedir];
-    u8 ny = movey + DIRY[movedir];
-    if(!solid(nx, ny))
-    {
-        u8 ni = ny * 16 + nx;
-        u8& obj0 = objects[mi];
-        u8& obj1 = objects[ny * 16 + nx];
-        obj1 = obj0;
-        obj0 = T_DIRT;
-        switch(tiles[ni])
-        {
-            case(T_WATER)
-            {
-                if(obj1 == T_BLOCK_MOVE)
-                    tiles[ni] = T_WATER_FILL;
-                obj1 = T_DIRT;
-            }
-            case(T_TUNNEL ... T_TUNNEL + 31)
-            {
-                u8 tnum = u8(tiles[ni] - T_TUNNEL) >> 2;
-                if(obj1 >= T_FIRST_SOLID)
-                    occupied_tunnels[tnum] += 1;
-                u8 ti = find_other_tunnel(ni);
-                if(ti != ni)
-                {
-                    objects[ti] = obj1;
-                    obj1 = T_DIRT;
-                }
-                last_tunneled[tnum] = ti;
-            }
-            case(T_ICE, T_ICE_CRACKED)
-            {
-                movex = nx;
-                movey = ny;
-                moving = true;
-            }
-        }
-        all_at_scans();
-
-        // trick 25
-        if(nx + DIRX[movedir] == tankx && ny + DIRY[movedir] == tanky)
-            moving = false;
-    }
-    switch(tiles[mi])
-    {
-        case(T_TUNNEL ... T_TUNNEL + 31)
-        {
-            // relevant tricks: 16, 26
-            u8 ti = tiles[mi];
-            u8 tnum = u8(ti - T_TUNNEL) >> 2;
-            u8 obji = last_tunneled[tnum];
-            if(objects[obji] >= T_FIRST_SOLID &&
-                tiles[obji] == ti &&
-                occupied_tunnels[tnum] == num_tunnels[tnum])
-            {
-                objects[mi] = objects[obji];
-                objects[obji] = T_DIRT;
-            }
-            else
-                occupied_tunnels[tnum] -= 1;
-        }
-    }
-}
-
 void process_laser()
 {
     if(!shooting)
@@ -262,11 +179,7 @@ void process_laser()
         {
             case(T_BLOCK_MOVE)
             {
-                movex = shootx;
-                movey = shooty;
-                movedir = shootdir;
-                moving = true;
-                process_moved_obj();
+                add_moving_object({ shooty * 16 + shootx, shootdir });
             }
             case(T_BLOCK_BRICK)
                 tiles[si] = T_DIRT;
@@ -277,16 +190,10 @@ void process_laser()
                 {
                     shooting = true;
                     shootdir = d;
-                    //shootx += DIRX[shootdir];
-                    //shooty += DIRY[shootdir];
                 }
                 else
                 {
-                    movex = shootx;
-                    movey = shooty;
-                    movedir = shootdir;
-                    moving = true;
-                    process_moved_obj();
+                    add_moving_object({ shooty * 16 + shootx, shootdir });
                 }
             }
             case(T_MIRROR_ROT ... T_MIRROR_ROT + 15)
@@ -296,8 +203,6 @@ void process_laser()
                 {
                     shooting = true;
                     shootdir = d;
-                    //shootx += DIRX[shootdir];
-                    //shooty += DIRY[shootdir];
                 }
                 else
                 {
@@ -312,17 +217,13 @@ void process_laser()
                     objects[si] = T_ANTITANK_B + tdir * 4;
                 else
                 {
-                    movex = shootx;
-                    movey = shooty;
-                    movedir = shootdir;
-                    moving = true;
-                    process_moved_obj();
+                    add_moving_object({ shooty * 16 + shootx, shootdir });
                 }
             }
             case(T_ANTITANK_B ... T_ANTITANK_B + 15)
             {
                 // Broken Anti-Tank braking (tricks 81-84)
-                moving = false;
+                delete_moving_object_pos(shootx, shooty);
             }
         }
     }
@@ -393,7 +294,7 @@ void play()
     {
         process_laser();
 
-        process_moved_obj();
+        process_moving_objects();
 
         tank_update();
 
@@ -413,7 +314,7 @@ void play()
     // INPUT AND RENDERING
     ////////////////////////////////////
 
-    bool busy = shooting || moving;
+    bool busy = shooting || (num_moving_objects != 0);
 
     if(!busy && $just_pressed(A_BUTTON))
     {

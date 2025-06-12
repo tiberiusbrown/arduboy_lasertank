@@ -87,7 +87,7 @@ void load_level()
     if(targety > 64) targety = 64;
     offy = targety;
     shooting = false;
-    moving = false;
+    num_moving_objects = 0;
     first_move = false;
     in_water = false;
     dead = false;
