@@ -1,6 +1,7 @@
 void render_level()
 {
     u8 off = (frame >> 2) & 3;
+    if(!tile_anim) off = 0;
 
     if(tilesize == TILESIZE_4)
     {
@@ -26,19 +27,22 @@ void render_level()
         if(!dead && (first_move || (frame & 15) >= 5))
             $draw_sprite(tankx * 4, tanky * 4, TILES4, T_TANK + tankdir);
 
-        $draw_vline(64, 0, 64, WHITE);
+        if(state != STATE_PAUSE)
+        {
+            $draw_vline(64, 0, 64, WHITE);
 
-        $set_text_font(FONT_BR5D);
-        char[32] buf;
-        $format(buf, "Level %u/%u", current_level + 1, len(LEVELSETS[current_set].levels));
-        u8 w = $text_width(buf);
-        $draw_text(97 - w/2, 5, buf);
-        $draw_hline(66, 6, 62, WHITE);
-        $draw_text(66, 17, "Moves:");
-        $draw_text(69, 28, "Shots:");
-        $set_text_font(FONT_PIXELOIDSANS);
-        $draw_textf(93, 18, "%u", moves);
-        $draw_textf(93, 29, "%u", shots);
+            $set_text_font(FONT_BR5D);
+            char[32] buf;
+            $format(buf, "Level %u/%u", current_level + 1, len(LEVELSETS[current_set].levels));
+            u8 w = $text_width(buf);
+            $draw_text(97 - w/2, 5, buf);
+            $draw_hline(66, 6, 62, WHITE);
+            $draw_text(66, 17, "Moves:");
+            $draw_text(69, 28, "Shots:");
+            $set_text_font(FONT_PIXELOIDSANS);
+            $draw_textf(93, 18, "%u", moves);
+            $draw_textf(93, 29, "%u", shots);
+        }
     }
     else if(tilesize == TILESIZE_8)
     {
@@ -51,10 +55,10 @@ void render_level()
             u8[16] row2 = objects[r*16 +: 16];
             for(u8 c = 0; c < 16; ++c)
             {
-                $draw_sprite(c * 8, y, TILES, row[c] + off);
+                $draw_sprite(c * 8, y, TILES8, row[c] + off);
                 u8 f = row2[c];
                 if(f != 0)
-                    $draw_sprite(c * 8, y, TILES, f + off);
+                    $draw_sprite(c * 8, y, TILES8, f + off);
             }
         }
 
@@ -62,6 +66,6 @@ void render_level()
             $draw_sprite(shootx * 8, shooty * 8 - offy, LASERS, shootdir);
 
         if(!dead && (first_move || (frame & 15) >= 5))
-            $draw_sprite(tankx * 8, tanky * 8 - offy, TILES, T_TANK + tankdir);
+            $draw_sprite(tankx * 8, tanky * 8 - offy, TILES8, T_TANK + tankdir);
     }
 }

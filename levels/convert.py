@@ -1,4 +1,5 @@
 import struct
+import sys
 
 def tile(r, c):
     return r * 16 + c
@@ -130,6 +131,316 @@ def format_str(b):
     s = s.translate(TRANS)
     return s
 
+XADV = [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    2,
+    2,
+    4,
+    6,
+    6,
+    4,
+    5,
+    2,
+    3,
+    3,
+    4,
+    4,
+    3,
+    4,
+    2,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    2,
+    3,
+    4,
+    4,
+    4,
+    4,
+    5,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    3,
+    4,
+    4,
+    6,
+    5,
+    5,
+    4,
+    5,
+    4,
+    4,
+    4,
+    5,
+    4,
+    6,
+    4,
+    4,
+    4,
+    3,
+    4,
+    3,
+    4,
+    4,
+    3,
+    4,
+    4,
+    3,
+    4,
+    4,
+    3,
+    4,
+    4,
+    2,
+    3,
+    4,
+    2,
+    6,
+    4,
+    4,
+    4,
+    4,
+    4,
+    3,
+    3,
+    4,
+    4,
+    6,
+    4,
+    4,
+    3,
+    4,
+    2,
+    4,
+    5,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    2,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+]
+
+def font_xadv(c):
+    return XADV[ord(c)]
+
+def wrap_str(s, w):
+    s = list(s)
+    
+    for i in range(1, len(s)):
+        if i + 1 < len(s) and s[i] == '\n' and s[i+1] != '\n' and s[i-1] != '\n':
+            s[i] = ' '
+        
+    cw = 0
+    i = 0
+    ti = i
+    tw = 0
+    n = len(s)
+    tn = n
+    num_lines = 1
+    while i < len(s) and tn != 0:
+        c = s[i]
+        if c == '\0': break
+        i += 1
+        tn -= 1
+        cw += font_xadv(c)
+        if c == '\n':
+            cw = 0
+            tw = 0
+            ti = i
+            num_lines += 1
+        if c == ' ':
+            ti = i
+            tw = cw
+            tn = n
+        if cw <= w: continue
+        if tw == 0: continue
+        i = ti
+        s[ti - 1] = '\n'
+        num_lines += 1
+        cw = 0
+        tw = 0
+        n = tn
+    return (''.join(s), num_lines)
+
+def format_hint(b):
+    s = b.decode('ascii', errors='backslashreplace')
+    s = s.translate(str.maketrans({ '\0': '', '\r': '' }))
+    t = wrap_str(s, 128)
+    if t[1] > 9:
+        t = wrap_str(s, 120)
+    s = t[0].translate(TRANS)
+    return (s, t[1])
+
 def convert(fin, sym):
     with open(fin, 'rb') as f:
         content = f.read()
@@ -152,10 +463,11 @@ def convert(fin, sym):
                     f.write(' %3d,' % remap(tiles[c*16+r]))
                 f.write('\n')
             f.write('        },\n')
-            f.write('        "%s",\n' % format_str(name));
-            f.write('        "%s",\n' % format_str(author));
-            f.write('        "%s",\n' % format_str(hint));
-            f.write('        %u,\n' % diff);
+            f.write('        "%s",\n' % format_str(name))
+            f.write('        "%s",\n' % format_str(author))
+            hint_info = format_hint(hint)
+            f.write('        "%s",\n' % hint_info[0])
+            f.write('        %u, %u,\n' % (hint_info[1], diff[0]))
             f.write('    },\n')
         f.write('};\n\n')
 

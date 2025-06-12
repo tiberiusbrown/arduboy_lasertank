@@ -3,6 +3,7 @@ saved u16[NUM_LEVELSETS] select_levels;
 
 import play;
 import pause;
+import hint;
 import menu;
 import help;
 import settings;
@@ -27,6 +28,7 @@ void loop()
         case(STATE_SELECT    ) select_level_ui();
         case(STATE_PLAY      ) play();
         case(STATE_PAUSE     ) pause();
+        case(STATE_HINT      ) hint();
     }
 
     ++frame;
