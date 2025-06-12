@@ -55,6 +55,8 @@ void load_level()
     tiles = level.tiles;
     $memset(objects, T_DIRT);
     num_tunnels = {};
+    occupied_tunnels = {};
+    last_tunneled = {};
     tankdir = DIR_U;
     for(u16 i = 0; i < 256; ++i)
     {

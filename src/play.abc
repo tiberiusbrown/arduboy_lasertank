@@ -75,9 +75,9 @@ void process_tank_oneway()
             {
                 tankx = nx;
                 tanky = ny;
-                process_tank_tunnel();
                 just_moved = true;
                 just_moved_dir = dir;
+                process_tank_tunnel();
                 anim_frame = anim_frames;
             }
         }
@@ -95,6 +95,7 @@ void process_tank_tunnel()
         case(T_TUNNEL ... T_TUNNEL + 31)
         {
             if(!just_moved) break;
+            just_moved = false;
             u8 ti = find_other_tunnel(tanki);
             if(ti != tanki)
             {
@@ -188,12 +189,16 @@ void process_moved_obj()
             }
             case(T_TUNNEL ... T_TUNNEL + 31)
             {
+                u8 tnum = u8(tiles[ni] - T_TUNNEL) >> 2;
+                if(obj1 >= T_FIRST_SOLID)
+                    occupied_tunnels[tnum] += 1;
                 u8 ti = find_other_tunnel(ni);
                 if(ti != ni)
                 {
                     objects[ti] = obj1;
                     obj1 = T_DIRT;
                 }
+                last_tunneled[tnum] = ti;
             }
             case(T_ICE, T_ICE_CRACKED)
             {
@@ -202,28 +207,29 @@ void process_moved_obj()
                 moving = true;
             }
         }
+        all_at_scans();
+
+        // trick 25
+        if(nx + DIRX[movedir] == tankx && ny + DIRY[movedir] == tanky)
+            moving = false;
     }
     switch(tiles[mi])
     {
         case(T_TUNNEL ... T_TUNNEL + 31)
         {
-            // if both of the following:
-            //     1. an object is moved off of a tunnel
-            //     2. there is an object on another tunnel
-            // then the other object teleports
-            // relevant trick level: "16. Moving a Dead Anti-Tank"
+            // relevant tricks: 16, 26
             u8 ti = tiles[mi];
-            u8 i = 0;
-            do
+            u8 tnum = u8(ti - T_TUNNEL) >> 2;
+            u8 obji = last_tunneled[tnum];
+            if(objects[obji] >= T_FIRST_SOLID &&
+                tiles[obji] == ti &&
+                occupied_tunnels[tnum] == num_tunnels[tnum])
             {
-                if(i != mi && tiles[i] == ti && objects[i] >= T_FIRST_SOLID)
-                {
-                    objects[mi] = objects[i];
-                    objects[i] = T_DIRT;
-                    break;
-                }
-                i += 1;
-            } while(i != 0);
+                objects[mi] = objects[obji];
+                objects[obji] = T_DIRT;
+            }
+            else
+                occupied_tunnels[tnum] -= 1;
         }
     }
 }

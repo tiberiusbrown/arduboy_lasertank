@@ -42,10 +42,10 @@ void main()
     select_set = 0;
 
     current_set = 2;
-    current_level = 23;
+    current_level = 34;
     load_level();
     state = STATE_PLAY;
-    anim_frames = 3;
+    anim_frames = 2;
     
     while(true)
         loop();

@@ -108,6 +108,8 @@ u32 b_pressed_time;
 u8[256] tiles;
 u8[256] objects;
 u8[8] num_tunnels;
+u8[8] occupied_tunnels;
+u8[8] last_tunneled;
 
 struct level_t
 {

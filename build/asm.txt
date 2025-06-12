@@ -1,4 +1,4 @@
-.githash c5f51c864797e075c0441002dff1c9aa3599716c
+.githash 30bf61450e5a3ad4c8b2adbf0d21e92dafcc48df
 .shades 2
 .global anim_frames 1
 .global select_set 1
@@ -37,7 +37,9 @@
 .global b_pressed_time 4
 .global btn_ticks 4
 .global repeat_counts 4
+.global last_tunneled 8
 .global num_tunnels 8
+.global occupied_tunnels 8
 .global objects 256
 .global tiles 256
 
@@ -10638,24 +10640,30 @@ load_level:
   pz8
   setgn 8 num_tunnels 0
   .line 58
+  pz8
+  setgn 8 occupied_tunnels 0
+  .line 59
+  pz8
+  setgn 8 last_tunneled 0
+  .line 60
   p0
   setg  tankdir 0
-  .line 59
+  .line 61
   p00
 $L_load_level_1:
-  .line 61
+  .line 63
   pushg tiles 0
   dupw3
   aidx  1 256
   getr
-  .line 62
-  dup
   .line 64
+  dup
+  .line 66
   dup
   push  220
   sub
   bz    $L_load_level_4
-  .line 70
+  .line 72
   dup
   push  184
   sub
@@ -10678,7 +10686,7 @@ $L_load_level_7:
   cult
   bz    $L_load_level_5
 $L_load_level_8:
-  .line 75
+  .line 77
   dup
   p32
   cult
@@ -10688,45 +10696,45 @@ $L_load_level_8:
   cult
   bz    $L_load_level_6
 $L_load_level_9:
-  .line 62
+  .line 64
   jmp   $L_load_level_3
 $L_load_level_4:
-  .line 66
+  .line 68
   p0
   pushg tiles 0
   dupw6
   aidx  1 256
   setr
-  .line 67
+  .line 69
   dup4
   push  15
   and
   setg  tankx 0
-  .line 68
+  .line 70
   dupw3
   p4
   lsr2
   pop
   setg  tanky 0
-  .line 62
+  .line 64
   jmp   $L_load_level_3
 $L_load_level_5:
-  .line 72
+  .line 74
   dup2
   pushg objects 0
   dupw6
   aidx  1 256
   setr
-  .line 73
+  .line 75
   p0
   pushg tiles 0
   dupw6
   aidx  1 256
   setr
-  .line 62
+  .line 64
   jmp   $L_load_level_3
 $L_load_level_6:
-  .line 77
+  .line 79
   pushg num_tunnels 0
   dup4
   p32
@@ -10741,9 +10749,9 @@ $L_load_level_6:
   setr
   pop2
 $L_load_level_3:
-  .line 62
+  .line 64
   pop2
-  .line 59
+  .line 61
   p1
   add2b
   dupw
@@ -10751,19 +10759,19 @@ $L_load_level_3:
   p1
   cult2
   bz    $L_load_level_0
-  .line 61
+  .line 63
   pushg tiles 0
   dupw3
   aidx  1 256
   getr
-  .line 62
-  dup
   .line 64
+  dup
+  .line 66
   dup
   push  220
   sub
   bz    $L_load_level_11
-  .line 70
+  .line 72
   dup
   push  184
   sub
@@ -10786,7 +10794,7 @@ $L_load_level_14:
   cult
   bz    $L_load_level_12
 $L_load_level_15:
-  .line 75
+  .line 77
   dup
   p32
   cult
@@ -10796,45 +10804,45 @@ $L_load_level_15:
   cult
   bz    $L_load_level_13
 $L_load_level_16:
-  .line 62
+  .line 64
   jmp   $L_load_level_10
 $L_load_level_11:
-  .line 66
+  .line 68
   p0
   pushg tiles 0
   dupw6
   aidx  1 256
   setr
-  .line 67
+  .line 69
   dup4
   push  15
   and
   setg  tankx 0
-  .line 68
+  .line 70
   dupw3
   p4
   lsr2
   pop
   setg  tanky 0
-  .line 62
+  .line 64
   jmp   $L_load_level_10
 $L_load_level_12:
-  .line 72
+  .line 74
   dup2
   pushg objects 0
   dupw6
   aidx  1 256
   setr
-  .line 73
+  .line 75
   p0
   pushg tiles 0
   dupw6
   aidx  1 256
   setr
-  .line 62
+  .line 64
   jmp   $L_load_level_10
 $L_load_level_13:
-  .line 77
+  .line 79
   pushg num_tunnels 0
   dup4
   p32
@@ -10849,9 +10857,9 @@ $L_load_level_13:
   setr
   pop2
 $L_load_level_10:
-  .line 62
+  .line 64
   pop2
-  .line 59
+  .line 61
   p1
   add2b
   dupw
@@ -10861,10 +10869,10 @@ $L_load_level_10:
   bnz   $L_load_level_1
 $L_load_level_0:
   pop2
-  .line 81
+  .line 83
   p32
   setg  offy 0
-  .line 82
+  .line 84
   p0
   setg  targety 0
   .line 6
@@ -10909,7 +10917,7 @@ $L_load_level_20:
 $L_load_level_21:
   .line 3
   popn  8
-  .line 84
+  .line 86
   getg  targety 0
   p0
   cslt
@@ -10917,7 +10925,7 @@ $L_load_level_21:
   p0
   setg  targety 0
 $L_load_level_17:
-  .line 85
+  .line 87
   p64
   getg  targety 0
   cslt
@@ -10925,28 +10933,28 @@ $L_load_level_17:
   p64
   setg  targety 0
 $L_load_level_18:
-  .line 86
+  .line 88
   getg  targety 0
   setg  offy 0
-  .line 87
-  p0
-  setg  shooting 0
-  .line 88
-  p0
-  setg  moving 0
   .line 89
   p0
-  setg  first_move 0
+  setg  shooting 0
   .line 90
   p0
-  setg  in_water 0
+  setg  moving 0
   .line 91
   p0
-  setg  dead 0
+  setg  first_move 0
   .line 92
   p0
-  setg  victory 0
+  setg  in_water 0
   .line 93
+  p0
+  setg  dead 0
+  .line 94
+  p0
+  setg  victory 0
+  .line 95
   p0
   setg  just_moved 0
   .line 52
@@ -12124,7 +12132,7 @@ main:
   p2
   setg  current_set 0
   .line 45
-  push2 23
+  push2 34
   setg2 current_level 0
   .line 46
   call  load_level
@@ -12132,7 +12140,7 @@ main:
   p6
   setg  state 0
   .line 48
-  p3
+  p2
   setg  anim_frames 0
 $L_main_1:
   .line 51
@@ -12149,54 +12157,54 @@ $L_main_1:
 
 play:
   .file play.abc
-  .line 233
+  .line 239
   getg  victory 0
   bz    $L_play_5
-  .line 235
+  .line 241
   call  render_level
-  .line 240
+  .line 246
   p0
   push4 1586193
   push2 38
   sys   draw_filled_rect
-  .line 241
+  .line 247
   p3
   push4 1651215
   push2 39
   sys   draw_filled_rect
-  .line 242
+  .line 248
   p0
   push4 1781259
   push2 41
   sys   draw_filled_rect
-  .line 243
+  .line 249
   push3 53487
   sys   set_text_font
-  .line 244
+  .line 250
   push4 134274684
   p00
   push4 2752547
   sys   draw_text_P
-  .line 245
+  .line 251
   p4
   sys   just_pressed
   bz    $L_play_0
-  .line 246
+  .line 252
   p5
   setg  state 0
-  .line 261
+  .line 267
   ret
 $L_play_0:
-  .line 247
+  .line 253
   p8
   sys   just_pressed
   bz    $L_play_4
-  .line 249
+  .line 255
   getg2 current_level 0
   p1
   add2b
   setg2 current_level 0
-  .line 250
+  .line 256
   getg2 current_level 0
   push4 17424128
   getg  current_set 0
@@ -12206,114 +12214,114 @@ $L_play_0:
   getpn 3
   cult3
   bnz   $L_play_1
-  .line 252
+  .line 258
   getg2 current_level 0
   p1
   sub2b
   setg2 current_level 0
-  .line 253
+  .line 259
   p5
   setg  state 0
-  .line 250
+  .line 256
   jmp   $L_play_2
 $L_play_1:
-  .line 257
+  .line 263
   call  load_level
 $L_play_2:
-  .line 259
+  .line 265
   getg2 current_level 0
   pushg select_levels 0
   getg  current_set 0
   aidxb 2 3
   setr2
 $L_play_4:
-  .line 261
+  .line 267
   ret
 $L_play_5:
-  .line 264
+  .line 270
   getg  dead 0
   bz    $L_play_9
-  .line 266
+  .line 272
   call  render_level
-  .line 271
+  .line 277
   p0
   push4 1649935
   push2 42
   sys   draw_filled_rect
-  .line 272
+  .line 278
   p3
   push4 1714957
   dup3
   p0
   sys   draw_filled_rect
-  .line 273
+  .line 279
   p0
   push4 1845001
   push2 45
   sys   draw_filled_rect
-  .line 274
+  .line 280
   push3 53487
   sys   set_text_font
-  .line 275
+  .line 281
   push4 100665883
   p00
   push4 3014692
   sys   draw_text_P
-  .line 276
+  .line 282
   p4
   sys   just_pressed
   bz    $L_play_6
-  .line 277
+  .line 283
   p5
   setg  state 0
-  .line 280
+  .line 286
   ret
 $L_play_6:
-  .line 278
+  .line 284
   p8
   sys   just_pressed
   bz    $L_play_8
-  .line 279
+  .line 285
   call  load_level
 $L_play_8:
-  .line 280
+  .line 286
   ret
 $L_play_9:
-  .line 283
+  .line 289
   getg  anim_frame 0
   bz    $L_play_10
-  .line 284
+  .line 290
   getg  anim_frame 0
   dec
   setg  anim_frame 0
 $L_play_10:
-  .line 285
+  .line 291
   getg  anim_frame 0
   not
-  .line 287
+  .line 293
   getg  shooting 0
   bz    $L_play_34
   dup
   bz    $L_play_34
-  .line 289
+  .line 295
   getg  shooty 0
   p16
   mul
   getg  shootx 0
   add
-  .line 290
+  .line 296
   pushg tiles 0
   dup3
   p0
   aidx  1 256
   getr
-  .line 291
+  .line 297
   pushg objects 0
   dup4
   p0
   aidx  1 256
   getr
-  .line 292
+  .line 298
   getg  shootx 0
   push3 68042
   getg  shootdir 0
@@ -12321,7 +12329,7 @@ $L_play_10:
   getp
   add
   setg  shootx 0
-  .line 293
+  .line 299
   getg  shooty 0
   push3 68046
   getg  shootdir 0
@@ -12329,7 +12337,7 @@ $L_play_10:
   getp
   add
   setg  shooty 0
-  .line 294
+  .line 300
   getg  shootx 0
   getg  tankx 0
   sub
@@ -12338,11 +12346,11 @@ $L_play_10:
   getg  tanky 0
   sub
   bnz   $L_play_13
-  .line 295
+  .line 301
   p1
   setg  dead 0
 $L_play_13:
-  .line 296
+  .line 302
   p0
   getg  shooty 0
   getg  shootx 0
@@ -12362,12 +12370,12 @@ $L_play_98:
   setl  3
   pop2
   .file play.abc
-  .line 296
+  .line 302
   bnz   $L_play_14
-  .line 298
+  .line 304
   getg  anim_frames 0
   setg  anim_frame 0
-  .line 296
+  .line 302
   jmp   $L_play_33
   .file level.abc
 $L_play_95:
@@ -12399,30 +12407,30 @@ $L_play_96:
   setl  4
   pop3
   .file play.abc
-  .line 296
+  .line 302
   bnz   $L_play_14
-  .line 298
+  .line 304
   getg  anim_frames 0
   setg  anim_frame 0
-  .line 296
+  .line 302
   jmp   $L_play_33
 $L_play_14:
-  .line 302
+  .line 308
   getg  shooty 0
   p16
   mul
   getg  shootx 0
   add
-  .line 303
+  .line 309
   pushg objects 0
   dup3
   p0
   aidx  1 256
   getr
-  .line 304
+  .line 310
   dup
   bnz   $L_play_15
-  .line 305
+  .line 311
   pushg tiles 0
   dup4
   p0
@@ -12430,22 +12438,22 @@ $L_play_14:
   getr
   setl  1
 $L_play_15:
-  .line 306
+  .line 312
   p0
   setg  shooting 0
-  .line 308
+  .line 314
   dup
-  .line 310
+  .line 316
   dup
   push  184
   sub
   bz    $L_play_17
-  .line 318
+  .line 324
   dup
   push  188
   sub
   bz    $L_play_18
-  .line 320
+  .line 326
   dup
   push  112
   cult
@@ -12455,7 +12463,7 @@ $L_play_15:
   cult
   bz    $L_play_19
 $L_play_23:
-  .line 339
+  .line 345
   dup
   p128
   cult
@@ -12465,7 +12473,7 @@ $L_play_23:
   cult
   bz    $L_play_20
 $L_play_24:
-  .line 355
+  .line 361
   dup
   push  144
   cult
@@ -12475,7 +12483,7 @@ $L_play_24:
   cult
   bz    $L_play_21
 $L_play_25:
-  .line 369
+  .line 375
   dup
   push  160
   cult
@@ -12485,37 +12493,37 @@ $L_play_25:
   cult
   bz    $L_play_22
 $L_play_26:
-  .line 308
+  .line 314
   jmp   $L_play_16
 $L_play_17:
-  .line 312
+  .line 318
   getg  shootx 0
   setg  movex 0
-  .line 313
+  .line 319
   getg  shooty 0
   setg  movey 0
-  .line 314
+  .line 320
   getg  shootdir 0
   setg  movedir 0
-  .line 315
+  .line 321
   p1
   setg  moving 0
-  .line 316
+  .line 322
   call  process_moved_obj
-  .line 308
+  .line 314
   jmp   $L_play_16
 $L_play_18:
-  .line 319
+  .line 325
   p0
   pushg tiles 0
   dup6
   p0
   aidx  1 256
   setr
-  .line 308
+  .line 314
   jmp   $L_play_16
 $L_play_19:
-  .line 322
+  .line 328
   p0
   getg  shootdir 0
   dup4
@@ -12558,41 +12566,41 @@ $L_play_86:
   setl  4
   pop3
 $L_play_87:
-  .line 323
+  .line 329
   dup
   p4
   cult
   bz    $L_play_27
-  .line 325
+  .line 331
   p1
   setg  shooting 0
-  .line 326
+  .line 332
   dup
   setg  shootdir 0
-  .line 336
+  .line 342
   pop
-  .line 308
+  .line 314
   jmp   $L_play_16
 $L_play_27:
-  .line 332
+  .line 338
   getg  shootx 0
   setg  movex 0
-  .line 333
+  .line 339
   getg  shooty 0
   setg  movey 0
-  .line 334
+  .line 340
   getg  shootdir 0
   setg  movedir 0
-  .line 335
+  .line 341
   p1
   setg  moving 0
-  .line 336
+  .line 342
   call  process_moved_obj
   pop
-  .line 308
+  .line 314
   jmp   $L_play_16
 $L_play_20:
-  .line 341
+  .line 347
   p0
   getg  shootdir 0
   dup4
@@ -12635,23 +12643,23 @@ $L_play_91:
   setl  4
   pop3
 $L_play_92:
-  .line 342
+  .line 348
   dup
   p4
   cult
   bz    $L_play_29
-  .line 344
+  .line 350
   p1
   setg  shooting 0
-  .line 345
+  .line 351
   dup
   setg  shootdir 0
-  .line 352
+  .line 358
   pop
-  .line 308
+  .line 314
   jmp   $L_play_16
 $L_play_29:
-  .line 352
+  .line 358
   dup3
   push  240
   and
@@ -12667,16 +12675,16 @@ $L_play_29:
   aidx  1 256
   setr
   pop
-  .line 308
+  .line 314
   jmp   $L_play_16
 $L_play_21:
-  .line 357
+  .line 363
   dup2
   push  144
   sub
   p2
   lsr
-  .line 358
+  .line 364
   dup
   p0
   p2
@@ -12688,7 +12696,7 @@ $L_play_21:
   sub2b
   bool2
   bnz   $L_play_31
-  .line 359
+  .line 365
   push  160
   dup2
   p4
@@ -12699,50 +12707,50 @@ $L_play_21:
   p0
   aidx  1 256
   setr
-  .line 366
+  .line 372
   pop
-  .line 308
+  .line 314
   jmp   $L_play_16
 $L_play_31:
-  .line 362
+  .line 368
   getg  shootx 0
   setg  movex 0
-  .line 363
+  .line 369
   getg  shooty 0
   setg  movey 0
-  .line 364
+  .line 370
   getg  shootdir 0
   setg  movedir 0
-  .line 365
+  .line 371
   p1
   setg  moving 0
-  .line 366
+  .line 372
   call  process_moved_obj
   pop
-  .line 308
+  .line 314
   jmp   $L_play_16
 $L_play_22:
-  .line 372
+  .line 378
   p0
   setg  moving 0
 $L_play_16:
-  .line 308
+  .line 314
   pop3
 $L_play_33:
   pop3
 $L_play_34:
-  .line 378
+  .line 384
   dup
   bz    $L_play_35
-  .line 379
+  .line 385
   call  process_moved_obj
 $L_play_35:
-  .line 381
+  .line 387
   dup
   bz    $L_play_39
-  .line 383
+  .line 389
   call  tank_update
-  .line 385
+  .line 391
   pushg tiles 0
   getg  tanky 0
   p0
@@ -12755,44 +12763,44 @@ $L_play_35:
   push  80
   sub
   bnz   $L_play_37
-  .line 389
+  .line 395
   getg  in_water 0
   bz    $L_play_36
-  .line 390
+  .line 396
   p1
   setg  dead 0
 $L_play_36:
-  .line 391
+  .line 397
   p1
   setg  in_water 0
-  .line 385
+  .line 391
   jmp   $L_play_39
 $L_play_37:
-  .line 394
+  .line 400
   p0
   setg  in_water 0
 $L_play_39:
-  .line 397
+  .line 403
   getg  shooting 0
   bnzp  $L_play_40
   getg  moving 0
 $L_play_40:
-  .line 399
+  .line 405
   dup
   bnz   $L_play_43
   p8
   sys   just_pressed
   bz    $L_play_43
-  .line 401
+  .line 407
   getg  tankx 0
   setg  shootx 0
-  .line 402
+  .line 408
   getg  tanky 0
   setg  shooty 0
-  .line 403
+  .line 409
   getg  tankdir 0
   setg  shootdir 0
-  .line 404
+  .line 410
   getg  shootx 0
   p16
   cult
@@ -12802,22 +12810,22 @@ $L_play_40:
   cult
 $L_play_42:
   setg  shooting 0
-  .line 405
+  .line 411
   p1
   setg  first_move 0
 $L_play_43:
-  .line 408
+  .line 414
   p4
   sys   just_pressed
   bz    $L_play_44
-  .line 410
+  .line 416
   p1
   setg  can_pan 0
-  .line 411
+  .line 417
   sys   millis
   setg4 b_pressed_time 0
 $L_play_44:
-  .line 414
+  .line 420
   p4
   sys   just_released
   bz    $L_play_46
@@ -12828,17 +12836,17 @@ $L_play_44:
   add4
   cult4
   bz    $L_play_46
-  .line 416
+  .line 422
   p7
   setg  state 0
 $L_play_46:
-  .line 419
+  .line 425
   dup
   bnz   $L_play_55
   p4
   sys   pressed
   bnz   $L_play_55
-  .line 421
+  .line 427
   p0
   p128
   .file input.abc
@@ -12854,15 +12862,15 @@ $L_play_68:
   setl  2
   pop
   .file play.abc
-  .line 421
+  .line 427
   bz    $L_play_48
-  .line 422
+  .line 428
   p0
   call  process_tank_move
-  .line 421
+  .line 427
   jmp   $L_play_55
 $L_play_48:
-  .line 423
+  .line 429
   p0
   p64
   .file input.abc
@@ -12878,15 +12886,15 @@ $L_play_71:
   setl  2
   pop
   .file play.abc
-  .line 423
+  .line 429
   bz    $L_play_49
-  .line 424
+  .line 430
   p1
   call  process_tank_move
-  .line 423
+  .line 429
   jmp   $L_play_55
 $L_play_49:
-  .line 425
+  .line 431
   p0
   p16
   .file input.abc
@@ -12902,15 +12910,15 @@ $L_play_74:
   setl  2
   pop
   .file play.abc
-  .line 425
+  .line 431
   bz    $L_play_50
-  .line 426
+  .line 432
   p2
   call  process_tank_move
-  .line 425
+  .line 431
   jmp   $L_play_55
 $L_play_50:
-  .line 427
+  .line 433
   p0
   p32
   .file input.abc
@@ -12926,19 +12934,19 @@ $L_play_77:
   setl  2
   pop
   .file play.abc
-  .line 427
+  .line 433
   bz    $L_play_55
-  .line 428
+  .line 434
   p3
   call  process_tank_move
 $L_play_55:
-  .line 431
+  .line 437
   getg  can_pan 0
   bz    $L_play_59
   p4
   sys   pressed
   bz    $L_play_59
-  .line 434
+  .line 440
   p128
   sys   pressed
   bz    $L_play_57
@@ -12947,7 +12955,7 @@ $L_play_55:
   sub
   setg  targety 0
 $L_play_57:
-  .line 435
+  .line 441
   p16
   sys   pressed
   bz    $L_play_58
@@ -12956,7 +12964,7 @@ $L_play_57:
   add
   setg  targety 0
 $L_play_58:
-  .line 431
+  .line 437
   jmp   $L_play_60
 $L_play_59:
   .file level.abc
@@ -13004,7 +13012,7 @@ $L_play_81:
   popn  8
   .file play.abc
 $L_play_60:
-  .line 440
+  .line 446
   getg  targety 0
   p0
   cslt
@@ -13012,7 +13020,7 @@ $L_play_60:
   p0
   setg  targety 0
 $L_play_61:
-  .line 441
+  .line 447
   p64
   getg  targety 0
   cslt
@@ -13020,7 +13028,7 @@ $L_play_61:
   p64
   setg  targety 0
 $L_play_62:
-  .line 443
+  .line 449
   getg  offy 0
   getg  targety 0
   cslt
@@ -13042,7 +13050,7 @@ $L_play_62:
   add
   setg  offy 0
 $L_play_63:
-  .line 444
+  .line 450
   getg  targety 0
   getg  offy 0
   cslt
@@ -13064,22 +13072,22 @@ $L_play_63:
   sub
   setg  offy 0
 $L_play_64:
-  .line 446
+  .line 452
   call  render_level
-  .line 448
+  .line 454
   getg  can_pan 0
   bz    $L_play_66
   p4
   sys   pressed
   bz    $L_play_66
-  .line 450
+  .line 456
   p0
   p64
   p3
   p00
   push2 125
   sys   draw_filled_rect
-  .line 451
+  .line 457
   p3
   p32
   p2
@@ -13091,60 +13099,60 @@ $L_play_64:
   push2 126
   sys   draw_filled_rect
 $L_play_66:
-  .line 231
+  .line 237
   pop2
   ret
 
 process_moved_obj:
   .file play.abc
-  .line 154
+  .line 155
   getg  moving 0
   bnz   $L_process_moved_obj_0
-  .line 155
+  .line 156
   ret
 $L_process_moved_obj_0:
-  .line 156
+  .line 157
   getg  movey 0
   p16
   mul
   getg  movex 0
   add
-  .line 157
+  .line 158
   p0
   setg  moving 0
-  .line 158
+  .line 159
   pushg tiles 0
   dup3
   p0
   aidx  1 256
   getr
-  .line 160
+  .line 161
   dup
   push  68
   sub
   bz    $L_process_moved_obj_2
-  .line 165
+  .line 166
   dup
   push  80
   sub
   bz    $L_process_moved_obj_3
-  .line 158
+  .line 159
   jmp   $L_process_moved_obj_1
 $L_process_moved_obj_2:
-  .line 162
+  .line 163
   push  80
   pushg tiles 0
   dup5
   p0
   aidx  1 256
   setr
-  .line 163
+  .line 164
   p1
   setg  moving 0
-  .line 158
+  .line 159
   jmp   $L_process_moved_obj_1
 $L_process_moved_obj_3:
-  .line 167
+  .line 168
   pushg objects 0
   dup4
   p0
@@ -13153,7 +13161,7 @@ $L_process_moved_obj_3:
   push  184
   sub
   bnz   $L_process_moved_obj_4
-  .line 168
+  .line 169
   p8
   pushg tiles 0
   dup5
@@ -13161,7 +13169,7 @@ $L_process_moved_obj_3:
   aidx  1 256
   setr
 $L_process_moved_obj_4:
-  .line 169
+  .line 170
   p0
   pushg objects 0
   dup5
@@ -13169,23 +13177,23 @@ $L_process_moved_obj_4:
   aidx  1 256
   setr
 $L_process_moved_obj_1:
-  .line 158
+  .line 159
   pop
-  .line 172
+  .line 173
   getg  movex 0
   push3 68042
   getg  movedir 0
   pidxb 1 4
   getp
   add
-  .line 173
+  .line 174
   getg  movey 0
   push3 68046
   getg  movedir 0
   pidxb 1 4
   getp
   add
-  .line 174
+  .line 175
   p0
   dup2
   dup4
@@ -13194,18 +13202,18 @@ $L_process_moved_obj_1:
   dup
   p16
   cult
-  bz    $L_process_moved_obj_31
+  bz    $L_process_moved_obj_27
   dup2
   p16
   cult
-  bnz   $L_process_moved_obj_28
-$L_process_moved_obj_31:
+  bnz   $L_process_moved_obj_24
+$L_process_moved_obj_27:
   .line 17
   p1
   setl  3
   pop2
-  jmp   $L_process_moved_obj_30
-$L_process_moved_obj_28:
+  jmp   $L_process_moved_obj_26
+$L_process_moved_obj_24:
   .line 18
   dup2
   p16
@@ -13221,7 +13229,7 @@ $L_process_moved_obj_28:
   push  96
   cult
   not
-  bnzp  $L_process_moved_obj_29
+  bnzp  $L_process_moved_obj_25
   pushg objects 0
   dup3
   p0
@@ -13230,25 +13238,25 @@ $L_process_moved_obj_28:
   push  96
   cult
   not
-$L_process_moved_obj_29:
+$L_process_moved_obj_25:
   setl  4
   pop3
-$L_process_moved_obj_30:
+$L_process_moved_obj_26:
   .file play.abc
-  .line 174
-  bnz   $L_process_moved_obj_12
-  .line 176
+  .line 175
+  bnz   $L_process_moved_obj_15
+  .line 177
   dup
   p16
   mul
   dup3
   add
-  .line 177
+  .line 178
   pushg objects 0
   dup6
   p0
   aidx  1 256
-  .line 178
+  .line 179
   pushg objects 0
   dup6
   p0
@@ -13257,27 +13265,27 @@ $L_process_moved_obj_30:
   getl  9
   add2b
   aidx  1 256
-  .line 179
+  .line 180
   dupw3
   getr
   dupw2
   setr
-  .line 180
+  .line 181
   p0
   dupw4
   setr
-  .line 181
+  .line 182
   pushg tiles 0
   dup7
   p0
   aidx  1 256
   getr
-  .line 183
+  .line 184
   dup
   push  80
   sub
   bz    $L_process_moved_obj_6
-  .line 189
+  .line 190
   dup
   p32
   cult
@@ -13287,7 +13295,7 @@ $L_process_moved_obj_30:
   cult
   bz    $L_process_moved_obj_7
 $L_process_moved_obj_9:
-  .line 198
+  .line 203
   dup
   p64
   sub
@@ -13296,16 +13304,16 @@ $L_process_moved_obj_9:
   push  68
   sub
   bz    $L_process_moved_obj_8
-  .line 181
+  .line 182
   jmp   $L_process_moved_obj_5
 $L_process_moved_obj_6:
-  .line 185
+  .line 186
   dupw2
   getr
   push  184
   sub
   bnz   $L_process_moved_obj_10
-  .line 186
+  .line 187
   p8
   pushg tiles 0
   getl  9
@@ -13313,95 +13321,154 @@ $L_process_moved_obj_6:
   aidx  1 256
   setr
 $L_process_moved_obj_10:
-  .line 187
+  .line 188
   p0
   dupw3
   setr
-  .line 181
+  .line 182
   jmp   $L_process_moved_obj_5
 $L_process_moved_obj_7:
-  .line 191
-  p0
-  dup7
-  call  find_other_tunnel
   .line 192
-  dup
+  pushg tiles 0
   dup8
+  p0
+  aidx  1 256
+  getr
+  p32
   sub
-  bz    $L_process_moved_obj_11
-  .line 194
+  p2
+  lsr
+  .line 193
   dupw3
+  getr
+  push  96
+  cult
+  bnz   $L_process_moved_obj_11
+  .line 194
+  pushg occupied_tunnels 0
+  dup3
+  aixb1 8
+  dupw
+  getr
+  inc
+  dupw2
+  setr
+  pop2
+$L_process_moved_obj_11:
+  .line 195
+  p0
+  dup8
+  call  find_other_tunnel
+  .line 196
+  dup
+  getl  9
+  sub
+  bz    $L_process_moved_obj_12
+  .line 198
+  dupw4
   getr
   pushg objects 0
   dup4
   p0
   aidx  1 256
   setr
-  .line 195
+  .line 199
   p0
-  dupw4
+  dupw5
   setr
-$L_process_moved_obj_11:
-  pop
-  .line 181
+$L_process_moved_obj_12:
+  .line 201
+  dup
+  pushg last_tunneled 0
+  dup5
+  aixb1 8
+  setr
+  pop2
+  .line 182
   jmp   $L_process_moved_obj_5
 $L_process_moved_obj_8:
-  .line 200
+  .line 205
   dup8
   setg  movex 0
-  .line 201
+  .line 206
   dup7
   setg  movey 0
-  .line 202
+  .line 207
   p1
   setg  moving 0
 $L_process_moved_obj_5:
-  .line 181
-  popn  6
-$L_process_moved_obj_12:
-  .line 206
+  .line 182
+  pop
+  .line 210
+  call  all_at_scans
+  .line 213
+  dup7
+  push4 17418752
+  getg  movedir 0
+  pidxb 1 4
+  getp
+  sext
+  add2
+  getg  tankx 0
+  sub2b
+  bool2
+  bnz   $L_process_moved_obj_14
+  dup6
+  push4 17419776
+  getg  movedir 0
+  pidxb 1 4
+  getp
+  sext
+  add2
+  getg  tanky 0
+  sub2b
+  bool2
+  bnz   $L_process_moved_obj_14
+  .line 214
+  p0
+  setg  moving 0
+$L_process_moved_obj_14:
+  popn  5
+$L_process_moved_obj_15:
+  .line 216
   pushg tiles 0
   dup5
   p0
   aidx  1 256
   getr
-  .line 208
+  .line 218
   dup
   p32
   cult
-  bnz   $L_process_moved_obj_15
+  bnz   $L_process_moved_obj_18
   push  63
   dup2
   cult
-  bz    $L_process_moved_obj_14
-$L_process_moved_obj_15:
-  .line 206
+  bz    $L_process_moved_obj_17
+$L_process_moved_obj_18:
+  .line 216
   pop4
-  .line 152
+  .line 153
   ret
-$L_process_moved_obj_14:
-  .line 215
+$L_process_moved_obj_17:
+  .line 221
   pushg tiles 0
   dup6
   p0
   aidx  1 256
   getr
-  .line 216
-  p0
-$L_process_moved_obj_17:
-  .line 219
+  .line 222
   dup
-  dup7
+  p32
   sub
-  bz    $L_process_moved_obj_19
-  pushg tiles 0
+  p2
+  lsr
+  .line 223
+  pushg last_tunneled 0
   dup3
-  p0
-  aidx  1 256
+  aixb1 8
   getr
-  dup3
-  sub
-  bnz   $L_process_moved_obj_19
+  .line 224
   pushg objects 0
   dup3
   p0
@@ -13409,223 +13476,101 @@ $L_process_moved_obj_17:
   getr
   push  96
   cult
-  bnz   $L_process_moved_obj_19
-  .line 221
-  pushg objects 0
-  dup3
-  p0
-  aidx  1 256
-  getr
-  pushg objects 0
-  getl  9
-  p0
-  aidx  1 256
-  setr
-  .line 222
-  p0
-  pushg objects 0
-  dup4
-  p0
-  aidx  1 256
-  setr
-  .line 226
-  popn  6
-  .line 152
-  ret
-$L_process_moved_obj_19:
+  bnz   $L_process_moved_obj_20
   .line 225
-  inc
-  .line 226
-  dup
-  bz    $L_process_moved_obj_16
-  .line 219
-  dup
-  dup7
-  sub
-  bz    $L_process_moved_obj_21
   pushg tiles 0
   dup3
   p0
   aidx  1 256
   getr
-  dup3
+  dup4
   sub
-  bnz   $L_process_moved_obj_21
+  .line 224
+  bnz   $L_process_moved_obj_20
+  .line 226
+  pushg occupied_tunnels 0
+  dup4
+  aixb1 8
+  getr
+  pushg num_tunnels 0
+  dup5
+  aixb1 8
+  getr
+  sub
+  .line 224
+  bnz   $L_process_moved_obj_20
+  .line 228
   pushg objects 0
   dup3
   p0
   aidx  1 256
   getr
-  push  96
-  cult
-  bnz   $L_process_moved_obj_21
-  .line 221
   pushg objects 0
-  dup3
-  p0
-  aidx  1 256
-  getr
-  pushg objects 0
-  getl  9
+  getl  10
   p0
   aidx  1 256
   setr
-  .line 222
+  .line 229
   p0
   pushg objects 0
   dup4
   p0
   aidx  1 256
   setr
-  .line 226
-  popn  6
-  .line 152
+  .line 232
+  popn  7
+  .line 153
   ret
-$L_process_moved_obj_21:
-  .line 225
-  inc
-  .line 226
-  dup
-  bz    $L_process_moved_obj_16
-  .line 219
-  dup
-  dup7
-  sub
-  bz    $L_process_moved_obj_23
-  pushg tiles 0
-  dup3
-  p0
-  aidx  1 256
-  getr
-  dup3
-  sub
-  bnz   $L_process_moved_obj_23
-  pushg objects 0
-  dup3
-  p0
-  aidx  1 256
-  getr
-  push  96
-  cult
-  bnz   $L_process_moved_obj_23
-  .line 221
-  pushg objects 0
-  dup3
-  p0
-  aidx  1 256
-  getr
-  pushg objects 0
-  getl  9
-  p0
-  aidx  1 256
-  setr
-  .line 222
-  p0
-  pushg objects 0
+$L_process_moved_obj_20:
+  .line 232
+  pushg occupied_tunnels 0
   dup4
-  p0
-  aidx  1 256
-  setr
-  .line 226
-  popn  6
-  .line 152
-  ret
-$L_process_moved_obj_23:
-  .line 225
-  inc
-  .line 226
-  dup
-  bz    $L_process_moved_obj_16
-  .line 219
-  dup
-  dup7
-  sub
-  bz    $L_process_moved_obj_25
-  pushg tiles 0
-  dup3
-  p0
-  aidx  1 256
+  aixb1 8
+  dupw
   getr
-  dup3
-  sub
-  bnz   $L_process_moved_obj_25
-  pushg objects 0
-  dup3
-  p0
-  aidx  1 256
-  getr
-  push  96
-  cult
-  bnz   $L_process_moved_obj_25
-  .line 221
-  pushg objects 0
-  dup3
-  p0
-  aidx  1 256
-  getr
-  pushg objects 0
-  getl  9
-  p0
-  aidx  1 256
+  dec
+  dupw2
   setr
-  .line 222
-  p0
-  pushg objects 0
-  dup4
-  p0
-  aidx  1 256
-  setr
-  .line 226
-  popn  6
-  .line 152
-  ret
-$L_process_moved_obj_25:
-  .line 225
-  inc
-  .line 226
-  dup
-  bnz   $L_process_moved_obj_17
-$L_process_moved_obj_16:
-  popn  6
-  .line 152
+  popn  9
+  .line 153
   ret
 
 process_tank_move:
   .file play.abc
-  .line 457
+  .line 463
   p1
   setg  first_move 0
-  .line 459
+  .line 465
   getg  tankdir 0
   dup2
   sub
   bz    $L_process_tank_move_0
-  .line 461
+  .line 467
   dup
   setg  tankdir 0
-  .line 462
+  .line 468
   pop
   ret
 $L_process_tank_move_0:
-  .line 465
+  .line 471
   push3 68042
   dup4
   pidxb 1 4
   getp
-  .line 466
+  .line 472
   push3 68046
   dup5
   pidxb 1 4
   getp
-  .line 467
+  .line 473
   getg  tankx 0
   dup3
   add
-  .line 468
+  .line 474
   getg  tanky 0
   dup3
   add
-  .line 470
+  .line 476
   p0
   dup2
   dup4
@@ -13645,9 +13590,9 @@ $L_process_tank_move_7:
   setl  3
   pop2
   .file play.abc
-  .line 470
+  .line 476
   bz    $L_process_tank_move_1
-  .line 471
+  .line 477
   popn  5
   ret
   .file level.abc
@@ -13680,27 +13625,27 @@ $L_process_tank_move_5:
   setl  4
   pop3
   .file play.abc
-  .line 470
+  .line 476
   bz    $L_process_tank_move_1
-  .line 471
+  .line 477
   popn  5
   ret
 $L_process_tank_move_1:
-  .line 473
+  .line 479
   dup2
   setg  tankx 0
-  .line 474
+  .line 480
   dup
   setg  tanky 0
-  .line 476
+  .line 482
   p1
   setg  just_moved 0
-  .line 477
+  .line 483
   dup5
   setg  just_moved_dir 0
-  .line 479
+  .line 485
   call  tank_update
-  .line 455
+  .line 461
   popn  5
   ret
 
@@ -14027,13 +13972,13 @@ $L_render_level_15:
 
 tank_update:
   .file play.abc
-  .line 118
+  .line 119
   getg  tanky 0
   p16
   mul
   getg  tankx 0
   add
-  .line 119
+  .line 120
   pushg tiles 0
   dup3
   p0
@@ -14084,14 +14029,17 @@ $L_tank_update_9:
   bz    $L_tank_update_14
   .line 98
   p0
+  setg  just_moved 0
+  .line 99
+  p0
   dup4
   call  find_other_tunnel
-  .line 99
+  .line 100
   dup
   dup5
   sub
   bz    $L_tank_update_12
-  .line 101
+  .line 102
   pushg objects 0
   dup3
   p0
@@ -14100,21 +14048,21 @@ $L_tank_update_9:
   push  96
   cult
   bz    $L_tank_update_11
-  .line 103
+  .line 104
   dup
   p4
   lsr
   setg  tanky 0
-  .line 104
+  .line 105
   dup
   push  15
   and
   setg  tankx 0
 $L_tank_update_11:
-  .line 99
+  .line 100
   jmp   $L_tank_update_13
 $L_tank_update_12:
-  .line 107
+  .line 108
   pushg num_tunnels 0
   dup5
   p32
@@ -14125,7 +14073,7 @@ $L_tank_update_12:
   getr
   dec
   bnz   $L_tank_update_13
-  .line 110
+  .line 111
   p1
   setg  dead 0
 $L_tank_update_13:
@@ -14134,14 +14082,14 @@ $L_tank_update_14:
   .line 93
   pop3
 $L_tank_update_15:
-  .line 121
-  getg  just_moved 0
   .line 122
+  getg  just_moved 0
+  .line 123
   p0
   setg  just_moved 0
-  .line 123
+  .line 124
   dup2
-  .line 125
+  .line 126
   dup
   p64
   sub
@@ -14150,48 +14098,48 @@ $L_tank_update_15:
   push  68
   sub
   bz    $L_tank_update_1
-  .line 144
+  .line 145
   dup
   p4
   sub
   bz    $L_tank_update_2
-  .line 123
+  .line 124
   jmp   $L_tank_update_0
 $L_tank_update_1:
-  .line 127
+  .line 128
   dup2
   bz    $L_tank_update_0
-  .line 128
+  .line 129
   dup3
   push  68
   sub
   bnz   $L_tank_update_4
-  .line 130
+  .line 131
   push  80
   pushg tiles 0
   dup7
   p0
   aidx  1 256
   setr
-  .line 131
+  .line 132
   p1
   setg  just_moved 0
 $L_tank_update_4:
-  .line 133
+  .line 134
   getg  tankx 0
   push3 68042
   getg  just_moved_dir 0
   pidxb 1 4
   getp
   add
-  .line 134
+  .line 135
   getg  tanky 0
   push3 68046
   getg  just_moved_dir 0
   pidxb 1 4
   getp
   add
-  .line 135
+  .line 136
   p0
   dup2
   dup4
@@ -14241,34 +14189,34 @@ $L_tank_update_35:
   pop3
 $L_tank_update_36:
   .file play.abc
-  .line 135
+  .line 136
   bnz   $L_tank_update_5
-  .line 137
-  call  all_at_scans
   .line 138
+  call  all_at_scans
+  .line 139
   dup2
   setg  tankx 0
-  .line 139
+  .line 140
   dup
   setg  tanky 0
-  .line 140
+  .line 141
   getg  anim_frames 0
   setg  anim_frame 0
-  .line 141
+  .line 142
   p1
   setg  just_moved 0
 $L_tank_update_5:
   pop2
-  .line 123
+  .line 124
   jmp   $L_tank_update_0
 $L_tank_update_2:
-  .line 145
+  .line 146
   p1
   setg  victory 0
 $L_tank_update_0:
-  .line 123
+  .line 124
   pop
-  .line 147
+  .line 148
   call  all_at_scans
   .line 63
   getg  tanky 0
@@ -14287,9 +14235,9 @@ $L_tank_update_0:
   bnz   $L_tank_update_17
   .line 65
   pop
-  .line 149
+  .line 150
   call  all_at_scans
-  .line 116
+  .line 117
   pop3
   ret
 $L_tank_update_17:
@@ -14313,9 +14261,9 @@ $L_tank_update_17:
 $L_tank_update_18:
   .line 67
   pop3
-  .line 149
+  .line 150
   call  all_at_scans
-  .line 116
+  .line 117
   pop3
   ret
 $L_tank_update_19:
@@ -14397,6 +14345,12 @@ $L_tank_update_41:
   .line 77
   dup
   setg  tanky 0
+  .line 78
+  p1
+  setg  just_moved 0
+  .line 79
+  dup3
+  setg  just_moved_dir 0
   .line 89
   getg  tanky 0
   p16
@@ -14442,14 +14396,17 @@ $L_tank_update_22:
   bz    $L_tank_update_27
   .line 98
   p0
+  setg  just_moved 0
+  .line 99
+  p0
   dup4
   call  find_other_tunnel
-  .line 99
+  .line 100
   dup
   dup5
   sub
   bz    $L_tank_update_25
-  .line 101
+  .line 102
   pushg objects 0
   dup3
   p0
@@ -14458,21 +14415,21 @@ $L_tank_update_22:
   push  96
   cult
   bz    $L_tank_update_24
-  .line 103
+  .line 104
   dup
   p4
   lsr
   setg  tanky 0
-  .line 104
+  .line 105
   dup
   push  15
   and
   setg  tankx 0
 $L_tank_update_24:
-  .line 99
+  .line 100
   jmp   $L_tank_update_26
 $L_tank_update_25:
-  .line 107
+  .line 108
   pushg num_tunnels 0
   dup5
   p32
@@ -14483,7 +14440,7 @@ $L_tank_update_25:
   getr
   dec
   bnz   $L_tank_update_26
-  .line 110
+  .line 111
   p1
   setg  dead 0
 $L_tank_update_26:
@@ -14492,20 +14449,14 @@ $L_tank_update_27:
   .line 93
   pop3
 $L_tank_update_28:
-  .line 79
-  p1
-  setg  just_moved 0
-  .line 80
-  dup3
-  setg  just_moved_dir 0
   .line 81
   getg  anim_frames 0
   setg  anim_frame 0
 $L_tank_update_29:
   popn  6
-  .line 149
+  .line 150
   call  all_at_scans
-  .line 116
+  .line 117
   pop3
   ret
 
