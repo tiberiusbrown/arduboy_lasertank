@@ -40,6 +40,8 @@ void at_scan(u8 dir)
         {
             shootx = x - dx;
             shooty = y - dy;
+            if(shootx == tankx && shooty == tanky)
+                dead = true;
             shootdir = dir;
             shooting = true;
             return;
