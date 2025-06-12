@@ -324,7 +324,10 @@ void play()
         shooty = tanky;
         shootdir = tankdir;
         shooting = shootx < 16 && shooty < 16;
+        if(shooting)
+            busy = true;
         first_move = true;
+        shots += 1;
     }
 
     if($just_pressed(B_BUTTON))
@@ -397,6 +400,8 @@ void process_tank_move(u8 dir)
 
     just_moved = true;
     just_moved_dir = dir;
+
+    moves += 1;
 
     tank_update();
 }

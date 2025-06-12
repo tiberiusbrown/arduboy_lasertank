@@ -41,11 +41,11 @@ void main()
     state = STATE_SELECT_SET;
     select_set = 0;
 
-    current_set = 2;
-    current_level = 3;
-    load_level();
-    state = STATE_PLAY;
-    anim_frames = 2;
+    //current_set = 2;
+    //current_level = 3;
+    //load_level();
+    //state = STATE_PLAY;
+    //anim_frames = 2;
 
     // TODO
     // need support for up to 16 sliding objects for 35 (MAX_TICEMEM)

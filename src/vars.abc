@@ -120,6 +120,9 @@ u8[8] num_tunnels;
 u8[8] occupied_tunnels;
 u8[8] last_tunneled;
 
+u32 moves;
+u32 shots;
+
 struct level_t
 {
     u8[256] tiles;

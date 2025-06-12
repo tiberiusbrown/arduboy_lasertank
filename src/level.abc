@@ -93,4 +93,6 @@ void load_level()
     dead = false;
     victory = false;
     just_moved = false;
+    moves = 0;
+    shots = 0;
 }

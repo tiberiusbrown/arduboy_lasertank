@@ -1,4 +1,4 @@
-.githash 9b1a4c48dcbc5dd4ff63a0aefa674618e514071e
+.githash f939d201766a5c4363a1b51773eedd9ae0390c46
 .shades 2
 .global anim_frames 1
 .global select_set 1
@@ -33,7 +33,9 @@
 .global current_level 2
 .global b_pressed_time 4
 .global btn_ticks 4
+.global moves 4
 .global repeat_counts 4
+.global shots 4
 .global last_tunneled 8
 .global num_tunnels 8
 .global occupied_tunnels 8
@@ -4584,6 +4586,151 @@ $PD_676:
 $PD_677:
   .b 7 56 69 63 74 6f 72 79 21
 $PD_679:
+  .b f 01 00 00 00 00 01 08 01 00 00 00 00 01 08 01 00
+  .b f 00 00 00 01 08 01 00 00 00 00 01 08 01 00 00 00
+  .b f 00 01 08 01 00 00 00 00 01 08 01 00 00 00 00 01
+  .b f 08 01 00 00 00 00 01 08 01 00 00 00 00 01 08 01
+  .b f 00 00 00 00 01 08 01 00 00 00 00 01 08 01 00 00
+  .b f 00 00 01 08 01 00 00 00 00 01 08 01 00 00 00 00
+  .b f 01 08 01 00 00 00 00 01 08 01 00 00 00 00 01 08
+  .b f 01 00 00 00 00 01 08 01 00 00 00 00 01 08 01 00
+  .b f 00 00 00 01 08 01 00 00 00 00 01 08 01 00 00 00
+  .b f 00 01 08 01 00 00 00 00 01 08 01 00 00 00 00 01
+  .b f 08 01 00 00 00 00 01 08 01 00 00 00 00 01 08 01
+  .b f 00 00 00 00 01 08 01 00 00 00 00 01 08 01 00 00
+  .b f 00 00 01 08 01 00 00 00 00 01 08 01 00 00 00 00
+  .b f 01 08 01 00 00 00 00 01 08 01 00 00 00 00 01 08
+  .b f 02 00 00 00 00 01 08 02 00 fa 01 00 01 08 04 00
+  .b f fa 02 00 04 08 06 00 fa 06 00 06 08 06 00 fa 0c
+  .b f 00 06 08 04 00 fa 12 00 04 08 05 00 fa 16 00 05
+  .b f 08 02 00 fa 02 00 01 08 03 00 fa 1b 00 03 08 03
+  .b f 00 fa 1e 00 03 08 04 00 fa 21 00 04 08 04 00 fb
+  .b f 25 00 04 08 03 00 fe 29 00 03 08 04 00 fc 2c 00
+  .b f 04 08 02 00 ff 30 00 01 08 04 00 fa 31 00 04 08
+  .b f 04 00 fa 35 00 04 08 04 00 fa 39 00 04 08 04 00
+  .b f fa 3d 00 04 08 04 00 fa 41 00 04 08 04 00 fa 45
+  .b f 00 04 08 04 00 fa 49 00 04 08 04 00 fa 4d 00 04
+  .b f 08 04 00 fa 51 00 04 08 04 00 fa 55 00 04 08 04
+  .b f 00 fa 59 00 04 08 02 00 fc 21 00 01 08 03 00 fc
+  .b f 5d 00 03 08 04 00 fa 60 00 04 08 04 00 fb 64 00
+  .b f 04 08 04 00 fa 68 00 04 08 04 00 fa 6c 00 04 08
+  .b f 05 00 fa 70 00 05 08 04 00 fa 75 00 04 08 04 00
+  .b f fa 79 00 04 08 04 00 fa 7d 00 04 08 04 00 fa 81
+  .b f 00 04 08 04 00 fa 85 00 04 08 04 00 fa 89 00 04
+  .b f 08 04 00 fa 8d 00 04 08 04 00 fa 91 00 04 08 04
+  .b f 00 fa 95 00 04 08 03 00 fa 99 00 03 08 04 00 fa
+  .b f 9c 00 04 08 04 00 fa a0 00 04 08 06 00 fa a4 00
+  .b f 06 08 05 00 fa aa 00 05 08 05 00 fa af 00 05 08
+  .b f 04 00 fa b4 00 04 08 05 00 fa b8 00 05 08 04 00
+  .b f fa bd 00 04 08 04 00 fa c1 00 04 08 04 00 fa c5
+  .b f 00 04 08 05 00 fa c9 00 05 08 04 00 fa ce 00 04
+  .b f 08 06 00 fa d2 00 06 08 04 00 fa d8 00 04 08 04
+  .b f 00 fa dc 00 04 08 04 00 fa e0 00 04 08 03 00 fa
+  .b f 96 00 03 08 04 00 fa e4 00 04 08 03 00 fa e8 00
+  .b f 03 08 04 00 fa eb 00 04 08 04 00 ff ef 00 04 08
+  .b f 03 00 fa ec 00 03 08 04 00 fb f3 00 04 08 04 00
+  .b f fa f7 00 04 08 03 00 fb fb 00 03 08 04 00 fa fe
+  .b f 00 04 08 04 00 fb 02 01 04 08 03 00 fa 06 01 03
+  .b f 08 04 00 fb 09 01 04 08 04 00 fa 0d 01 04 08 02
+  .b f 00 fa 11 01 01 08 03 00 fa 12 01 03 08 04 00 fa
+  .b f 15 01 04 08 02 00 fa 07 00 01 08 06 00 fb 19 01
+  .b f 06 08 04 00 fb 1f 01 04 08 04 00 fb 23 01 04 08
+  .b f 04 00 fb 27 01 04 08 04 00 fb 2b 01 04 08 04 00
+  .b f fb 2f 01 04 08 03 00 fb 33 01 03 08 03 00 fa 36
+  .b f 01 03 08 04 00 fb 39 01 04 08 04 00 fb 3d 01 04
+  .b f 08 06 00 fb 41 01 06 08 04 00 fb 47 01 04 08 04
+  .b f 00 fb dc 00 04 08 03 00 fb 4b 01 03 08 04 00 fa
+  .b f 4e 01 04 08 02 00 fa 07 00 01 08 04 00 fa 52 01
+  .b f 04 08 05 00 fc 56 01 05 08 01 00 00 00 00 01 08
+  .b f 01 00 00 00 00 01 08 01 00 00 00 00 01 08 01 00
+  .b f 00 00 00 01 08 01 00 00 00 00 01 08 01 00 00 00
+  .b f 00 01 08 01 00 00 00 00 01 08 01 00 00 00 00 01
+  .b f 08 01 00 00 00 00 01 08 01 00 00 00 00 01 08 01
+  .b f 00 00 00 00 01 08 01 00 00 00 00 01 08 01 00 00
+  .b f 00 00 01 08 01 00 00 00 00 01 08 01 00 00 00 00
+  .b f 01 08 01 00 00 00 00 01 08 01 00 00 00 00 01 08
+  .b f 01 00 00 00 00 01 08 01 00 00 00 00 01 08 01 00
+  .b f 00 00 00 01 08 01 00 00 00 00 01 08 01 00 00 00
+  .b f 00 01 08 01 00 00 00 00 01 08 01 00 00 00 00 01
+  .b f 08 01 00 00 00 00 01 08 01 00 00 00 00 01 08 01
+  .b f 00 00 00 00 01 08 01 00 00 00 00 01 08 01 00 00
+  .b f 00 00 01 08 01 00 00 00 00 01 08 01 00 00 00 00
+  .b f 01 08 01 00 00 00 00 01 08 01 00 00 00 00 01 08
+  .b f 02 00 00 00 00 01 08 01 00 00 00 00 01 08 01 00
+  .b f 00 00 00 01 08 01 00 00 00 00 01 08 01 00 00 00
+  .b f 00 01 08 01 00 00 00 00 01 08 01 00 00 00 00 01
+  .b f 08 01 00 00 00 00 01 08 01 00 00 00 00 01 08 01
+  .b f 00 00 00 00 01 08 01 00 00 00 00 01 08 01 00 00
+  .b f 00 00 01 08 01 00 00 00 00 01 08 01 00 00 00 00
+  .b f 01 08 01 00 00 00 00 01 08 01 00 00 00 00 01 08
+  .b f 01 00 00 00 00 01 08 01 00 00 00 00 01 08 01 00
+  .b f 00 00 00 01 08 01 00 00 00 00 01 08 01 00 00 00
+  .b f 00 01 08 01 00 00 00 00 01 08 01 00 00 00 00 01
+  .b f 08 01 00 00 00 00 01 08 01 00 00 00 00 01 08 01
+  .b f 00 00 00 00 01 08 01 00 00 00 00 01 08 01 00 00
+  .b f 00 00 01 08 01 00 00 00 00 01 08 01 00 00 00 00
+  .b f 01 08 01 00 00 00 00 01 08 01 00 00 00 00 01 08
+  .b f 01 00 00 00 00 01 08 01 00 00 00 00 01 08 01 00
+  .b f 00 00 00 01 08 01 00 00 00 00 01 08 01 00 00 00
+  .b f 00 01 08 01 00 00 00 00 01 08 01 00 00 00 00 01
+  .b f 08 01 00 00 00 00 01 08 01 00 00 00 00 01 08 01
+  .b f 00 00 00 00 01 08 01 00 00 00 00 01 08 01 00 00
+  .b f 00 00 01 08 01 00 00 00 00 01 08 01 00 00 00 00
+  .b f 01 08 01 00 00 00 00 01 08 01 00 00 00 00 01 08
+  .b f 01 00 00 00 00 01 08 01 00 00 00 00 01 08 01 00
+  .b f 00 00 00 01 08 01 00 00 00 00 01 08 01 00 00 00
+  .b f 00 01 08 01 00 00 00 00 01 08 01 00 00 00 00 01
+  .b f 08 01 00 00 00 00 01 08 01 00 00 00 00 01 08 01
+  .b f 00 00 00 00 01 08 01 00 00 00 00 01 08 01 00 00
+  .b f 00 00 01 08 01 00 00 00 00 01 08 01 00 00 00 00
+  .b f 01 08 01 00 00 00 00 01 08 01 00 00 00 00 01 08
+  .b f 01 00 00 00 00 01 08 01 00 00 00 00 01 08 01 00
+  .b f 00 00 00 01 08 01 00 00 00 00 01 08 01 00 00 00
+  .b f 00 01 08 01 00 00 00 00 01 08 01 00 00 00 00 01
+  .b f 08 01 00 00 00 00 01 08 01 00 00 00 00 01 08 01
+  .b f 00 00 00 00 01 08 01 00 00 00 00 01 08 01 00 00
+  .b f 00 00 01 08 01 00 00 00 00 01 08 01 00 00 00 00
+  .b f 01 08 01 00 00 00 00 01 08 01 00 00 00 00 01 08
+  .b f 01 00 00 00 00 01 08 01 00 00 00 00 01 08 01 00
+  .b f 00 00 00 01 08 01 00 00 00 00 01 08 01 00 00 00
+  .b f 00 01 08 01 00 00 00 00 01 08 01 00 00 00 00 01
+  .b f 08 01 00 00 00 00 01 08 01 00 00 00 00 01 08 01
+  .b f 00 00 00 00 01 08 01 00 00 00 00 01 08 01 00 00
+  .b f 00 00 01 08 01 00 00 00 00 01 08 01 00 00 00 00
+  .b f 01 08 01 00 00 00 00 01 08 01 00 00 00 00 01 08
+  .b f 07 00 2e 06 00 06 00 14 3e 14 3e 14 00 04 2a 3e
+  .b f 2a 10 00 32 08 26 00 14 2a 12 28 00 1c 22 00 22
+  .b f 1c 00 0a 04 0a 00 04 0e 04 00 04 02 00 02 02 02
+  .b f 00 01 30 08 06 00 1c 22 1c 00 24 3e 20 00 32 2a
+  .b f 24 00 22 2a 14 00 0e 08 3e 00 2e 2a 12 00 1c 2a
+  .b f 10 00 02 32 0e 00 14 2a 14 00 04 2a 1c 00 10 0a
+  .b f 00 08 14 22 00 0a 0a 0a 00 22 14 08 00 02 2a 04
+  .b f 00 1c 22 2a 0c 00 3c 0a 3c 00 3e 2a 14 00 1c 22
+  .b f 22 00 3e 22 1c 00 3e 2a 22 00 3e 0a 02 00 1c 22
+  .b f 32 00 3e 08 3e 00 22 3e 22 00 22 1e 00 3e 08 36
+  .b f 00 3e 20 20 00 3e 04 08 04 3e 00 3e 04 08 3e 00
+  .b f 1c 22 22 1c 00 3e 0a 04 00 1c 22 32 3c 00 3e 0a
+  .b f 34 00 24 2a 12 00 02 3e 02 00 1e 20 20 1e 00 0e
+  .b f 30 0e 00 0e 30 08 30 0e 00 36 08 36 00 06 28 1e
+  .b f 00 32 2a 26 00 06 08 30 00 22 3e 00 04 02 04 00
+  .b f 01 01 01 00 0c 12 1e 00 3e 24 18 00 0c 12 00 18
+  .b f 24 3e 00 0c 1a 14 00 3c 0a 00 04 2a 1e 00 3e 08
+  .b f 30 00 3a 40 3a 00 3e 08 34 00 1e 02 1c 02 1c 00
+  .b f 1e 02 1c 00 0c 12 0c 00 3e 12 0c 00 0c 12 3e 00
+  .b f 1e 04 02 00 16 1a 00 1e 24 00 0e 10 1e 00 0e 10
+  .b f 0e 00 0e 10 0c 10 0e 00 12 0c 12 00 1a 16 00 08
+  .b b 36 22 00 22 36 08 00 04 02 04 02 00
+$PD_680:
+  .b 5 4c 65 76 65 6c 20
+$PD_684:
+$PD_685:
+$PD_686:
+  .b 6 25 75 30 2f 25 75 30
+$PD_681:
+  .b 5 4d 6f 76 65 73 3a
+$PD_682:
+  .b 5 53 68 6f 74 73 3a
+$PD_683:
   .b f 06 00 f8 00 00 06 08 06 00 f8 00 00 06 08 06 00
   .b f f8 00 00 06 08 06 00 f8 00 00 06 08 06 00 f8 00
   .b f 00 06 08 06 00 f8 00 00 06 08 06 00 f8 00 00 06
@@ -4783,144 +4930,7 @@ $PD_679:
   .b f 78 00 30 c0 04 c2 30 00 04 04 03 00 00 00 fe 50
   .b f 88 88 70 00 01 00 00 00 00 00 18 62 80 62 18 00
   .b 5 02 02 01 00 00 00
-$PD_680:
-  .b f 01 00 00 00 00 01 08 01 00 00 00 00 01 08 01 00
-  .b f 00 00 00 01 08 01 00 00 00 00 01 08 01 00 00 00
-  .b f 00 01 08 01 00 00 00 00 01 08 01 00 00 00 00 01
-  .b f 08 01 00 00 00 00 01 08 01 00 00 00 00 01 08 01
-  .b f 00 00 00 00 01 08 01 00 00 00 00 01 08 01 00 00
-  .b f 00 00 01 08 01 00 00 00 00 01 08 01 00 00 00 00
-  .b f 01 08 01 00 00 00 00 01 08 01 00 00 00 00 01 08
-  .b f 01 00 00 00 00 01 08 01 00 00 00 00 01 08 01 00
-  .b f 00 00 00 01 08 01 00 00 00 00 01 08 01 00 00 00
-  .b f 00 01 08 01 00 00 00 00 01 08 01 00 00 00 00 01
-  .b f 08 01 00 00 00 00 01 08 01 00 00 00 00 01 08 01
-  .b f 00 00 00 00 01 08 01 00 00 00 00 01 08 01 00 00
-  .b f 00 00 01 08 01 00 00 00 00 01 08 01 00 00 00 00
-  .b f 01 08 01 00 00 00 00 01 08 01 00 00 00 00 01 08
-  .b f 02 00 00 00 00 01 08 02 00 fa 01 00 01 08 04 00
-  .b f fa 02 00 04 08 06 00 fa 06 00 06 08 06 00 fa 0c
-  .b f 00 06 08 04 00 fa 12 00 04 08 05 00 fa 16 00 05
-  .b f 08 02 00 fa 02 00 01 08 03 00 fa 1b 00 03 08 03
-  .b f 00 fa 1e 00 03 08 04 00 fa 21 00 04 08 04 00 fb
-  .b f 25 00 04 08 03 00 fe 29 00 03 08 04 00 fc 2c 00
-  .b f 04 08 02 00 ff 30 00 01 08 04 00 fa 31 00 04 08
-  .b f 04 00 fa 35 00 04 08 04 00 fa 39 00 04 08 04 00
-  .b f fa 3d 00 04 08 04 00 fa 41 00 04 08 04 00 fa 45
-  .b f 00 04 08 04 00 fa 49 00 04 08 04 00 fa 4d 00 04
-  .b f 08 04 00 fa 51 00 04 08 04 00 fa 55 00 04 08 04
-  .b f 00 fa 59 00 04 08 02 00 fc 21 00 01 08 03 00 fc
-  .b f 5d 00 03 08 04 00 fa 60 00 04 08 04 00 fb 64 00
-  .b f 04 08 04 00 fa 68 00 04 08 04 00 fa 6c 00 04 08
-  .b f 05 00 fa 70 00 05 08 04 00 fa 75 00 04 08 04 00
-  .b f fa 79 00 04 08 04 00 fa 7d 00 04 08 04 00 fa 81
-  .b f 00 04 08 04 00 fa 85 00 04 08 04 00 fa 89 00 04
-  .b f 08 04 00 fa 8d 00 04 08 04 00 fa 91 00 04 08 04
-  .b f 00 fa 95 00 04 08 03 00 fa 99 00 03 08 04 00 fa
-  .b f 9c 00 04 08 04 00 fa a0 00 04 08 06 00 fa a4 00
-  .b f 06 08 05 00 fa aa 00 05 08 05 00 fa af 00 05 08
-  .b f 04 00 fa b4 00 04 08 05 00 fa b8 00 05 08 04 00
-  .b f fa bd 00 04 08 04 00 fa c1 00 04 08 04 00 fa c5
-  .b f 00 04 08 05 00 fa c9 00 05 08 04 00 fa ce 00 04
-  .b f 08 06 00 fa d2 00 06 08 04 00 fa d8 00 04 08 04
-  .b f 00 fa dc 00 04 08 04 00 fa e0 00 04 08 03 00 fa
-  .b f 96 00 03 08 04 00 fa e4 00 04 08 03 00 fa e8 00
-  .b f 03 08 04 00 fa eb 00 04 08 04 00 ff ef 00 04 08
-  .b f 03 00 fa ec 00 03 08 04 00 fb f3 00 04 08 04 00
-  .b f fa f7 00 04 08 03 00 fb fb 00 03 08 04 00 fa fe
-  .b f 00 04 08 04 00 fb 02 01 04 08 03 00 fa 06 01 03
-  .b f 08 04 00 fb 09 01 04 08 04 00 fa 0d 01 04 08 02
-  .b f 00 fa 11 01 01 08 03 00 fa 12 01 03 08 04 00 fa
-  .b f 15 01 04 08 02 00 fa 07 00 01 08 06 00 fb 19 01
-  .b f 06 08 04 00 fb 1f 01 04 08 04 00 fb 23 01 04 08
-  .b f 04 00 fb 27 01 04 08 04 00 fb 2b 01 04 08 04 00
-  .b f fb 2f 01 04 08 03 00 fb 33 01 03 08 03 00 fa 36
-  .b f 01 03 08 04 00 fb 39 01 04 08 04 00 fb 3d 01 04
-  .b f 08 06 00 fb 41 01 06 08 04 00 fb 47 01 04 08 04
-  .b f 00 fb dc 00 04 08 03 00 fb 4b 01 03 08 04 00 fa
-  .b f 4e 01 04 08 02 00 fa 07 00 01 08 04 00 fa 52 01
-  .b f 04 08 05 00 fc 56 01 05 08 01 00 00 00 00 01 08
-  .b f 01 00 00 00 00 01 08 01 00 00 00 00 01 08 01 00
-  .b f 00 00 00 01 08 01 00 00 00 00 01 08 01 00 00 00
-  .b f 00 01 08 01 00 00 00 00 01 08 01 00 00 00 00 01
-  .b f 08 01 00 00 00 00 01 08 01 00 00 00 00 01 08 01
-  .b f 00 00 00 00 01 08 01 00 00 00 00 01 08 01 00 00
-  .b f 00 00 01 08 01 00 00 00 00 01 08 01 00 00 00 00
-  .b f 01 08 01 00 00 00 00 01 08 01 00 00 00 00 01 08
-  .b f 01 00 00 00 00 01 08 01 00 00 00 00 01 08 01 00
-  .b f 00 00 00 01 08 01 00 00 00 00 01 08 01 00 00 00
-  .b f 00 01 08 01 00 00 00 00 01 08 01 00 00 00 00 01
-  .b f 08 01 00 00 00 00 01 08 01 00 00 00 00 01 08 01
-  .b f 00 00 00 00 01 08 01 00 00 00 00 01 08 01 00 00
-  .b f 00 00 01 08 01 00 00 00 00 01 08 01 00 00 00 00
-  .b f 01 08 01 00 00 00 00 01 08 01 00 00 00 00 01 08
-  .b f 02 00 00 00 00 01 08 01 00 00 00 00 01 08 01 00
-  .b f 00 00 00 01 08 01 00 00 00 00 01 08 01 00 00 00
-  .b f 00 01 08 01 00 00 00 00 01 08 01 00 00 00 00 01
-  .b f 08 01 00 00 00 00 01 08 01 00 00 00 00 01 08 01
-  .b f 00 00 00 00 01 08 01 00 00 00 00 01 08 01 00 00
-  .b f 00 00 01 08 01 00 00 00 00 01 08 01 00 00 00 00
-  .b f 01 08 01 00 00 00 00 01 08 01 00 00 00 00 01 08
-  .b f 01 00 00 00 00 01 08 01 00 00 00 00 01 08 01 00
-  .b f 00 00 00 01 08 01 00 00 00 00 01 08 01 00 00 00
-  .b f 00 01 08 01 00 00 00 00 01 08 01 00 00 00 00 01
-  .b f 08 01 00 00 00 00 01 08 01 00 00 00 00 01 08 01
-  .b f 00 00 00 00 01 08 01 00 00 00 00 01 08 01 00 00
-  .b f 00 00 01 08 01 00 00 00 00 01 08 01 00 00 00 00
-  .b f 01 08 01 00 00 00 00 01 08 01 00 00 00 00 01 08
-  .b f 01 00 00 00 00 01 08 01 00 00 00 00 01 08 01 00
-  .b f 00 00 00 01 08 01 00 00 00 00 01 08 01 00 00 00
-  .b f 00 01 08 01 00 00 00 00 01 08 01 00 00 00 00 01
-  .b f 08 01 00 00 00 00 01 08 01 00 00 00 00 01 08 01
-  .b f 00 00 00 00 01 08 01 00 00 00 00 01 08 01 00 00
-  .b f 00 00 01 08 01 00 00 00 00 01 08 01 00 00 00 00
-  .b f 01 08 01 00 00 00 00 01 08 01 00 00 00 00 01 08
-  .b f 01 00 00 00 00 01 08 01 00 00 00 00 01 08 01 00
-  .b f 00 00 00 01 08 01 00 00 00 00 01 08 01 00 00 00
-  .b f 00 01 08 01 00 00 00 00 01 08 01 00 00 00 00 01
-  .b f 08 01 00 00 00 00 01 08 01 00 00 00 00 01 08 01
-  .b f 00 00 00 00 01 08 01 00 00 00 00 01 08 01 00 00
-  .b f 00 00 01 08 01 00 00 00 00 01 08 01 00 00 00 00
-  .b f 01 08 01 00 00 00 00 01 08 01 00 00 00 00 01 08
-  .b f 01 00 00 00 00 01 08 01 00 00 00 00 01 08 01 00
-  .b f 00 00 00 01 08 01 00 00 00 00 01 08 01 00 00 00
-  .b f 00 01 08 01 00 00 00 00 01 08 01 00 00 00 00 01
-  .b f 08 01 00 00 00 00 01 08 01 00 00 00 00 01 08 01
-  .b f 00 00 00 00 01 08 01 00 00 00 00 01 08 01 00 00
-  .b f 00 00 01 08 01 00 00 00 00 01 08 01 00 00 00 00
-  .b f 01 08 01 00 00 00 00 01 08 01 00 00 00 00 01 08
-  .b f 01 00 00 00 00 01 08 01 00 00 00 00 01 08 01 00
-  .b f 00 00 00 01 08 01 00 00 00 00 01 08 01 00 00 00
-  .b f 00 01 08 01 00 00 00 00 01 08 01 00 00 00 00 01
-  .b f 08 01 00 00 00 00 01 08 01 00 00 00 00 01 08 01
-  .b f 00 00 00 00 01 08 01 00 00 00 00 01 08 01 00 00
-  .b f 00 00 01 08 01 00 00 00 00 01 08 01 00 00 00 00
-  .b f 01 08 01 00 00 00 00 01 08 01 00 00 00 00 01 08
-  .b f 07 00 2e 06 00 06 00 14 3e 14 3e 14 00 04 2a 3e
-  .b f 2a 10 00 32 08 26 00 14 2a 12 28 00 1c 22 00 22
-  .b f 1c 00 0a 04 0a 00 04 0e 04 00 04 02 00 02 02 02
-  .b f 00 01 30 08 06 00 1c 22 1c 00 24 3e 20 00 32 2a
-  .b f 24 00 22 2a 14 00 0e 08 3e 00 2e 2a 12 00 1c 2a
-  .b f 10 00 02 32 0e 00 14 2a 14 00 04 2a 1c 00 10 0a
-  .b f 00 08 14 22 00 0a 0a 0a 00 22 14 08 00 02 2a 04
-  .b f 00 1c 22 2a 0c 00 3c 0a 3c 00 3e 2a 14 00 1c 22
-  .b f 22 00 3e 22 1c 00 3e 2a 22 00 3e 0a 02 00 1c 22
-  .b f 32 00 3e 08 3e 00 22 3e 22 00 22 1e 00 3e 08 36
-  .b f 00 3e 20 20 00 3e 04 08 04 3e 00 3e 04 08 3e 00
-  .b f 1c 22 22 1c 00 3e 0a 04 00 1c 22 32 3c 00 3e 0a
-  .b f 34 00 24 2a 12 00 02 3e 02 00 1e 20 20 1e 00 0e
-  .b f 30 0e 00 0e 30 08 30 0e 00 36 08 36 00 06 28 1e
-  .b f 00 32 2a 26 00 06 08 30 00 22 3e 00 04 02 04 00
-  .b f 01 01 01 00 0c 12 1e 00 3e 24 18 00 0c 12 00 18
-  .b f 24 3e 00 0c 1a 14 00 3c 0a 00 04 2a 1e 00 3e 08
-  .b f 30 00 3a 40 3a 00 3e 08 34 00 1e 02 1c 02 1c 00
-  .b f 1e 02 1c 00 0c 12 0c 00 3e 12 0c 00 0c 12 3e 00
-  .b f 1e 04 02 00 16 1a 00 1e 24 00 0e 10 1e 00 0e 10
-  .b f 0e 00 0e 10 0c 10 0e 00 12 0c 12 00 1a 16 00 08
-  .b b 36 22 00 22 36 08 00 04 02 04 02 00
-$PD_681:
-  .b 6 25 75 30 2f 25 75 30
-$PD_682:
+$PD_687:
   .b f 03 00 fa 00 00 03 08 03 00 fa 00 00 03 08 03 00
   .b f fa 00 00 03 08 03 00 fa 00 00 03 08 03 00 fa 00
   .b f 00 03 08 03 00 fa 00 00 03 08 03 00 fa 00 00 03
@@ -10192,7 +10202,7 @@ $globinit:
   .line 101
   p0
   setg  tilesize 0
-  push3 64344
+  push3 64362
   sys   set_text_font
   ret
 
@@ -10431,12 +10441,12 @@ $L_at_scan_0:
   ret
 $L_at_scan_1:
   .line 28
-  push3 70095
+  push3 70113
   dup4
   pidxb 1 4
   getp
   .line 29
-  push3 70099
+  push3 70117
   dup5
   pidxb 1 4
   getp
@@ -11193,7 +11203,7 @@ $L_find_other_tunnel_0:
 load_level:
   .file level.abc
   .line 54
-  push3 70116
+  push3 70134
   getg  current_set 0
   pidxb 19 3
   getpn 6
@@ -11536,6 +11546,12 @@ $L_load_level_18:
   .line 95
   p0
   setg  just_moved 0
+  .line 96
+  p0000
+  setg4 moves 0
+  .line 97
+  p0000
+  setg4 shots 0
   .line 52
   pop3
   ret
@@ -12095,7 +12111,7 @@ $L_loop_10:
 $L_loop_5:
   .file select.abc
   .line 13
-  push3 70103
+  push3 70121
   getg  select_set 0
   pidxb 19 3
   .line 14
@@ -12166,7 +12182,7 @@ $L_loop_53:
   setg  set_descy 0
 $L_loop_56:
   .line 27
-  push3 62197
+  push3 59023
   sys   set_text_font
   .line 28
   p00
@@ -12281,7 +12297,7 @@ $L_loop_62:
   sys   draw_sprite
 $L_loop_63:
   .line 50
-  push3 59023
+  push3 61188
   sys   set_text_font
   .line 51
   getln 3 8
@@ -12333,7 +12349,7 @@ $L_loop_65:
 $L_loop_6:
   .file select.abc
   .line 64
-  push3 70103
+  push3 70121
   getg  select_set 0
   pidxb 19 3
   .line 65
@@ -12475,7 +12491,7 @@ $L_loop_42:
   p000
   sys   draw_filled_rect
   .line 81
-  push3 59023
+  push3 61188
   sys   set_text_font
   .line 82
   getln 3 13
@@ -12509,7 +12525,7 @@ $L_loop_42:
   sext
   upidx 276
   .line 90
-  push3 59023
+  push3 61188
   sys   set_text_font
   .line 91
   alloc 40
@@ -12576,7 +12592,7 @@ $L_loop_44:
   p000
   sys   draw_hline
   .line 102
-  push3 62197
+  push3 59023
   sys   set_text_font
   .line 103
   dupw7
@@ -12586,7 +12602,7 @@ $L_loop_44:
   p1
   add3b
   sext
-  push4 117504849
+  push4 117501681
   p00
   push  63
   p000
@@ -12702,21 +12718,6 @@ main:
   .line 42
   p0
   setg  select_set 0
-  .line 44
-  p2
-  setg  current_set 0
-  .line 45
-  p3
-  p0
-  setg2 current_level 0
-  .line 46
-  call  load_level
-  .line 47
-  p6
-  setg  state 0
-  .line 48
-  p2
-  setg  anim_frames 0
 $L_main_1:
   .line 54
   call  loop
@@ -12781,7 +12782,7 @@ $L_play_0:
   setg2 current_level 0
   .line 254
   getg2 current_level 0
-  push4 17949696
+  push4 17954304
   getg  current_set 0
   pidxb 19 3
   p3
@@ -12920,10 +12921,10 @@ $L_play_14:
 $L_play_15:
   .line 321
   dup
-  bnz   $L_play_18
+  bnz   $L_play_19
   p8
   sys   just_pressed
-  bz    $L_play_18
+  bz    $L_play_19
   .line 323
   getg  tankx 0
   setg  shootx 0
@@ -12944,162 +12945,175 @@ $L_play_15:
 $L_play_17:
   setg  shooting 0
   .line 327
+  getg  shooting 0
+  bz    $L_play_18
+  .line 328
+  p1
+  setl  1
+$L_play_18:
+  .line 329
   p1
   setg  first_move 0
-$L_play_18:
   .line 330
+  getg4 shots 0
+  p1
+  p000
+  add4
+  setg4 shots 0
+$L_play_19:
+  .line 333
   p4
   sys   just_pressed
-  bz    $L_play_19
-  .line 332
+  bz    $L_play_20
+  .line 335
   p1
   setg  can_pan 0
-  .line 333
+  .line 336
   sys   millis
   setg4 b_pressed_time 0
-$L_play_19:
-  .line 336
+$L_play_20:
+  .line 339
   p4
   sys   just_released
-  bz    $L_play_21
+  bz    $L_play_22
   sys   millis
   getg4 b_pressed_time 0
   push2 400
   p00
   add4
   cult4
-  bz    $L_play_21
-  .line 338
+  bz    $L_play_22
+  .line 341
   p7
   setg  state 0
-$L_play_21:
-  .line 341
+$L_play_22:
+  .line 344
   dup
-  bnz   $L_play_30
+  bnz   $L_play_31
   p4
   sys   pressed
-  bnz   $L_play_30
-  .line 343
+  bnz   $L_play_31
+  .line 346
   p0
   p128
   .file input.abc
   .line 23
   dup
   sys   just_pressed
-  bnzp  $L_play_43
+  bnzp  $L_play_44
   getg  btns_pressed 0
   dup2
   and
   bool
-$L_play_43:
+$L_play_44:
   setl  2
   pop
   .file play.abc
-  .line 343
-  bz    $L_play_23
-  .line 344
+  .line 346
+  bz    $L_play_24
+  .line 347
   p0
   call  process_tank_move
-  .line 343
-  jmp   $L_play_30
-$L_play_23:
-  .line 345
+  .line 346
+  jmp   $L_play_31
+$L_play_24:
+  .line 348
   p0
   p64
   .file input.abc
   .line 23
   dup
   sys   just_pressed
-  bnzp  $L_play_46
+  bnzp  $L_play_47
   getg  btns_pressed 0
   dup2
   and
   bool
-$L_play_46:
+$L_play_47:
   setl  2
   pop
   .file play.abc
-  .line 345
-  bz    $L_play_24
-  .line 346
+  .line 348
+  bz    $L_play_25
+  .line 349
   p1
   call  process_tank_move
-  .line 345
-  jmp   $L_play_30
-$L_play_24:
-  .line 347
+  .line 348
+  jmp   $L_play_31
+$L_play_25:
+  .line 350
   p0
   p16
   .file input.abc
   .line 23
   dup
   sys   just_pressed
-  bnzp  $L_play_49
+  bnzp  $L_play_50
   getg  btns_pressed 0
   dup2
   and
   bool
-$L_play_49:
+$L_play_50:
   setl  2
   pop
   .file play.abc
-  .line 347
-  bz    $L_play_25
-  .line 348
+  .line 350
+  bz    $L_play_26
+  .line 351
   p2
   call  process_tank_move
-  .line 347
-  jmp   $L_play_30
-$L_play_25:
-  .line 349
+  .line 350
+  jmp   $L_play_31
+$L_play_26:
+  .line 352
   p0
   p32
   .file input.abc
   .line 23
   dup
   sys   just_pressed
-  bnzp  $L_play_52
+  bnzp  $L_play_53
   getg  btns_pressed 0
   dup2
   and
   bool
-$L_play_52:
+$L_play_53:
   setl  2
   pop
   .file play.abc
-  .line 349
-  bz    $L_play_30
-  .line 350
+  .line 352
+  bz    $L_play_31
+  .line 353
   p3
   call  process_tank_move
-$L_play_30:
-  .line 353
+$L_play_31:
+  .line 356
   getg  can_pan 0
-  bz    $L_play_34
+  bz    $L_play_35
   p4
   sys   pressed
-  bz    $L_play_34
-  .line 356
+  bz    $L_play_35
+  .line 359
   p128
-  sys   pressed
-  bz    $L_play_32
-  getg  targety 0
-  p3
-  sub
-  setg  targety 0
-$L_play_32:
-  .line 357
-  p16
   sys   pressed
   bz    $L_play_33
   getg  targety 0
   p3
-  add
+  sub
   setg  targety 0
 $L_play_33:
-  .line 353
-  jmp   $L_play_35
+  .line 360
+  p16
+  sys   pressed
+  bz    $L_play_34
+  getg  targety 0
+  p3
+  add
+  setg  targety 0
 $L_play_34:
+  .line 356
+  jmp   $L_play_36
+$L_play_35:
   .file level.abc
   .line 6
   getg  tanky 0
@@ -13128,44 +13142,44 @@ $L_play_34:
   sext
   dupw5
   cslt2
-  bz    $L_play_55
+  bz    $L_play_56
   dup4
   setg  targety 0
-$L_play_55:
+$L_play_56:
   .line 11
   dupw
   getg  targety 0
   sext
   cslt2
-  bz    $L_play_56
+  bz    $L_play_57
   dup2
   setg  targety 0
-$L_play_56:
+$L_play_57:
   .line 3
   popn  8
   .file play.abc
-$L_play_35:
-  .line 362
-  getg  targety 0
-  p0
-  cslt
-  bz    $L_play_36
-  p0
-  setg  targety 0
 $L_play_36:
-  .line 363
-  p64
+  .line 365
   getg  targety 0
+  p0
   cslt
   bz    $L_play_37
-  p64
+  p0
   setg  targety 0
 $L_play_37:
-  .line 365
-  getg  offy 0
+  .line 366
+  p64
   getg  targety 0
   cslt
   bz    $L_play_38
+  p64
+  setg  targety 0
+$L_play_38:
+  .line 368
+  getg  offy 0
+  getg  targety 0
+  cslt
+  bz    $L_play_39
   getg  offy 0
   getg  targety 0
   sext
@@ -13182,12 +13196,12 @@ $L_play_37:
   pop3
   add
   setg  offy 0
-$L_play_38:
-  .line 366
+$L_play_39:
+  .line 369
   getg  targety 0
   getg  offy 0
   cslt
-  bz    $L_play_39
+  bz    $L_play_40
   getg  offy 0
   getg  offy 0
   sext
@@ -13204,23 +13218,23 @@ $L_play_38:
   pop3
   sub
   setg  offy 0
-$L_play_39:
-  .line 368
+$L_play_40:
+  .line 371
   call  render_level
-  .line 370
+  .line 373
   getg  can_pan 0
-  bz    $L_play_41
+  bz    $L_play_42
   p4
   sys   pressed
-  bz    $L_play_41
-  .line 372
+  bz    $L_play_42
+  .line 375
   p0
   p64
   p3
   p00
   push2 125
   sys   draw_filled_rect
-  .line 373
+  .line 376
   p3
   p32
   p2
@@ -13231,7 +13245,7 @@ $L_play_39:
   div2
   push2 126
   sys   draw_filled_rect
-$L_play_41:
+$L_play_42:
   .line 234
   pop2
   ret
@@ -13264,7 +13278,7 @@ $L_process_laser_0:
   getr
   .line 164
   getg  shootx 0
-  push3 70095
+  push3 70113
   getg  shootdir 0
   pidxb 1 4
   getp
@@ -13272,7 +13286,7 @@ $L_process_laser_0:
   setg  shootx 0
   .line 165
   getg  shooty 0
-  push3 70099
+  push3 70117
   getg  shootdir 0
   pidxb 1 4
   getp
@@ -13761,14 +13775,14 @@ $L_process_moving_object_0:
   pop
   .line 71
   dup4
-  push3 70095
+  push3 70113
   dup6
   pidxb 1 4
   getp
   add
   .line 72
   dup4
-  push3 70099
+  push3 70117
   dup7
   pidxb 1 4
   getp
@@ -13983,7 +13997,7 @@ $L_process_moving_object_4:
   call  all_at_scans
   .line 111
   dup7
-  push4 17944320
+  push4 17948928
   getl  14
   pidxb 1 4
   getp
@@ -13994,7 +14008,7 @@ $L_process_moving_object_4:
   bool2
   bnz   $L_process_moving_object_13
   dup6
-  push4 17945344
+  push4 17949952
   getl  14
   pidxb 1 4
   getp
@@ -14292,40 +14306,40 @@ $L_process_moving_objects_0:
 
 process_tank_move:
   .file play.abc
-  .line 379
+  .line 382
   p1
   setg  first_move 0
-  .line 381
+  .line 384
   getg  tankdir 0
   dup2
   sub
   bz    $L_process_tank_move_0
-  .line 383
+  .line 386
   dup
   setg  tankdir 0
-  .line 384
+  .line 387
   pop
   ret
 $L_process_tank_move_0:
-  .line 387
-  push3 70095
+  .line 390
+  push3 70113
   dup4
   pidxb 1 4
   getp
-  .line 388
-  push3 70099
+  .line 391
+  push3 70117
   dup5
   pidxb 1 4
   getp
-  .line 389
+  .line 392
   getg  tankx 0
   dup3
   add
-  .line 390
+  .line 393
   getg  tanky 0
   dup3
   add
-  .line 392
+  .line 395
   p0
   dup2
   dup4
@@ -14345,9 +14359,9 @@ $L_process_tank_move_7:
   setl  3
   pop2
   .file play.abc
-  .line 392
+  .line 395
   bz    $L_process_tank_move_1
-  .line 393
+  .line 396
   popn  5
   ret
   .file level.abc
@@ -14380,27 +14394,33 @@ $L_process_tank_move_5:
   setl  4
   pop3
   .file play.abc
-  .line 392
+  .line 395
   bz    $L_process_tank_move_1
-  .line 393
+  .line 396
   popn  5
   ret
 $L_process_tank_move_1:
-  .line 395
+  .line 398
   dup2
   setg  tankx 0
-  .line 396
+  .line 399
   dup
   setg  tanky 0
-  .line 398
+  .line 401
   p1
   setg  just_moved 0
-  .line 399
+  .line 402
   dup5
   setg  just_moved_dir 0
-  .line 401
+  .line 404
+  getg4 moves 0
+  p1
+  p000
+  add4
+  setg4 moves 0
+  .line 406
   call  tank_update
-  .line 377
+  .line 380
   popn  5
   ret
 
@@ -14414,7 +14434,7 @@ render_level:
   and
   .line 5
   getg  tilesize 0
-  bnz   $L_render_level_14
+  bnz   $L_render_level_16
   .line 7
   p0
 $L_render_level_1:
@@ -14459,25 +14479,10 @@ $L_render_level_4:
   dup3
   aixb1 16
   getr
-  p0
-  getl  39
-  add2b
-  push3 2309
-  getl2 40
-  dup8
-  p0
-  p4
-  mul2b
-  sys   draw_sprite
   .line 15
-  refl  17
-  dup3
-  aixb1 16
-  getr
-  .line 16
   dup
   bz    $L_render_level_6
-  .line 17
+  .line 16
   dup
   p0
   getl  40
@@ -14490,37 +14495,16 @@ $L_render_level_4:
   mul2b
   sys   draw_sprite
 $L_render_level_6:
-  pop
-  .line 12
-  inc
-  dup
-  p16
-  cult
-  bz    $L_render_level_3
-  .line 14
-  refl  33
-  dup3
+  .line 17
+  refl  18
+  dup4
   aixb1 16
   getr
-  p0
-  getl  39
-  add2b
-  push3 2309
-  getl2 40
-  dup8
-  p0
-  p4
-  mul2b
-  sys   draw_sprite
-  .line 15
-  refl  17
-  dup3
-  aixb1 16
-  getr
-  .line 16
+  setl  1
+  .line 18
   dup
   bz    $L_render_level_7
-  .line 17
+  .line 19
   dup
   p0
   getl  40
@@ -14545,25 +14529,10 @@ $L_render_level_7:
   dup3
   aixb1 16
   getr
-  p0
-  getl  39
-  add2b
-  push3 2309
-  getl2 40
-  dup8
-  p0
-  p4
-  mul2b
-  sys   draw_sprite
   .line 15
-  refl  17
-  dup3
-  aixb1 16
-  getr
-  .line 16
   dup
   bz    $L_render_level_8
-  .line 17
+  .line 16
   dup
   p0
   getl  40
@@ -14576,37 +14545,16 @@ $L_render_level_7:
   mul2b
   sys   draw_sprite
 $L_render_level_8:
-  pop
-  .line 12
-  inc
-  dup
-  p16
-  cult
-  bz    $L_render_level_3
-  .line 14
-  refl  33
-  dup3
+  .line 17
+  refl  18
+  dup4
   aixb1 16
   getr
-  p0
-  getl  39
-  add2b
-  push3 2309
-  getl2 40
-  dup8
-  p0
-  p4
-  mul2b
-  sys   draw_sprite
-  .line 15
-  refl  17
-  dup3
-  aixb1 16
-  getr
-  .line 16
+  setl  1
+  .line 18
   dup
   bz    $L_render_level_9
-  .line 17
+  .line 19
   dup
   p0
   getl  40
@@ -14625,6 +14573,56 @@ $L_render_level_9:
   dup
   p16
   cult
+  bz    $L_render_level_3
+  .line 14
+  refl  33
+  dup3
+  aixb1 16
+  getr
+  .line 15
+  dup
+  bz    $L_render_level_10
+  .line 16
+  dup
+  p0
+  getl  40
+  add2b
+  push3 2309
+  getl2 41
+  getl  9
+  p0
+  p4
+  mul2b
+  sys   draw_sprite
+$L_render_level_10:
+  .line 17
+  refl  18
+  dup4
+  aixb1 16
+  getr
+  setl  1
+  .line 18
+  dup
+  bz    $L_render_level_11
+  .line 19
+  dup
+  p0
+  getl  40
+  add2b
+  push3 2309
+  getl2 41
+  getl  9
+  p0
+  p4
+  mul2b
+  sys   draw_sprite
+$L_render_level_11:
+  pop
+  .line 12
+  inc
+  dup
+  p16
+  cult
   bnz   $L_render_level_4
 $L_render_level_3:
   popn  35
@@ -14635,10 +14633,10 @@ $L_render_level_3:
   cult
   bnz   $L_render_level_1
   pop
-  .line 21
+  .line 23
   getg  shooting 0
-  bz    $L_render_level_10
-  .line 22
+  bz    $L_render_level_12
+  .line 24
   push2 208
   getg  shootdir 0
   add2b
@@ -14652,20 +14650,20 @@ $L_render_level_3:
   p4
   mul2b
   sys   draw_sprite
-$L_render_level_10:
-  .line 24
+$L_render_level_12:
+  .line 26
   getg  dead 0
-  bnz   $L_render_level_13
+  bnz   $L_render_level_15
   getg  first_move 0
-  bnz   $L_render_level_33
+  bnz   $L_render_level_35
   getg  frame 0
   push  15
   and
   p5
   cult
-  bnz   $L_render_level_13
-$L_render_level_33:
-  .line 25
+  bnz   $L_render_level_15
+$L_render_level_35:
+  .line 27
   push2 220
   getg  tankdir 0
   add2b
@@ -14679,19 +14677,99 @@ $L_render_level_33:
   p4
   mul2b
   sys   draw_sprite
-$L_render_level_13:
-  .line 1
+$L_render_level_15:
+  .line 29
+  p3
+  p64
+  p00
+  dupw2
+  sys   draw_vline
+  .line 31
+  push3 59023
+  sys   set_text_font
+  .line 32
+  pz16
+  pz16
+  .line 33
+  push3 70134
+  getg  current_set 0
+  pidxb 19 3
+  p3
+  add3b
+  getpn 3
+  p0
+  getg2 current_level 0
+  p0
+  p1
+  add3b
+  sext
+  push4 218164971
+  p00
+  refl  46
+  p32
+  p0
+  sys   format
+  .line 34
+  refl  32
+  p32
+  p0
+  sys   text_width
   pop
+  .line 35
+  refl  33
+  p32
+  p0
+  p5
+  push3 24832
+  getl  9
+  p000
+  p1
+  lsr4
+  pop2
+  sub2
+  sys   draw_text
+  .line 36
+  p3
+  push4 1107297854
+  p0
+  sys   draw_hline
+  .line 37
+  push4 100724472
+  p00
+  push4 4325393
+  sys   draw_text_P
+  .line 38
+  push4 100724478
+  p00
+  push4 4522012
+  sys   draw_text_P
+  .line 39
+  push3 61188
+  sys   set_text_font
+  .line 40
+  getg4 moves 0
+  push4 50392817
+  p00
+  push4 6094866
+  sys   draw_textf
+  .line 41
+  getg4 shots 0
+  push4 50392817
+  p00
+  push4 6094877
+  sys   draw_textf
+  popn  34
+  .line 1
   ret
-$L_render_level_14:
-  .line 27
+$L_render_level_16:
+  .line 43
   getg  tilesize 0
   dec
-  bnz   $L_render_level_32
-  .line 29
+  bnz   $L_render_level_34
+  .line 45
   p0
-$L_render_level_16:
-  .line 31
+$L_render_level_18:
+  .line 47
   dup
   p0
   p8
@@ -14699,24 +14777,24 @@ $L_render_level_16:
   getg  offy 0
   sext
   sub2
-  .line 32
+  .line 48
   push2 65528
   dupw3
   cslt2
-  bnz   $L_render_level_18
+  bnz   $L_render_level_20
   pop2
-  jmp   $L_render_level_17
-$L_render_level_18:
-  .line 33
+  jmp   $L_render_level_19
+$L_render_level_20:
+  .line 49
   dupw
   p64
   p0
   cslt2
-  bnz   $L_render_level_19
+  bnz   $L_render_level_21
   pop2
-  jmp   $L_render_level_15
-$L_render_level_19:
-  .line 34
+  jmp   $L_render_level_17
+$L_render_level_21:
+  .line 50
   alloc 16
   pushg tiles 0
   getl  21
@@ -14730,7 +14808,7 @@ $L_render_level_19:
   p16
   p0
   sys   memcpy
-  .line 35
+  .line 51
   alloc 16
   pushg objects 0
   getl  37
@@ -14744,57 +14822,10 @@ $L_render_level_19:
   p16
   p0
   sys   memcpy
-  .line 36
+  .line 52
   p0
-$L_render_level_21:
-  .line 38
-  refl  33
-  dup3
-  aixb1 16
-  getr
-  p0
-  getl  39
-  add2b
-  p0
-  p1
-  p0
-  getl2 40
-  dup8
-  p0
-  p8
-  mul2b
-  sys   draw_sprite
-  .line 39
-  refl  17
-  dup3
-  aixb1 16
-  getr
-  .line 40
-  dup
-  bz    $L_render_level_23
-  .line 41
-  dup
-  p0
-  getl  40
-  add2b
-  p0
-  p1
-  p0
-  getl2 41
-  getl  9
-  p0
-  p8
-  mul2b
-  sys   draw_sprite
 $L_render_level_23:
-  pop
-  .line 36
-  inc
-  dup
-  p16
-  cult
-  bz    $L_render_level_20
-  .line 38
+  .line 54
   refl  33
   dup3
   aixb1 16
@@ -14811,62 +14842,15 @@ $L_render_level_23:
   p8
   mul2b
   sys   draw_sprite
-  .line 39
+  .line 55
   refl  17
   dup3
   aixb1 16
   getr
-  .line 40
-  dup
-  bz    $L_render_level_24
-  .line 41
-  dup
-  p0
-  getl  40
-  add2b
-  p0
-  p1
-  p0
-  getl2 41
-  getl  9
-  p0
-  p8
-  mul2b
-  sys   draw_sprite
-$L_render_level_24:
-  pop
-  .line 36
-  inc
-  dup
-  p16
-  cult
-  bz    $L_render_level_20
-  .line 38
-  refl  33
-  dup3
-  aixb1 16
-  getr
-  p0
-  getl  39
-  add2b
-  p0
-  p1
-  p0
-  getl2 40
-  dup8
-  p0
-  p8
-  mul2b
-  sys   draw_sprite
-  .line 39
-  refl  17
-  dup3
-  aixb1 16
-  getr
-  .line 40
+  .line 56
   dup
   bz    $L_render_level_25
-  .line 41
+  .line 57
   dup
   p0
   getl  40
@@ -14882,13 +14866,13 @@ $L_render_level_24:
   sys   draw_sprite
 $L_render_level_25:
   pop
-  .line 36
+  .line 52
   inc
   dup
   p16
   cult
-  bz    $L_render_level_20
-  .line 38
+  bz    $L_render_level_22
+  .line 54
   refl  33
   dup3
   aixb1 16
@@ -14905,15 +14889,15 @@ $L_render_level_25:
   p8
   mul2b
   sys   draw_sprite
-  .line 39
+  .line 55
   refl  17
   dup3
   aixb1 16
   getr
-  .line 40
+  .line 56
   dup
   bz    $L_render_level_26
-  .line 41
+  .line 57
   dup
   p0
   getl  40
@@ -14929,27 +14913,121 @@ $L_render_level_25:
   sys   draw_sprite
 $L_render_level_26:
   pop
-  .line 36
+  .line 52
   inc
   dup
   p16
   cult
-  bnz   $L_render_level_21
-$L_render_level_20:
-  popn  35
-$L_render_level_17:
-  .line 29
-  inc
+  bz    $L_render_level_22
+  .line 54
+  refl  33
+  dup3
+  aixb1 16
+  getr
+  p0
+  getl  39
+  add2b
+  p0
+  p1
+  p0
+  getl2 40
+  dup8
+  p0
+  p8
+  mul2b
+  sys   draw_sprite
+  .line 55
+  refl  17
+  dup3
+  aixb1 16
+  getr
+  .line 56
   dup
-  p16
-  cult
-  bnz   $L_render_level_16
-$L_render_level_15:
-  pop
-  .line 45
-  getg  shooting 0
   bz    $L_render_level_27
-  .line 46
+  .line 57
+  dup
+  p0
+  getl  40
+  add2b
+  p0
+  p1
+  p0
+  getl2 41
+  getl  9
+  p0
+  p8
+  mul2b
+  sys   draw_sprite
+$L_render_level_27:
+  pop
+  .line 52
+  inc
+  dup
+  p16
+  cult
+  bz    $L_render_level_22
+  .line 54
+  refl  33
+  dup3
+  aixb1 16
+  getr
+  p0
+  getl  39
+  add2b
+  p0
+  p1
+  p0
+  getl2 40
+  dup8
+  p0
+  p8
+  mul2b
+  sys   draw_sprite
+  .line 55
+  refl  17
+  dup3
+  aixb1 16
+  getr
+  .line 56
+  dup
+  bz    $L_render_level_28
+  .line 57
+  dup
+  p0
+  getl  40
+  add2b
+  p0
+  p1
+  p0
+  getl2 41
+  getl  9
+  p0
+  p8
+  mul2b
+  sys   draw_sprite
+$L_render_level_28:
+  pop
+  .line 52
+  inc
+  dup
+  p16
+  cult
+  bnz   $L_render_level_23
+$L_render_level_22:
+  popn  35
+$L_render_level_19:
+  .line 45
+  inc
+  dup
+  p16
+  cult
+  bnz   $L_render_level_18
+$L_render_level_17:
+  pop
+  .line 61
+  getg  shooting 0
+  bz    $L_render_level_29
+  .line 62
   getg  shootdir 0
   push4 5778176
   getg  shooty 0
@@ -14964,20 +15042,20 @@ $L_render_level_15:
   p8
   mul2b
   sys   draw_sprite
-$L_render_level_27:
-  .line 48
+$L_render_level_29:
+  .line 64
   getg  dead 0
-  bnz   $L_render_level_32
-  getg  first_move 0
   bnz   $L_render_level_34
+  getg  first_move 0
+  bnz   $L_render_level_36
   getg  frame 0
   push  15
   and
   p5
   cult
-  bnz   $L_render_level_32
-$L_render_level_34:
-  .line 49
+  bnz   $L_render_level_34
+$L_render_level_36:
+  .line 65
   push2 220
   getg  tankdir 0
   add2b
@@ -14996,7 +15074,7 @@ $L_render_level_34:
   p8
   mul2b
   sys   draw_sprite
-$L_render_level_32:
+$L_render_level_34:
   .line 1
   pop
   ret
@@ -15158,14 +15236,14 @@ $L_tank_update_1:
 $L_tank_update_4:
   .line 137
   getg  tankx 0
-  push3 70095
+  push3 70113
   getg  just_moved_dir 0
   pidxb 1 4
   getp
   add
   .line 138
   getg  tanky 0
-  push3 70099
+  push3 70117
   getg  just_moved_dir 0
   pidxb 1 4
   getp
@@ -15306,14 +15384,14 @@ $L_tank_update_19:
   lsr
   .line 75
   getg  tankx 0
-  push3 70095
+  push3 70113
   dup5
   pidxb 1 4
   getp
   add
   .line 76
   getg  tanky 0
-  push3 70099
+  push3 70117
   dup6
   pidxb 1 4
   getp

@@ -11,8 +11,10 @@ void render_level()
             u8[16] row2 = objects[r*16 +: 16];
             for(u8 c = 0; c < 16; ++c)
             {
-                $draw_sprite(c * 4, y, TILES4, row[c] + off);
-                u8 f = row2[c];
+                u8 f = row[c];
+                if(f != 0)
+                    $draw_sprite(c * 4, y, TILES4, f + off);
+                f = row2[c];
                 if(f != 0)
                     $draw_sprite(c * 4, y, TILES4, f + off);
             }
@@ -23,6 +25,20 @@ void render_level()
         
         if(!dead && (first_move || (frame & 15) >= 5))
             $draw_sprite(tankx * 4, tanky * 4, TILES4, T_TANK + tankdir);
+
+        $draw_vline(64, 0, 64, WHITE);
+
+        $set_text_font(FONT_BR5D);
+        char[32] buf;
+        $format(buf, "Level %u/%u", current_level + 1, len(LEVELSETS[current_set].levels));
+        u8 w = $text_width(buf);
+        $draw_text(97 - w/2, 5, buf);
+        $draw_hline(66, 6, 62, WHITE);
+        $draw_text(66, 17, "Moves:");
+        $draw_text(69, 28, "Shots:");
+        $set_text_font(FONT_PIXELOIDSANS);
+        $draw_textf(93, 18, "%u", moves);
+        $draw_textf(93, 29, "%u", shots);
     }
     else if(tilesize == TILESIZE_8)
     {
