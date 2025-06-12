@@ -25,6 +25,7 @@ u16 current_level;
 u8 menu_index;
 
 constexpr sprites TILES = sprites{ 8x8 "img/tiles.png" };
+constexpr sprites TILES4 = sprites{ 4x4 "img/tiles4.png" };
 constexpr sprites ARROWS = sprites{ 9x9 "img/arrows.png" };
 constexpr sprites LASERS = sprites{ 8x8 "img/lasers.png" };
 
@@ -91,6 +92,13 @@ u8 just_moved_dir;
 
 // camera offset
 i8 offy, targety;
+
+// tile size
+enum {
+    TILESIZE_4,
+    TILESIZE_8
+};
+saved u8 tilesize = TILESIZE_4;
 
 // whether we can press B to pan
 bool can_pan;

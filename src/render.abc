@@ -2,28 +2,50 @@ void render_level()
 {
     u8 off = (frame >> 2) & 3;
 
-    for(u8 r = 0; r < 16; ++r)
+    if(tilesize == TILESIZE_4)
     {
-        i16 y = r * 8 - offy;
-        if(y <= -8) continue;
-        if(y >= 64) break;
-        u8[16] row = tiles[r*16 +: 16];
-        u8[16] row2 = objects[r*16 +: 16];
-        for(u8 c = 0; c < 16; ++c)
+        for(u8 r = 0; r < 16; ++r)
         {
-            $draw_sprite(c * 8, y, TILES, row[c] + off);
-            u8 f = row2[c];
-            if(f != 0)
-                $draw_sprite(c * 8, y, TILES, f + off);
+            i16 y = r * 4;
+            u8[16] row = tiles[r*16 +: 16];
+            u8[16] row2 = objects[r*16 +: 16];
+            for(u8 c = 0; c < 16; ++c)
+            {
+                $draw_sprite(c * 4, y, TILES4, row[c] + off);
+                u8 f = row2[c];
+                if(f != 0)
+                    $draw_sprite(c * 4, y, TILES4, f + off);
+            }
         }
+
+        if(shooting)
+            $draw_sprite(shootx * 4, shooty * 4, TILES4, 0xd0 + shootdir);
+        
+        if(!dead && ((frame & 15) >= 5))
+            $draw_sprite(tankx * 4, tanky * 4, TILES4, T_TANK + tankdir);
     }
+    else if(tilesize == TILESIZE_8)
+    {
+        for(u8 r = 0; r < 16; ++r)
+        {
+            i16 y = r * 8 - offy;
+            if(y <= -8) continue;
+            if(y >= 64) break;
+            u8[16] row = tiles[r*16 +: 16];
+            u8[16] row2 = objects[r*16 +: 16];
+            for(u8 c = 0; c < 16; ++c)
+            {
+                $draw_sprite(c * 8, y, TILES, row[c] + off);
+                u8 f = row2[c];
+                if(f != 0)
+                    $draw_sprite(c * 8, y, TILES, f + off);
+            }
+        }
 
-    //if(moving)
-    //    $draw_sprite(movex * 8, movey * 8 - offy, TILES, moveobj);
+        if(shooting)
+            $draw_sprite(shootx * 8, shooty * 8 - offy, LASERS, shootdir);
 
-    if(shooting)
-        $draw_sprite(shootx * 8, shooty * 8 - offy, LASERS, shootdir);
-
-    if(!dead && (first_move || (frame & 15) >= 5))
-        $draw_sprite(tankx * 8, tanky * 8 - offy, TILES, T_TANK + tankdir);
+        if(!dead && (first_move || (frame & 15) >= 5))
+            $draw_sprite(tankx * 8, tanky * 8 - offy, TILES, T_TANK + tankdir);
+    }
 }
