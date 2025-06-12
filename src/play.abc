@@ -234,8 +234,103 @@ void process_moved_obj()
     }
 }
 
+void process_laser()
+{
+    if(!shooting)
+        return;
+
+    u8 si = shooty * 16 + shootx;
+    u8 t = tiles[si];
+    u8 obj = objects[si];
+    shootx += DIRX[shootdir];
+    shooty += DIRY[shootdir];
+    if(shootx == tankx && shooty == tanky)
+        dead = true;
+    if(!opaque(shootx, shooty))
+    {
+        anim_frame = anim_frames;
+    }
+    else
+    {
+        u8 si = shooty * 16 + shootx;
+        u8 obj = objects[si];
+        if(obj == T_DIRT)
+            obj = tiles[si];
+        shooting = false;
+        //moveobj = obj;
+        switch(obj)
+        {
+            case(T_BLOCK_MOVE)
+            {
+                movex = shootx;
+                movey = shooty;
+                movedir = shootdir;
+                moving = true;
+                process_moved_obj();
+            }
+            case(T_BLOCK_BRICK)
+                tiles[si] = T_DIRT;
+            case(T_MIRROR ... T_MIRROR + 15)
+            {
+                u8 d = mirror_reflect((obj >> 2) & 3, shootdir);
+                if(d < 4)
+                {
+                    shooting = true;
+                    shootdir = d;
+                    //shootx += DIRX[shootdir];
+                    //shooty += DIRY[shootdir];
+                }
+                else
+                {
+                    movex = shootx;
+                    movey = shooty;
+                    movedir = shootdir;
+                    moving = true;
+                    process_moved_obj();
+                }
+            }
+            case(T_MIRROR_ROT ... T_MIRROR_ROT + 15)
+            {
+                u8 d = mirror_reflect((obj >> 2) & 3, shootdir);
+                if(d < 4)
+                {
+                    shooting = true;
+                    shootdir = d;
+                    //shootx += DIRX[shootdir];
+                    //shooty += DIRY[shootdir];
+                }
+                else
+                {
+                    // rotate clockwise
+                    tiles[si] = (obj & 0xf0) + ((obj + 4) & 0xc);
+                }
+            }
+            case(T_ANTITANK ... T_ANTITANK + 15)
+            {
+                u8 tdir = u8(obj - T_ANTITANK) >> 2;
+                if(((tdir + 2) & 3) == shootdir)
+                    objects[si] = T_ANTITANK_B + tdir * 4;
+                else
+                {
+                    movex = shootx;
+                    movey = shooty;
+                    movedir = shootdir;
+                    moving = true;
+                    process_moved_obj();
+                }
+            }
+            case(T_ANTITANK_B ... T_ANTITANK_B + 15)
+            {
+                // Broken Anti-Tank braking (tricks 81-84)
+                moving = false;
+            }
+        }
+    }
+}
+
 void play()
 {
+
     if(victory)
     {
         render_level();
@@ -286,106 +381,20 @@ void play()
         return;
     }
 
+    ////////////////////////////////////
+    // LOGIC UPDATES
+    ////////////////////////////////////
+
     if(anim_frame != 0)
         anim_frame -= 1;
     bool anim = anim_frame == 0;
 
-    if(shooting && anim)
-    {
-        u8 si = shooty * 16 + shootx;
-        u8 t = tiles[si];
-        u8 obj = objects[si];
-        shootx += DIRX[shootdir];
-        shooty += DIRY[shootdir];
-        if(shootx == tankx && shooty == tanky)
-            dead = true;
-        if(!opaque(shootx, shooty))
-        {
-            anim_frame = anim_frames;
-        }
-        else
-        {
-            u8 si = shooty * 16 + shootx;
-            u8 obj = objects[si];
-            if(obj == T_DIRT)
-                obj = tiles[si];
-            shooting = false;
-            //moveobj = obj;
-            switch(obj)
-            {
-                case(T_BLOCK_MOVE)
-                {
-                    movex = shootx;
-                    movey = shooty;
-                    movedir = shootdir;
-                    moving = true;
-                    process_moved_obj();
-                }
-                case(T_BLOCK_BRICK)
-                    tiles[si] = T_DIRT;
-                case(T_MIRROR ... T_MIRROR + 15)
-                {
-                    u8 d = mirror_reflect((obj >> 2) & 3, shootdir);
-                    if(d < 4)
-                    {
-                        shooting = true;
-                        shootdir = d;
-                        //shootx += DIRX[shootdir];
-                        //shooty += DIRY[shootdir];
-                    }
-                    else
-                    {
-                        movex = shootx;
-                        movey = shooty;
-                        movedir = shootdir;
-                        moving = true;
-                        process_moved_obj();
-                    }
-                }
-                case(T_MIRROR_ROT ... T_MIRROR_ROT + 15)
-                {
-                    u8 d = mirror_reflect((obj >> 2) & 3, shootdir);
-                    if(d < 4)
-                    {
-                        shooting = true;
-                        shootdir = d;
-                        //shootx += DIRX[shootdir];
-                        //shooty += DIRY[shootdir];
-                    }
-                    else
-                    {
-                        // rotate clockwise
-                        tiles[si] = (obj & 0xf0) + ((obj + 4) & 0xc);
-                    }
-                }
-                case(T_ANTITANK ... T_ANTITANK + 15)
-                {
-                    u8 tdir = u8(obj - T_ANTITANK) >> 2;
-                    if(((tdir + 2) & 3) == shootdir)
-                        objects[si] = T_ANTITANK_B + tdir * 4;
-                    else
-                    {
-                        movex = shootx;
-                        movey = shooty;
-                        movedir = shootdir;
-                        moving = true;
-                        process_moved_obj();
-                    }
-                }
-                case(T_ANTITANK_B ... T_ANTITANK_B + 15)
-                {
-                    // Broken Anti-Tank braking (tricks 81-84)
-                    moving = false;
-                }
-            }
-        }
-    }
-
     if(anim)
+    {
+        process_laser();
+
         process_moved_obj();
 
-    if(anim)
-    {
         tank_update();
 
         if(tiles[tanky * 16 + tankx] == T_WATER)
@@ -399,6 +408,10 @@ void play()
         else
             in_water = false;
     }
+
+    ////////////////////////////////////
+    // INPUT AND RENDERING
+    ////////////////////////////////////
 
     bool busy = shooting || moving;
 
