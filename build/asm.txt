@@ -1,4 +1,4 @@
-.githash c555ad27f7deb90c2e84ecfb5e275f9e18c0333f
+.githash 9b1a4c48dcbc5dd4ff63a0aefa674618e514071e
 .shades 2
 .global anim_frames 1
 .global select_set 1
@@ -174,117 +174,117 @@ $PD_0:
 $PD_1:
   .b f 04 04 01 00 01 00 0f 00 0f 00 0f 00 0f 00 0f 00
   .b f 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00
-  .b f 0f 00 0f 00 0f 0f 0f 05 0f 05 0f 03 0f 0f 0f 05
-  .b f 0f 05 0f 03 0f 0f 0f 05 0f 03 0f 00 0f 0f 0f 05
-  .b f 0f 03 0f 00 0f 0a 0f 00 0f 0a 0f 00 0f 0a 0f 00
-  .b f 0f 0a 0f 00 0f 0a 0f 00 0f 0a 0f 00 0f 0a 0f 00
-  .b f 0f 0a 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00
-  .b f 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00
-  .b f 0f 00 0f 00 0f 04 0f 02 0f 02 0f 04 0f 02 0f 01
-  .b f 0f 01 0f 02 0f 01 0f 08 0f 08 0f 01 0f 08 0f 04
-  .b f 0f 04 0f 08 0f 00 0f 09 0f 06 0f 00 0f 00 0f 00
-  .b f 0f 09 0f 06 0f 06 0f 00 0f 00 0f 09 0f 09 0f 06
-  .b f 0f 00 0f 00 0f 02 0f 04 0f 04 0f 02 0f 04 0f 08
-  .b f 0f 08 0f 04 0f 08 0f 01 0f 01 0f 08 0f 01 0f 02
-  .b f 0f 02 0f 01 0f 00 0f 06 0f 09 0f 00 0f 06 0f 09
-  .b f 0f 00 0f 00 0f 09 0f 00 0f 00 0f 06 0f 00 0f 00
-  .b f 0f 06 0f 09 0f 0a 0f 0f 0f 08 0f 00 0f 0a 0f 0f
-  .b f 0f 08 0f 00 0f 06 0f 09 0f 09 0f 06 0f 06 0f 09
-  .b f 0f 09 0f 06 0f 0d 0f 0d 0f 0a 0f 00 0f 0d 0f 0d
-  .b f 0f 0a 0f 00 0f 06 0f 09 0f 09 0f 06 0f 06 0f 09
-  .b f 0f 09 0f 06 0f 0b 0f 0f 0f 06 0f 00 0f 0b 0f 0f
-  .b f 0f 06 0f 00 0f 06 0f 09 0f 09 0f 06 0f 06 0f 09
-  .b f 0f 09 0f 06 0f 07 0f 04 0f 0f 0f 00 0f 07 0f 04
-  .b f 0f 0f 0f 00 0f 06 0f 09 0f 09 0f 06 0f 06 0f 09
-  .b f 0f 09 0f 06 0f 0b 0f 0b 0f 05 0f 00 0f 0b 0f 0b
-  .b f 0f 05 0f 00 0f 06 0f 09 0f 09 0f 06 0f 06 0f 09
-  .b f 0f 09 0f 06 0f 06 0f 0d 0f 0d 0f 00 0f 06 0f 0d
-  .b f 0f 0d 0f 00 0f 06 0f 09 0f 09 0f 06 0f 06 0f 09
-  .b f 0f 09 0f 06 0f 01 0f 0d 0f 03 0f 00 0f 01 0f 0d
-  .b f 0f 03 0f 00 0f 06 0f 09 0f 09 0f 06 0f 06 0f 09
-  .b f 0f 09 0f 06 0f 06 0f 0b 0f 06 0f 00 0f 06 0f 0b
-  .b f 0f 06 0f 00 0f 06 0f 09 0f 09 0f 06 0f 06 0f 09
-  .b f 0f 09 0f 06 0f 0f 0f 0b 0f 0d 0f 0f 0f 0f 0f 0b
-  .b f 0f 0d 0f 0f 0f 0f 0f 0b 0f 0d 0f 0f 0f 0f 0f 0b
-  .b f 0f 0d 0f 0f 0f 0d 0f 07 0f 0e 0f 0b 0f 0d 0f 07
-  .b f 0f 0e 0f 0b 0f 0d 0f 07 0f 0e 0f 0b 0f 0d 0f 07
-  .b f 0f 0e 0f 0b 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00
+  .b f 0f 00 0f 00 0f 07 0f 03 0f 03 0f 00 0f 07 0f 03
+  .b f 0f 03 0f 00 0f 07 0f 03 0f 00 0f 00 0f 07 0f 03
+  .b f 0f 00 0f 00 0f 00 0f 02 0f 00 0f 00 0f 00 0f 02
+  .b f 0f 00 0f 00 0f 00 0f 02 0f 00 0f 00 0f 00 0f 02
   .b f 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00
   .b f 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00
-  .b f 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00
-  .b f 0f 00 0f 00 0f 0a 0f 05 0f 0a 0f 05 0f 0a 0f 05
-  .b f 0f 0a 0f 05 0f 0a 0f 05 0f 0a 0f 05 0f 0a 0f 05
-  .b f 0f 0a 0f 05 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00
+  .b f 0f 00 0f 00 0f 02 0f 01 0f 02 0f 00 0f 01 0f 00
+  .b f 0f 01 0f 00 0f 00 0f 04 0f 00 0f 00 0f 04 0f 02
+  .b f 0f 04 0f 00 0f 00 0f 05 0f 02 0f 00 0f 00 0f 00
+  .b f 0f 05 0f 00 0f 02 0f 00 0f 00 0f 00 0f 05 0f 02
+  .b f 0f 00 0f 00 0f 02 0f 04 0f 02 0f 00 0f 04 0f 00
+  .b f 0f 04 0f 00 0f 00 0f 01 0f 00 0f 00 0f 01 0f 02
+  .b f 0f 01 0f 00 0f 02 0f 05 0f 00 0f 00 0f 05 0f 00
+  .b f 0f 00 0f 00 0f 00 0f 00 0f 02 0f 00 0f 00 0f 02
+  .b f 0f 05 0f 00 0f 05 0f 07 0f 04 0f 00 0f 05 0f 07
+  .b f 0f 04 0f 00 0f 02 0f 05 0f 02 0f 00 0f 02 0f 05
+  .b f 0f 02 0f 00 0f 01 0f 07 0f 04 0f 00 0f 01 0f 07
+  .b f 0f 04 0f 00 0f 02 0f 05 0f 02 0f 00 0f 02 0f 05
+  .b f 0f 02 0f 00 0f 05 0f 07 0f 07 0f 00 0f 05 0f 07
+  .b f 0f 07 0f 00 0f 02 0f 05 0f 02 0f 00 0f 02 0f 05
+  .b f 0f 02 0f 00 0f 03 0f 02 0f 07 0f 00 0f 03 0f 02
+  .b f 0f 07 0f 00 0f 02 0f 05 0f 02 0f 00 0f 02 0f 05
+  .b f 0f 02 0f 00 0f 04 0f 07 0f 01 0f 00 0f 04 0f 07
+  .b f 0f 01 0f 00 0f 02 0f 05 0f 02 0f 00 0f 02 0f 05
+  .b f 0f 02 0f 00 0f 07 0f 06 0f 06 0f 00 0f 07 0f 06
+  .b f 0f 06 0f 00 0f 02 0f 05 0f 02 0f 00 0f 02 0f 05
+  .b f 0f 02 0f 00 0f 01 0f 01 0f 07 0f 00 0f 01 0f 01
+  .b f 0f 07 0f 00 0f 02 0f 05 0f 02 0f 00 0f 02 0f 05
+  .b f 0f 02 0f 00 0f 06 0f 07 0f 03 0f 00 0f 06 0f 07
+  .b f 0f 03 0f 00 0f 02 0f 05 0f 02 0f 00 0f 02 0f 05
+  .b f 0f 02 0f 00 0f 07 0f 07 0f 07 0f 00 0f 07 0f 07
+  .b f 0f 07 0f 00 0f 07 0f 07 0f 07 0f 00 0f 07 0f 07
+  .b f 0f 07 0f 00 0f 05 0f 07 0f 05 0f 00 0f 05 0f 07
+  .b f 0f 05 0f 00 0f 05 0f 07 0f 05 0f 00 0f 05 0f 07
+  .b f 0f 05 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00
   .b f 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00
   .b f 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00
   .b f 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00
-  .b f 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00
-  .b f 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00
-  .b f 0f 00 0f 00 0f 0f 0f 09 0f 09 0f 0f 0f 0f 0f 09
-  .b f 0f 09 0f 0f 0f 0f 0f 09 0f 09 0f 0f 0f 0f 0f 09
-  .b f 0f 09 0f 0f 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00
+  .b f 0f 00 0f 00 0f 05 0f 02 0f 05 0f 00 0f 05 0f 02
+  .b f 0f 05 0f 00 0f 05 0f 02 0f 05 0f 00 0f 05 0f 02
+  .b f 0f 05 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00
   .b f 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00
   .b f 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00
   .b f 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00
   .b f 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00
   .b f 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00
-  .b f 0f 00 0f 00 0f 08 0f 0c 0f 0a 0f 0f 0f 08 0f 0c
-  .b f 0f 0a 0f 0f 0f 08 0f 0c 0f 0a 0f 0f 0f 08 0f 0c
-  .b f 0f 0a 0f 0f 0f 0f 0f 0a 0f 0c 0f 08 0f 0f 0f 0a
-  .b f 0f 0c 0f 08 0f 0f 0f 0a 0f 0c 0f 08 0f 0f 0f 0a
-  .b f 0f 0c 0f 08 0f 0f 0f 05 0f 03 0f 01 0f 0f 0f 05
-  .b f 0f 03 0f 01 0f 0f 0f 05 0f 03 0f 01 0f 0f 0f 05
-  .b f 0f 03 0f 01 0f 01 0f 03 0f 05 0f 0f 0f 01 0f 03
-  .b f 0f 05 0f 0f 0f 01 0f 03 0f 05 0f 0f 0f 01 0f 03
-  .b f 0f 05 0f 0f 0f 08 0f 04 0f 0e 0f 0d 0f 08 0f 04
-  .b f 0f 0e 0f 0d 0f 08 0f 04 0f 0e 0f 0d 0f 08 0f 04
-  .b f 0f 0e 0f 0d 0f 0d 0f 0e 0f 04 0f 08 0f 0d 0f 0e
-  .b f 0f 04 0f 08 0f 0d 0f 0e 0f 04 0f 08 0f 0d 0f 0e
-  .b f 0f 04 0f 08 0f 0b 0f 07 0f 02 0f 01 0f 0b 0f 07
-  .b f 0f 02 0f 01 0f 0b 0f 07 0f 02 0f 01 0f 0b 0f 07
-  .b f 0f 02 0f 01 0f 01 0f 02 0f 07 0f 0b 0f 01 0f 02
-  .b f 0f 07 0f 0b 0f 01 0f 02 0f 07 0f 0b 0f 01 0f 02
-  .b f 0f 07 0f 0b 0f 0c 0f 0f 0f 0f 0f 0c 0f 0c 0f 0f
-  .b f 0f 0f 0f 0c 0f 0c 0f 0e 0f 0e 0f 0c 0f 0c 0f 0e
-  .b f 0f 0e 0f 0c 0f 0f 0f 0f 0f 06 0f 06 0f 0f 0f 0f
-  .b f 0f 06 0f 06 0f 0f 0f 0f 0f 06 0f 00 0f 0f 0f 0f
-  .b f 0f 06 0f 00 0f 03 0f 0f 0f 0f 0f 03 0f 03 0f 0f
-  .b f 0f 0f 0f 03 0f 03 0f 07 0f 07 0f 03 0f 03 0f 07
-  .b f 0f 07 0f 03 0f 06 0f 06 0f 0f 0f 0f 0f 06 0f 06
-  .b f 0f 0f 0f 0f 0f 00 0f 06 0f 0f 0f 0f 0f 00 0f 06
-  .b f 0f 0f 0f 0f 0f 08 0f 05 0f 0b 0f 04 0f 08 0f 05
-  .b f 0f 0b 0f 04 0f 08 0f 05 0f 0b 0f 04 0f 08 0f 05
-  .b f 0f 0b 0f 04 0f 0a 0f 05 0f 02 0f 06 0f 0a 0f 05
-  .b f 0f 02 0f 06 0f 0a 0f 05 0f 02 0f 06 0f 0a 0f 05
-  .b f 0f 02 0f 06 0f 02 0f 0d 0f 0a 0f 01 0f 02 0f 0d
-  .b f 0f 0a 0f 01 0f 02 0f 0d 0f 0a 0f 01 0f 02 0f 0d
-  .b f 0f 0a 0f 01 0f 06 0f 04 0f 0a 0f 05 0f 06 0f 04
-  .b f 0f 0a 0f 05 0f 06 0f 04 0f 0a 0f 05 0f 06 0f 04
-  .b f 0f 0a 0f 05 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00
-  .b f 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00
-  .b f 0f 00 0f 00 0f 0f 0f 0d 0f 09 0f 0f 0f 0f 0f 0d
-  .b f 0f 09 0f 0f 0f 0f 0f 0d 0f 09 0f 0f 0f 0f 0f 0d
-  .b f 0f 09 0f 0f 0f 06 0f 0d 0f 09 0f 06 0f 06 0f 0d
-  .b f 0f 09 0f 06 0f 06 0f 0d 0f 09 0f 06 0f 06 0f 0d
-  .b f 0f 09 0f 06 0f 0f 0f 05 0f 0f 0f 05 0f 0f 0f 05
-  .b f 0f 0f 0f 05 0f 0f 0f 05 0f 0f 0f 05 0f 0f 0f 05
-  .b f 0f 0f 0f 05 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00
+  .b f 0f 00 0f 00 0f 06 0f 05 0f 03 0f 00 0f 06 0f 05
+  .b f 0f 03 0f 00 0f 06 0f 05 0f 03 0f 00 0f 06 0f 05
+  .b f 0f 03 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00
   .b f 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00
   .b f 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00
   .b f 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00
   .b f 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00
   .b f 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00
+  .b f 0f 00 0f 00 0f 04 0f 06 0f 07 0f 00 0f 04 0f 06
+  .b f 0f 07 0f 00 0f 04 0f 06 0f 07 0f 00 0f 04 0f 06
+  .b f 0f 07 0f 00 0f 07 0f 06 0f 04 0f 00 0f 07 0f 06
+  .b f 0f 04 0f 00 0f 07 0f 06 0f 04 0f 00 0f 07 0f 06
+  .b f 0f 04 0f 00 0f 07 0f 03 0f 01 0f 00 0f 07 0f 03
+  .b f 0f 01 0f 00 0f 07 0f 03 0f 01 0f 00 0f 07 0f 03
+  .b f 0f 01 0f 00 0f 01 0f 03 0f 07 0f 00 0f 01 0f 03
+  .b f 0f 07 0f 00 0f 01 0f 03 0f 07 0f 00 0f 01 0f 03
+  .b f 0f 07 0f 00 0f 04 0f 06 0f 03 0f 00 0f 04 0f 06
+  .b f 0f 03 0f 00 0f 04 0f 06 0f 03 0f 00 0f 04 0f 06
+  .b f 0f 03 0f 00 0f 03 0f 06 0f 04 0f 00 0f 03 0f 06
+  .b f 0f 04 0f 00 0f 03 0f 06 0f 04 0f 00 0f 03 0f 06
+  .b f 0f 04 0f 00 0f 06 0f 03 0f 01 0f 00 0f 06 0f 03
+  .b f 0f 01 0f 00 0f 06 0f 03 0f 01 0f 00 0f 06 0f 03
+  .b f 0f 01 0f 00 0f 01 0f 03 0f 06 0f 00 0f 01 0f 03
+  .b f 0f 06 0f 00 0f 01 0f 03 0f 06 0f 00 0f 01 0f 03
+  .b f 0f 06 0f 00 0f 07 0f 04 0f 07 0f 00 0f 07 0f 04
+  .b f 0f 07 0f 00 0f 06 0f 04 0f 06 0f 00 0f 06 0f 04
+  .b f 0f 06 0f 00 0f 07 0f 05 0f 05 0f 00 0f 07 0f 05
+  .b f 0f 05 0f 00 0f 07 0f 05 0f 00 0f 00 0f 07 0f 05
+  .b f 0f 00 0f 00 0f 07 0f 01 0f 07 0f 00 0f 07 0f 01
+  .b f 0f 07 0f 00 0f 03 0f 01 0f 03 0f 00 0f 03 0f 01
+  .b f 0f 03 0f 00 0f 05 0f 05 0f 07 0f 00 0f 05 0f 05
+  .b f 0f 07 0f 00 0f 00 0f 05 0f 07 0f 00 0f 00 0f 05
+  .b f 0f 07 0f 00 0f 03 0f 04 0f 03 0f 00 0f 03 0f 04
+  .b f 0f 03 0f 00 0f 03 0f 04 0f 03 0f 00 0f 03 0f 04
+  .b f 0f 03 0f 00 0f 02 0f 05 0f 05 0f 00 0f 02 0f 05
+  .b f 0f 05 0f 00 0f 02 0f 05 0f 05 0f 00 0f 02 0f 05
+  .b f 0f 05 0f 00 0f 06 0f 01 0f 06 0f 00 0f 06 0f 01
+  .b f 0f 06 0f 00 0f 06 0f 01 0f 06 0f 00 0f 06 0f 01
+  .b f 0f 06 0f 00 0f 05 0f 05 0f 02 0f 00 0f 05 0f 05
+  .b f 0f 02 0f 00 0f 05 0f 05 0f 02 0f 00 0f 05 0f 05
+  .b f 0f 02 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00
+  .b f 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00
+  .b f 0f 00 0f 00 0f 07 0f 05 0f 07 0f 00 0f 07 0f 05
+  .b f 0f 07 0f 00 0f 07 0f 05 0f 07 0f 00 0f 07 0f 05
+  .b f 0f 07 0f 00 0f 02 0f 07 0f 02 0f 00 0f 02 0f 07
+  .b f 0f 02 0f 00 0f 02 0f 07 0f 02 0f 00 0f 02 0f 07
+  .b f 0f 02 0f 00 0f 05 0f 05 0f 05 0f 00 0f 05 0f 05
+  .b f 0f 05 0f 00 0f 05 0f 05 0f 05 0f 00 0f 05 0f 05
+  .b f 0f 05 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00
   .b f 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00
   .b f 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00
-  .b f 0f 00 0f 00 0f 00 0f 0f 0f 0f 0f 00 0f 06 0f 06
-  .b f 0f 06 0f 06 0f 00 0f 0f 0f 0f 0f 00 0f 06 0f 06
-  .b f 0f 06 0f 06 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00
   .b f 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00
   .b f 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00
   .b f 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00
-  .b f 0f 00 0f 00 0f 0e 0f 0b 0f 0b 0f 0e 0f 0f 0f 09
-  .b f 0f 0f 0f 06 0f 07 0f 0d 0f 0d 0f 07 0f 06 0f 0f
-  .b f 0f 09 0f 0f 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00
+  .b f 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00
+  .b f 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00
+  .b f 0f 00 0f 00 0f 00 0f 07 0f 00 0f 00 0f 02 0f 02
+  .b f 0f 02 0f 00 0f 00 0f 07 0f 00 0f 00 0f 02 0f 02
+  .b f 0f 02 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00
+  .b f 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00
+  .b f 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00
+  .b f 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00
+  .b f 0f 00 0f 00 0f 06 0f 07 0f 06 0f 00 0f 07 0f 07
+  .b f 0f 02 0f 00 0f 03 0f 07 0f 03 0f 00 0f 02 0f 07
+  .b f 0f 07 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00
   .b f 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00
   .b f 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00
   .b f 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00 0f 00
@@ -14414,7 +14414,7 @@ render_level:
   and
   .line 5
   getg  tilesize 0
-  bnz   $L_render_level_13
+  bnz   $L_render_level_14
   .line 7
   p0
 $L_render_level_1:
@@ -14655,13 +14655,16 @@ $L_render_level_3:
 $L_render_level_10:
   .line 24
   getg  dead 0
-  bnz   $L_render_level_12
+  bnz   $L_render_level_13
+  getg  first_move 0
+  bnz   $L_render_level_33
   getg  frame 0
   push  15
   and
   p5
   cult
-  bnz   $L_render_level_12
+  bnz   $L_render_level_13
+$L_render_level_33:
   .line 25
   push2 220
   getg  tankdir 0
@@ -14676,18 +14679,18 @@ $L_render_level_10:
   p4
   mul2b
   sys   draw_sprite
-$L_render_level_12:
+$L_render_level_13:
   .line 1
   pop
   ret
-$L_render_level_13:
+$L_render_level_14:
   .line 27
   getg  tilesize 0
   dec
-  bnz   $L_render_level_31
+  bnz   $L_render_level_32
   .line 29
   p0
-$L_render_level_15:
+$L_render_level_16:
   .line 31
   dup
   p0
@@ -14700,19 +14703,19 @@ $L_render_level_15:
   push2 65528
   dupw3
   cslt2
-  bnz   $L_render_level_17
+  bnz   $L_render_level_18
   pop2
-  jmp   $L_render_level_16
-$L_render_level_17:
+  jmp   $L_render_level_17
+$L_render_level_18:
   .line 33
   dupw
   p64
   p0
   cslt2
-  bnz   $L_render_level_18
+  bnz   $L_render_level_19
   pop2
-  jmp   $L_render_level_14
-$L_render_level_18:
+  jmp   $L_render_level_15
+$L_render_level_19:
   .line 34
   alloc 16
   pushg tiles 0
@@ -14743,54 +14746,7 @@ $L_render_level_18:
   sys   memcpy
   .line 36
   p0
-$L_render_level_20:
-  .line 38
-  refl  33
-  dup3
-  aixb1 16
-  getr
-  p0
-  getl  39
-  add2b
-  p0
-  p1
-  p0
-  getl2 40
-  dup8
-  p0
-  p8
-  mul2b
-  sys   draw_sprite
-  .line 39
-  refl  17
-  dup3
-  aixb1 16
-  getr
-  .line 40
-  dup
-  bz    $L_render_level_22
-  .line 41
-  dup
-  p0
-  getl  40
-  add2b
-  p0
-  p1
-  p0
-  getl2 41
-  getl  9
-  p0
-  p8
-  mul2b
-  sys   draw_sprite
-$L_render_level_22:
-  pop
-  .line 36
-  inc
-  dup
-  p16
-  cult
-  bz    $L_render_level_19
+$L_render_level_21:
   .line 38
   refl  33
   dup3
@@ -14837,7 +14793,7 @@ $L_render_level_23:
   dup
   p16
   cult
-  bz    $L_render_level_19
+  bz    $L_render_level_20
   .line 38
   refl  33
   dup3
@@ -14884,7 +14840,7 @@ $L_render_level_24:
   dup
   p16
   cult
-  bz    $L_render_level_19
+  bz    $L_render_level_20
   .line 38
   refl  33
   dup3
@@ -14931,21 +14887,68 @@ $L_render_level_25:
   dup
   p16
   cult
-  bnz   $L_render_level_20
-$L_render_level_19:
+  bz    $L_render_level_20
+  .line 38
+  refl  33
+  dup3
+  aixb1 16
+  getr
+  p0
+  getl  39
+  add2b
+  p0
+  p1
+  p0
+  getl2 40
+  dup8
+  p0
+  p8
+  mul2b
+  sys   draw_sprite
+  .line 39
+  refl  17
+  dup3
+  aixb1 16
+  getr
+  .line 40
+  dup
+  bz    $L_render_level_26
+  .line 41
+  dup
+  p0
+  getl  40
+  add2b
+  p0
+  p1
+  p0
+  getl2 41
+  getl  9
+  p0
+  p8
+  mul2b
+  sys   draw_sprite
+$L_render_level_26:
+  pop
+  .line 36
+  inc
+  dup
+  p16
+  cult
+  bnz   $L_render_level_21
+$L_render_level_20:
   popn  35
-$L_render_level_16:
+$L_render_level_17:
   .line 29
   inc
   dup
   p16
   cult
-  bnz   $L_render_level_15
-$L_render_level_14:
+  bnz   $L_render_level_16
+$L_render_level_15:
   pop
   .line 45
   getg  shooting 0
-  bz    $L_render_level_26
+  bz    $L_render_level_27
   .line 46
   getg  shootdir 0
   push4 5778176
@@ -14961,19 +14964,19 @@ $L_render_level_14:
   p8
   mul2b
   sys   draw_sprite
-$L_render_level_26:
+$L_render_level_27:
   .line 48
   getg  dead 0
-  bnz   $L_render_level_31
-  getg  first_move 0
   bnz   $L_render_level_32
+  getg  first_move 0
+  bnz   $L_render_level_34
   getg  frame 0
   push  15
   and
   p5
   cult
-  bnz   $L_render_level_31
-$L_render_level_32:
+  bnz   $L_render_level_32
+$L_render_level_34:
   .line 49
   push2 220
   getg  tankdir 0
@@ -14993,7 +14996,7 @@ $L_render_level_32:
   p8
   mul2b
   sys   draw_sprite
-$L_render_level_31:
+$L_render_level_32:
   .line 1
   pop
   ret

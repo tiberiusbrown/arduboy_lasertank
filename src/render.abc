@@ -21,7 +21,7 @@ void render_level()
         if(shooting)
             $draw_sprite(shootx * 4, shooty * 4, TILES4, 0xd0 + shootdir);
         
-        if(!dead && ((frame & 15) >= 5))
+        if(!dead && (first_move || (frame & 15) >= 5))
             $draw_sprite(tankx * 4, tanky * 4, TILES4, T_TANK + tankdir);
     }
     else if(tilesize == TILESIZE_8)
