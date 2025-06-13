@@ -22,7 +22,24 @@ void render_level()
         }
 
         if(shooting)
-            $draw_sprite(shootx * 4, shooty * 4, TILES4, 0xd0 + shootdir);
+        {
+            u8 f = shootdir;
+            switch(objects[shooty * 16 + shootx])
+            {
+                case(T_MIRROR + 0x0) f = 4;
+                case(T_MIRROR + 0x4) f = 5;
+                case(T_MIRROR + 0x8) f = 6;
+                case(T_MIRROR + 0xc) f = 7;
+            }
+            switch(tiles[shooty * 16 + shootx])
+            {
+                case(T_MIRROR_ROT + 0x0) f = 4;
+                case(T_MIRROR_ROT + 0x4) f = 5;
+                case(T_MIRROR_ROT + 0x8) f = 6;
+                case(T_MIRROR_ROT + 0xc) f = 7;
+            }
+            $draw_sprite(shootx * 4, shooty * 4, TILES4, 0xd0 + f);
+        }
         
         if(!dead && (first_move || (frame & 15) >= 5))
             $draw_sprite(tankx * 4, tanky * 4, TILES4, T_TANK + tankdir);
@@ -63,7 +80,24 @@ void render_level()
         }
 
         if(shooting)
-            $draw_sprite(shootx * 8, shooty * 8 - offy, LASERS, shootdir);
+        {
+            u8 f = shootdir;
+            switch(objects[shooty * 16 + shootx])
+            {
+                case(T_MIRROR + 0x0) f = 4;
+                case(T_MIRROR + 0x4) f = 5;
+                case(T_MIRROR + 0x8) f = 6;
+                case(T_MIRROR + 0xc) f = 7;
+            }
+            switch(tiles[shooty * 16 + shootx])
+            {
+                case(T_MIRROR_ROT + 0x0) f = 4;
+                case(T_MIRROR_ROT + 0x4) f = 5;
+                case(T_MIRROR_ROT + 0x8) f = 6;
+                case(T_MIRROR_ROT + 0xc) f = 7;
+            }
+            $draw_sprite(shootx * 8, shooty * 8 - offy, LASERS, f);
+        }
 
         if(!dead && (first_move || (frame & 15) >= 5))
             $draw_sprite(tankx * 8, tanky * 8 - offy, TILES8, T_TANK + tankdir);

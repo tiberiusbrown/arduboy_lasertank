@@ -100,7 +100,7 @@ enum {
     TILESIZE_4,
     TILESIZE_8
 };
-saved u8 tilesize = TILESIZE_4;
+saved u8 tilesize = TILESIZE_8;
 
 // whether we can press B to pan
 bool can_pan;

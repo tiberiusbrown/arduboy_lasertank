@@ -4,9 +4,9 @@ import hint;
 
 char[] prog&[2] SIZE_STRS = { "Tiny", "Normal" };
 char[] prog&[2] ANIM_STRS = { "Off", "On" };
-char[] prog&[4] SPEED_STRS = { "Slow", "Normal", "Fast", "Insane" };
+char[] prog&[4] SPEED_STRS = { "Turtle", "Slow", "Normal", "Fast" };
 
-u8[4] prog SPEEDS = { 5, 3, 2, 1 };
+u8[4] prog SPEEDS = { 7, 4, 2, 1 };
 
 u8 pause_i;
 
@@ -22,18 +22,19 @@ void pause()
     {
         case(1) speed = 3;
         case(2) speed = 2;
-        case(3) speed = 1;
-        case(5) speed = 0;
+        case(4) speed = 1;
+        case(7) speed = 0;
     }
 
     if($just_pressed(A_BUTTON))
     {
         switch(pause_i)
         {
-            case(1) state = STATE_HINT;
+            case(1) { pause_i = 0; state = STATE_HINT; }
+            case(2) { pause_i = 0; state = STATE_SELECT; }
             case(3) if(++tilesize > TILESIZE_8) tilesize = TILESIZE_4;
             case(4) tile_anim = !tile_anim;
-            case(5) if(++speed > 3) speed = 0;
+            case(5) if(++speed >= len(SPEEDS)) speed = 0;
         }
     }
 
@@ -65,6 +66,7 @@ void pause()
 
     if($just_pressed(B_BUTTON))
     {
+        pause_i = 0;
         state = STATE_PLAY;
         can_pan = false;
     }

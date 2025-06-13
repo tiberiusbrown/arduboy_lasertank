@@ -1,12 +1,18 @@
 import level;
 
+//import levels.standard;
 import levels.tutorial_objects;
 import levels.tutorial_beginner;
 import levels.tutorial_tricks;
-//import levels.standard;
 
 levelset_t[3] prog LEVELSETS =
 {
+    //{
+    //    "LaserTank",
+    //    "The full base set of LaserTank levels.",
+    //    1,
+    //    LEVELS_STANDARD
+    //},
     {
         "Tutorial: Basic Objects",
         "These sixteen levels are the basic\n"

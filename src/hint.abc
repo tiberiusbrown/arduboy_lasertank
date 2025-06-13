@@ -28,6 +28,6 @@ void hint()
     if($just_pressed(B_BUTTON))
     {
         hint_y = 0;
-        state = STATE_PAUSE;
+        state = STATE_PLAY;
     }
 }
