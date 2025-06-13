@@ -458,7 +458,9 @@ def compress(d):
     # postprocess
     dc2 = []
     for i in range(0, len(dc), 2):
-        if dc[i+1] <= 3:
+        if dc[i] == 0 and dc[i+1] <= 16:
+            dc2.append(0xdf + dc[i+1])
+        elif dc[i+1] <= 3:
             dc2.append(dc[i] + dc[i+1])
         else:
             dc2.append(dc[i])
