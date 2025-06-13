@@ -93,7 +93,8 @@ bool just_moved;
 u8 just_moved_dir;
 
 // camera offset
-i8 offy, targety;
+i8 offx, offy, targetx, targety;
+bool first_pan;
 
 // tile size
 enum {

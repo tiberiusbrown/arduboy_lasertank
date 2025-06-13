@@ -347,15 +347,31 @@ void play()
     if(can_pan && $pressed(B_BUTTON))
     {
         constexpr i8 PAN_SPEED = 3;
-        if($pressed(UP_BUTTON  )) targety -= PAN_SPEED;
-        if($pressed(DOWN_BUTTON)) targety += PAN_SPEED;
+        if($pressed(   UP_BUTTON)) { first_pan = true; targety -= PAN_SPEED; }
+        if($pressed( DOWN_BUTTON)) { first_pan = true; targety += PAN_SPEED; }
+        if($pressed( LEFT_BUTTON)) { first_pan = true; targetx -= PAN_SPEED; }
+        if($pressed(RIGHT_BUTTON)) { first_pan = true; targetx += PAN_SPEED; }
     }
     else
+    {
+        first_pan = false;
         adjust_to_tank();
+    }
 
-    if(targety <  0) targety =  0;
-    if(targety > 64) targety = 64;
+    if(tilesize == TILESIZE_8)
+    {
+        constexpr i8 AX = -10;
+        constexpr i8 AY = -10;
+        constexpr i8 BX = 10;
+        constexpr i8 BY = 74;
+        if(targetx < AX) targetx = AX;
+        if(targetx > BX) targetx = BX;
+        if(targety < AY) targety = AY;
+        if(targety > BY) targety = BY;
+    }
 
+    if(offx < targetx) offx += (targetx - offx + 3) / 4;
+    if(offx > targetx) offx -= (offx - targetx + 3) / 4;
     if(offy < targety) offy += (targety - offy + 3) / 4;
     if(offy > targety) offy -= (offy - targety + 3) / 4;
 
@@ -371,17 +387,18 @@ void play()
         if($just_pressed(B_BUTTON))
         {
             can_pan = true;
+            first_pan = false;
             b_pressed_time = $millis();
         }
         if($just_released(B_BUTTON) && $millis() < b_pressed_time + PAUSE_PRESS_MS)
         {
             state = STATE_PAUSE;
         }
-        if(can_pan && $pressed(B_BUTTON))
-        {
-            $draw_filled_rect(125, 0, 3, 64, BLACK);
-            $draw_filled_rect(126, offy / 2, 2, 32, WHITE);
-        }
+        //if(can_pan && $pressed(B_BUTTON))
+        //{
+        //    $draw_filled_rect(125, 0, 3, 64, BLACK);
+        //    $draw_filled_rect(126, offy / 2, 2, 32, WHITE);
+        //}
     }
 }
 

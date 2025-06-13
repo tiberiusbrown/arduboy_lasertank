@@ -1009,8 +1009,8 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         LEVELS_TUTORIAL_TRICKS_15,
         "Moving a dead anti-tank",
         "Donald Drouin",
-        "Order of shots :                                    \n\n                     1                 4   +  2             \n        3 ...",
-        4, 0,
+        "Order of shots :                                    \n\n                     1\n                4   +  2\n                     3 ...",
+        5, 0,
     },
     {
         LEVELS_TUTORIAL_TRICKS_16,

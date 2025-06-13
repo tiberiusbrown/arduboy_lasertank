@@ -9,6 +9,7 @@ void adjust_to_tank()
     i16 maxy = dy + 8 - D;
     if(targety < miny) targety = miny;
     if(targety > maxy) targety = maxy;
+    targetx = 0;
 }
 
 bool solid(u8 x, u8 y)

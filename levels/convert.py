@@ -397,7 +397,7 @@ def wrap_str(s, w):
     s = list(s)
     
     for i in range(1, len(s)):
-        if i + 1 < len(s) and s[i] == '\n' and s[i+1] != '\n' and s[i-1] != '\n':
+        if i + 1 < len(s) and s[i] == '\n' and s[i+1] != '\n' and s[i+1] != ' ' and s[i-1] != '\n':
             s[i] = ' '
         
     cw = 0
