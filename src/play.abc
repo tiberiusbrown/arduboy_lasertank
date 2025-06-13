@@ -360,10 +360,17 @@ void play()
 
     if(tilesize == TILESIZE_8)
     {
-        constexpr i8 AX = -10;
-        constexpr i8 AY = -10;
-        constexpr i8 BX = 10;
-        constexpr i8 BY = 74;
+        i8 AX = -10;
+        i8 AY = -10;
+        i8 BX = 10;
+        i8 BY = 74;
+        if(!first_pan)
+        {
+            AX = 0;
+            AY = 0;
+            BX = 0;
+            BY = 64;
+        }
         if(targetx < AX) targetx = AX;
         if(targetx > BX) targetx = BX;
         if(targety < AY) targety = AY;
