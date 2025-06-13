@@ -52,7 +52,25 @@ u8 find_other_tunnel(u8 i)
 void load_level()
 {
     level_t prog& level = LEVELSETS[current_set].levels[current_level];
-    tiles = level.tiles;
+    
+    //tiles = level.tiles;
+    {
+        u8[] prog& ts = level.tiles;
+        u8 i = 0;
+        u16 j = 0;
+        do
+        {
+            u8 t = ts[j++];
+            u8 n = (t & 3);
+            if(n == 0)
+                n = ts[j++];
+            t &= 0xfc;
+            for(u8 k = 0; k < n; ++k)
+                tiles[i + k] = t;
+            i += n;
+        } while(i != 0);
+    }
+
     $memset(objects, T_DIRT);
     num_tunnels = {};
     occupied_tunnels = {};

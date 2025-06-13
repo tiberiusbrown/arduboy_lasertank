@@ -127,7 +127,7 @@ u32 shots;
 
 struct level_t
 {
-    u8[256] tiles;
+    u8[] prog& tiles;
     char[] prog& name;
     char[] prog& author;
     char[] prog& hint;

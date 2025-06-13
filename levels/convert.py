@@ -441,12 +441,47 @@ def format_hint(b):
     s = t[0].translate(TRANS)
     return (s, t[1])
 
+def compress(d):
+    dc = []
+    prev = 255
+    td = [0 for x in range(256)]
+    for r in range(16):
+        for c in range(16):
+            td[r * 16 + c] = remap(d[c * 16 + r])
+    for b in td:
+        if b == prev:
+            dc[-1] += 1
+        else:
+            dc.append(b)
+            dc.append(1)
+            prev = b
+    # postprocess
+    dc2 = []
+    for i in range(0, len(dc), 2):
+        if dc[i+1] <= 3:
+            dc2.append(dc[i] + dc[i+1])
+        else:
+            dc2.append(dc[i])
+            dc2.append(dc[i+1])
+    return dc2
+
 def convert(fin, sym):
     with open(fin, 'rb') as f:
         content = f.read()
     fout = '../src/levels/%s.abc' % sym.lower()
     with open(fout, 'w') as f:
         n = len(content) // 576
+        for i in range(n):
+            d = content[i*576:(i+1)*576]
+            tiles = d[:256]
+            dc = compress(d)
+            f.write('u8[%u] prog LEVELS_%s_%u =\n{' % (len(dc), sym, i))
+            for i in range(len(dc)):
+                if i % 16 == 0:
+                    f.write('\n   ')
+                f.write(' %3d,' % dc[i])
+            f.write('\n};\n')
+        f.write('\n')
         f.write('level_t[%u] prog LEVELS_%s =\n{\n' % (n, sym))
         for i in range(n):
             d = content[i*576:(i+1)*576]
@@ -456,13 +491,14 @@ def convert(fin, sym):
             author = d[256+31+256:256+31+256+31]
             diff = struct.unpack('H', d[-2:])
             f.write('    {\n')
-            f.write('        {\n')
-            for r in range(16):
-                f.write('           ')
-                for c in range(16):
-                    f.write(' %3d,' % remap(tiles[c*16+r]))
-                f.write('\n')
-            f.write('        },\n')
+            f.write('        LEVELS_%s_%u,\n' % (sym, i))
+            #f.write('        {\n')
+            #for r in range(16):
+            #    f.write('           ')
+            #    for c in range(16):
+            #        f.write(' %3d,' % remap(tiles[c*16+r]))
+            #    f.write('\n')
+            #f.write('        },\n')
             f.write('        "%s",\n' % format_str(name))
             f.write('        "%s",\n' % format_str(author))
             hint_info = format_hint(hint)
