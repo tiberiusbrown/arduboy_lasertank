@@ -24,6 +24,7 @@ u16 current_level;
 u8 menu_index;
 
 constexpr sprites TILES8 = sprites{ 8x8 "img/tiles8.png" };
+constexpr sprites TILES6 = sprites{ 6x6 "img/tiles6.png" };
 constexpr sprites TILES4 = sprites{ 4x4 "img/tiles4.png" };
 constexpr sprites ARROWS = sprites{ 9x9 "img/arrows.png" };
 constexpr sprites LASERS = sprites{ 8x8 "img/lasers.png" };
@@ -97,8 +98,10 @@ bool first_pan;
 
 // tile size
 enum {
+    TILESIZE_8,
+    TILESIZE_6,
     TILESIZE_4,
-    TILESIZE_8
+    TILESIZE_NUM,
 };
 saved u8 tilesize = TILESIZE_8;
 
@@ -151,4 +154,14 @@ struct levelset_t
     char[] prog& desc;
     u8 desc_lines;
     level_t[] prog& levels;
+};
+
+char[] prog&[6] prog DIFF_STRS =
+{
+    "Tutorial",
+    "Kids",
+    "Easy",
+    "Medium",
+    "Hard",
+    "Deadly",
 };

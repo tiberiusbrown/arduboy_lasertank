@@ -1,15 +1,5 @@
 import vars;
 
-char[] prog&[6] prog DIFF_STRS =
-{
-    "Tutorial",
-    "Kids",
-    "Easy",
-    "Medium",
-    "Hard",
-    "Deadly",
-};
-
 u16 inc_amount(u8 index)
 {
     u8 repeat = repeat_counts[index];

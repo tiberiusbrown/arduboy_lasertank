@@ -3,7 +3,7 @@ import vars;
 import hint;
 import undo;
 
-char[] prog&[2] SIZE_STRS = { "Tiny", "Normal" };
+char[] prog&[3] SIZE_STRS = { "Normal", "Small", "Tiny" };
 char[] prog&[2] ANIM_STRS = { "Off", "On" };
 char[] prog&[4] SPEED_STRS = { "Turtle", "Slow", "Normal", "Fast" };
 
@@ -66,7 +66,7 @@ void pause()
             case(0) { pause_i = 0; state = STATE_PLAY; undo(); }
             case(1) { pause_i = 0; state = STATE_HINT; }
             case(2) { pause_i = 0; state = STATE_SELECT; }
-            case(3) if(++tilesize > TILESIZE_8) tilesize = TILESIZE_4;
+            case(3) if(++tilesize >= TILESIZE_NUM) tilesize = 0;
             case(4) tile_anim = !tile_anim;
             case(5) if(++speed >= len(SPEEDS)) speed = 0;
         }

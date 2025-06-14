@@ -61,6 +61,50 @@ void render_level()
             $draw_textf(93, 29, "%u", shots);
         }
     }
+    else if(tilesize == TILESIZE_6)
+    {
+        for(u8 r = 0; r < 16; ++r)
+        {
+            i16 y = r * 6 - offy;
+            if(y <= -6) continue;
+            if(y >= 64) break;
+            u8[16] row = tiles[r*16 +: 16];
+            u8[16] row2 = objects[r*16 +: 16];
+            i16 x = -offx;
+            for(u8 c = 0; c < 16; ++c)
+            {
+                $draw_sprite(x, y, TILES6, row[c] + off);
+                u8 f = row2[c];
+                if(f != 0)
+                    $draw_sprite(x, y, TILES6, f + off);
+                x += 6;
+            }
+        }
+
+        if(shooting)
+        {
+            u8 f = shootdir;
+            switch(objects[shooty * 16 + shootx])
+            {
+                case(T_MIRROR + 0x0) f = 4;
+                case(T_MIRROR + 0x4) f = 5;
+                case(T_MIRROR + 0x8) f = 6;
+                case(T_MIRROR + 0xc) f = 7;
+            }
+            switch(tiles[shooty * 16 + shootx])
+            {
+                case(T_MIRROR_ROT + 0x0) f = 4;
+                case(T_MIRROR_ROT + 0x4) f = 5;
+                case(T_MIRROR_ROT + 0x8) f = 6;
+                case(T_MIRROR_ROT + 0xc) f = 7;
+            }
+            $draw_sprite(shootx * 6 - offx, shooty * 6 - offy, TILES6, 0xd0 + f);
+        }
+
+        if(!dead && (first_move || (frame & 15) >= 5))
+            $draw_sprite(tankx * 6 - offx, tanky * 6 - offy, TILES6, T_TANK + tankdir);
+
+    }
     else if(tilesize == TILESIZE_8)
     {
         for(u8 r = 0; r < 16; ++r)
