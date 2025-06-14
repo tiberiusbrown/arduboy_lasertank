@@ -45,6 +45,8 @@ void main()
 
     current_set = 2;
     current_level = 71;
+    current_set = 0;
+    current_level = 0;
     load_level();
     state = STATE_PLAY;
     anim_frames = 2;

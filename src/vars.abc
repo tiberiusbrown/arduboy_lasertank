@@ -127,9 +127,14 @@ u32 moves;
 u32 shots;
 
 // compressed past level state for undo
-// saved because it is repurposed for
-u8[2+4+4+290] undo_base;
-u8 undo_valid;
+// byte mapping:
+//    0        tank pos
+//    1        tank dir
+//    2-5      moves
+//    6-9      shots
+//    10-299   compressed level
+u8[2+4+4+290] undo_data;
+u8 undo_num_moves;
 
 struct level_t
 {

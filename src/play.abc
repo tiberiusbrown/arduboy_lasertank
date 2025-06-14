@@ -42,7 +42,10 @@ void at_scan(u8 dir)
             shootx = x - dx;
             shooty = y - dy;
             if(shootx == tankx && shooty == tanky)
+            {
+                frame = 0;
                 dead = true;
+            }
             shootdir = dir;
             shooting = true;
             return;
@@ -112,6 +115,7 @@ void process_tank_tunnel()
             else if(num_tunnels[u8(t - T_TUNNEL) >> 2] == 1)
             {
                 // black hole
+                frame = 0;
                 dead = true;
             }
         }
@@ -147,7 +151,10 @@ void tank_update()
             }
         }
         case(T_FLAG)
+        {
+            frame = 0;
             victory = true;
+        }
     }
     all_at_scans();
     process_tank_oneway();
@@ -165,7 +172,10 @@ void process_laser()
     shootx += DIRX[shootdir];
     shooty += DIRY[shootdir];
     if(shootx == tankx && shooty == tanky)
+    {
+        frame = 0;
         dead = true;
+    }
     if(!opaque(shootx, shooty))
     {
         anim_frame = anim_frames;
@@ -231,21 +241,48 @@ void process_laser()
     }
 }
 
+void process_tick()
+{
+    process_laser();
+
+    process_moving_objects();
+
+    if(shooting || (num_moving_objects != 0) || just_moved)
+        tank_update();
+
+    if(tiles[tanky * 16 + tankx] == T_WATER)
+    {
+        // detecting a drowning tank is delayed by one tick
+        // relevant trick level: "8. Actually, Tanks Sink Slowly!"
+        if(in_water)
+        {
+            frame = 0;
+            dead = true;
+        }
+        in_water = true;
+    }
+    else
+        in_water = false;
+}
+
 void play()
 {
 
     if(victory)
     {
         render_level();
-        constexpr u8 W = 52;
-        constexpr u8 H = 17;
+        constexpr u8 W = 44;
+        constexpr u8 H = 15;
         constexpr u8 X = 64 - W / 2;
         constexpr u8 Y = 32 - H / 2;
-        $draw_filled_rect(X, Y, W, H, BLACK);
-        $draw_filled_rect(X + 1, Y + 1, W - 2, H - 2, WHITE);
-        $draw_filled_rect(X + 3, Y + 3, W - 6, H - 6, BLACK);
-        $set_text_font(FONT_PIXELOIDSANSBOLD);
-        $draw_text(42, 35, "Victory!");
+        if((frame & 0x3f) < 45)
+        {
+            $draw_filled_rect(X, Y, W, H, BLACK);
+            $draw_filled_rect(X + 1, Y + 1, W - 2, H - 2, WHITE);
+            $draw_filled_rect(X + 3, Y + 3, W - 6, H - 6, BLACK);
+            $set_text_font(FONT_PIXELOIDSANSBOLD);
+            $draw_text(46, 36, "Bravo!");
+        }
         if($just_pressed(B_BUTTON))
             state = STATE_SELECT;
         else if($just_pressed(A_BUTTON))
@@ -268,19 +305,30 @@ void play()
     if(dead)
     {
         render_level();
-        constexpr u8 W = 45;
-        constexpr u8 H = 15;
+        constexpr u8 W = 94;
+        constexpr u8 H = 23;
         constexpr u8 X = 64 - W / 2;
         constexpr u8 Y = 32 - H / 2;
-        $draw_filled_rect(X, Y, W, H, BLACK);
-        $draw_filled_rect(X + 1, Y + 1, W - 2, H - 2, WHITE);
-        $draw_filled_rect(X + 3, Y + 3, W - 6, H - 6, BLACK);
-        $set_text_font(FONT_PIXELOIDSANSBOLD);
-        $draw_text(46, 36, "Defeat");
+        if((frame & 0x3f) < 45)
+        {
+            $draw_filled_rect(X, Y, W, H, BLACK);
+            $draw_filled_rect(X + 1, Y + 1, W - 2, H - 2, WHITE);
+            $draw_filled_rect(X + 3, Y + 3, W - 6, H - 6, BLACK);
+            $set_text_font(FONT_PIXELOIDSANSBOLD);
+            $draw_text(21, 32, "YOU ARE DEAD!!!");
+            $set_text_font(FONT_BR5D);
+            $draw_text(21, 40, "A: Undo");
+            $draw_text(75, 40, "B: Restart");
+        }
         if($just_pressed(B_BUTTON))
-            state = STATE_SELECT;
-        else if($just_pressed(A_BUTTON))
             load_level();
+        else if($just_pressed(A_BUTTON))
+        {
+            if(undo_num_moves == 0)
+                load_level();
+            else
+                undo();
+        }
         return;
     }
 
@@ -292,39 +340,22 @@ void play()
         anim_frame -= 1;
     bool anim = anim_frame == 0;
 
-    bool busy = shooting || (num_moving_objects != 0) || just_moved;
-
     if(anim)
     {
-        process_laser();
-
-        process_moving_objects();
-
-        if(busy)
-            tank_update();
-
-        if(tiles[tanky * 16 + tankx] == T_WATER)
-        {
-            // detecting a drowning tank is delayed by one tick
-            // relevant trick level: "8. Actually, Tanks Sink Slowly!"
-            if(in_water)
-                dead = true;
-            in_water = true;
-        }
-        else
-            in_water = false;
+        process_tick();
     }
 
     ////////////////////////////////////
     // INPUT AND RENDERING
     ////////////////////////////////////
 
-    busy = shooting || (num_moving_objects != 0) || just_moved;
+    bool busy = shooting || (num_moving_objects != 0) || just_moved;
 
     if(!busy && !$pressed(B_BUTTON))
     {
         if($just_pressed(A_BUTTON))
         {
+            undo_premove(tankdir + 4);
             shootx = tankx;
             shooty = tanky;
             shootdir = tankdir;
@@ -415,7 +446,7 @@ void process_tank_move(u8 dir)
 
     if(tankdir != dir)
     {
-        undo_premove();
+        undo_premove(dir);
         tankdir = dir;
         tank_update();
         return;
@@ -431,8 +462,8 @@ void process_tank_move(u8 dir)
         return;
     }
 
-    undo_premove();
-    
+    undo_premove(dir);
+
     tankx = nx;
     tanky = ny;
 

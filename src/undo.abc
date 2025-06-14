@@ -13,7 +13,7 @@ u16 undo_compress_buffer(u8[256]& src, u16 ci)
                 break;
             n += 1;
         }
-        undo_base[ci] = t + n;
+        undo_data[ci] = t + n;
         ci += 1;
         i += n + 1;
     } while(i != 0);
@@ -25,7 +25,7 @@ u16 undo_decompress_buffer(u8[256]& dst, u16 ci)
     u8 i = 0;
     do
     {
-        u8 t = undo_base[ci];
+        u8 t = undo_data[ci];
         u8 n = t & 3;
         dst[i] = t & 0xfc;
         for(u8 k = 1; k <= n; ++k)
@@ -38,17 +38,17 @@ u16 undo_decompress_buffer(u8[256]& dst, u16 ci)
 
 void undo_compress()
 {
-    undo_base[0] = tanky * 16 + tankx;
-    undo_base[1] = tankdir;
+    undo_data[0] = tanky * 16 + tankx;
+    undo_data[1] = tankdir;
 
-    undo_base[2+0] = (moves >> (0 * 8));
-    undo_base[2+1] = (moves >> (1 * 8));
-    undo_base[2+2] = (moves >> (2 * 8));
-    undo_base[2+3] = (moves >> (3 * 8));
-    undo_base[6+0] = (shots >> (0 * 8));
-    undo_base[6+1] = (shots >> (1 * 8));
-    undo_base[6+2] = (shots >> (2 * 8));
-    undo_base[6+3] = (shots >> (3 * 8));
+    undo_data[2+0] = (moves >> (0 * 8));
+    undo_data[2+1] = (moves >> (1 * 8));
+    undo_data[2+2] = (moves >> (2 * 8));
+    undo_data[2+3] = (moves >> (3 * 8));
+    undo_data[6+0] = (shots >> (0 * 8));
+    undo_data[6+1] = (shots >> (1 * 8));
+    undo_data[6+2] = (shots >> (2 * 8));
+    undo_data[6+3] = (shots >> (3 * 8));
 
     u16 ci = 10;
     ci = undo_compress_buffer(tiles, ci);
@@ -57,37 +57,47 @@ void undo_compress()
 
 void undo_decompress()
 {
-    tanky = undo_base[0] >> 4;
-    tankx = undo_base[0] & 15;
-    tankdir = undo_base[1];
+    tanky = undo_data[0] >> 4;
+    tankx = undo_data[0] & 15;
+    tankdir = undo_data[1];
 
-    moves  = u32(undo_base[2+0]) << (0 * 8);
-    moves += u32(undo_base[2+1]) << (1 * 8);
-    moves += u32(undo_base[2+2]) << (2 * 8);
-    moves += u32(undo_base[2+3]) << (3 * 8);
-    shots  = u32(undo_base[6+0]) << (0 * 8);
-    shots += u32(undo_base[6+1]) << (1 * 8);
-    shots += u32(undo_base[6+2]) << (2 * 8);
-    shots += u32(undo_base[6+3]) << (3 * 8);
+    moves  = u32(undo_data[2+0]) << (0 * 8);
+    moves += u32(undo_data[2+1]) << (1 * 8);
+    moves += u32(undo_data[2+2]) << (2 * 8);
+    moves += u32(undo_data[2+3]) << (3 * 8);
+    shots  = u32(undo_data[6+0]) << (0 * 8);
+    shots += u32(undo_data[6+1]) << (1 * 8);
+    shots += u32(undo_data[6+2]) << (2 * 8);
+    shots += u32(undo_data[6+3]) << (3 * 8);
 
     u16 ci = 10;
     ci = undo_decompress_buffer(tiles, ci);
     ci = undo_decompress_buffer(objects, ci);
 }
 
-void undo_premove()
+void undo_premove(u8 m)
 {
     undo_compress();
-    undo_valid = 1;
+    undo_num_moves = 1;
 }
 
 void undo()
 {
-    if(undo_valid)
-    {
-        undo_decompress();
-        shooting = false;
-        num_moving_objects = 0;
-        undo_valid = 0;
-    }
+    if(undo_num_moves == 0)
+        return;
+
+    u8 n = undo_num_moves - 1;
+
+    undo_decompress();
+    
+    in_water = false;
+    just_moved = false;
+    victory = false;
+    dead = false;
+    anim_frame = 0;
+
+    shooting = false;
+    num_moving_objects = 0;
+
+    undo_num_moves = n;
 }

@@ -122,5 +122,5 @@ void load_level()
     just_moved = false;
     moves = 0;
     shots = 0;
-    undo_valid = 0;
+    undo_num_moves = 0;
 }

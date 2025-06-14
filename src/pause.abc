@@ -27,6 +27,38 @@ void pause()
         case(7) speed = 0;
     }
 
+    render_level();
+    $draw_filled_rect(64, 0, 64, 64, BLACK);
+
+    $draw_vline(64, 0, 64, WHITE);
+
+    $set_text_font(FONT_BR5D);
+
+    $draw_text(85, 5, "Paused");
+    $draw_hline(66, 7, 62, WHITE);
+
+    constexpr u8 X2 = 104;
+
+    $draw_textf(75, 15, "Undo (%u)", undo_num_moves);
+    $draw_text(75, 22, "Hint");
+    $draw_text(75, 29, "Exit Level");
+    $draw_hline(66, 31, 62, WHITE);
+    $draw_text(75, 39, "Tiles:"); $draw_text(X2, 39, SIZE_STRS[tilesize]);
+    $draw_text(75, 46, "Anim:");  $draw_text(X2, 46, ANIM_STRS[tile_anim]);
+    $draw_text(75, 53, "Speed:"); $draw_text(X2, 53, SPEED_STRS[speed]);
+
+    $draw_hline(66, 55, 62, WHITE);
+    {
+        char[32] buf;
+        $format(buf, "M: %u   S: %u", moves, shots);
+        u8 w = $text_width(buf);
+        $draw_text(98 - w / 2, 63, buf);
+    }
+
+    u8 cy = pause_i * 7 + 15;
+    if(pause_i >= 3) cy += 3;
+    $draw_text(68, cy, ">");
+
     if($just_pressed(A_BUTTON))
     {
         switch(pause_i)
@@ -38,33 +70,9 @@ void pause()
             case(4) tile_anim = !tile_anim;
             case(5) if(++speed >= len(SPEEDS)) speed = 0;
         }
+
+        anim_frames = SPEEDS[speed];
     }
-
-    render_level();
-    $draw_filled_rect(64, 0, 64, 64, BLACK);
-
-    $draw_vline(64, 0, 64, WHITE);
-
-    $set_text_font(FONT_BR5D);
-
-    $draw_text(85, 5, "Paused");
-    $draw_hline(66, 6, 62, WHITE);
-
-    constexpr u8 X2 = 104;
-
-    $draw_textf(75, 15, "Undo (%u)", undo_valid);
-    $draw_text(75, 22, "Hint");
-    $draw_text(75, 29, "Exit Level");
-    $draw_hline(66, 31, 62, WHITE);
-    $draw_text(75, 39, "Tiles:"); $draw_text(X2, 39, SIZE_STRS[tilesize]);
-    $draw_text(75, 46, "Anim:");  $draw_text(X2, 46, ANIM_STRS[tile_anim]);
-    $draw_text(75, 53, "Speed:"); $draw_text(X2, 53, SPEED_STRS[speed]);
-
-    anim_frames = SPEEDS[speed];
-
-    u8 cy = pause_i * 7 + 15;
-    if(pause_i >= 3) cy += 3;
-    $draw_text(68, cy, ">");
 
     if($just_pressed(B_BUTTON))
     {
