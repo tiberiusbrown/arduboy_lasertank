@@ -1,4 +1,4 @@
-.githash 99ba80e671f76df3e9475fc8a8cc867f49a007a9
+.githash 09e9b1d572549a31783f088961059e60dd0e169c
 .shades 2
 .global anim_frames 1
 .global select_set 1
@@ -59,7 +59,7 @@ $PD_0:
   .b f 08 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00
   .b f 08 00 00 00 00 7f 11 11 22 22 11 1f 00 7f 11 22
   .b a 22 11 11 1e 00 7f 22 22 11 11 22
-$PD_694:
+$PD_699:
   .b f 3e 00 7f 22 11 11 22 22 1f 00 42 08 21 04 10 42
   .b f 08 00 42 08 21 04 10 42 08 00 42 08 21 04 10 42
   .b f 08 00 42 08 21 04 10 42 08 00 00 00 00 00 00 00
@@ -1774,7 +1774,7 @@ $PD_300:
   .b f 65 72 20 41 2d 54 2c 20 73 6f 20 69 74 20 73 6c
   .b f 69 64 65 73 20 61 6e 64 20 73 74 6f 70 73 0a 75
   .b f 6e 64 65 72 20 74 68 65 20 74 61 6e 6b 2e 20 28
-$PD_688:
+$PD_693:
   .b f 48 69 6e 74 3a 20 54 68 65 20 41 2d 54 20 69 73
   .b f 0a 62 65 74 77 65 65 6e 20 74 68 65 20 74 61 6e
   .b f 6b 20 61 6e 64 20 50 32 20 41 2d 54 2e 20 53 68
@@ -2110,7 +2110,7 @@ $PD_348:
   .b 0 20
 $PD_349:
   .b a 53 6f 6b 6f 62 61 6e 20 74 6f 20
-$PD_680:
+$PD_686:
   .b a 4c 61 73 65 72 54 61 6e 6b 20 31
 $PD_350:
 $PD_353:
@@ -3974,6 +3974,7 @@ $PD_663:
   .b f 6e 73 70 69 72 65 64 20 62 79 20 22 47 6c 61 63
   .b f 65 20 2d 2d 3e 20 43 6f 6e 76 6f 79 65 75 72 22
 $PD_664:
+$PD_678:
   .b f 54 75 74 6f 72 69 61 6c 3a 20 42 61 73 69 63 20
   .b 6 4f 62 6a 65 63 74 73
 $PD_665:
@@ -4066,7 +4067,17 @@ $PD_674:
   .b 5 54 75 72 74 6c 65
 $PD_677:
   .b 3 46 61 73 74
-$PD_678:
+$PD_679:
+  .b 3 4b 69 64 73
+$PD_680:
+  .b 3 45 61 73 79
+$PD_681:
+  .b 5 4d 65 64 69 75 6d
+$PD_682:
+  .b 3 48 61 72 64
+$PD_683:
+  .b 5 44 65 61 64 6c 79
+$PD_684:
   .b f 01 00 00 00 00 01 08 01 00 00 00 00 01 08 01 00
   .b f 00 00 00 01 08 01 00 00 00 00 01 08 01 00 00 00
   .b f 00 01 08 01 00 00 00 00 01 08 01 00 00 00 00 01
@@ -4201,7 +4212,7 @@ $PD_678:
   .b f 1e 04 02 00 16 1a 00 1e 24 00 0e 10 1e 00 0e 10
   .b f 0e 00 0e 10 0c 10 0e 00 12 0c 12 00 1a 16 00 08
   .b b 36 22 00 22 36 08 00 04 02 04 02 00
-$PD_679:
+$PD_685:
   .b f 01 00 00 00 00 01 08 01 00 00 00 00 01 08 01 00
   .b f 00 00 00 01 08 01 00 00 00 00 01 08 01 00 00 00
   .b f 00 01 08 01 00 00 00 00 01 08 01 00 00 00 00 01
@@ -4524,7 +4535,7 @@ $PD_679:
   .b f 07 07 07 03 01 f0 17 f1 f7 f7 00 00 f7 11 f7 f7
   .b f f0 0f 10 cf 5f df dc dc ff dc ff ff ff 00 00 01
   .b 8 00 01 01 01 01 01 01 01 00
-$PD_681:
+$PD_687:
   .b f 07 00 f8 00 00 07 08 07 00 f8 00 00 07 08 07 00
   .b f f8 00 00 07 08 07 00 f8 00 00 07 08 07 00 f8 00
   .b f 00 07 08 07 00 f8 00 00 07 08 07 00 f8 00 00 07
@@ -4740,23 +4751,10 @@ $PD_681:
   .b f 80 fa 78 00 30 f0 c0 c4 f2 30 00 04 04 07 03 00
   .b f 00 00 fe fe 88 88 f8 70 00 01 01 00 00 00 00 00
   .b d 18 7a e0 e0 7a 18 00 02 02 03 01 00 00 00
-$PD_682:
+$PD_688:
   .b b 53 65 6c 65 63 74 20 4c 65 76 65 6c
-$PD_683:
-  .b 3 48 65 6c 70
-$PD_684:
-  .b 7 53 65 74 74 69 6e 67 73
-$PD_685:
-  .b 6 43 72 65 64 69 74 73
-$PD_686:
-  .b 5 50 61 75 73 65 64
-$PD_687:
-  .b 5 55 6e 64 6f 20 28
-$PD_703:
-$PD_704:
-  .b 3 25 75 30 29
 $PD_689:
-  .b 9 45 78 69 74 20 4c 65 76 65 6c
+  .b 3 48 65 6c 70
 $PD_69:
   .b f 42 72 69 64 67 65 20 48 33 2d 48 37 20 6f 72 20
   .b f 4e 39 2d 4a 39 20 69 73 20 74 6f 6f 20 73 68 6f
@@ -4775,25 +4773,24 @@ $PD_69:
   .b f 32 20 6d 6f 76 65 73 20 26 20 39 36 20 73 68 6f
   .b 2 74 73 2e
 $PD_690:
-  .b 5 54 69 6c 65 73 3a
+  .b 6 43 72 65 64 69 74 73
 $PD_691:
-  .b 4 41 6e 69 6d 3a
+  .b 5 50 61 75 73 65 64
 $PD_692:
-  .b 5 53 70 65 65 64 3a
-$PD_693:
-  .b e 4d 3a 20 25 75 30 20 20 20 53 3a 20 25 75 30
+  .b 5 55 6e 64 6f 20 28
+$PD_708:
+$PD_709:
+  .b 3 25 75 30 29
+$PD_694:
+  .b 9 45 78 69 74 20 4c 65 76 65 6c
 $PD_695:
-  .b 5 42 72 61 76 6f 21
+  .b 5 54 69 6c 65 73 3a
 $PD_696:
-  .b e 59 4f 55 20 41 52 45 20 44 45 41 44 21 21 21
+  .b 4 41 6e 69 6d 3a
 $PD_697:
-  .b 6 41 3a 20 55 6e 64 6f
+  .b 5 53 70 65 65 64 3a
 $PD_698:
-  .b 9 42 3a 20 52 65 73 74 61 72 74
-$PD_699:
-  .b 5 4c 65 76 65 6c 20
-$PD_705:
-  .b 6 25 75 30 2f 25 75 30
+  .b e 4d 3a 20 25 75 30 20 20 20 53 3a 20 25 75 30
 $PD_7:
   .b f 47 2d 4f 3a 20 4d 6f 76 61 62 6c 65 20 62 6c 6f
   .b 2 63 6b 73
@@ -4801,10 +4798,22 @@ $PD_70:
   .b f 4d 61 6b 69 6e 67 20 61 20 7a 69 67 7a 61 67 20
   .b 5 62 72 69 64 67 65
 $PD_700:
-  .b 5 4d 6f 76 65 73 3a
+  .b 5 42 72 61 76 6f 21
 $PD_701:
-  .b 5 53 68 6f 74 73 3a
+  .b e 59 4f 55 20 41 52 45 20 44 45 41 44 21 21 21
 $PD_702:
+  .b 6 41 3a 20 55 6e 64 6f
+$PD_703:
+  .b 9 42 3a 20 52 65 73 74 61 72 74
+$PD_704:
+  .b 5 4c 65 76 65 6c 20
+$PD_711:
+  .b 6 25 75 30 2f 25 75 30
+$PD_705:
+  .b 5 4d 6f 76 65 73 3a
+$PD_706:
+  .b 5 53 68 6f 74 73 3a
+$PD_707:
   .b f 06 00 f8 00 00 06 08 06 00 f8 00 00 06 08 06 00
   .b f f8 00 00 06 08 06 00 f8 00 00 06 08 06 00 f8 00
   .b f 00 06 08 06 00 f8 00 00 06 08 06 00 f8 00 00 06
@@ -5004,7 +5013,9 @@ $PD_702:
   .b f 78 00 30 c0 04 c2 30 00 04 04 03 00 00 00 fe 50
   .b f 88 88 70 00 01 00 00 00 00 00 18 62 80 62 18 00
   .b 5 02 02 01 00 00 00
-$PD_706:
+$PD_710:
+  .b d 44 69 66 66 69 63 75 6c 74 79 3a 20 25 53
+$PD_712:
   .b f 03 00 fa 00 00 03 08 03 00 fa 00 00 03 08 03 00
   .b f fa 00 00 03 08 03 00 fa 00 00 03 08 03 00 fa 00
   .b f 00 03 08 03 00 fa 00 00 03 08 03 00 fa 00 00 03
@@ -5379,6 +5390,19 @@ $PD_99:
   .b f 0a 62 79 20 59 6f 6e 6f 20 69 6e 20 4a 6b 74 2e
   .b f 0a 0a 33 37 33 20 6d 6f 76 65 73 20 26 20 31 31
   .b 7 37 20 73 68 6f 74 73 2e
+DIFF_STRS:
+  .rp $PD_678
+  .b 2 08 00 00
+  .rp $PD_679
+  .b 2 04 00 00
+  .rp $PD_680
+  .b 2 04 00 00
+  .rp $PD_681
+  .b 2 06 00 00
+  .rp $PD_682
+  .b 2 04 00 00
+  .rp $PD_683
+  .b 2 06 00 00
 DIRX:
   .b 3 00 01 00 ff
 DIRY:
@@ -5410,7 +5434,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_53
   .b 2 0c 00 00
   .rp $PD_54
-  .b 5 dd 00 00 08 00 00
+  .b 4 dd 00 00 08 00
   .rp LEVELS_TUTORIAL_BEGINNER_1
   .b 2 58 00 00
   .rp $PD_55
@@ -5418,7 +5442,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_56
   .b 2 0c 00 00
   .rp $PD_57
-  .b 5 fa 00 00 09 00 00
+  .b 4 fa 00 00 09 00
   .rp LEVELS_TUTORIAL_BEGINNER_2
   .b 2 5f 00 00
   .rp $PD_58
@@ -5426,7 +5450,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_59
   .b 2 0a 00 00
   .rp $PD_60
-  .b 5 fc 00 00 09 00 00
+  .b 4 fc 00 00 09 00
   .rp LEVELS_TUTORIAL_BEGINNER_3
   .b 2 2f 00 00
   .rp $PD_61
@@ -5434,7 +5458,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_62
   .b 2 0c 00 00
   .rp $PD_63
-  .b 5 f8 00 00 0b 00 00
+  .b 4 f8 00 00 0b 00
   .rp LEVELS_TUTORIAL_BEGINNER_4
   .b 2 2f 00 00
   .rp $PD_64
@@ -5442,7 +5466,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_65
   .b 2 0c 00 00
   .rp $PD_66
-  .b 5 d9 00 00 0b 00 00
+  .b 4 d9 00 00 0b 00
   .rp LEVELS_TUTORIAL_BEGINNER_5
   .b 2 33 00 00
   .rp $PD_67
@@ -5450,7 +5474,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_68
   .b 2 0c 00 00
   .rp $PD_69
-  .b 5 f3 00 00 0d 00 00
+  .b 4 f3 00 00 0d 00
   .rp LEVELS_TUTORIAL_BEGINNER_6
   .b 2 34 00 00
   .rp $PD_70
@@ -5458,7 +5482,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_71
   .b 2 0c 00 00
   .rp $PD_72
-  .b 5 f6 00 00 0d 00 00
+  .b 4 f6 00 00 0d 00
   .rp LEVELS_TUTORIAL_BEGINNER_7
   .b 2 36 00 00
   .rp $PD_73
@@ -5466,7 +5490,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_74
   .b 2 0c 00 00
   .rp $PD_75
-  .b 5 f8 00 00 0c 00 00
+  .b 4 f8 00 00 0c 00
   .rp LEVELS_TUTORIAL_BEGINNER_8
   .b 2 76 00 00
   .rp $PD_76
@@ -5474,7 +5498,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_77
   .b 2 0c 00 00
   .rp $PD_78
-  .b 5 f8 00 00 0c 00 00
+  .b 4 f8 00 00 0c 00
   .rp LEVELS_TUTORIAL_BEGINNER_9
   .b 2 a8 00 00
   .rp $PD_79
@@ -5482,7 +5506,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_80
   .b 2 0c 00 00
   .rp $PD_81
-  .b 5 f6 00 00 08 00 00
+  .b 4 f6 00 00 08 00
   .rp LEVELS_TUTORIAL_BEGINNER_10
   .b 2 53 00 00
   .rp $PD_82
@@ -5490,7 +5514,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_83
   .b 2 0c 00 00
   .rp $PD_84
-  .b 5 fb 00 00 08 00 00
+  .b 4 fb 00 00 08 00
   .rp LEVELS_TUTORIAL_BEGINNER_11
   .b 2 40 00 00
   .rp $PD_85
@@ -5498,7 +5522,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_86
   .b 2 0a 00 00
   .rp $PD_87
-  .b 5 fc 00 00 09 00 00
+  .b 4 fc 00 00 09 00
   .rp LEVELS_TUTORIAL_BEGINNER_12
   .b 2 71 00 00
   .rp $PD_88
@@ -5506,7 +5530,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_89
   .b 2 0c 00 00
   .rp $PD_90
-  .b 5 fb 00 00 09 00 00
+  .b 4 fb 00 00 09 00
   .rp LEVELS_TUTORIAL_BEGINNER_13
   .b 2 c9 00 00
   .rp $PD_91
@@ -5514,7 +5538,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_92
   .b 2 0c 00 00
   .rp $PD_93
-  .b 5 ec 00 00 0c 00 00
+  .b 4 ec 00 00 0c 00
   .rp LEVELS_TUTORIAL_BEGINNER_14
   .b 2 87 00 00
   .rp $PD_94
@@ -5522,7 +5546,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_95
   .b 2 0c 00 00
   .rp $PD_96
-  .b 5 f5 00 00 0a 00 00
+  .b 4 f5 00 00 0a 00
   .rp LEVELS_TUTORIAL_BEGINNER_15
   .b 2 79 00 00
   .rp $PD_97
@@ -5530,7 +5554,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_98
   .b 2 19 00 00
   .rp $PD_99
-  .b 5 f8 00 00 0b 00 00
+  .b 4 f8 00 00 0b 00
   .rp LEVELS_TUTORIAL_BEGINNER_16
   .b 2 40 00 00
   .rp $PD_100
@@ -5538,7 +5562,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_101
   .b 2 10 00 00
   .rp $PD_102
-  .b 5 71 00 00 05 00 00
+  .b 4 71 00 00 05 00
   .rp LEVELS_TUTORIAL_BEGINNER_17
   .b 2 2d 00 00
   .rp $PD_103
@@ -5546,7 +5570,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_104
   .b 2 0a 00 00
   .rp $PD_105
-  .b 5 fc 00 00 09 00 00
+  .b 4 fc 00 00 09 00
   .rp LEVELS_TUTORIAL_BEGINNER_18
   .b 2 6b 00 00
   .rp $PD_106
@@ -5554,7 +5578,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_107
   .b 2 10 00 00
   .rp $PD_108
-  .b 5 f7 00 00 0c 00 00
+  .b 4 f7 00 00 0c 00
   .rp LEVELS_TUTORIAL_BEGINNER_19
   .b 2 7a 00 00
   .rp $PD_109
@@ -5562,7 +5586,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_110
   .b 2 0c 00 00
   .rp $PD_111
-  .b 5 f9 00 00 09 00 00
+  .b 4 f9 00 00 09 00
   .rp LEVELS_TUTORIAL_BEGINNER_20
   .b 2 48 00 00
   .rp $PD_112
@@ -5570,7 +5594,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_113
   .b 2 04 00 00
   .rp $PD_114
-  .b 5 48 00 00 05 00 00
+  .b 4 48 00 00 05 00
   .rp LEVELS_TUTORIAL_BEGINNER_21
   .b 2 72 00 00
   .rp $PD_115
@@ -5578,7 +5602,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_116
   .b 2 0c 00 00
   .rp $PD_117
-  .b 5 f8 00 00 0b 00 00
+  .b 4 f8 00 00 0b 00
   .rp LEVELS_TUTORIAL_BEGINNER_22
   .b 2 44 00 00
   .rp $PD_118
@@ -5586,7 +5610,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_119
   .b 2 0c 00 00
   .rp $PD_120
-  .b 5 f7 00 00 09 00 00
+  .b 4 f7 00 00 09 00
   .rp LEVELS_TUTORIAL_BEGINNER_23
   .b 2 40 00 00
   .rp $PD_121
@@ -5594,7 +5618,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_122
   .b 2 10 00 00
   .rp $PD_123
-  .b 5 a5 00 00 06 00 00
+  .b 4 a5 00 00 06 00
   .rp LEVELS_TUTORIAL_BEGINNER_24
   .b 2 28 00 00
   .rp $PD_124
@@ -5602,7 +5626,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_125
   .b 2 10 00 00
   .rp $PD_126
-  .b 5 3c 00 00 04 00 00
+  .b 4 3c 00 00 04 00
   .rp LEVELS_TUTORIAL_BEGINNER_25
   .b 2 3b 00 00
   .rp $PD_127
@@ -5610,7 +5634,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_128
   .b 2 10 00 00
   .rp $PD_129
-  .b 5 98 00 00 06 00 00
+  .b 4 98 00 00 06 00
   .rp LEVELS_TUTORIAL_BEGINNER_26
   .b 2 2f 00 00
   .rp $PD_130
@@ -5618,7 +5642,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_131
   .b 2 0a 00 00
   .rp $PD_132
-  .b 5 f5 00 00 0c 00 00
+  .b 4 f5 00 00 0c 00
   .rp LEVELS_TUTORIAL_BEGINNER_27
   .b 2 7a 00 00
   .rp $PD_133
@@ -5626,7 +5650,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_134
   .b 2 0a 00 00
   .rp $PD_135
-  .b 5 f9 00 00 09 00 00
+  .b 4 f9 00 00 09 00
   .rp LEVELS_TUTORIAL_BEGINNER_28
   .b 2 84 00 00
   .rp $PD_136
@@ -5634,7 +5658,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_137
   .b 2 0c 00 00
   .rp $PD_138
-  .b 5 f5 00 00 0a 00 00
+  .b 4 f5 00 00 0a 00
   .rp LEVELS_TUTORIAL_BEGINNER_29
   .b 2 63 00 00
   .rp $PD_139
@@ -5642,7 +5666,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_140
   .b 2 0c 00 00
   .rp $PD_141
-  .b 5 f5 00 00 0d 00 00
+  .b 4 f5 00 00 0d 00
   .rp LEVELS_TUTORIAL_BEGINNER_30
   .b 2 ec 00 00
   .rp $PD_142
@@ -5650,7 +5674,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_143
   .b 2 0c 00 00
   .rp $PD_144
-  .b 5 f6 00 00 0d 00 00
+  .b 4 f6 00 00 0d 00
   .rp LEVELS_TUTORIAL_BEGINNER_31
   .b 2 8e 00 00
   .rp $PD_145
@@ -5658,7 +5682,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_146
   .b 2 0c 00 00
   .rp $PD_147
-  .b 5 f8 00 00 0b 00 00
+  .b 4 f8 00 00 0b 00
   .rp LEVELS_TUTORIAL_BEGINNER_32
   .b 2 38 00 00
   .rp $PD_148
@@ -5666,7 +5690,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_149
   .b 2 0a 00 00
   .rp $PD_150
-  .b 5 ee 00 00 0c 00 00
+  .b 4 ee 00 00 0c 00
   .rp LEVELS_TUTORIAL_BEGINNER_33
   .b 2 54 00 00
   .rp $PD_151
@@ -5674,7 +5698,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_152
   .b 2 10 00 00
   .rp $PD_153
-  .b 5 8e 00 00 06 00 00
+  .b 4 8e 00 00 06 00
   .rp LEVELS_TUTORIAL_BEGINNER_34
   .b 2 e2 00 00
   .rp $PD_154
@@ -5682,7 +5706,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_155
   .b 2 0c 00 00
   .rp $PD_156
-  .b 5 f8 00 00 0d 00 00
+  .b 4 f8 00 00 0d 00
   .rp LEVELS_TUTORIAL_BEGINNER_35
   .b 2 8d 00 00
   .rp $PD_157
@@ -5690,7 +5714,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_158
   .b 2 0c 00 00
   .rp $PD_159
-  .b 5 f8 00 00 0b 00 00
+  .b 4 f8 00 00 0b 00
   .rp LEVELS_TUTORIAL_BEGINNER_36
   .b 2 3e 00 00
   .rp $PD_160
@@ -5698,7 +5722,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_161
   .b 2 0a 00 00
   .rp $PD_162
-  .b 5 fc 00 00 09 00 00
+  .b 4 fc 00 00 09 00
   .rp LEVELS_TUTORIAL_BEGINNER_37
   .b 2 64 00 00
   .rp $PD_163
@@ -5706,7 +5730,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_164
   .b 2 0c 00 00
   .rp $PD_165
-  .b 5 fa 00 00 09 00 00
+  .b 4 fa 00 00 09 00
   .rp LEVELS_TUTORIAL_BEGINNER_38
   .b 2 55 00 00
   .rp $PD_166
@@ -5714,7 +5738,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_167
   .b 2 0c 00 00
   .rp $PD_168
-  .b 5 fa 00 00 09 00 00
+  .b 4 fa 00 00 09 00
   .rp LEVELS_TUTORIAL_BEGINNER_39
   .b 2 9d 00 00
   .rp $PD_169
@@ -5722,7 +5746,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_170
   .b 2 0c 00 00
   .rp $PD_171
-  .b 5 f4 00 00 0f 00 00
+  .b 4 f4 00 00 0f 00
   .rp LEVELS_TUTORIAL_BEGINNER_40
   .b 2 6f 00 00
   .rp $PD_172
@@ -5730,7 +5754,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_173
   .b 2 10 00 00
   .rp $PD_174
-  .b 5 73 00 00 05 00 00
+  .b 4 73 00 00 05 00
   .rp LEVELS_TUTORIAL_BEGINNER_41
   .b 2 69 00 00
   .rp $PD_175
@@ -5738,7 +5762,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_176
   .b 2 0a 00 00
   .rp $PD_177
-  .b 5 f9 00 00 0a 00 00
+  .b 4 f9 00 00 0a 00
   .rp LEVELS_TUTORIAL_BEGINNER_42
   .b 2 4a 00 00
   .rp $PD_178
@@ -5746,7 +5770,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_179
   .b 2 0c 00 00
   .rp $PD_180
-  .b 5 f5 00 00 08 00 00
+  .b 4 f5 00 00 08 00
   .rp LEVELS_TUTORIAL_BEGINNER_43
   .b 2 69 00 00
   .rp $PD_181
@@ -5754,7 +5778,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_182
   .b 2 0c 00 00
   .rp $PD_183
-  .b 5 fc 00 00 09 00 00
+  .b 4 fc 00 00 09 00
   .rp LEVELS_TUTORIAL_BEGINNER_44
   .b 2 5f 00 00
   .rp $PD_184
@@ -5762,7 +5786,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_185
   .b 2 0c 00 00
   .rp $PD_186
-  .b 5 f8 00 00 0b 00 00
+  .b 4 f8 00 00 0b 00
   .rp LEVELS_TUTORIAL_BEGINNER_45
   .b 2 62 00 00
   .rp $PD_187
@@ -5770,7 +5794,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_188
   .b 2 0c 00 00
   .rp $PD_189
-  .b 5 f9 00 00 09 00 00
+  .b 4 f9 00 00 09 00
   .rp LEVELS_TUTORIAL_BEGINNER_46
   .b 2 5f 00 00
   .rp $PD_190
@@ -5778,7 +5802,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_191
   .b 2 0c 00 00
   .rp $PD_192
-  .b 5 fa 00 00 09 00 00
+  .b 4 fa 00 00 09 00
   .rp LEVELS_TUTORIAL_BEGINNER_47
   .b 2 e7 00 00
   .rp $PD_193
@@ -5786,7 +5810,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_194
   .b 2 0c 00 00
   .rp $PD_195
-  .b 5 f8 00 00 0b 00 00
+  .b 4 f8 00 00 0b 00
   .rp LEVELS_TUTORIAL_BEGINNER_48
   .b 2 2e 00 00
   .rp $PD_196
@@ -5794,7 +5818,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_197
   .b 2 04 00 00
   .rp $PD_198
-  .b 5 40 00 00 05 00 00
+  .b 4 40 00 00 05 00
   .rp LEVELS_TUTORIAL_BEGINNER_49
   .b 2 93 00 00
   .rp $PD_199
@@ -5802,7 +5826,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_200
   .b 2 0c 00 00
   .rp $PD_201
-  .b 5 f8 00 00 0b 00 00
+  .b 4 f8 00 00 0b 00
   .rp LEVELS_TUTORIAL_BEGINNER_50
   .b 2 7c 00 00
   .rp $PD_202
@@ -5810,7 +5834,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_203
   .b 2 0c 00 00
   .rp $PD_204
-  .b 5 f6 00 00 0b 00 00
+  .b 4 f6 00 00 0b 00
   .rp LEVELS_TUTORIAL_BEGINNER_51
   .b 2 7a 00 00
   .rp $PD_205
@@ -5818,7 +5842,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_206
   .b 2 0a 00 00
   .rp $PD_207
-  .b 5 f5 00 00 09 00 00
+  .b 4 f5 00 00 09 00
   .rp LEVELS_TUTORIAL_BEGINNER_52
   .b 2 4a 00 00
   .rp $PD_208
@@ -5826,7 +5850,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_209
   .b 2 0a 00 00
   .rp $PD_210
-  .b 5 fa 00 00 0b 00 00
+  .b 4 fa 00 00 0b 00
   .rp LEVELS_TUTORIAL_BEGINNER_53
   .b 2 72 00 00
   .rp $PD_211
@@ -5834,7 +5858,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_212
   .b 2 0a 00 00
   .rp $PD_213
-  .b 5 fb 00 00 09 00 00
+  .b 4 fb 00 00 09 00
   .rp LEVELS_TUTORIAL_BEGINNER_54
   .b 2 b7 00 00
   .rp $PD_214
@@ -5842,7 +5866,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_215
   .b 2 0a 00 00
   .rp $PD_216
-  .b 5 f7 00 00 09 00 00
+  .b 4 f7 00 00 09 00
   .rp LEVELS_TUTORIAL_BEGINNER_55
   .b 2 4c 00 00
   .rp $PD_217
@@ -5850,7 +5874,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_218
   .b 2 0c 00 00
   .rp $PD_219
-  .b 5 f3 00 00 0a 00 00
+  .b 4 f3 00 00 0a 00
   .rp LEVELS_TUTORIAL_BEGINNER_56
   .b 2 56 00 00
   .rp $PD_220
@@ -5858,7 +5882,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_221
   .b 2 0c 00 00
   .rp $PD_222
-  .b 5 f3 00 00 0a 00 00
+  .b 4 f3 00 00 0a 00
   .rp LEVELS_TUTORIAL_BEGINNER_57
   .b 2 73 00 00
   .rp $PD_223
@@ -5866,7 +5890,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_224
   .b 2 0c 00 00
   .rp $PD_225
-  .b 5 f8 00 00 09 00 00
+  .b 4 f8 00 00 09 00
   .rp LEVELS_TUTORIAL_BEGINNER_58
   .b 2 56 00 00
   .rp $PD_226
@@ -5874,7 +5898,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_227
   .b 2 0c 00 00
   .rp $PD_228
-  .b 5 f9 00 00 09 00 00
+  .b 4 f9 00 00 09 00
   .rp LEVELS_TUTORIAL_BEGINNER_59
   .b 2 4c 00 00
   .rp $PD_229
@@ -5882,7 +5906,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_230
   .b 2 0c 00 00
   .rp $PD_231
-  .b 5 f6 00 00 0a 00 00
+  .b 4 f6 00 00 0a 00
   .rp LEVELS_TUTORIAL_BEGINNER_60
   .b 2 79 00 00
   .rp $PD_232
@@ -5890,7 +5914,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_233
   .b 2 0c 00 00
   .rp $PD_234
-  .b 5 f4 00 00 0c 00 00
+  .b 4 f4 00 00 0c 00
   .rp LEVELS_TUTORIAL_BEGINNER_61
   .b 2 b0 00 00
   .rp $PD_235
@@ -5898,7 +5922,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_236
   .b 2 0c 00 00
   .rp $PD_237
-  .b 5 f8 00 00 0c 00 00
+  .b 4 f8 00 00 0c 00
   .rp LEVELS_TUTORIAL_BEGINNER_62
   .b 2 67 00 00
   .rp $PD_238
@@ -5906,7 +5930,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_239
   .b 2 0c 00 00
   .rp $PD_240
-  .b 5 f3 00 00 0d 00 00
+  .b 4 f3 00 00 0d 00
   .rp LEVELS_TUTORIAL_BEGINNER_63
   .b 2 73 00 00
   .rp $PD_241
@@ -5914,7 +5938,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_242
   .b 2 0c 00 00
   .rp $PD_243
-  .b 5 f8 00 00 0b 00 00
+  .b 4 f8 00 00 0b 00
   .rp LEVELS_TUTORIAL_BEGINNER_64
   .b 2 9c 00 00
   .rp $PD_244
@@ -5922,7 +5946,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_245
   .b 2 0c 00 00
   .rp $PD_246
-  .b 5 f8 00 00 08 00 00
+  .b 4 f8 00 00 08 00
   .rp LEVELS_TUTORIAL_BEGINNER_65
   .b 2 98 00 00
   .rp $PD_247
@@ -5930,7 +5954,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_248
   .b 2 0a 00 00
   .rp $PD_249
-  .b 5 f4 00 00 0a 00 00
+  .b 4 f4 00 00 0a 00
   .rp LEVELS_TUTORIAL_BEGINNER_66
   .b 2 b4 00 00
   .rp $PD_250
@@ -5938,7 +5962,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_251
   .b 2 0c 00 00
   .rp $PD_252
-  .b 5 f8 00 00 09 00 00
+  .b 4 f8 00 00 09 00
   .rp LEVELS_TUTORIAL_BEGINNER_67
   .b 2 ad 00 00
   .rp $PD_253
@@ -5946,7 +5970,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_254
   .b 2 0c 00 00
   .rp $PD_255
-  .b 5 f4 00 00 0e 00 00
+  .b 4 f4 00 00 0e 00
   .rp LEVELS_TUTORIAL_BEGINNER_68
   .b 2 9a 00 00
   .rp $PD_256
@@ -5954,7 +5978,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_257
   .b 2 0c 00 00
   .rp $PD_258
-  .b 5 f5 00 00 0a 00 00
+  .b 4 f5 00 00 0a 00
   .rp LEVELS_TUTORIAL_BEGINNER_69
   .b 2 95 00 00
   .rp $PD_259
@@ -5962,7 +5986,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_260
   .b 2 0c 00 00
   .rp $PD_261
-  .b 5 f1 00 00 0d 00 00
+  .b 4 f1 00 00 0d 00
   .rp LEVELS_TUTORIAL_BEGINNER_70
   .b 2 45 00 00
   .rp $PD_262
@@ -5970,7 +5994,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_263
   .b 2 10 00 00
   .rp $PD_264
-  .b 5 b5 00 00 07 00 00
+  .b 4 b5 00 00 07 00
   .rp LEVELS_TUTORIAL_BEGINNER_71
   .b 2 5b 00 00
   .rp $PD_265
@@ -5978,7 +6002,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_266
   .b 2 10 00 00
   .rp $PD_267
-  .b 5 ae 00 00 07 00 00
+  .b 4 ae 00 00 07 00
   .rp LEVELS_TUTORIAL_BEGINNER_72
   .b 2 6a 00 00
   .rp $PD_268
@@ -5986,7 +6010,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_269
   .b 2 0c 00 00
   .rp $PD_270
-  .b 5 fa 00 00 0a 00 00
+  .b 4 fa 00 00 0a 00
   .rp LEVELS_TUTORIAL_BEGINNER_73
   .b 2 a1 00 00
   .rp $PD_271
@@ -5994,7 +6018,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_272
   .b 2 0c 00 00
   .rp $PD_273
-  .b 5 fc 00 00 09 00 00
+  .b 4 fc 00 00 09 00
   .rp LEVELS_TUTORIAL_BEGINNER_74
   .b 2 45 00 00
   .rp $PD_274
@@ -6002,7 +6026,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_275
   .b 2 0c 00 00
   .rp $PD_276
-  .b 5 f9 00 00 09 00 00
+  .b 4 f9 00 00 09 00
   .rp LEVELS_TUTORIAL_BEGINNER_75
   .b 2 85 00 00
   .rp $PD_277
@@ -6010,7 +6034,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_278
   .b 2 0c 00 00
   .rp $PD_279
-  .b 5 f9 00 00 09 00 00
+  .b 4 f9 00 00 09 00
   .rp LEVELS_TUTORIAL_BEGINNER_76
   .b 2 56 00 00
   .rp $PD_280
@@ -6018,7 +6042,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_281
   .b 2 0c 00 00
   .rp $PD_282
-  .b 5 f8 00 00 09 00 00
+  .b 4 f8 00 00 09 00
   .rp LEVELS_TUTORIAL_BEGINNER_77
   .b 2 1c 00 00
   .rp $PD_283
@@ -6026,7 +6050,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_284
   .b 2 0a 00 00
   .rp $PD_285
-  .b 5 f4 00 00 08 00 00
+  .b 4 f4 00 00 08 00
   .rp LEVELS_TUTORIAL_BEGINNER_78
   .b 2 31 00 00
   .rp $PD_286
@@ -6034,7 +6058,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_287
   .b 2 0c 00 00
   .rp $PD_288
-  .b 5 fa 00 00 0b 00 00
+  .b 4 fa 00 00 0b 00
   .rp LEVELS_TUTORIAL_BEGINNER_79
   .b 2 72 00 00
   .rp $PD_289
@@ -6042,7 +6066,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_290
   .b 2 0c 00 00
   .rp $PD_291
-  .b 5 f6 00 00 0b 00 00
+  .b 4 f6 00 00 0b 00
   .rp LEVELS_TUTORIAL_BEGINNER_80
   .b 2 85 00 00
   .rp $PD_292
@@ -6050,7 +6074,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_293
   .b 2 0c 00 00
   .rp $PD_294
-  .b 5 fa 00 00 0a 00 00
+  .b 4 fa 00 00 0a 00
   .rp LEVELS_TUTORIAL_BEGINNER_81
   .b 2 74 00 00
   .rp $PD_295
@@ -6058,7 +6082,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_296
   .b 2 0c 00 00
   .rp $PD_297
-  .b 5 f5 00 00 09 00 00
+  .b 4 f5 00 00 09 00
   .rp LEVELS_TUTORIAL_BEGINNER_82
   .b 2 20 00 00
   .rp $PD_298
@@ -6066,7 +6090,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_299
   .b 2 0c 00 00
   .rp $PD_300
-  .b 5 fc 00 00 09 00 00
+  .b 4 fc 00 00 09 00
   .rp LEVELS_TUTORIAL_BEGINNER_83
   .b 2 71 00 00
   .rp $PD_301
@@ -6074,7 +6098,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_302
   .b 2 0c 00 00
   .rp $PD_303
-  .b 5 f8 00 00 09 00 00
+  .b 4 f8 00 00 09 00
   .rp LEVELS_TUTORIAL_BEGINNER_84
   .b 2 83 00 00
   .rp $PD_304
@@ -6082,7 +6106,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_305
   .b 2 0c 00 00
   .rp $PD_306
-  .b 5 f6 00 00 09 00 00
+  .b 4 f6 00 00 09 00
   .rp LEVELS_TUTORIAL_BEGINNER_85
   .b 2 86 00 00
   .rp $PD_307
@@ -6090,7 +6114,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_308
   .b 2 0c 00 00
   .rp $PD_309
-  .b 5 fb 00 00 09 00 00
+  .b 4 fb 00 00 09 00
   .rp LEVELS_TUTORIAL_BEGINNER_86
   .b 2 6d 00 00
   .rp $PD_310
@@ -6098,7 +6122,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_311
   .b 2 0c 00 00
   .rp $PD_312
-  .b 5 f6 00 00 09 00 00
+  .b 4 f6 00 00 09 00
   .rp LEVELS_TUTORIAL_BEGINNER_87
   .b 2 76 00 00
   .rp $PD_313
@@ -6106,7 +6130,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_314
   .b 2 0c 00 00
   .rp $PD_315
-  .b 5 f6 00 00 0d 00 00
+  .b 4 f6 00 00 0d 00
   .rp LEVELS_TUTORIAL_BEGINNER_88
   .b 2 a4 00 00
   .rp $PD_316
@@ -6114,7 +6138,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_317
   .b 2 0c 00 00
   .rp $PD_318
-  .b 5 fc 00 00 09 00 00
+  .b 4 fc 00 00 09 00
   .rp LEVELS_TUTORIAL_BEGINNER_89
   .b 2 a8 00 00
   .rp $PD_319
@@ -6122,7 +6146,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_320
   .b 2 0c 00 00
   .rp $PD_321
-  .b 5 fb 00 00 09 00 00
+  .b 4 fb 00 00 09 00
   .rp LEVELS_TUTORIAL_BEGINNER_90
   .b 2 5e 00 00
   .rp $PD_322
@@ -6130,7 +6154,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_323
   .b 2 0c 00 00
   .rp $PD_324
-  .b 5 f8 00 00 0a 00 00
+  .b 4 f8 00 00 0a 00
   .rp LEVELS_TUTORIAL_BEGINNER_91
   .b 2 33 00 00
   .rp $PD_325
@@ -6138,7 +6162,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_326
   .b 2 0c 00 00
   .rp $PD_327
-  .b 5 fa 00 00 0b 00 00
+  .b 4 fa 00 00 0b 00
   .rp LEVELS_TUTORIAL_BEGINNER_92
   .b 2 42 00 00
   .rp $PD_328
@@ -6146,7 +6170,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_329
   .b 2 0c 00 00
   .rp $PD_330
-  .b 5 fa 00 00 0a 00 00
+  .b 4 fa 00 00 0a 00
   .rp LEVELS_TUTORIAL_BEGINNER_93
   .b 2 a4 00 00
   .rp $PD_331
@@ -6154,7 +6178,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_332
   .b 2 0c 00 00
   .rp $PD_333
-  .b 5 fa 00 00 0b 00 00
+  .b 4 fa 00 00 0b 00
   .rp LEVELS_TUTORIAL_BEGINNER_94
   .b 2 40 00 00
   .rp $PD_334
@@ -6162,7 +6186,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_335
   .b 2 0c 00 00
   .rp $PD_336
-  .b 5 f9 00 00 0a 00 00
+  .b 4 f9 00 00 0a 00
   .rp LEVELS_TUTORIAL_BEGINNER_95
   .b 2 57 00 00
   .rp $PD_337
@@ -6170,7 +6194,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_338
   .b 2 0c 00 00
   .rp $PD_339
-  .b 5 f8 00 00 09 00 00
+  .b 4 f8 00 00 09 00
   .rp LEVELS_TUTORIAL_BEGINNER_96
   .b 2 60 00 00
   .rp $PD_340
@@ -6178,7 +6202,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_341
   .b 2 0c 00 00
   .rp $PD_342
-  .b 5 f9 00 00 09 00 00
+  .b 4 f9 00 00 09 00
   .rp LEVELS_TUTORIAL_BEGINNER_97
   .b 2 50 00 00
   .rp $PD_343
@@ -6186,7 +6210,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_344
   .b 2 04 00 00
   .rp $PD_345
-  .b 5 47 00 00 05 00 00
+  .b 4 47 00 00 05 00
   .rp LEVELS_TUTORIAL_BEGINNER_98
   .b 2 50 00 00
   .rp $PD_346
@@ -6194,7 +6218,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_347
   .b 2 04 00 00
   .rp $PD_348
-  .b 5 61 00 00 07 00 00
+  .b 4 61 00 00 07 00
   .rp LEVELS_TUTORIAL_BEGINNER_99
   .b 2 a6 00 00
   .rp $PD_349
@@ -6202,7 +6226,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_350
   .b 2 18 00 00
   .rp $PD_351
-  .b 5 f4 00 00 0c 00 00
+  .b 4 f4 00 00 0c 00
   .rp LEVELS_TUTORIAL_BEGINNER_100
   .b 2 a0 00 00
   .rp $PD_352
@@ -6210,7 +6234,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_353
   .b 2 18 00 00
   .rp $PD_354
-  .b 5 f5 00 00 0c 00 00
+  .b 4 f5 00 00 0c 00
   .rp LEVELS_TUTORIAL_BEGINNER_101
   .b 2 8c 00 00
   .rp $PD_355
@@ -6218,7 +6242,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_356
   .b 2 18 00 00
   .rp $PD_357
-  .b 5 f7 00 00 0c 00 00
+  .b 4 f7 00 00 0c 00
   .rp LEVELS_TUTORIAL_BEGINNER_102
   .b 2 7a 00 00
   .rp $PD_358
@@ -6226,7 +6250,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_359
   .b 2 0c 00 00
   .rp $PD_360
-  .b 5 f4 00 00 0b 00 00
+  .b 4 f4 00 00 0b 00
   .rp LEVELS_TUTORIAL_BEGINNER_103
   .b 2 78 00 00
   .rp $PD_361
@@ -6234,7 +6258,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_362
   .b 2 0c 00 00
   .rp $PD_363
-  .b 5 f8 00 00 0b 00 00
+  .b 4 f8 00 00 0b 00
   .rp LEVELS_TUTORIAL_BEGINNER_104
   .b 2 76 00 00
   .rp $PD_364
@@ -6242,7 +6266,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_365
   .b 2 0c 00 00
   .rp $PD_366
-  .b 5 fa 00 00 0b 00 00
+  .b 4 fa 00 00 0b 00
   .rp LEVELS_TUTORIAL_BEGINNER_105
   .b 2 86 00 00
   .rp $PD_367
@@ -6250,7 +6274,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_368
   .b 2 0c 00 00
   .rp $PD_369
-  .b 5 fa 00 00 0b 00 00
+  .b 4 fa 00 00 0b 00
   .rp LEVELS_TUTORIAL_BEGINNER_106
   .b 2 99 00 00
   .rp $PD_370
@@ -6258,7 +6282,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_371
   .b 2 0c 00 00
   .rp $PD_372
-  .b 5 f4 00 00 0a 00 00
+  .b 4 f4 00 00 0a 00
   .rp LEVELS_TUTORIAL_BEGINNER_107
   .b 2 a8 00 00
   .rp $PD_373
@@ -6266,7 +6290,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_374
   .b 2 0c 00 00
   .rp $PD_375
-  .b 5 f5 00 00 0c 00 00
+  .b 4 f5 00 00 0c 00
   .rp LEVELS_TUTORIAL_BEGINNER_108
   .b 2 59 00 00
   .rp $PD_376
@@ -6274,7 +6298,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_377
   .b 2 04 00 00
   .rp $PD_378
-  .b 5 3f 00 00 03 00 00
+  .b 4 3f 00 00 03 00
   .rp LEVELS_TUTORIAL_BEGINNER_109
   .b 2 a5 00 00
   .rp $PD_379
@@ -6282,7 +6306,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_380
   .b 2 0c 00 00
   .rp $PD_381
-  .b 5 f6 00 00 0c 00 00
+  .b 4 f6 00 00 0c 00
   .rp LEVELS_TUTORIAL_BEGINNER_110
   .b 2 8f 00 00
   .rp $PD_382
@@ -6290,7 +6314,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_383
   .b 2 0c 00 00
   .rp $PD_384
-  .b 5 f4 00 00 0c 00 00
+  .b 4 f4 00 00 0c 00
   .rp LEVELS_TUTORIAL_BEGINNER_111
   .b 2 34 00 00
   .rp $PD_385
@@ -6298,7 +6322,7 @@ LEVELS_TUTORIAL_BEGINNER:
   .rp $PD_386
   .b 2 0a 00 00
   .rp $PD_387
-  .b 5 f5 00 00 0b 00 00
+  .b 4 f5 00 00 0b 00
 LEVELS_TUTORIAL_BEGINNER_0:
   .b f 00 34 b4 05 e9 b6 e2 b5 e9 b5 e1 b5 e0 b5 e9 b5
   .b f e0 b5 e1 b4 06 e2 b7 e2 b6 e3 b5 e2 b5 e1 b5 e4
@@ -7236,7 +7260,7 @@ LEVELS_TUTORIAL_OBJECTS:
   .rp $PD_5
   .b 2 0c 00 00
   .rp $PD_6
-  .b 5 f4 00 00 0a 00 00
+  .b 4 f4 00 00 0a 00
   .rp LEVELS_TUTORIAL_OBJECTS_1
   .b 2 56 00 00
   .rp $PD_7
@@ -7244,7 +7268,7 @@ LEVELS_TUTORIAL_OBJECTS:
   .rp $PD_8
   .b 2 0c 00 00
   .rp $PD_9
-  .b 5 f8 00 00 0a 00 00
+  .b 4 f8 00 00 0a 00
   .rp LEVELS_TUTORIAL_OBJECTS_2
   .b 2 7b 00 00
   .rp $PD_10
@@ -7252,7 +7276,7 @@ LEVELS_TUTORIAL_OBJECTS:
   .rp $PD_11
   .b 2 0c 00 00
   .rp $PD_12
-  .b 5 f7 00 00 0a 00 00
+  .b 4 f7 00 00 0a 00
   .rp LEVELS_TUTORIAL_OBJECTS_3
   .b 2 88 00 00
   .rp $PD_13
@@ -7260,7 +7284,7 @@ LEVELS_TUTORIAL_OBJECTS:
   .rp $PD_14
   .b 2 0c 00 00
   .rp $PD_15
-  .b 5 f5 00 00 0c 00 00
+  .b 4 f5 00 00 0c 00
   .rp LEVELS_TUTORIAL_OBJECTS_4
   .b 2 2a 00 00
   .rp $PD_16
@@ -7268,7 +7292,7 @@ LEVELS_TUTORIAL_OBJECTS:
   .rp $PD_17
   .b 2 0c 00 00
   .rp $PD_18
-  .b 5 f5 00 00 0b 00 00
+  .b 4 f5 00 00 0b 00
   .rp LEVELS_TUTORIAL_OBJECTS_5
   .b 2 36 00 00
   .rp $PD_19
@@ -7276,7 +7300,7 @@ LEVELS_TUTORIAL_OBJECTS:
   .rp $PD_20
   .b 2 0c 00 00
   .rp $PD_21
-  .b 5 f6 00 00 0b 00 00
+  .b 4 f6 00 00 0b 00
   .rp LEVELS_TUTORIAL_OBJECTS_6
   .b 2 64 00 00
   .rp $PD_22
@@ -7284,7 +7308,7 @@ LEVELS_TUTORIAL_OBJECTS:
   .rp $PD_23
   .b 2 0c 00 00
   .rp $PD_24
-  .b 5 f5 00 00 0d 00 00
+  .b 4 f5 00 00 0d 00
   .rp LEVELS_TUTORIAL_OBJECTS_7
   .b 2 1c 00 00
   .rp $PD_25
@@ -7292,7 +7316,7 @@ LEVELS_TUTORIAL_OBJECTS:
   .rp $PD_26
   .b 2 0c 00 00
   .rp $PD_27
-  .b 5 f6 00 00 0c 00 00
+  .b 4 f6 00 00 0c 00
   .rp LEVELS_TUTORIAL_OBJECTS_8
   .b 2 3a 00 00
   .rp $PD_28
@@ -7300,7 +7324,7 @@ LEVELS_TUTORIAL_OBJECTS:
   .rp $PD_29
   .b 2 0c 00 00
   .rp $PD_30
-  .b 5 fa 00 00 09 00 00
+  .b 4 fa 00 00 09 00
   .rp LEVELS_TUTORIAL_OBJECTS_9
   .b 2 4f 00 00
   .rp $PD_31
@@ -7308,7 +7332,7 @@ LEVELS_TUTORIAL_OBJECTS:
   .rp $PD_32
   .b 2 0c 00 00
   .rp $PD_33
-  .b 5 f5 00 00 0b 00 00
+  .b 4 f5 00 00 0b 00
   .rp LEVELS_TUTORIAL_OBJECTS_10
   .b 2 3b 00 00
   .rp $PD_34
@@ -7316,7 +7340,7 @@ LEVELS_TUTORIAL_OBJECTS:
   .rp $PD_35
   .b 2 0c 00 00
   .rp $PD_36
-  .b 5 f8 00 00 0a 00 00
+  .b 4 f8 00 00 0a 00
   .rp LEVELS_TUTORIAL_OBJECTS_11
   .b 2 b9 00 00
   .rp $PD_37
@@ -7324,7 +7348,7 @@ LEVELS_TUTORIAL_OBJECTS:
   .rp $PD_38
   .b 2 0c 00 00
   .rp $PD_39
-  .b 5 fa 00 00 0b 00 00
+  .b 4 fa 00 00 0b 00
   .rp LEVELS_TUTORIAL_OBJECTS_12
   .b 2 54 00 00
   .rp $PD_40
@@ -7332,7 +7356,7 @@ LEVELS_TUTORIAL_OBJECTS:
   .rp $PD_41
   .b 2 0c 00 00
   .rp $PD_42
-  .b 5 f2 00 00 09 00 00
+  .b 4 f2 00 00 09 00
   .rp LEVELS_TUTORIAL_OBJECTS_13
   .b 2 23 00 00
   .rp $PD_43
@@ -7340,7 +7364,7 @@ LEVELS_TUTORIAL_OBJECTS:
   .rp $PD_44
   .b 2 0c 00 00
   .rp $PD_45
-  .b 5 f9 00 00 0a 00 00
+  .b 4 f9 00 00 0a 00
   .rp LEVELS_TUTORIAL_OBJECTS_14
   .b 2 4a 00 00
   .rp $PD_46
@@ -7348,7 +7372,7 @@ LEVELS_TUTORIAL_OBJECTS:
   .rp $PD_47
   .b 2 0c 00 00
   .rp $PD_48
-  .b 5 fa 00 00 0b 00 00
+  .b 4 fa 00 00 0b 00
   .rp LEVELS_TUTORIAL_OBJECTS_15
   .b 2 8f 00 00
   .rp $PD_49
@@ -7356,7 +7380,7 @@ LEVELS_TUTORIAL_OBJECTS:
   .rp $PD_50
   .b 2 0c 00 00
   .rp $PD_51
-  .b 5 f8 00 00 0c 00 00
+  .b 4 f8 00 00 0c 00
 LEVELS_TUTORIAL_OBJECTS_0:
   .b f e7 05 51 e4 05 e8 51 e0 50 05 e8 51 e0 51 ec 51
   .b f e0 51 ec 51 e0 51 05 eb 51 e0 61 e8 05 e2 51 e0
@@ -7473,7 +7497,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_389
   .b 2 0d 00 00
   .rp $PD_390
-  .b 5 7c 00 00 04 00 00
+  .b 4 7c 00 00 04 00
   .rp LEVELS_TUTORIAL_TRICKS_1
   .b 2 23 00 00
   .rp $PD_391
@@ -7481,7 +7505,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_392
   .b 2 0f 00 00
   .rp $PD_393
-  .b 5 80 00 00 04 00 00
+  .b 4 80 00 00 04 00
   .rp LEVELS_TUTORIAL_TRICKS_2
   .b 2 1a 00 00
   .rp $PD_394
@@ -7489,7 +7513,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_395
   .b 2 0f 00 00
   .rp $PD_396
-  .b 5 1f 00 00 01 00 00
+  .b 4 1f 00 00 01 00
   .rp LEVELS_TUTORIAL_TRICKS_3
   .b 2 23 00 00
   .rp $PD_397
@@ -7497,7 +7521,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_398
   .b 2 0f 00 00
   .rp $PD_399
-  .b 5 7d 00 00 04 00 00
+  .b 4 7d 00 00 04 00
   .rp LEVELS_TUTORIAL_TRICKS_4
   .b 2 30 00 00
   .rp $PD_400
@@ -7505,7 +7529,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_401
   .b 2 0f 00 00
   .rp $PD_402
-  .b 5 86 00 00 04 00 00
+  .b 4 86 00 00 04 00
   .rp LEVELS_TUTORIAL_TRICKS_5
   .b 2 52 00 00
   .rp $PD_403
@@ -7513,7 +7537,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_404
   .b 2 0f 00 00
   .rp $PD_405
-  .b 5 c7 00 00 06 00 00
+  .b 4 c7 00 00 06 00
   .rp LEVELS_TUTORIAL_TRICKS_6
   .b 2 2d 00 00
   .rp $PD_406
@@ -7521,7 +7545,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_407
   .b 2 0f 00 00
   .rp $PD_408
-  .b 5 a5 00 00 05 00 00
+  .b 4 a5 00 00 05 00
   .rp LEVELS_TUTORIAL_TRICKS_7
   .b 2 87 00 00
   .rp $PD_409
@@ -7529,7 +7553,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_410
   .b 2 0f 00 00
   .rp $PD_411
-  .b 5 c6 00 00 06 00 00
+  .b 4 c6 00 00 06 00
   .rp LEVELS_TUTORIAL_TRICKS_8
   .b 2 34 00 00
   .rp $PD_412
@@ -7537,7 +7561,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_413
   .b 2 0f 00 00
   .rp $PD_414
-  .b 5 59 00 00 03 00 00
+  .b 4 59 00 00 03 00
   .rp LEVELS_TUTORIAL_TRICKS_9
   .b 2 4a 00 00
   .rp $PD_415
@@ -7545,7 +7569,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_416
   .b 2 0c 00 00
   .rp $PD_417
-  .b 5 32 00 00 02 00 00
+  .b 4 32 00 00 02 00
   .rp LEVELS_TUTORIAL_TRICKS_10
   .b 2 74 00 00
   .rp $PD_418
@@ -7553,7 +7577,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_419
   .b 2 0c 00 00
   .rp $PD_420
-  .b 5 8f 00 00 05 00 00
+  .b 4 8f 00 00 05 00
   .rp LEVELS_TUTORIAL_TRICKS_11
   .b 2 76 00 00
   .rp $PD_421
@@ -7561,7 +7585,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_422
   .b 2 0c 00 00
   .rp $PD_423
-  .b 5 55 00 00 03 00 00
+  .b 4 55 00 00 03 00
   .rp LEVELS_TUTORIAL_TRICKS_12
   .b 2 6a 00 00
   .rp $PD_424
@@ -7569,7 +7593,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_425
   .b 2 0c 00 00
   .rp $PD_426
-  .b 5 60 00 00 03 00 00
+  .b 4 60 00 00 03 00
   .rp LEVELS_TUTORIAL_TRICKS_13
   .b 2 6b 00 00
   .rp $PD_427
@@ -7577,7 +7601,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_428
   .b 2 0c 00 00
   .rp $PD_429
-  .b 5 36 00 00 02 00 00
+  .b 4 36 00 00 02 00
   .rp LEVELS_TUTORIAL_TRICKS_14
   .b 2 6e 00 00
   .rp $PD_430
@@ -7585,7 +7609,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_431
   .b 2 0c 00 00
   .rp $PD_432
-  .b 5 83 00 00 05 00 00
+  .b 4 83 00 00 05 00
   .rp LEVELS_TUTORIAL_TRICKS_15
   .b 2 63 00 00
   .rp $PD_433
@@ -7593,7 +7617,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_434
   .b 2 0d 00 00
   .rp $PD_435
-  .b 5 80 00 00 05 00 00
+  .b 4 80 00 00 05 00
   .rp LEVELS_TUTORIAL_TRICKS_16
   .b 2 86 00 00
   .rp $PD_436
@@ -7601,7 +7625,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_437
   .b 2 0a 00 00
   .rp $PD_438
-  .b 5 a0 00 00 07 00 00
+  .b 4 a0 00 00 07 00
   .rp LEVELS_TUTORIAL_TRICKS_17
   .b 2 57 00 00
   .rp $PD_439
@@ -7609,7 +7633,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_440
   .b 2 0a 00 00
   .rp $PD_441
-  .b 5 de 00 00 08 00 00
+  .b 4 de 00 00 08 00
   .rp LEVELS_TUTORIAL_TRICKS_18
   .b 2 65 00 00
   .rp $PD_442
@@ -7617,7 +7641,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_443
   .b 2 0a 00 00
   .rp $PD_444
-  .b 5 ea 00 00 09 00 00
+  .b 4 ea 00 00 09 00
   .rp LEVELS_TUTORIAL_TRICKS_19
   .b 2 87 00 00
   .rp $PD_445
@@ -7625,7 +7649,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_446
   .b 2 0a 00 00
   .rp $PD_447
-  .b 5 6c 00 00 05 00 00
+  .b 4 6c 00 00 05 00
   .rp LEVELS_TUTORIAL_TRICKS_20
   .b 2 38 00 00
   .rp $PD_448
@@ -7633,7 +7657,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_449
   .b 2 0a 00 00
   .rp $PD_450
-  .b 5 52 00 00 03 00 00
+  .b 4 52 00 00 03 00
   .rp LEVELS_TUTORIAL_TRICKS_21
   .b 2 3e 00 00
   .rp $PD_451
@@ -7641,7 +7665,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_452
   .b 2 0a 00 00
   .rp $PD_453
-  .b 5 0a 00 00 01 00 00
+  .b 4 0a 00 00 01 00
   .rp LEVELS_TUTORIAL_TRICKS_22
   .b 2 68 00 00
   .rp $PD_454
@@ -7649,7 +7673,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_455
   .b 2 0a 00 00
   .rp $PD_456
-  .b 5 fb 00 00 0a 00 00
+  .b 4 fb 00 00 0a 00
   .rp LEVELS_TUTORIAL_TRICKS_23
   .b 2 74 00 00
   .rp $PD_457
@@ -7657,7 +7681,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_458
   .b 2 0a 00 00
   .rp $PD_459
-  .b 5 65 00 00 05 00 00
+  .b 4 65 00 00 05 00
   .rp LEVELS_TUTORIAL_TRICKS_24
   .b 2 50 00 00
   .rp $PD_460
@@ -7665,7 +7689,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_461
   .b 2 0c 00 00
   .rp $PD_462
-  .b 5 db 00 00 09 00 00
+  .b 4 db 00 00 09 00
   .rp LEVELS_TUTORIAL_TRICKS_25
   .b 2 2d 00 00
   .rp $PD_463
@@ -7673,7 +7697,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_464
   .b 2 0c 00 00
   .rp $PD_465
-  .b 5 fa 00 00 09 00 00
+  .b 4 fa 00 00 09 00
   .rp LEVELS_TUTORIAL_TRICKS_26
   .b 2 7d 00 00
   .rp $PD_466
@@ -7681,7 +7705,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_467
   .b 2 0c 00 00
   .rp $PD_468
-  .b 5 fc 00 00 07 00 00
+  .b 4 fc 00 00 07 00
   .rp LEVELS_TUTORIAL_TRICKS_27
   .b 2 9a 00 00
   .rp $PD_469
@@ -7689,7 +7713,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_470
   .b 2 0c 00 00
   .rp $PD_471
-  .b 5 f7 00 00 0b 00 00
+  .b 4 f7 00 00 0b 00
   .rp LEVELS_TUTORIAL_TRICKS_28
   .b 2 83 00 00
   .rp $PD_472
@@ -7697,7 +7721,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_473
   .b 2 0a 00 00
   .rp $PD_474
-  .b 5 23 00 00 03 00 00
+  .b 4 23 00 00 03 00
   .rp LEVELS_TUTORIAL_TRICKS_29
   .b 2 84 00 00
   .rp $PD_475
@@ -7705,7 +7729,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_476
   .b 2 0a 00 00
   .rp $PD_477
-  .b 5 f8 00 00 0c 00 00
+  .b 4 f8 00 00 0c 00
   .rp LEVELS_TUTORIAL_TRICKS_30
   .b 2 75 00 00
   .rp $PD_478
@@ -7713,7 +7737,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_479
   .b 2 0a 00 00
   .rp $PD_480
-  .b 5 7c 00 00 05 00 00
+  .b 4 7c 00 00 05 00
   .rp LEVELS_TUTORIAL_TRICKS_31
   .b 2 51 00 00
   .rp $PD_481
@@ -7721,7 +7745,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_482
   .b 2 0a 00 00
   .rp $PD_483
-  .b 5 51 00 00 05 00 00
+  .b 4 51 00 00 05 00
   .rp LEVELS_TUTORIAL_TRICKS_32
   .b 2 7b 00 00
   .rp $PD_484
@@ -7729,7 +7753,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_485
   .b 2 0a 00 00
   .rp $PD_486
-  .b 5 6b 00 00 05 00 00
+  .b 4 6b 00 00 05 00
   .rp LEVELS_TUTORIAL_TRICKS_33
   .b 2 8a 00 00
   .rp $PD_487
@@ -7737,7 +7761,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_488
   .b 2 0a 00 00
   .rp $PD_489
-  .b 5 6b 00 00 05 00 00
+  .b 4 6b 00 00 05 00
   .rp LEVELS_TUTORIAL_TRICKS_34
   .b 2 98 00 00
   .rp $PD_490
@@ -7745,7 +7769,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_491
   .b 2 0a 00 00
   .rp $PD_492
-  .b 5 6c 00 00 05 00 00
+  .b 4 6c 00 00 05 00
   .rp LEVELS_TUTORIAL_TRICKS_35
   .b 2 9a 00 00
   .rp $PD_493
@@ -7753,7 +7777,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_494
   .b 2 0a 00 00
   .rp $PD_495
-  .b 5 f6 00 00 0b 00 00
+  .b 4 f6 00 00 0b 00
   .rp LEVELS_TUTORIAL_TRICKS_36
   .b 2 96 00 00
   .rp $PD_496
@@ -7761,7 +7785,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_497
   .b 2 0a 00 00
   .rp $PD_498
-  .b 5 a4 00 00 07 00 00
+  .b 4 a4 00 00 07 00
   .rp LEVELS_TUTORIAL_TRICKS_37
   .b 2 98 00 00
   .rp $PD_499
@@ -7769,7 +7793,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_500
   .b 2 1a 00 00
   .rp $PD_501
-  .b 5 92 00 00 05 00 00
+  .b 4 92 00 00 05 00
   .rp LEVELS_TUTORIAL_TRICKS_38
   .b 2 ef 00 00
   .rp $PD_502
@@ -7777,7 +7801,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_503
   .b 2 0a 00 00
   .rp $PD_504
-  .b 5 9a 00 00 05 00 00
+  .b 4 9a 00 00 05 00
   .rp LEVELS_TUTORIAL_TRICKS_39
   .b 2 61 00 00
   .rp $PD_505
@@ -7785,7 +7809,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_506
   .b 2 0a 00 00
   .rp $PD_507
-  .b 5 5a 00 00 05 00 00
+  .b 4 5a 00 00 05 00
   .rp LEVELS_TUTORIAL_TRICKS_40
   .b 2 ac 00 00
   .rp $PD_508
@@ -7793,7 +7817,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_509
   .b 2 0a 00 00
   .rp $PD_510
-  .b 5 dc 00 00 0e 00 00
+  .b 4 dc 00 00 0e 00
   .rp LEVELS_TUTORIAL_TRICKS_41
   .b 2 93 00 00
   .rp $PD_511
@@ -7801,7 +7825,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_512
   .b 2 0a 00 00
   .rp $PD_513
-  .b 5 f0 00 00 0b 00 00
+  .b 4 f0 00 00 0b 00
   .rp LEVELS_TUTORIAL_TRICKS_42
   .b 2 6f 00 00
   .rp $PD_514
@@ -7809,7 +7833,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_515
   .b 2 0c 00 00
   .rp $PD_516
-  .b 5 fa 00 00 09 00 00
+  .b 4 fa 00 00 09 00
   .rp LEVELS_TUTORIAL_TRICKS_43
   .b 2 4f 00 00
   .rp $PD_517
@@ -7817,7 +7841,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_518
   .b 2 0a 00 00
   .rp $PD_519
-  .b 5 e0 00 00 08 00 00
+  .b 4 e0 00 00 08 00
   .rp LEVELS_TUTORIAL_TRICKS_44
   .b 2 4d 00 00
   .rp $PD_520
@@ -7825,7 +7849,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_521
   .b 2 0a 00 00
   .rp $PD_522
-  .b 5 4b 00 00 04 00 00
+  .b 4 4b 00 00 04 00
   .rp LEVELS_TUTORIAL_TRICKS_45
   .b 2 46 00 00
   .rp $PD_523
@@ -7833,7 +7857,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_524
   .b 2 0a 00 00
   .rp $PD_525
-  .b 5 44 00 00 03 00 00
+  .b 4 44 00 00 03 00
   .rp LEVELS_TUTORIAL_TRICKS_46
   .b 2 3e 00 00
   .rp $PD_526
@@ -7841,7 +7865,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_527
   .b 2 0a 00 00
   .rp $PD_528
-  .b 5 5f 00 00 05 00 00
+  .b 4 5f 00 00 05 00
   .rp LEVELS_TUTORIAL_TRICKS_47
   .b 2 61 00 00
   .rp $PD_529
@@ -7849,7 +7873,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_530
   .b 2 0a 00 00
   .rp $PD_531
-  .b 5 47 00 00 04 00 00
+  .b 4 47 00 00 04 00
   .rp LEVELS_TUTORIAL_TRICKS_48
   .b 2 99 00 00
   .rp $PD_532
@@ -7857,7 +7881,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_533
   .b 2 0d 00 00
   .rp $PD_534
-  .b 5 c4 00 00 09 00 00
+  .b 4 c4 00 00 09 00
   .rp LEVELS_TUTORIAL_TRICKS_49
   .b 2 cd 00 00
   .rp $PD_535
@@ -7865,7 +7889,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_536
   .b 2 0a 00 00
   .rp $PD_537
-  .b 5 48 00 00 05 00 00
+  .b 4 48 00 00 05 00
   .rp LEVELS_TUTORIAL_TRICKS_50
   .b 2 50 00 00
   .rp $PD_538
@@ -7873,7 +7897,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_539
   .b 2 19 00 00
   .rp $PD_540
-  .b 5 51 00 00 06 00 00
+  .b 4 51 00 00 06 00
   .rp LEVELS_TUTORIAL_TRICKS_51
   .b 2 5e 00 00
   .rp $PD_541
@@ -7881,7 +7905,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_542
   .b 2 0a 00 00
   .rp $PD_543
-  .b 5 81 00 00 08 00 00
+  .b 4 81 00 00 08 00
   .rp LEVELS_TUTORIAL_TRICKS_52
   .b 2 c3 00 00
   .rp $PD_544
@@ -7889,7 +7913,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_545
   .b 2 0a 00 00
   .rp $PD_546
-  .b 5 58 00 00 07 00 00
+  .b 4 58 00 00 07 00
   .rp LEVELS_TUTORIAL_TRICKS_53
   .b 2 9c 00 00
   .rp $PD_547
@@ -7897,7 +7921,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_548
   .b 2 0a 00 00
   .rp $PD_549
-  .b 5 37 00 00 05 00 00
+  .b 4 37 00 00 05 00
   .rp LEVELS_TUTORIAL_TRICKS_54
   .b 2 59 00 00
   .rp $PD_550
@@ -7905,7 +7929,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_551
   .b 2 0a 00 00
   .rp $PD_552
-  .b 5 8e 00 00 07 00 00
+  .b 4 8e 00 00 07 00
   .rp LEVELS_TUTORIAL_TRICKS_55
   .b 2 67 00 00
   .rp $PD_553
@@ -7913,7 +7937,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_554
   .b 2 0a 00 00
   .rp $PD_555
-  .b 5 47 00 00 05 00 00
+  .b 4 47 00 00 05 00
   .rp LEVELS_TUTORIAL_TRICKS_56
   .b 2 7a 00 00
   .rp $PD_556
@@ -7921,7 +7945,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_557
   .b 2 0c 00 00
   .rp $PD_558
-  .b 5 f5 00 00 08 00 00
+  .b 4 f5 00 00 08 00
   .rp LEVELS_TUTORIAL_TRICKS_57
   .b 2 58 00 00
   .rp $PD_559
@@ -7929,7 +7953,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_560
   .b 2 0c 00 00
   .rp $PD_561
-  .b 5 f9 00 00 07 00 00
+  .b 4 f9 00 00 07 00
   .rp LEVELS_TUTORIAL_TRICKS_58
   .b 2 51 00 00
   .rp $PD_562
@@ -7937,7 +7961,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_563
   .b 2 0b 00 00
   .rp $PD_564
-  .b 5 59 00 00 05 00 00
+  .b 4 59 00 00 05 00
   .rp LEVELS_TUTORIAL_TRICKS_59
   .b 2 32 00 00
   .rp $PD_565
@@ -7945,7 +7969,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_566
   .b 2 0b 00 00
   .rp $PD_567
-  .b 5 ec 00 00 07 00 00
+  .b 4 ec 00 00 07 00
   .rp LEVELS_TUTORIAL_TRICKS_60
   .b 2 32 00 00
   .rp $PD_568
@@ -7953,7 +7977,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_569
   .b 2 0b 00 00
   .rp $PD_570
-  .b 5 fa 00 00 09 00 00
+  .b 4 fa 00 00 09 00
   .rp LEVELS_TUTORIAL_TRICKS_61
   .b 2 5a 00 00
   .rp $PD_571
@@ -7961,7 +7985,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_572
   .b 2 0b 00 00
   .rp $PD_573
-  .b 5 f7 00 00 09 00 00
+  .b 4 f7 00 00 09 00
   .rp LEVELS_TUTORIAL_TRICKS_62
   .b 2 6a 00 00
   .rp $PD_574
@@ -7969,7 +7993,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_575
   .b 2 0b 00 00
   .rp $PD_576
-  .b 5 f2 00 00 09 00 00
+  .b 4 f2 00 00 09 00
   .rp LEVELS_TUTORIAL_TRICKS_63
   .b 2 35 00 00
   .rp $PD_577
@@ -7977,7 +8001,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_578
   .b 2 19 00 00
   .rp $PD_579
-  .b 5 42 00 00 03 00 00
+  .b 4 42 00 00 03 00
   .rp LEVELS_TUTORIAL_TRICKS_64
   .b 2 33 00 00
   .rp $PD_580
@@ -7985,7 +8009,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_581
   .b 2 19 00 00
   .rp $PD_582
-  .b 5 59 00 00 05 00 00
+  .b 4 59 00 00 05 00
   .rp LEVELS_TUTORIAL_TRICKS_65
   .b 2 32 00 00
   .rp $PD_583
@@ -7993,7 +8017,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_584
   .b 2 19 00 00
   .rp $PD_585
-  .b 5 37 00 00 04 00 00
+  .b 4 37 00 00 04 00
   .rp LEVELS_TUTORIAL_TRICKS_66
   .b 2 38 00 00
   .rp $PD_586
@@ -8001,7 +8025,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_587
   .b 2 19 00 00
   .rp $PD_588
-  .b 5 60 00 00 06 00 00
+  .b 4 60 00 00 06 00
   .rp LEVELS_TUTORIAL_TRICKS_67
   .b 2 75 00 00
   .rp $PD_589
@@ -8009,7 +8033,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_590
   .b 2 19 00 00
   .rp $PD_591
-  .b 5 c5 00 00 07 00 00
+  .b 4 c5 00 00 07 00
   .rp LEVELS_TUTORIAL_TRICKS_68
   .b 2 3e 00 00
   .rp $PD_592
@@ -8017,7 +8041,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_593
   .b 2 0a 00 00
   .rp $PD_594
-  .b 5 f0 00 00 07 00 00
+  .b 4 f0 00 00 07 00
   .rp LEVELS_TUTORIAL_TRICKS_69
   .b 2 76 00 00
   .rp $PD_595
@@ -8025,7 +8049,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_596
   .b 2 0c 00 00
   .rp $PD_597
-  .b 5 df 00 00 07 00 00
+  .b 4 df 00 00 07 00
   .rp LEVELS_TUTORIAL_TRICKS_70
   .b 2 e9 00 00
   .rp $PD_598
@@ -8033,7 +8057,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_599
   .b 2 0a 00 00
   .rp $PD_600
-  .b 5 56 00 00 03 00 00
+  .b 4 56 00 00 03 00
   .rp LEVELS_TUTORIAL_TRICKS_71
   .b 2 8e 00 00
   .rp $PD_601
@@ -8041,7 +8065,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_602
   .b 2 0b 00 00
   .rp $PD_603
-  .b 5 cd 00 00 06 00 00
+  .b 4 cd 00 00 06 00
   .rp LEVELS_TUTORIAL_TRICKS_72
   .b 2 6e 00 00
   .rp $PD_604
@@ -8049,7 +8073,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_605
   .b 2 0b 00 00
   .rp $PD_606
-  .b 5 d8 00 00 06 00 00
+  .b 4 d8 00 00 06 00
   .rp LEVELS_TUTORIAL_TRICKS_73
   .b 2 4b 00 00
   .rp $PD_607
@@ -8057,7 +8081,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_608
   .b 2 0b 00 00
   .rp $PD_609
-  .b 5 99 00 00 06 00 00
+  .b 4 99 00 00 06 00
   .rp LEVELS_TUTORIAL_TRICKS_74
   .b 2 85 00 00
   .rp $PD_610
@@ -8065,7 +8089,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_611
   .b 2 0c 00 00
   .rp $PD_612
-  .b 5 f9 00 00 07 00 00
+  .b 4 f9 00 00 07 00
   .rp LEVELS_TUTORIAL_TRICKS_75
   .b 2 39 00 00
   .rp $PD_613
@@ -8073,7 +8097,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_614
   .b 2 0b 00 00
   .rp $PD_615
-  .b 5 d0 00 00 07 00 00
+  .b 4 d0 00 00 07 00
   .rp LEVELS_TUTORIAL_TRICKS_76
   .b 2 32 00 00
   .rp $PD_616
@@ -8081,7 +8105,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_617
   .b 2 0b 00 00
   .rp $PD_618
-  .b 5 ac 00 00 05 00 00
+  .b 4 ac 00 00 05 00
   .rp LEVELS_TUTORIAL_TRICKS_77
   .b 2 48 00 00
   .rp $PD_619
@@ -8089,7 +8113,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_620
   .b 2 0b 00 00
   .rp $PD_621
-  .b 5 f7 00 00 07 00 00
+  .b 4 f7 00 00 07 00
   .rp LEVELS_TUTORIAL_TRICKS_78
   .b 2 6e 00 00
   .rp $PD_622
@@ -8097,7 +8121,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_623
   .b 2 0b 00 00
   .rp $PD_624
-  .b 5 e8 00 00 08 00 00
+  .b 4 e8 00 00 08 00
   .rp LEVELS_TUTORIAL_TRICKS_79
   .b 2 42 00 00
   .rp $PD_625
@@ -8105,7 +8129,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_626
   .b 2 0b 00 00
   .rp $PD_627
-  .b 5 ec 00 00 09 00 00
+  .b 4 ec 00 00 09 00
   .rp LEVELS_TUTORIAL_TRICKS_80
   .b 2 56 00 00
   .rp $PD_628
@@ -8113,7 +8137,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_629
   .b 2 0a 00 00
   .rp $PD_630
-  .b 5 4c 00 00 03 00 00
+  .b 4 4c 00 00 03 00
   .rp LEVELS_TUTORIAL_TRICKS_81
   .b 2 55 00 00
   .rp $PD_631
@@ -8121,7 +8145,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_632
   .b 2 0a 00 00
   .rp $PD_633
-  .b 5 4c 00 00 03 00 00
+  .b 4 4c 00 00 03 00
   .rp LEVELS_TUTORIAL_TRICKS_82
   .b 2 5c 00 00
   .rp $PD_634
@@ -8129,7 +8153,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_635
   .b 2 0a 00 00
   .rp $PD_636
-  .b 5 4c 00 00 03 00 00
+  .b 4 4c 00 00 03 00
   .rp LEVELS_TUTORIAL_TRICKS_83
   .b 2 5c 00 00
   .rp $PD_637
@@ -8137,7 +8161,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_638
   .b 2 0a 00 00
   .rp $PD_639
-  .b 5 4c 00 00 03 00 00
+  .b 4 4c 00 00 03 00
   .rp LEVELS_TUTORIAL_TRICKS_84
   .b 2 32 00 00
   .rp $PD_640
@@ -8145,7 +8169,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_641
   .b 2 0b 00 00
   .rp $PD_642
-  .b 5 d5 00 00 08 00 00
+  .b 4 d5 00 00 08 00
   .rp LEVELS_TUTORIAL_TRICKS_85
   .b 2 64 00 00
   .rp $PD_643
@@ -8153,7 +8177,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_644
   .b 2 0b 00 00
   .rp $PD_645
-  .b 5 60 00 00 05 00 00
+  .b 4 60 00 00 05 00
   .rp LEVELS_TUTORIAL_TRICKS_86
   .b 2 34 00 00
   .rp $PD_646
@@ -8161,7 +8185,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_647
   .b 2 0b 00 00
   .rp $PD_648
-  .b 5 c1 00 00 07 00 00
+  .b 4 c1 00 00 07 00
   .rp LEVELS_TUTORIAL_TRICKS_87
   .b 2 57 00 00
   .rp $PD_649
@@ -8169,7 +8193,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_650
   .b 2 0b 00 00
   .rp $PD_651
-  .b 5 9d 00 00 06 00 00
+  .b 4 9d 00 00 06 00
   .rp LEVELS_TUTORIAL_TRICKS_88
   .b 2 36 00 00
   .rp $PD_652
@@ -8177,7 +8201,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_653
   .b 2 0b 00 00
   .rp $PD_654
-  .b 5 50 00 00 04 00 00
+  .b 4 50 00 00 04 00
   .rp LEVELS_TUTORIAL_TRICKS_89
   .b 2 a3 00 00
   .rp $PD_655
@@ -8185,7 +8209,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_656
   .b 2 10 00 00
   .rp $PD_657
-  .b 5 d8 00 00 08 00 00
+  .b 4 d8 00 00 08 00
   .rp LEVELS_TUTORIAL_TRICKS_90
   .b 2 5f 00 00
   .rp $PD_658
@@ -8193,7 +8217,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_659
   .b 2 0b 00 00
   .rp $PD_660
-  .b 5 b4 00 00 07 00 00
+  .b 4 b4 00 00 07 00
   .rp LEVELS_TUTORIAL_TRICKS_91
   .b 2 4e 00 00
   .rp $PD_661
@@ -8201,7 +8225,7 @@ LEVELS_TUTORIAL_TRICKS:
   .rp $PD_662
   .b 2 0b 00 00
   .rp $PD_663
-  .b 5 d0 00 00 09 00 00
+  .b 4 d0 00 00 09 00
 LEVELS_TUTORIAL_TRICKS_0:
   .b f e6 71 75 ec 71 79 7d 75 ea 71 79 62 7d 75 e8 71
   .b f 79 60 04 7d 75 e6 71 79 60 06 7d 75 e4 71 79 60
@@ -8922,17 +8946,17 @@ SPEEDS:
 
 $globinit:
   .file <internal>.abc
-  .line 83
+  .line 82
   p1
   setg  tile_anim 0
-  .line 86
+  .line 85
   p2
   setg  anim_frames 0
-  .line 104
+  .line 103
   p1
   setg  tilesize 0
   .line 6
-  push4 67176507
+  push4 67176537
   p00
   push4 100713806
   p00
@@ -8956,7 +8980,7 @@ $globinit:
   p4
   p00
   setgn 24 SPEED_STRS 0
-  push3 64862
+  push3 64892
   sys   set_text_font
   ret
 
@@ -9195,12 +9219,12 @@ $L_at_scan_0:
   ret
 $L_at_scan_1:
   .line 29
-  push3 70329
+  push3 70395
   dup4
   pidxb 1 4
   getp
   .line 30
-  push3 70333
+  push3 70399
   dup5
   pidxb 1 4
   getp
@@ -9963,13 +9987,13 @@ $L_find_other_tunnel_0:
 load_level:
   .file level.abc
   .line 55
-  push3 70350
+  push3 70416
   getg  current_set 0
   pidxb 19 3
   getpn 6
   getg2 current_level 0
   p0
-  upidx 27
+  upidx 26
   .line 59
   getln 3 3
   getpn 6
@@ -10503,14 +10527,88 @@ $L_load_level_26:
 
 loop:
   .file main.abc
-  .line 15
+  .line 14
   p0
   setg  btns_pressed 0
-  .line 16
+  .line 15
   p0
   p128
   sys   pressed
   p128
+  .file input.abc
+  .line 5
+  dup2
+  bnz   $L_loop_74
+  .line 7
+  push  12
+  pushg btn_ticks 0
+  dup6
+  aixb1 4
+  setr
+  .line 8
+  p0
+  pushg repeat_counts 0
+  dup6
+  aixb1 4
+  setr
+  .line 9
+  pop3
+  jmp   $L_loop_77
+$L_loop_74:
+  .line 11
+  pushg btn_ticks 0
+  dup5
+  aixb1 4
+  getr
+  bnz   $L_loop_76
+  .line 13
+  p4
+  pushg btn_ticks 0
+  dup6
+  aixb1 4
+  setr
+  .line 14
+  pushg repeat_counts 0
+  dup5
+  aixb1 4
+  getr
+  push  255
+  cult
+  bz    $L_loop_75
+  .line 15
+  pushg repeat_counts 0
+  dup5
+  aixb1 4
+  dupw
+  getr
+  inc
+  dupw2
+  setr
+  pop2
+$L_loop_75:
+  .line 16
+  getg  btns_pressed 0
+  dup2
+  or
+  setg  btns_pressed 0
+$L_loop_76:
+  .line 18
+  pushg btn_ticks 0
+  dup5
+  aixb1 4
+  dupw
+  getr
+  dec
+  dupw2
+  setr
+  popn  5
+$L_loop_77:
+  .file main.abc
+  .line 16
+  p1
+  p64
+  sys   pressed
+  p64
   .file input.abc
   .line 5
   dup2
@@ -10581,10 +10679,10 @@ $L_loop_81:
 $L_loop_82:
   .file main.abc
   .line 17
-  p1
-  p64
+  p2
+  p16
   sys   pressed
-  p64
+  p16
   .file input.abc
   .line 5
   dup2
@@ -10654,10 +10752,10 @@ $L_loop_86:
   popn  5
 $L_loop_87:
   .file main.abc
-  p2
-  p16
+  p3
+  p32
   sys   pressed
-  p16
+  p32
   .file input.abc
   .line 5
   dup2
@@ -10727,133 +10825,54 @@ $L_loop_91:
   popn  5
 $L_loop_92:
   .file main.abc
-  .line 19
-  p3
-  p32
-  sys   pressed
-  p32
-  .file input.abc
-  .line 5
-  dup2
-  bnz   $L_loop_94
-  .line 7
-  push  12
-  pushg btn_ticks 0
-  dup6
-  aixb1 4
-  setr
-  .line 8
-  p0
-  pushg repeat_counts 0
-  dup6
-  aixb1 4
-  setr
-  .line 9
-  pop3
-  jmp   $L_loop_97
-$L_loop_94:
-  .line 11
-  pushg btn_ticks 0
-  dup5
-  aixb1 4
-  getr
-  bnz   $L_loop_96
-  .line 13
-  p4
-  pushg btn_ticks 0
-  dup6
-  aixb1 4
-  setr
-  .line 14
-  pushg repeat_counts 0
-  dup5
-  aixb1 4
-  getr
-  push  255
-  cult
-  bz    $L_loop_95
-  .line 15
-  pushg repeat_counts 0
-  dup5
-  aixb1 4
-  dupw
-  getr
-  inc
-  dupw2
-  setr
-  pop2
-$L_loop_95:
-  .line 16
-  getg  btns_pressed 0
-  dup2
-  or
-  setg  btns_pressed 0
-$L_loop_96:
-  .line 18
-  pushg btn_ticks 0
-  dup5
-  aixb1 4
-  dupw
-  getr
-  dec
-  dupw2
-  setr
-  popn  5
-$L_loop_97:
-  .file main.abc
-  .line 21
+  .line 20
   getg  state 0
-  .line 23
+  .line 22
   dup
   bz    $L_loop_1
-  .line 24
+  .line 23
   dup
   dec
   bz    $L_loop_2
-  .line 25
+  .line 24
   dup
   p2
   sub
   bz    $L_loop_3
-  .line 26
+  .line 25
   dup
   p3
   sub
   bz    $L_loop_4
-  .line 27
+  .line 26
   dup
   p4
   sub
   bz    $L_loop_5
-  .line 28
+  .line 27
   dup
   p5
   sub
   bz    $L_loop_6
-  .line 29
+  .line 28
   dup
   p6
   sub
   bz    $L_loop_7
-  .line 30
+  .line 29
   dup
   p7
   sub
   bz    $L_loop_8
-  .line 31
-  dup
-  p8
-  sub
-  bz    $L_loop_9
-  .line 21
+  .line 20
   pop
-  .line 34
+  .line 32
   getg  frame 0
   inc
   setg  frame 0
-  .line 35
+  .line 33
   sys   display
-  .line 13
+  .line 12
   ret
 $L_loop_1:
   .file menu.abc
@@ -10861,118 +10880,102 @@ $L_loop_1:
   p0
   getg  menu_index 0
   cult
-  bz    $L_loop_28
+  bz    $L_loop_27
   p128
   sys   just_pressed
-  bz    $L_loop_28
+  bz    $L_loop_27
   .line 6
   getg  menu_index 0
   dec
   setg  menu_index 0
-$L_loop_28:
+$L_loop_27:
   .line 7
   getg  menu_index 0
-  p3
+  p2
   cult
-  bz    $L_loop_30
+  bz    $L_loop_29
   p16
   sys   just_pressed
-  bz    $L_loop_30
+  bz    $L_loop_29
   .line 8
   getg  menu_index 0
   inc
   setg  menu_index 0
-$L_loop_30:
+$L_loop_29:
   .line 10
   p8
   sys   just_pressed
-  bz    $L_loop_36
+  bz    $L_loop_34
   .line 12
   getg  menu_index 0
   .line 14
   dup
-  bz    $L_loop_31
+  bz    $L_loop_30
   .line 15
   dup
   dec
-  bz    $L_loop_32
+  bz    $L_loop_31
   .line 16
   dup
   p2
   sub
-  bz    $L_loop_33
-  .line 17
-  dup
-  p3
-  sub
-  bz    $L_loop_34
+  bz    $L_loop_32
   .line 12
-  jmp   $L_loop_35
-$L_loop_31:
+  jmp   $L_loop_33
+$L_loop_30:
   .line 14
-  p4
+  p3
   setg  state 0
   .line 12
-  jmp   $L_loop_35
-$L_loop_32:
+  jmp   $L_loop_33
+$L_loop_31:
   .line 15
   p1
   setg  state 0
   .line 12
-  jmp   $L_loop_35
-$L_loop_33:
+  jmp   $L_loop_33
+$L_loop_32:
   .line 16
   p2
   setg  state 0
-  .line 12
-  jmp   $L_loop_35
-$L_loop_34:
-  .line 17
-  p3
-  setg  state 0
-$L_loop_35:
+$L_loop_33:
   .line 12
   pop
-$L_loop_36:
-  .line 21
-  push3 52669
+$L_loop_34:
+  .line 20
+  push3 52693
   sys   set_text_font
-  .line 22
+  .line 21
   push4 151022473
   p00
   push4 1048588
   sys   draw_text_P
-  .line 23
+  .line 22
   p3
   p2
   p128
   push  14
   p000
   sys   draw_filled_rect
-  .line 25
-  push3 57814
+  .line 24
+  push3 57838
   sys   set_text_font
-  .line 26
-  push4 201387844
+  .line 25
+  push4 201387868
   p00
   push4 2228254
   sys   draw_text_P
-  .line 27
-  push4 67170128
+  .line 26
+  push4 67170152
   p00
   push4 2228265
   sys   draw_text_P
-  .line 28
-  push4 134278996
+  .line 27
+  push4 117502047
   p00
   push4 2228276
   sys   draw_text_P
   .line 29
-  push4 117501788
-  p00
-  push4 2228287
-  sys   draw_text_P
-  .line 31
   p3
   p5
   dup
@@ -10984,165 +10987,145 @@ $L_loop_36:
   push2 24
   sys   draw_filled_rect
   .file main.abc
-  .line 21
+  .line 20
   pop
-  .line 34
+  .line 32
   getg  frame 0
   inc
   setg  frame 0
-  .line 35
+  .line 33
   sys   display
-  .line 13
+  .line 12
   ret
 $L_loop_2:
   .file help.abc
   .line 5
   p4
   sys   just_pressed
-  bz    $L_loop_14
+  bz    $L_loop_13
   .line 6
   p0
   setg  state 0
-$L_loop_14:
+$L_loop_13:
   .file main.abc
-  .line 21
+  .line 20
   pop
-  .line 34
+  .line 32
   getg  frame 0
   inc
   setg  frame 0
-  .line 35
+  .line 33
   sys   display
-  .line 13
+  .line 12
   ret
 $L_loop_3:
-  .file settings.abc
-  .line 5
-  p4
-  sys   just_pressed
-  bz    $L_loop_76
-  .line 6
-  p0
-  setg  state 0
-$L_loop_76:
-  .file main.abc
-  .line 21
-  pop
-  .line 34
-  getg  frame 0
-  inc
-  setg  frame 0
-  .line 35
-  sys   display
-  .line 13
-  ret
-$L_loop_4:
   .file credits.abc
   .line 5
   p4
   sys   just_pressed
-  bz    $L_loop_11
+  bz    $L_loop_10
   .line 6
   p0
   setg  state 0
-$L_loop_11:
+$L_loop_10:
   .file main.abc
-  .line 21
+  .line 20
   pop
-  .line 34
+  .line 32
   getg  frame 0
   inc
   setg  frame 0
-  .line 35
+  .line 33
   sys   display
-  .line 13
+  .line 12
   ret
-$L_loop_5:
+$L_loop_4:
   .file select.abc
-  push3 70337
+  .line 23
+  push3 70403
   getg  select_set 0
   pidxb 19 3
-  .line 14
+  .line 24
   getln 3 3
   push  13
   add3b
   p3
   add3b
   getpn 2
-  .line 16
+  .line 26
   p0
   getg  select_set 0
   cult
-  bz    $L_loop_60
+  bz    $L_loop_58
   p0
   p32
   .file input.abc
   .line 23
   dup
   sys   just_pressed
-  bnzp  $L_loop_57
+  bnzp  $L_loop_55
   getg  btns_pressed 0
   dup2
   and
   bool
-$L_loop_57:
+$L_loop_55:
   setl  2
   pop
   .file select.abc
-  .line 16
-  bz    $L_loop_60
-  .line 18
+  .line 26
+  bz    $L_loop_58
+  .line 28
   getg  select_set 0
   dec
   setg  select_set 0
-  .line 19
+  .line 29
   p0
   setg  set_descy 0
-$L_loop_60:
-  .line 21
+$L_loop_58:
+  .line 31
   getg  select_set 0
   p2
   cult
-  bz    $L_loop_64
+  bz    $L_loop_62
   p0
   p64
   .file input.abc
   .line 23
   dup
   sys   just_pressed
-  bnzp  $L_loop_61
+  bnzp  $L_loop_59
   getg  btns_pressed 0
   dup2
   and
   bool
-$L_loop_61:
+$L_loop_59:
   setl  2
   pop
   .file select.abc
-  .line 21
-  bz    $L_loop_64
-  .line 23
+  .line 31
+  bz    $L_loop_62
+  .line 33
   getg  select_set 0
   inc
   setg  select_set 0
-  .line 24
+  .line 34
   p0
   setg  set_descy 0
-$L_loop_64:
-  .line 27
-  push3 50529
+$L_loop_62:
+  .line 37
+  push3 50553
   sys   set_text_font
-  .line 28
+  .line 38
   p00
-  .line 30
+  .line 40
   p7
   getln 3 8
   push  12
   add3b
   getp
   cult
-  bz    $L_loop_65
-  .line 31
+  bz    $L_loop_63
+  .line 41
   getln 3 7
   push  12
   add3b
@@ -11152,40 +11135,40 @@ $L_loop_64:
   push  51
   sub
   setl  1
-$L_loop_65:
-  .line 33
+$L_loop_63:
+  .line 43
   p128
   sys   pressed
-  bz    $L_loop_66
+  bz    $L_loop_64
   getg  set_descy 0
   dec
   setg  set_descy 0
-$L_loop_66:
-  .line 34
+$L_loop_64:
+  .line 44
   p16
   sys   pressed
-  bz    $L_loop_67
+  bz    $L_loop_65
   getg  set_descy 0
   inc
   setg  set_descy 0
-$L_loop_67:
-  .line 35
+$L_loop_65:
+  .line 45
   getg  set_descy 0
   dup3
   cslt
-  bz    $L_loop_68
+  bz    $L_loop_66
   dup2
   setg  set_descy 0
-$L_loop_68:
-  .line 36
+$L_loop_66:
+  .line 46
   dup
   getg  set_descy 0
   cslt
-  bz    $L_loop_69
+  bz    $L_loop_67
   dup
   setg  set_descy 0
-$L_loop_69:
-  .line 38
+$L_loop_67:
+  .line 48
   getln 3 7
   p6
   add3b
@@ -11196,30 +11179,30 @@ $L_loop_69:
   sub2
   p00
   sys   draw_text_P
-  .line 40
+  .line 50
   getg  frame 0
   p4
   lsr
   p1
   and
-  .line 42
+  .line 52
   p0
   push2 32782
   p0000
   sys   draw_filled_rect
-  .line 43
+  .line 53
   p3
   p2
   p128
   push  10
   p000
   sys   draw_filled_rect
-  .line 44
+  .line 54
   p0
   getg  select_set 0
   cult
-  bz    $L_loop_70
-  .line 45
+  bz    $L_loop_68
+  .line 55
   p3
   p0
   push4 4278202986
@@ -11228,13 +11211,13 @@ $L_loop_69:
   getl  10
   sub2b
   sys   draw_sprite
-$L_loop_70:
-  .line 46
+$L_loop_68:
+  .line 56
   getg  select_set 0
   p2
   cult
-  bz    $L_loop_71
-  .line 47
+  bz    $L_loop_69
+  .line 57
   p1
   p0
   push4 4278202986
@@ -11243,16 +11226,16 @@ $L_loop_70:
   getl  10
   add2b
   sys   draw_sprite
-$L_loop_71:
-  .line 50
-  push3 61688
+$L_loop_69:
+  .line 60
+  push3 61704
   sys   set_text_font
-  .line 51
+  .line 61
   getln 3 8
   getpn 6
   sys   text_width_P
   pop
-  .line 52
+  .line 62
   getln 3 9
   getpn 6
   p7
@@ -11267,186 +11250,186 @@ $L_loop_71:
   sub2
   sys   draw_text_P
   pop
-  .line 55
+  .line 65
   p8
   sys   just_pressed
-  bz    $L_loop_72
-  .line 56
-  p5
+  bz    $L_loop_70
+  .line 66
+  p4
   setg  state 0
-$L_loop_72:
-  .line 57
+$L_loop_70:
+  .line 67
   p4
   sys   just_pressed
-  bz    $L_loop_73
-  .line 58
+  bz    $L_loop_71
+  .line 68
   p0
   setg  state 0
-$L_loop_73:
-  .line 10
+$L_loop_71:
+  .line 20
   popn  9
   .file main.abc
-  .line 34
+  .line 32
   getg  frame 0
   inc
   setg  frame 0
-  .line 35
+  .line 33
   sys   display
-  .line 13
+  .line 12
   ret
-$L_loop_6:
+$L_loop_5:
   .file select.abc
-  .line 64
-  push3 70337
+  .line 74
+  push3 70403
   getg  select_set 0
   pidxb 19 3
-  .line 65
+  .line 75
   getln 3 3
   push  13
   add3b
   getpn 6
-  .line 66
+  .line 76
   dupw2
-  .line 67
+  .line 77
   pushg select_levels 0
   getg  select_set 0
   aidxb 2 3
   getr2
-  .line 69
+  .line 79
   p0
   p128
   .file input.abc
   .line 23
   dup
   sys   just_pressed
-  bnzp  $L_loop_39
+  bnzp  $L_loop_37
   getg  btns_pressed 0
   dup2
   and
   bool
-$L_loop_39:
+$L_loop_37:
   setl  2
   pop
   .file select.abc
-  .line 69
-  bz    $L_loop_43
-  .line 70
+  .line 79
+  bz    $L_loop_41
+  .line 80
   dupw
   p000
-  .line 5
+  .line 15
   pushg repeat_counts 0
   dup3
   aixb1 4
   getr
-  .line 6
+  .line 16
   dup
   push  10
   cult
-  bz    $L_loop_41
+  bz    $L_loop_39
   p1
   p0
   setl2 4
   pop2
-  jmp   $L_loop_42
-$L_loop_41:
-  .line 7
+  jmp   $L_loop_40
+$L_loop_39:
+  .line 17
   push2 10
   setl2 4
   pop2
-$L_loop_42:
-  .line 70
+$L_loop_40:
+  .line 80
   sub2
   setl2 2
-$L_loop_43:
-  .line 71
+$L_loop_41:
+  .line 81
   p0
   p16
   .file input.abc
   .line 23
   dup
   sys   just_pressed
-  bnzp  $L_loop_44
+  bnzp  $L_loop_42
   getg  btns_pressed 0
   dup2
   and
   bool
-$L_loop_44:
+$L_loop_42:
   setl  2
   pop
   .file select.abc
-  .line 71
-  bz    $L_loop_48
-  .line 72
+  .line 81
+  bz    $L_loop_46
+  .line 82
   dupw
   p00
   p2
-  .line 5
+  .line 15
   pushg repeat_counts 0
   dup3
   aixb1 4
   getr
-  .line 6
+  .line 16
   dup
   push  10
   cult
-  bz    $L_loop_46
+  bz    $L_loop_44
   p1
   p0
   setl2 4
   pop2
-  jmp   $L_loop_47
-$L_loop_46:
-  .line 7
+  jmp   $L_loop_45
+$L_loop_44:
+  .line 17
   push2 10
   setl2 4
   pop2
-$L_loop_47:
-  .line 72
+$L_loop_45:
+  .line 82
   add2
   setl2 2
-$L_loop_48:
-  .line 73
+$L_loop_46:
+  .line 83
   dupw
   p00
   cslt2
-  bz    $L_loop_49
-  .line 74
+  bz    $L_loop_47
+  .line 84
   p00
   setl2 2
-$L_loop_49:
-  .line 75
+$L_loop_47:
+  .line 85
   dupw
   dupw5
   cult2
-  bnz   $L_loop_50
-  .line 76
+  bnz   $L_loop_48
+  .line 86
   dupw3
   p1
   sub2b
   setl2 2
-$L_loop_50:
-  .line 77
+$L_loop_48:
+  .line 87
   dupw
   pushg select_levels 0
   getg  select_set 0
   aidxb 2 3
   setr2
-  .line 79
+  .line 89
   p3
   p2
   p128
   push  10
   p000
   sys   draw_filled_rect
-  .line 81
-  push3 61688
+  .line 91
+  push3 61704
   sys   set_text_font
-  .line 82
+  .line 92
   getln 3 13
   getpn 6
   sys   text_width_P
   pop
-  .line 83
+  .line 93
   getln 3 14
   getpn 6
   p7
@@ -11461,21 +11444,21 @@ $L_loop_50:
   sub2
   sys   draw_text_P
   pop
-  .line 86
+  .line 96
   getg  frame 0
   p4
   lsr
   p1
   and
-  .line 88
+  .line 98
   getln 6 11
   dupw8
   sext
-  upidx 27
-  .line 90
-  push3 61688
+  upidx 26
+  .line 100
+  push3 61704
   sys   set_text_font
-  .line 91
+  .line 101
   alloc 40
   getln 3 43
   p6
@@ -11485,24 +11468,40 @@ $L_loop_50:
   push2 40
   sys   strcpy_P
   pop4
-  .line 92
+  .line 102
   push  117
   refl  41
   push2 40
   sys   wrap_text
   pop2
-  .line 93
+  .line 103
   refl  40
-  push3 2097192
+  push3 1703976
   p000
   sys   draw_text
   popn  40
-  .line 96
+  .line 106
+  push3 50553
+  sys   set_text_font
+  .line 107
+  push3 70359
+  getln 3 6
+  push  25
+  add3b
+  getp
+  pidxb 6 6
+  getpn 6
+  push4 234945902
+  p00
+  push  50
+  p000
+  sys   draw_textf
+  .line 109
   p00
   dupw7
   cslt2
-  bz    $L_loop_51
-  .line 97
+  bz    $L_loop_49
+  .line 110
   p00
   push4 218116714
   p0
@@ -11510,8 +11509,8 @@ $L_loop_50:
   sub2b
   push2 120
   sys   draw_sprite
-$L_loop_51:
-  .line 98
+$L_loop_49:
+  .line 111
   dupw5
   sext
   getl2 11
@@ -11520,8 +11519,8 @@ $L_loop_51:
   p00
   sub3
   cslt3
-  bz    $L_loop_52
-  .line 99
+  bz    $L_loop_50
+  .line 112
   p2
   p0
   push4 771764842
@@ -11530,17 +11529,14 @@ $L_loop_51:
   add2b
   push2 120
   sys   draw_sprite
-$L_loop_52:
-  .line 101
+$L_loop_50:
+  .line 114
   p3
   p128
   push  56
   p000
   sys   draw_hline
-  .line 102
-  push3 50529
-  sys   set_text_font
-  .line 103
+  .line 115
   dupw7
   p00
   getl2 10
@@ -11548,19 +11544,19 @@ $L_loop_52:
   p1
   add3b
   sext
-  push4 117502140
+  push4 117502197
   p00
   push  63
   p000
   sys   draw_textf
-  .line 105
+  .line 117
   getln 3 3
   push  12
   add3b
   getpn 6
   sys   text_width_P
   pop
-  .line 106
+  .line 118
   getln 3 4
   push  12
   add3b
@@ -11570,110 +11566,110 @@ $L_loop_52:
   sub2b
   sys   draw_text_P
   pop
-  .line 109
+  .line 121
   p8
   sys   just_pressed
-  bz    $L_loop_53
-  .line 111
+  bz    $L_loop_51
+  .line 123
   getg  select_set 0
   setg  current_set 0
-  .line 112
+  .line 124
   dupw5
   setg2 current_level 0
-  .line 113
+  .line 125
   call  load_level
-  .line 114
-  p6
+  .line 126
+  p5
   setg  state 0
-$L_loop_53:
-  .line 117
+$L_loop_51:
+  .line 129
   p4
   sys   just_pressed
-  bz    $L_loop_54
-  .line 119
-  p4
+  bz    $L_loop_52
+  .line 131
+  p3
   setg  state 0
-$L_loop_54:
-  .line 61
+$L_loop_52:
+  .line 71
   popn  18
   .file main.abc
-  .line 34
+  .line 32
   getg  frame 0
   inc
   setg  frame 0
-  .line 35
+  .line 33
   sys   display
-  .line 13
+  .line 12
+  ret
+$L_loop_6:
+  .line 27
+  call  play
+  .line 20
+  pop
+  .line 32
+  getg  frame 0
+  inc
+  setg  frame 0
+  .line 33
+  sys   display
+  .line 12
   ret
 $L_loop_7:
-  .line 29
-  call  play
-  .line 21
-  pop
-  .line 34
-  getg  frame 0
-  inc
-  setg  frame 0
-  .line 35
-  sys   display
-  .line 13
-  ret
-$L_loop_8:
   .file pause.abc
   .line 16
   p0
   getg  pause_i 0
   cult
-  bz    $L_loop_101
+  bz    $L_loop_96
   p0
   p128
   .file input.abc
   .line 23
   dup
   sys   just_pressed
-  bnzp  $L_loop_99
+  bnzp  $L_loop_94
   getg  btns_pressed 0
   dup2
   and
   bool
-$L_loop_99:
+$L_loop_94:
   setl  2
   pop
   .file pause.abc
   .line 16
-  bz    $L_loop_101
+  bz    $L_loop_96
   .line 17
   getg  pause_i 0
   dec
   setg  pause_i 0
-$L_loop_101:
+$L_loop_96:
   .line 18
   getg  pause_i 0
   p5
   cult
-  bz    $L_loop_104
+  bz    $L_loop_99
   p0
   p16
   .file input.abc
   .line 23
   dup
   sys   just_pressed
-  bnzp  $L_loop_102
+  bnzp  $L_loop_97
   getg  btns_pressed 0
   dup2
   and
   bool
-$L_loop_102:
+$L_loop_97:
   setl  2
   pop
   .file pause.abc
   .line 18
-  bz    $L_loop_104
+  bz    $L_loop_99
   .line 19
   getg  pause_i 0
   inc
   setg  pause_i 0
-$L_loop_104:
+$L_loop_99:
   .line 21
   p0
   .line 22
@@ -11681,47 +11677,47 @@ $L_loop_104:
   .line 24
   dup
   dec
-  bz    $L_loop_105
+  bz    $L_loop_100
   .line 25
   dup
   p2
   sub
-  bz    $L_loop_106
+  bz    $L_loop_101
   .line 26
   dup
   p4
   sub
-  bz    $L_loop_107
+  bz    $L_loop_102
   .line 27
   dup
   p7
   sub
-  bz    $L_loop_108
+  bz    $L_loop_103
   .line 22
-  jmp   $L_loop_109
-$L_loop_105:
+  jmp   $L_loop_104
+$L_loop_100:
   .line 24
   p3
   setl  2
   .line 22
-  jmp   $L_loop_109
-$L_loop_106:
+  jmp   $L_loop_104
+$L_loop_101:
   .line 25
   p2
   setl  2
   .line 22
-  jmp   $L_loop_109
-$L_loop_107:
+  jmp   $L_loop_104
+$L_loop_102:
   .line 26
   p1
   setl  2
   .line 22
-  jmp   $L_loop_109
-$L_loop_108:
+  jmp   $L_loop_104
+$L_loop_103:
   .line 27
   p0
   setl  2
-$L_loop_109:
+$L_loop_104:
   .line 22
   pop
   .line 30
@@ -11740,10 +11736,10 @@ $L_loop_109:
   dupw2
   sys   draw_vline
   .line 35
-  push3 50529
+  push3 50553
   sys   set_text_font
   .line 37
-  push4 100724579
+  push4 100724838
   p00
   p5
   push3 21760
@@ -11756,7 +11752,7 @@ $L_loop_109:
   .line 42
   getg  undo_num_moves 0
   p000
-  push4 167833449
+  push4 167833708
   p00
   push4 4915215
   sys   draw_textf
@@ -11766,7 +11762,7 @@ $L_loop_109:
   push4 4915222
   sys   draw_text_P
   .line 44
-  push4 167833459
+  push4 167833718
   p00
   push4 4915229
   sys   draw_text_P
@@ -11776,7 +11772,8 @@ $L_loop_109:
   p0
   sys   draw_hline
   .line 46
-  push4 100724848
+  p128
+  push3 393456
   p00
   push4 4915239
   sys   draw_text_P
@@ -11787,7 +11784,7 @@ $L_loop_109:
   push4 6815783
   sys   draw_text_P
   .line 47
-  push4 83947638
+  push4 83947654
   p00
   push4 4915246
   sys   draw_text_P
@@ -11798,7 +11795,7 @@ $L_loop_109:
   push4 6815790
   sys   draw_text_P
   .line 48
-  push4 100724859
+  push4 100724875
   p00
   push4 4915253
   sys   draw_text_P
@@ -11819,7 +11816,7 @@ $L_loop_109:
   .line 53
   getg4 shots 0
   getg4 moves 0
-  push4 251719809
+  push4 251719825
   p00
   refl  46
   p32
@@ -11854,10 +11851,10 @@ $L_loop_109:
   getg  pause_i 0
   p3
   cult
-  bnz   $L_loop_110
+  bnz   $L_loop_105
   p3
   add
-$L_loop_110:
+$L_loop_105:
   .line 60
   push3 315
   dupw
@@ -11868,49 +11865,49 @@ $L_loop_110:
   .line 62
   p8
   sys   just_pressed
-  bz    $L_loop_119
+  bz    $L_loop_114
   .line 64
   getg  pause_i 0
   .line 66
   dup
-  bz    $L_loop_111
+  bz    $L_loop_106
   .line 67
   dup
   dec
-  bz    $L_loop_112
+  bz    $L_loop_107
   .line 68
   dup
   p2
   sub
-  bz    $L_loop_113
+  bz    $L_loop_108
   .line 69
   dup
   p3
   sub
-  bz    $L_loop_114
+  bz    $L_loop_109
   .line 70
   dup
   p4
   sub
-  bz    $L_loop_116
+  bz    $L_loop_111
   .line 71
   dup
   p5
   sub
-  bz    $L_loop_117
+  bz    $L_loop_112
   .line 64
-  jmp   $L_loop_118
-$L_loop_111:
+  jmp   $L_loop_113
+$L_loop_106:
   .line 66
   p0
   setg  pause_i 0
-  p6
+  p5
   setg  state 0
   .file undo.abc
   .line 86
   getg  undo_num_moves 0
   .line 87
-  bz    $L_loop_124
+  bz    $L_loop_119
   .line 89
   getg  undo_num_moves 0
   dec
@@ -11991,7 +11988,7 @@ $L_loop_111:
   pushg tiles 0
   .line 25
   p0
-$L_loop_126:
+$L_loop_121:
   .line 28
   pushg undo_data 0
   dupw6
@@ -12013,8 +12010,8 @@ $L_loop_126:
   p1
   dupw
   cult
-  bnz   $L_loop_128
-$L_loop_127:
+  bnz   $L_loop_123
+$L_loop_122:
   .line 32
   p0
   getln 3 7
@@ -12027,7 +12024,7 @@ $L_loop_127:
   inc
   dupw
   cult
-  bnz   $L_loop_128
+  bnz   $L_loop_123
   .line 32
   p0
   getln 3 7
@@ -12040,7 +12037,7 @@ $L_loop_127:
   inc
   dupw
   cult
-  bnz   $L_loop_128
+  bnz   $L_loop_123
   .line 32
   p0
   getln 3 7
@@ -12053,7 +12050,7 @@ $L_loop_127:
   inc
   dupw
   cult
-  bnz   $L_loop_128
+  bnz   $L_loop_123
   .line 32
   p0
   getln 3 7
@@ -12066,7 +12063,7 @@ $L_loop_127:
   inc
   dupw
   cult
-  bnz   $L_loop_128
+  bnz   $L_loop_123
   .line 32
   p0
   getln 3 7
@@ -12079,7 +12076,7 @@ $L_loop_127:
   inc
   dupw
   cult
-  bnz   $L_loop_128
+  bnz   $L_loop_123
   .line 32
   p0
   getln 3 7
@@ -12092,7 +12089,7 @@ $L_loop_127:
   inc
   dupw
   cult
-  bnz   $L_loop_128
+  bnz   $L_loop_123
   .line 32
   p0
   getln 3 7
@@ -12105,7 +12102,7 @@ $L_loop_127:
   inc
   dupw
   cult
-  bnz   $L_loop_128
+  bnz   $L_loop_123
   .line 32
   p0
   getln 3 7
@@ -12118,8 +12115,8 @@ $L_loop_127:
   inc
   dupw
   cult
-  bz    $L_loop_127
-$L_loop_128:
+  bz    $L_loop_122
+$L_loop_123:
   pop
   .line 33
   dupw6
@@ -12135,7 +12132,7 @@ $L_loop_128:
   pop2
   .line 35
   dup
-  bnz   $L_loop_126
+  bnz   $L_loop_121
   .line 36
   dupw4
   setl2 7
@@ -12148,7 +12145,7 @@ $L_loop_128:
   pushg objects 0
   .line 25
   p0
-$L_loop_129:
+$L_loop_124:
   .line 28
   pushg undo_data 0
   dupw6
@@ -12170,8 +12167,8 @@ $L_loop_129:
   p1
   dupw
   cult
-  bnz   $L_loop_131
-$L_loop_130:
+  bnz   $L_loop_126
+$L_loop_125:
   .line 32
   p0
   getln 3 7
@@ -12184,7 +12181,7 @@ $L_loop_130:
   inc
   dupw
   cult
-  bnz   $L_loop_131
+  bnz   $L_loop_126
   .line 32
   p0
   getln 3 7
@@ -12197,7 +12194,7 @@ $L_loop_130:
   inc
   dupw
   cult
-  bnz   $L_loop_131
+  bnz   $L_loop_126
   .line 32
   p0
   getln 3 7
@@ -12210,7 +12207,7 @@ $L_loop_130:
   inc
   dupw
   cult
-  bnz   $L_loop_131
+  bnz   $L_loop_126
   .line 32
   p0
   getln 3 7
@@ -12223,7 +12220,7 @@ $L_loop_130:
   inc
   dupw
   cult
-  bnz   $L_loop_131
+  bnz   $L_loop_126
   .line 32
   p0
   getln 3 7
@@ -12236,7 +12233,7 @@ $L_loop_130:
   inc
   dupw
   cult
-  bnz   $L_loop_131
+  bnz   $L_loop_126
   .line 32
   p0
   getln 3 7
@@ -12249,7 +12246,7 @@ $L_loop_130:
   inc
   dupw
   cult
-  bnz   $L_loop_131
+  bnz   $L_loop_126
   .line 32
   p0
   getln 3 7
@@ -12262,7 +12259,7 @@ $L_loop_130:
   inc
   dupw
   cult
-  bnz   $L_loop_131
+  bnz   $L_loop_126
   .line 32
   p0
   getln 3 7
@@ -12275,8 +12272,8 @@ $L_loop_130:
   inc
   dupw
   cult
-  bz    $L_loop_130
-$L_loop_131:
+  bz    $L_loop_125
+$L_loop_126:
   pop
   .line 33
   dupw6
@@ -12292,7 +12289,7 @@ $L_loop_131:
   pop2
   .line 35
   dup
-  bnz   $L_loop_129
+  bnz   $L_loop_124
   .line 36
   dupw4
   setl2 7
@@ -12327,27 +12324,27 @@ $L_loop_131:
   setg  undo_num_moves 0
   .line 84
   pop
-$L_loop_124:
+$L_loop_119:
   .file pause.abc
   .line 64
-  jmp   $L_loop_118
-$L_loop_112:
+  jmp   $L_loop_113
+$L_loop_107:
   .line 67
   p0
   setg  pause_i 0
-  p8
+  p7
   setg  state 0
   .line 64
-  jmp   $L_loop_118
-$L_loop_113:
+  jmp   $L_loop_113
+$L_loop_108:
   .line 68
   p0
   setg  pause_i 0
-  p5
+  p4
   setg  state 0
   .line 64
-  jmp   $L_loop_118
-$L_loop_114:
+  jmp   $L_loop_113
+$L_loop_109:
   .line 69
   p1
   getg  tilesize 0
@@ -12355,73 +12352,73 @@ $L_loop_114:
   setg  tilesize 0
   getg  tilesize 0
   cult
-  bz    $L_loop_115
+  bz    $L_loop_110
   p0
   setg  tilesize 0
-$L_loop_115:
+$L_loop_110:
   .line 64
-  jmp   $L_loop_118
-$L_loop_116:
+  jmp   $L_loop_113
+$L_loop_111:
   .line 70
   getg  tile_anim 0
   not
   setg  tile_anim 0
   .line 64
-  jmp   $L_loop_118
-$L_loop_117:
+  jmp   $L_loop_113
+$L_loop_112:
   .line 71
   linc  3
   dup3
   p4
   cult
-  bnz   $L_loop_118
+  bnz   $L_loop_113
   p0
   setl  3
-$L_loop_118:
+$L_loop_113:
   .line 64
   pop
   .line 74
-  push3 99170
+  push3 99016
   dup5
   pidxb 1 4
   getp
   setg  anim_frames 0
-$L_loop_119:
+$L_loop_114:
   .line 77
   p4
   sys   just_pressed
-  bz    $L_loop_120
+  bz    $L_loop_115
   .line 79
   p0
   setg  pause_i 0
   .line 80
-  p6
+  p5
   setg  state 0
   .line 81
   p0
   setg  can_pan 0
-$L_loop_120:
+$L_loop_115:
   .line 14
   pop3
   .file main.abc
-  .line 34
+  .line 32
   getg  frame 0
   inc
   setg  frame 0
-  .line 35
+  .line 33
   sys   display
-  .line 13
+  .line 12
   ret
-$L_loop_9:
+$L_loop_8:
   .file hint.abc
   .line 7
-  push3 70350
+  push3 70416
   getg  current_set 0
   pidxb 19 3
   getpn 6
   getg2 current_level 0
   p0
-  upidx 27
+  upidx 26
   .line 9
   getln 3 3
   push  24
@@ -12432,7 +12429,7 @@ $L_loop_9:
   .line 11
   dup3
   cult
-  bz    $L_loop_17
+  bz    $L_loop_16
   .line 12
   dup2
   push  9
@@ -12442,35 +12439,35 @@ $L_loop_9:
   p2
   sub
   setl  1
-$L_loop_17:
+$L_loop_16:
   .line 14
   p0
   getg  hint_y 0
   cult
-  bz    $L_loop_19
+  bz    $L_loop_18
   p128
   sys   pressed
-  bz    $L_loop_19
+  bz    $L_loop_18
   .line 15
   getg  hint_y 0
   dec
   setg  hint_y 0
-$L_loop_19:
+$L_loop_18:
   .line 16
   getg  hint_y 0
   dup2
   cult
-  bz    $L_loop_21
+  bz    $L_loop_20
   p16
   sys   pressed
-  bz    $L_loop_21
+  bz    $L_loop_20
   .line 17
   getg  hint_y 0
   inc
   setg  hint_y 0
-$L_loop_21:
+$L_loop_20:
   .line 19
-  push3 50529
+  push3 50553
   sys   set_text_font
   .line 20
   getln 3 5
@@ -12493,7 +12490,7 @@ $L_loop_21:
   p0
   getg  hint_y 0
   cult
-  bz    $L_loop_22
+  bz    $L_loop_21
   .line 24
   p00
   push4 16790122
@@ -12502,12 +12499,12 @@ $L_loop_21:
   sub2b
   push2 120
   sys   draw_sprite
-$L_loop_22:
+$L_loop_21:
   .line 25
   getg  hint_y 0
   dup3
   cult
-  bz    $L_loop_23
+  bz    $L_loop_22
   .line 26
   p2
   p0
@@ -12517,66 +12514,66 @@ $L_loop_22:
   add2b
   push2 120
   sys   draw_sprite
-$L_loop_23:
+$L_loop_22:
   .line 28
   p4
   sys   just_pressed
-  bz    $L_loop_24
+  bz    $L_loop_23
   .line 30
   p0
   setg  hint_y 0
   .line 31
-  p6
+  p5
   setg  state 0
-$L_loop_24:
+$L_loop_23:
   .line 5
   popn  7
   .file main.abc
-  .line 34
+  .line 32
   getg  frame 0
   inc
   setg  frame 0
-  .line 35
+  .line 33
   sys   display
-  .line 13
+  .line 12
   ret
 
 main:
   .file main.abc
-  .line 40
+  .line 38
   push  30
   sys   set_frame_rate
-  .line 41
+  .line 39
   sys   load
   setg  save_valid 0
-  .line 43
-  p4
+  .line 41
+  p3
   setg  state 0
-  .line 44
+  .line 42
   p0
   setg  select_set 0
-  .line 46
+  .line 44
   p2
   setg  current_set 0
-  .line 47
+  .line 45
   push2 71
   setg2 current_level 0
-  .line 48
+  .line 46
   p0
   setg  current_set 0
-  .line 49
+  .line 47
   p00
   setg2 current_level 0
-  .line 50
+  .line 48
   call  load_level
-  .line 51
-  p6
+  .line 49
+  p5
   setg  state 0
-  .line 52
+  .line 50
   p2
   setg  anim_frames 0
 $L_main_1:
-  .line 58
+  .line 56
   call  loop
   call  loop
   call  loop
@@ -12585,7 +12582,7 @@ $L_main_1:
   call  loop
   call  loop
   call  loop
-  .line 57
+  .line 55
   jmp   $L_main_1
 
 play:
@@ -12618,10 +12615,10 @@ play:
   push2 45
   sys   draw_filled_rect
   .line 283
-  push3 57814
+  push3 57838
   sys   set_text_font
   .line 284
-  push4 100724880
+  push4 100724937
   p00
   push4 3014692
   sys   draw_text_P
@@ -12631,7 +12628,7 @@ $L_play_0:
   sys   just_pressed
   bz    $L_play_1
   .line 287
-  p5
+  p4
   setg  state 0
   .line 302
   ret
@@ -12647,7 +12644,8 @@ $L_play_1:
   setg2 current_level 0
   .line 291
   getg2 current_level 0
-  push4 18009600
+  p0
+  push3 70416
   getg  current_set 0
   pidxb 19 3
   p3
@@ -12661,7 +12659,7 @@ $L_play_1:
   sub2b
   setg2 current_level 0
   .line 294
-  p5
+  p4
   setg  state 0
   .line 291
   jmp   $L_play_3
@@ -12707,24 +12705,24 @@ $L_play_6:
   push2 20
   sys   draw_filled_rect
   .line 317
-  push3 57814
+  push3 57838
   sys   set_text_font
   .line 318
-  push4 251719830
+  push4 251719887
   p00
   p32
   push3 5376
   sys   draw_text_P
   .line 319
-  push3 50529
+  push3 50553
   sys   set_text_font
   .line 320
-  push4 117502117
+  push4 117502174
   p00
   push4 1376296
   sys   draw_text_P
   .line 321
-  push4 167833772
+  push4 167833829
   p00
   push4 4915240
   sys   draw_text_P
@@ -14010,7 +14008,7 @@ $L_play_46:
   sys   just_pressed
   bz    $L_play_47
   .line 421
-  p7
+  p6
   setg  state 0
 $L_play_47:
   .line 268
@@ -14043,7 +14041,7 @@ $L_play_49:
   cult4
   bz    $L_play_52
   .line 433
-  p7
+  p6
   setg  state 0
 $L_play_52:
   .line 268
@@ -14078,7 +14076,7 @@ $L_process_laser_0:
   getr
   .line 172
   getg  shootx 0
-  push3 70329
+  push3 70395
   getg  shootdir 0
   pidxb 1 4
   getp
@@ -14086,7 +14084,7 @@ $L_process_laser_0:
   setg  shootx 0
   .line 173
   getg  shooty 0
-  push3 70333
+  push3 70399
   getg  shootdir 0
   pidxb 1 4
   getp
@@ -14578,14 +14576,14 @@ $L_process_moving_object_0:
   pop
   .line 71
   dup4
-  push3 70329
+  push3 70395
   dup6
   pidxb 1 4
   getp
   add
   .line 72
   dup4
-  push3 70333
+  push3 70399
   dup7
   pidxb 1 4
   getp
@@ -14800,7 +14798,7 @@ $L_process_moving_object_4:
   call  all_at_scans
   .line 111
   dup7
-  push4 18004224
+  push4 18021120
   getl  14
   pidxb 1 4
   getp
@@ -14811,7 +14809,7 @@ $L_process_moving_object_4:
   bool2
   bnz   $L_process_moving_object_13
   dup6
-  push4 18005248
+  push4 18022144
   getl  14
   pidxb 1 4
   getp
@@ -15538,12 +15536,12 @@ $L_process_tank_move_27:
   ret
 $L_process_tank_move_0:
   .line 455
-  push3 70329
+  push3 70395
   dup4
   pidxb 1 4
   getp
   .line 456
-  push3 70333
+  push3 70399
   dup5
   pidxb 1 4
   getp
@@ -16482,7 +16480,7 @@ $L_render_level_144:
 $L_render_level_26:
   .line 47
   getg  state 0
-  p7
+  p6
   sub
   bz    $L_render_level_27
   .line 49
@@ -16492,13 +16490,13 @@ $L_render_level_26:
   dupw2
   sys   draw_vline
   .line 51
-  push3 50529
+  push3 50553
   sys   set_text_font
   .line 52
   pz16
   pz16
   .line 53
-  push3 70350
+  push3 70416
   getg  current_set 0
   pidxb 19 3
   p3
@@ -16510,7 +16508,7 @@ $L_render_level_26:
   p1
   add3b
   sext
-  push4 218165430
+  push4 218165487
   p00
   refl  46
   p32
@@ -16541,27 +16539,28 @@ $L_render_level_26:
   p0
   sys   draw_hline
   .line 57
-  push4 100724972
+  push4 100724988
   p00
   push4 4325393
   sys   draw_text_P
   .line 58
-  push4 100724978
+  p2
+  push3 393457
   p00
   push4 4522012
   sys   draw_text_P
   .line 59
-  push3 61688
+  push3 61704
   sys   set_text_font
   .line 60
   getg4 moves 0
-  push4 50392943
+  push4 50393202
   p00
   push4 6094866
   sys   draw_textf
   .line 61
   getg4 shots 0
-  push4 50392943
+  push4 50393202
   p00
   push4 6094877
   sys   draw_textf
@@ -17857,14 +17856,14 @@ $L_tank_update_1:
 $L_tank_update_4:
   .line 142
   getg  tankx 0
-  push3 70329
+  push3 70395
   getg  just_moved_dir 0
   pidxb 1 4
   getp
   add
   .line 143
   getg  tanky 0
-  push3 70333
+  push3 70399
   getg  just_moved_dir 0
   pidxb 1 4
   getp
@@ -18008,14 +18007,14 @@ $L_tank_update_19:
   lsr
   .line 79
   getg  tankx 0
-  push3 70329
+  push3 70395
   dup5
   pidxb 1 4
   getp
   add
   .line 80
   getg  tanky 0
-  push3 70333
+  push3 70399
   dup6
   pidxb 1 4
   getp

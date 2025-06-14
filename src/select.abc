@@ -1,5 +1,15 @@
 import vars;
 
+char[] prog&[6] prog DIFF_STRS =
+{
+    "Tutorial",
+    "Kids",
+    "Easy",
+    "Medium",
+    "Hard",
+    "Deadly",
+};
+
 u16 inc_amount(u8 index)
 {
     u8 repeat = repeat_counts[index];
@@ -90,8 +100,11 @@ void select_level_ui()
         $set_text_font(FONT_PIXELOIDSANS);
         char[40] name = level.name;
         $wrap_text(name, 117);
-        $draw_text(0, 32, name);
+        $draw_text(0, 26, name);
     }
+
+    $set_text_font(FONT_BR5D);
+    $draw_textf(0, 50, "Difficulty: %s", DIFF_STRS[level.difficulty]);
 
     if(select_level > 0)
         $draw_sprite(120, 13 - arrow_off, ARROWS, 0);
@@ -99,7 +112,6 @@ void select_level_ui()
         $draw_sprite(120, 46 + arrow_off, ARROWS, 2);
 
     $draw_hline(0, 56, 128, WHITE);
-    $set_text_font(FONT_BR5D);
     $draw_textf(0, 63, "%u/%u", select_level + 1, num_levels);
     {
         u8 w = $text_width(level.author);

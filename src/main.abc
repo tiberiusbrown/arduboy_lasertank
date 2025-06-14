@@ -6,7 +6,6 @@ import pause;
 import hint;
 import menu;
 import help;
-import settings;
 import credits;
 import select;
 
@@ -22,7 +21,6 @@ void loop()
     {
         case(STATE_MENU      ) menu();
         case(STATE_HELP      ) help();
-        case(STATE_SETTINGS  ) settings();
         case(STATE_CREDITS   ) credits();
         case(STATE_SELECT_SET) select_set_ui();
         case(STATE_SELECT    ) select_level_ui();

@@ -2,7 +2,6 @@ enum
 {
     STATE_MENU,
     STATE_HELP,
-    STATE_SETTINGS,
     STATE_CREDITS,
     STATE_SELECT_SET,
     STATE_SELECT,
@@ -143,7 +142,7 @@ struct level_t
     char[] prog& author;
     char[] prog& hint;
     u8 hint_lines;
-    u16 difficulty;
+    u8 difficulty;
 };
 
 struct levelset_t

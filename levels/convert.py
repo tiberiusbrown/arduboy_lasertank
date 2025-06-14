@@ -510,7 +510,9 @@ def convert(fin, sym):
             f.write('        "%s",\n' % format_str(author))
             hint_info = format_hint(hint)
             f.write('        "%s",\n' % hint_info[0])
-            f.write('        %u, %u,\n' % (hint_info[1], diff[0]))
+            diff = diff[0]
+            diff = { 0:0, 1:1, 2:2, 4:3, 8:4, 16:5 }[diff]
+            f.write('        %u, %u,\n' % (hint_info[1], diff))
             f.write('    },\n')
         f.write('};\n\n')
 

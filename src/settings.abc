@@ -1,8 +1,0 @@
-import vars;
-
-void settings()
-{
-    if($just_pressed(B_BUTTON))
-        state = STATE_MENU;
-
-}
