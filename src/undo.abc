@@ -38,11 +38,6 @@ u16 undo_decompress_buffer(u8[256]& dst, u16 ci)
 
 void undo_compress()
 {
-    $memset(undo_base, 0xaa);
-
-    // each entry represents one tile/object
-    // bits 1:0 are how many bytes of dirt follow
-
     undo_base[0] = tanky * 16 + tankx;
     undo_base[1] = tankdir;
 
@@ -64,6 +59,7 @@ void undo_decompress()
 {
     tanky = undo_base[0] >> 4;
     tankx = undo_base[0] & 15;
+    tankdir = undo_base[1];
 
     moves  = u32(undo_base[2+0]) << (0 * 8);
     moves += u32(undo_base[2+1]) << (1 * 8);
@@ -82,7 +78,7 @@ void undo_decompress()
 void undo_premove()
 {
     undo_compress();
-    undo_valid = true;
+    undo_valid = 1;
 }
 
 void undo()
@@ -92,6 +88,6 @@ void undo()
         undo_decompress();
         shooting = false;
         num_moving_objects = 0;
-        undo_valid = false;
+        undo_valid = 0;
     }
 }

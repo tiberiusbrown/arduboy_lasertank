@@ -52,7 +52,7 @@ void pause()
 
     constexpr u8 X2 = 104;
 
-    $draw_text(75, 15, "Undo");
+    $draw_textf(75, 15, "Undo (%u)", undo_valid);
     $draw_text(75, 22, "Hint");
     $draw_text(75, 29, "Exit Level");
     $draw_hline(66, 31, 62, WHITE);

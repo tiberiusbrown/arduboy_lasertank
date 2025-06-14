@@ -129,7 +129,7 @@ u32 shots;
 // compressed past level state for undo
 // saved because it is repurposed for
 u8[2+4+4+290] undo_base;
-bool undo_valid;
+u8 undo_valid;
 
 struct level_t
 {

@@ -1,4 +1,4 @@
-.githash 91ada15dca077ed687b3964dfd863c36730107fd
+.githash 809eb7a646e0067e0cf576c428b10014528f21e1
 .shades 2
 .global anim_frames 1
 .global select_set 1
@@ -4752,7 +4752,10 @@ $PD_685:
 $PD_686:
   .b 5 50 61 75 73 65 64
 $PD_687:
-  .b 3 55 6e 64 6f
+  .b 5 55 6e 64 6f 20 28
+$PD_700:
+$PD_701:
+  .b 3 25 75 30 29
 $PD_689:
   .b 9 45 78 69 74 20 4c 65 76 65 6c
 $PD_69:
@@ -4782,8 +4785,6 @@ $PD_694:
   .b 7 56 69 63 74 6f 72 79 21
 $PD_696:
   .b 5 4c 65 76 65 6c 20
-$PD_700:
-$PD_701:
 $PD_702:
   .b 6 25 75 30 2f 25 75 30
 $PD_697:
@@ -8924,10 +8925,7 @@ $globinit:
   p1
   setg  tilesize 0
   .line 6
-  p8
-  dup
-  p1
-  p4
+  push4 67176462
   p00
   push4 100713806
   p00
@@ -8951,7 +8949,7 @@ $globinit:
   p4
   p00
   setgn 24 SPEED_STRS 0
-  push3 64811
+  push3 64817
   sys   set_text_font
   ret
 
@@ -9190,12 +9188,12 @@ $L_at_scan_0:
   ret
 $L_at_scan_1:
   .line 29
-  push3 70278
+  push3 70284
   dup4
   pidxb 1 4
   getp
   .line 30
-  push3 70282
+  push3 70288
   dup5
   pidxb 1 4
   getp
@@ -9952,7 +9950,7 @@ $L_find_other_tunnel_0:
 load_level:
   .file level.abc
   .line 55
-  push3 70299
+  push3 70305
   getg  current_set 0
   pidxb 19 3
   getpn 6
@@ -10483,6 +10481,9 @@ $L_load_level_26:
   .line 124
   p0000
   setg4 shots 0
+  .line 125
+  p0
+  setg  undo_valid 0
   .line 53
   pop3
   ret
@@ -11045,7 +11046,7 @@ $L_loop_11:
   ret
 $L_loop_5:
   .file select.abc
-  push3 70286
+  push3 70292
   getg  select_set 0
   pidxb 19 3
   .line 14
@@ -11231,7 +11232,7 @@ $L_loop_70:
   sys   draw_sprite
 $L_loop_71:
   .line 50
-  push3 61596
+  push3 61602
   sys   set_text_font
   .line 51
   getln 3 8
@@ -11283,7 +11284,7 @@ $L_loop_73:
 $L_loop_6:
   .file select.abc
   .line 64
-  push3 70286
+  push3 70292
   getg  select_set 0
   pidxb 19 3
   .line 65
@@ -11425,7 +11426,7 @@ $L_loop_50:
   p000
   sys   draw_filled_rect
   .line 81
-  push3 61596
+  push3 61602
   sys   set_text_font
   .line 82
   getln 3 13
@@ -11459,7 +11460,7 @@ $L_loop_50:
   sext
   upidx 27
   .line 90
-  push3 61596
+  push3 61602
   sys   set_text_font
   .line 91
   alloc 40
@@ -11534,7 +11535,7 @@ $L_loop_52:
   p1
   add3b
   sext
-  push4 117502089
+  push4 117502095
   p00
   push  63
   p000
@@ -11752,24 +11753,27 @@ $L_loop_110:
   p6
   setg  state 0
   .file undo.abc
-  .line 90
+  .line 86
   getg  undo_valid 0
   bz    $L_loop_123
-  .line 65
+  .line 60
   getg  undo_base 0
   p4
   lsr
   setg  tanky 0
-  .line 66
+  .line 61
   getg  undo_base 0
   push  15
   and
   setg  tankx 0
-  .line 68
+  .line 62
+  getg  undo_base 1
+  setg  tankdir 0
+  .line 64
   getg  undo_base 2
   p000
   setg4 moves 0
-  .line 69
+  .line 65
   getg4 moves 0
   getg  undo_base 3
   p000
@@ -11777,7 +11781,7 @@ $L_loop_110:
   lsl4
   add4
   setg4 moves 0
-  .line 70
+  .line 66
   getg4 moves 0
   getg  undo_base 4
   p000
@@ -11785,7 +11789,7 @@ $L_loop_110:
   lsl4
   add4
   setg4 moves 0
-  .line 71
+  .line 67
   getg4 moves 0
   getg  undo_base 5
   p000
@@ -11793,11 +11797,11 @@ $L_loop_110:
   lsl4
   add4
   setg4 moves 0
-  .line 72
+  .line 68
   getg  undo_base 6
   p000
   setg4 shots 0
-  .line 73
+  .line 69
   getg4 shots 0
   getg  undo_base 7
   p000
@@ -11805,7 +11809,7 @@ $L_loop_110:
   lsl4
   add4
   setg4 shots 0
-  .line 74
+  .line 70
   getg4 shots 0
   getg  undo_base 8
   p000
@@ -11813,7 +11817,7 @@ $L_loop_110:
   lsl4
   add4
   setg4 shots 0
-  .line 75
+  .line 71
   getg4 shots 0
   getg  undo_base 9
   p000
@@ -11821,10 +11825,10 @@ $L_loop_110:
   lsl4
   add4
   setg4 shots 0
-  .line 77
+  .line 73
   push  10
   p000
-  .line 78
+  .line 74
   dupw3
   pushg tiles 0
   .line 25
@@ -11978,9 +11982,9 @@ $L_loop_128:
   dupw4
   setl2 7
   popn  5
-  .line 78
+  .line 74
   setl2 2
-  .line 79
+  .line 75
   p00
   dupw3
   pushg objects 0
@@ -12135,17 +12139,17 @@ $L_loop_131:
   dupw4
   setl2 7
   popn  5
-  .line 79
+  .line 75
   setl2 2
-  .line 63
+  .line 58
   pop2
-  .line 93
+  .line 89
   p0
   setg  shooting 0
-  .line 94
+  .line 90
   p0
   setg  num_moving_objects 0
-  .line 95
+  .line 91
   p0
   setg  undo_valid 0
 $L_loop_123:
@@ -12232,17 +12236,19 @@ $L_loop_118:
   p0
   sys   draw_hline
   .line 55
-  push4 67170153
+  getg  undo_valid 0
+  p000
+  push4 167833449
   p00
   push4 4915215
-  sys   draw_text_P
+  sys   draw_textf
   .line 56
   push4 67131914
   p00
   push4 4915222
   sys   draw_text_P
   .line 57
-  push4 167833453
+  push4 167833459
   p00
   push4 4915229
   sys   draw_text_P
@@ -12252,7 +12258,7 @@ $L_loop_118:
   p0
   sys   draw_hline
   .line 59
-  push4 100724842
+  push4 100724848
   p00
   push4 4915239
   sys   draw_text_P
@@ -12263,7 +12269,7 @@ $L_loop_118:
   push4 6815783
   sys   draw_text_P
   .line 60
-  push4 83947632
+  push4 83947638
   p00
   push4 4915246
   sys   draw_text_P
@@ -12274,7 +12280,7 @@ $L_loop_118:
   push4 6815790
   sys   draw_text_P
   .line 61
-  push4 100724853
+  push4 100724859
   p00
   push4 4915253
   sys   draw_text_P
@@ -12285,7 +12291,7 @@ $L_loop_118:
   push4 6815797
   sys   draw_text_P
   .line 63
-  push3 99119
+  push3 99125
   dup4
   pidxb 1 4
   getp
@@ -12339,7 +12345,7 @@ $L_loop_120:
 $L_loop_9:
   .file hint.abc
   .line 7
-  push3 70299
+  push3 70305
   getg  current_set 0
   pidxb 19 3
   getpn 6
@@ -12532,7 +12538,7 @@ play:
   push3 57814
   sys   set_text_font
   .line 248
-  push4 134279291
+  push4 134279297
   p00
   push4 2752547
   sys   draw_text_P
@@ -12557,7 +12563,7 @@ $L_play_0:
   setg2 current_level 0
   .line 254
   getg2 current_level 0
-  push4 17996544
+  push4 17998080
   getg  current_set 0
   pidxb 19 3
   p3
@@ -13181,7 +13187,7 @@ $L_process_laser_0:
   getr
   .line 165
   getg  shootx 0
-  push3 70278
+  push3 70284
   getg  shootdir 0
   pidxb 1 4
   getp
@@ -13189,7 +13195,7 @@ $L_process_laser_0:
   setg  shootx 0
   .line 166
   getg  shooty 0
-  push3 70282
+  push3 70288
   getg  shootdir 0
   pidxb 1 4
   getp
@@ -13678,14 +13684,14 @@ $L_process_moving_object_0:
   pop
   .line 71
   dup4
-  push3 70278
+  push3 70284
   dup6
   pidxb 1 4
   getp
   add
   .line 72
   dup4
-  push3 70282
+  push3 70288
   dup7
   pidxb 1 4
   getp
@@ -13900,7 +13906,7 @@ $L_process_moving_object_4:
   call  all_at_scans
   .line 111
   dup7
-  push4 17991168
+  push4 17992704
   getl  14
   pidxb 1 4
   getp
@@ -13911,7 +13917,7 @@ $L_process_moving_object_4:
   bool2
   bnz   $L_process_moving_object_13
   dup6
-  push4 17992192
+  push4 17993728
   getl  14
   pidxb 1 4
   getp
@@ -14219,66 +14225,61 @@ process_tank_move:
   bz    $L_process_tank_move_0
   .file undo.abc
   .line 41
-  push  170
-  pushg undo_base 0
-  push2 300
-  sys   memset
-  .line 46
   getg  tanky 0
   p16
   mul
   getg  tankx 0
   add
   setg  undo_base 0
-  .line 47
+  .line 42
   getg  tankdir 0
   setg  undo_base 1
-  .line 49
+  .line 44
   getg  moves 0
   setg  undo_base 2
-  .line 50
+  .line 45
   getg4 moves 0
   p8
   lsr4
   pop3
   setg  undo_base 3
-  .line 51
+  .line 46
   getg4 moves 0
   p16
   lsr4
   pop3
   setg  undo_base 4
-  .line 52
+  .line 47
   getg4 moves 0
   push  24
   lsr4
   pop3
   setg  undo_base 5
-  .line 53
+  .line 48
   getg  shots 0
   setg  undo_base 6
-  .line 54
+  .line 49
   getg4 shots 0
   p8
   lsr4
   pop3
   setg  undo_base 7
-  .line 55
+  .line 50
   getg4 shots 0
   p16
   lsr4
   pop3
   setg  undo_base 8
-  .line 56
+  .line 51
   getg4 shots 0
   push  24
   lsr4
   pop3
   setg  undo_base 9
-  .line 58
+  .line 53
   push  10
   p000
-  .line 59
+  .line 54
   dupw3
   pushg tiles 0
   .line 5
@@ -14448,9 +14449,9 @@ $L_process_tank_move_19:
   dupw4
   setl2 7
   popn  5
-  .line 59
+  .line 54
   setl2 2
-  .line 60
+  .line 55
   p00
   dupw3
   pushg objects 0
@@ -14621,11 +14622,11 @@ $L_process_tank_move_27:
   dupw4
   setl2 7
   popn  5
-  .line 60
+  .line 55
   setl2 2
   .line 39
   pop2
-  .line 85
+  .line 81
   p1
   setg  undo_valid 0
   .file play.abc
@@ -14639,12 +14640,12 @@ $L_process_tank_move_27:
   ret
 $L_process_tank_move_0:
   .line 424
-  push3 70278
+  push3 70284
   dup4
   pidxb 1 4
   getp
   .line 425
-  push3 70282
+  push3 70288
   dup5
   pidxb 1 4
   getp
@@ -14719,66 +14720,61 @@ $L_process_tank_move_5:
 $L_process_tank_move_1:
   .file undo.abc
   .line 41
-  push  170
-  pushg undo_base 0
-  push2 300
-  sys   memset
-  .line 46
   getg  tanky 0
   p16
   mul
   getg  tankx 0
   add
   setg  undo_base 0
-  .line 47
+  .line 42
   getg  tankdir 0
   setg  undo_base 1
-  .line 49
+  .line 44
   getg  moves 0
   setg  undo_base 2
-  .line 50
+  .line 45
   getg4 moves 0
   p8
   lsr4
   pop3
   setg  undo_base 3
-  .line 51
+  .line 46
   getg4 moves 0
   p16
   lsr4
   pop3
   setg  undo_base 4
-  .line 52
+  .line 47
   getg4 moves 0
   push  24
   lsr4
   pop3
   setg  undo_base 5
-  .line 53
+  .line 48
   getg  shots 0
   setg  undo_base 6
-  .line 54
+  .line 49
   getg4 shots 0
   p8
   lsr4
   pop3
   setg  undo_base 7
-  .line 55
+  .line 50
   getg4 shots 0
   p16
   lsr4
   pop3
   setg  undo_base 8
-  .line 56
+  .line 51
   getg4 shots 0
   push  24
   lsr4
   pop3
   setg  undo_base 9
-  .line 58
+  .line 53
   push  10
   p000
-  .line 59
+  .line 54
   dupw3
   pushg tiles 0
   .line 5
@@ -14948,9 +14944,9 @@ $L_process_tank_move_37:
   dupw4
   setl2 7
   popn  5
-  .line 59
+  .line 54
   setl2 2
-  .line 60
+  .line 55
   p00
   dupw3
   pushg objects 0
@@ -15121,11 +15117,11 @@ $L_process_tank_move_45:
   dupw4
   setl2 7
   popn  5
-  .line 60
+  .line 55
   setl2 2
   .line 39
   pop2
-  .line 85
+  .line 81
   p1
   setg  undo_valid 0
   .file play.abc
@@ -15548,7 +15544,7 @@ $L_render_level_26:
   pz16
   pz16
   .line 53
-  push3 70299
+  push3 70305
   getg  current_set 0
   pidxb 19 3
   p3
@@ -15560,7 +15556,7 @@ $L_render_level_26:
   p1
   add3b
   sext
-  push4 218165379
+  push4 218165385
   p00
   refl  46
   p32
@@ -15591,27 +15587,27 @@ $L_render_level_26:
   p0
   sys   draw_hline
   .line 57
-  push4 100724880
+  push4 100724886
   p00
   push4 4325393
   sys   draw_text_P
   .line 58
-  push4 100724886
+  push4 100724892
   p00
   push4 4522012
   sys   draw_text_P
   .line 59
-  push3 61596
+  push3 61602
   sys   set_text_font
   .line 60
   getg4 moves 0
-  push4 50393225
+  push4 50392943
   p00
   push4 6094866
   sys   draw_textf
   .line 61
   getg4 shots 0
-  push4 50393225
+  push4 50392943
   p00
   push4 6094877
   sys   draw_textf
@@ -16904,14 +16900,14 @@ $L_tank_update_1:
 $L_tank_update_4:
   .line 138
   getg  tankx 0
-  push3 70278
+  push3 70284
   getg  just_moved_dir 0
   pidxb 1 4
   getp
   add
   .line 139
   getg  tanky 0
-  push3 70282
+  push3 70288
   getg  just_moved_dir 0
   pidxb 1 4
   getp
@@ -17052,14 +17048,14 @@ $L_tank_update_19:
   lsr
   .line 76
   getg  tankx 0
-  push3 70278
+  push3 70284
   dup5
   pidxb 1 4
   getp
   add
   .line 77
   getg  tanky 0
-  push3 70282
+  push3 70288
   dup6
   pidxb 1 4
   getp
