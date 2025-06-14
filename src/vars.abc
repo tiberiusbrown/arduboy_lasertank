@@ -126,6 +126,11 @@ u8[8] last_tunneled;
 u32 moves;
 u32 shots;
 
+// compressed past level state for undo
+// saved because it is repurposed for
+u8[2+4+4+290] undo_base;
+bool undo_valid;
+
 struct level_t
 {
     u8[] prog& tiles;

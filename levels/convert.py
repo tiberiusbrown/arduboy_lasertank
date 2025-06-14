@@ -467,7 +467,10 @@ def compress(d):
             dc2.append(dc[i+1])
     return dc2
 
+largest = 0
+
 def convert(fin, sym):
+    global largest
     with open(fin, 'rb') as f:
         content = f.read()
     fout = '../src/levels/%s.abc' % sym.lower()
@@ -477,6 +480,8 @@ def convert(fin, sym):
             d = content[i*576:(i+1)*576]
             tiles = d[:256]
             dc = compress(d)
+            if len(dc) > largest:
+                largest = len(dc)
             f.write('u8[%u] prog LEVELS_%s_%u =\n{' % (len(dc), sym, i))
             for i in range(len(dc)):
                 if i % 16 == 0:
@@ -513,3 +518,5 @@ convert('ObjectsTutorial.lvl', 'TUTORIAL_OBJECTS')
 convert('Tutor-with-Playbacks.lvl', 'TUTORIAL_BEGINNER')
 convert('Tutor.lvl', 'TUTORIAL_TRICKS')
 convert('LaserTank.lvl', 'STANDARD')
+
+print(largest)

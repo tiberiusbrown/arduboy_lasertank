@@ -1,6 +1,7 @@
 import vars;
 
 import hint;
+import undo;
 
 char[] prog&[2] SIZE_STRS = { "Tiny", "Normal" };
 char[] prog&[2] ANIM_STRS = { "Off", "On" };
@@ -30,6 +31,7 @@ void pause()
     {
         switch(pause_i)
         {
+            case(0) { pause_i = 0; state = STATE_PLAY; undo(); }
             case(1) { pause_i = 0; state = STATE_HINT; }
             case(2) { pause_i = 0; state = STATE_SELECT; }
             case(3) if(++tilesize > TILESIZE_8) tilesize = TILESIZE_4;

@@ -2,6 +2,7 @@ import input;
 import level;
 import render;
 import moving;
+import undo;
 
 // returns dir if laser reflected
 // returns 4 otherwise
@@ -176,7 +177,6 @@ void process_laser()
         if(obj == T_DIRT)
             obj = tiles[si];
         shooting = false;
-        //moveobj = obj;
         switch(obj)
         {
             case(T_BLOCK_MOVE)
@@ -415,6 +415,7 @@ void process_tank_move(u8 dir)
 
     if(tankdir != dir)
     {
+        undo_premove();
         tankdir = dir;
         tank_update();
         return;
@@ -427,10 +428,11 @@ void process_tank_move(u8 dir)
 
     if(solid(nx, ny))
     {
-        tank_update();
         return;
     }
 
+    undo_premove();
+    
     tankx = nx;
     tanky = ny;
 
