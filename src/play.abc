@@ -407,6 +407,24 @@ void play()
         if(targety < AY) targety = AY;
         if(targety > BY) targety = BY;
     }
+    else if(tilesize == TILESIZE_6)
+    {
+        i8 AX = -8;
+        i8 AY = -8;
+        i8 BX = -8;
+        i8 BY = 39;
+        if(!first_pan)
+        {
+            AX = 0;
+            AY = 0;
+            BX = 0;
+            BY = 31;
+        }
+        if(targetx < AX) targetx = AX;
+        if(targetx > BX) targetx = BX;
+        if(targety < AY) targety = AY;
+        if(targety > BY) targety = BY;
+    }
 
     if(offx < targetx) offx += (targetx - offx + 3) / 4;
     if(offx > targetx) offx -= (offx - targetx + 3) / 4;
@@ -432,11 +450,6 @@ void play()
         {
             state = STATE_PAUSE;
         }
-        //if(can_pan && $pressed(B_BUTTON))
-        //{
-        //    $draw_filled_rect(125, 0, 3, 64, BLACK);
-        //    $draw_filled_rect(126, offy / 2, 2, 32, WHITE);
-        //}
     }
 }
 

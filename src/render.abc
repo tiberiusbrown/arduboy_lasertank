@@ -53,12 +53,15 @@ void render_level()
             $format(buf, "Level %u/%u", current_level + 1, len(LEVELSETS[current_set].levels));
             u8 w = $text_width(buf);
             $draw_text(97 - w/2, 5, buf);
-            $draw_hline(66, 6, 62, WHITE);
-            $draw_text(66, 17, "Moves:");
-            $draw_text(69, 28, "Shots:");
+            buf = DIFF_STRS[LEVELSETS[current_set].levels[current_level].difficulty];
+            w = $text_width(buf);
+            $draw_text(97 - w/2, 12, buf);
+            $draw_hline(66, 14, 62, WHITE);
+            $draw_text(66, 24, "Moves:");
+            $draw_text(69, 35, "Shots:");
             $set_text_font(FONT_PIXELOIDSANS);
-            $draw_textf(93, 18, "%u", moves);
-            $draw_textf(93, 29, "%u", shots);
+            $draw_textf(93, 25, "%u", moves);
+            $draw_textf(93, 36, "%u", shots);
         }
     }
     else if(tilesize == TILESIZE_6)
@@ -104,6 +107,52 @@ void render_level()
         if(!dead && (first_move || (frame & 15) >= 5))
             $draw_sprite(tankx * 6 - offx, tanky * 6 - offy, TILES6, T_TANK + tankdir);
 
+        if(can_pan && first_pan && $pressed(B_BUTTON))
+        {
+            {
+                $draw_vline(-offx + 96, -offy - 1, 97, WHITE);
+                i16 x = -offx + 98, y = -offy;
+                for(u8 i = 0; i < 16; ++i)
+                    $draw_sprite(x, y + i * 6, TILES6, 0xf0 + i);
+            }
+            {
+                i16 y = -offy;
+                $draw_filled_rect(0, y - 1, 8, 97, BLACK);
+                $draw_vline(6, y - 1, 97, WHITE);
+                for(u8 i = 0; i < 16; ++i)
+                    $draw_sprite(0, y + i * 6, TILES6, 0xf0 + i);
+            }
+            if(offy > 31)
+            {
+                $draw_hline(-offx - 1, -offy + 96, 97, WHITE);
+                i16 x = -offx, y = -offy + 98;
+                for(u8 i = 0; i < 16; ++i)
+                    $draw_sprite(x + i * 6, y, TILES6, 0xe0 + i);
+            }
+            else
+            {
+                i16 x = -offx;
+                $draw_filled_rect(x - 1, 0, 97, 8, BLACK);
+                $draw_hline(x - 1, 6, 97, WHITE);
+                for(u8 i = 0; i < 16; ++i)
+                    $draw_sprite(x + i * 6, 0, TILES6, 0xe0 + i);
+            }
+        }
+        else
+        {
+            $draw_vline(96, 0, 64, WHITE);
+            $set_text_font(FONT_BR5D);
+            char[16] buf;
+            $format(buf, "%u/%u", current_level + 1, len(LEVELSETS[current_set].levels));
+            u8 w = $text_width(buf);
+            $draw_text(113-w/2, 5, buf);
+            buf = DIFF_STRS[LEVELSETS[current_set].levels[current_level].difficulty];
+            w = $text_width(buf);
+            $draw_text(113-w/2, 12, buf);
+            $draw_hline(98, 14, 30, WHITE);
+            $draw_textf(98, 22, "M: %u", moves);
+            $draw_textf(100, 29, "S: %u", shots);
+        }
     }
     else if(tilesize == TILESIZE_8)
     {
@@ -150,14 +199,7 @@ void render_level()
         
         bool panning = can_pan && first_pan && $pressed(B_BUTTON);
 
-        /*if(offx < 0)
-        {
-            $draw_vline(-offx - 2, -offy - 2, 130, WHITE);
-            i16 x = -offx - 10, y = -offy;
-            for(u8 i = 0; i < 16; ++i)
-                $draw_sprite(x, y + i * 8, TILES8, 0xf0 + i);
-        }
-        else*/ if(offx > 0)
+        if(offx > 0)
         {
             $draw_vline(-offx + 128, -offy - 1, 129, WHITE);
             i16 x = -offx + 130, y = -offy;
@@ -172,14 +214,7 @@ void render_level()
             for(u8 i = 0; i < 16; ++i)
                 $draw_sprite(0, y + i * 8, TILES8, 0xf0 + i);
         }
-        /*if(offy < 0)
-        {
-            $draw_hline(-offx - 2, -offy - 2, 132, WHITE);
-            i16 x = -offx, y = -offy - 10;
-            for(u8 i = 0; i < 16; ++i)
-                $draw_sprite(x + i * 8, y, TILES8, 0xe0 + i);
-        }
-        else*/ if(offy > 64)
+        if(offy > 64)
         {
             $draw_hline(-offx - 1, -offy + 128, 129, WHITE);
             i16 x = -offx, y = -offy + 130;

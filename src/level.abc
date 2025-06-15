@@ -2,14 +2,32 @@ import vars;
 
 void adjust_to_tank()
 {
-    constexpr u8 D = 32;
-    i16 dy = tanky * 8;
-    i16 dx = tankx * 8;
-    i16 miny = dy - 64 + D;
-    i16 maxy = dy + 8 - D;
-    if(targety < miny) targety = miny;
-    if(targety > maxy) targety = maxy;
-    targetx = 0;
+    if(tilesize == TILESIZE_8)
+    {
+        constexpr u8 D = 36;
+        i16 dy = tanky * 8;
+        i16 dx = tankx * 8;
+        i16 miny = dy - 64 + D;
+        i16 maxy = dy + 8 - D;
+        if(targety < miny) targety = miny;
+        if(targety > maxy) targety = maxy;
+        if(targety < 0) targety = 0;
+        if(targety > 64) targety = 64;
+        targetx = 0;
+    }
+    else if(tilesize == TILESIZE_6)
+    {
+        constexpr u8 D = 36;
+        i16 dy = tanky * 6;
+        i16 dx = tankx * 6;
+        i16 miny = dy - 64 + D;
+        i16 maxy = dy + 6 - D;
+        if(targety < miny) targety = miny;
+        if(targety > maxy) targety = maxy;
+        if(targety < 0) targety = 0;
+        if(targety > 31) targety = 31;
+        targetx = 0;
+    }
 }
 
 bool solid(u8 x, u8 y)

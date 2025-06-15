@@ -48,6 +48,7 @@ void main()
     load_level();
     state = STATE_PLAY;
     anim_frames = 2;
+    tilesize = TILESIZE_6;
 
     // TODO
     // need support for up to 16 sliding objects for 35 (MAX_TICEMEM)
