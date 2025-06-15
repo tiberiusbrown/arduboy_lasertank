@@ -2,6 +2,7 @@ import vars;
 
 import hint;
 import undo;
+import saveload;
 
 char[] prog&[3] SIZE_STRS = { "Large", "Normal", "Small" };
 char[] prog&[2] ANIM_STRS = { "Off", "On" };
@@ -61,11 +62,18 @@ void pause()
 
     if($just_pressed(A_BUTTON))
     {
+        if(pause_i >= 3)
+            need_save = true;
         switch(pause_i)
         {
-            case(0) { pause_i = 0; state = STATE_PLAY; undo(); }
-            case(1) { pause_i = 0; state = STATE_HINT; }
-            case(2) { pause_i = 0; state = STATE_SELECT; }
+            case(0) { state = STATE_PLAY; undo(); }
+            case(1) { state = STATE_HINT; }
+            case(2)
+            {
+                state = STATE_SELECT;
+                if(need_save)
+                    do_save(0xff, 0xff);
+            }
             case(3)
             {
                 if(++tilesize >= TILESIZE_NUM)
@@ -77,6 +85,8 @@ void pause()
             case(4) tile_anim = !tile_anim;
             case(5) if(++speed >= len(SPEEDS)) speed = 0;
         }
+        if(pause_i <= 2)
+            pause_i = 0;
 
         anim_frames = SPEEDS[speed];
     }

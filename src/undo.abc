@@ -1,6 +1,6 @@
 import vars;
 
-// worst case compression should be 320 bytes
+// worst case compression should be 322 bytes
 u16 undo_compress_buffer(u8[256]& src, u16 ci)
 {
     u8 i = 0;

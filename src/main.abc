@@ -8,6 +8,7 @@ import menu;
 import help;
 import credits;
 import select;
+import saveload;
 
 void loop()
 {
@@ -36,7 +37,7 @@ void loop()
 void main()
 {
     $set_frame_rate(30);
-    save_valid = $load();
+    do_load();
 
     state = STATE_SELECT_SET;
     select_set = 0;

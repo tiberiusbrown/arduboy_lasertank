@@ -13,8 +13,6 @@ enum
 };
 u8 state;
 
-bool save_valid;
-
 saved u8 select_set;
 
 i8 set_descy;
@@ -80,10 +78,10 @@ struct moving_obj_t { u8 pos, dir; };
 moving_obj_t[15] moving_objects;
 u8 num_moving_objects;
 
-saved bool tile_anim = true;
+saved bool tile_anim;
 
 u8 anim_frame;
-saved u8 anim_frames = 2;
+saved u8 anim_frames;
 
 bool first_move;
 bool in_water;
@@ -103,7 +101,7 @@ enum {
     TILESIZE_4,
     TILESIZE_NUM,
 };
-saved u8 tilesize = TILESIZE_8;
+saved u8 tilesize;
 
 // whether we can press B to pan
 bool can_pan;
@@ -129,14 +127,17 @@ u32 moves;
 u32 shots;
 
 // compressed past level state for undo
+// (saved because it's used for saving completion state)
 // byte mapping:
 //    0        tank pos
 //    1        tank dir
 //    2-5      moves
 //    6-9      shots
 //    10-331   compressed level
-u8[2+4+4+320] undo_data;
+saved u8[2+4+4+322] undo_data;
 u8 undo_num_moves;
+
+bool need_save;
 
 struct level_t
 {

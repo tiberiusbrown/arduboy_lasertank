@@ -141,4 +141,5 @@ void load_level()
     moves = 0;
     shots = 0;
     undo_num_moves = 0;
+    need_save = false;
 }

@@ -2,6 +2,7 @@ import input;
 import level;
 import render;
 import moving;
+import saveload;
 import undo;
 
 // returns dir if laser reflected
@@ -16,6 +17,20 @@ u8 mirror_reflect(u8 mirror_dir, u8 laser_dir)
     if(t <= 1)
         return t == 0 ? u8(laser_dir - 1) & 3 : u8(laser_dir + 1) & 3;
     return 4;
+}
+
+void do_victory()
+{
+    if(need_save || !is_completed(current_set, current_level))
+        do_save(current_set, current_level);
+    victory = true;
+}
+
+void do_defeat()
+{
+    if(need_save)
+        do_save(0xff, 0xff);
+    dead = true;
 }
 
 void at_scan(u8 dir)
@@ -44,7 +59,7 @@ void at_scan(u8 dir)
             if(shootx == tankx && shooty == tanky)
             {
                 frame = 0;
-                dead = true;
+                do_defeat();
             }
             shootdir = dir;
             shooting = true;
@@ -116,7 +131,7 @@ void process_tank_tunnel()
             {
                 // black hole
                 frame = 0;
-                dead = true;
+                do_defeat();
             }
         }
     }
@@ -153,7 +168,7 @@ void tank_update()
         case(T_FLAG)
         {
             frame = 0;
-            victory = true;
+            do_victory();
         }
     }
     all_at_scans();
@@ -174,7 +189,7 @@ void process_laser()
     if(shootx == tankx && shooty == tanky)
     {
         frame = 0;
-        dead = true;
+        do_defeat();
     }
     if(!opaque(shootx, shooty))
     {
@@ -257,7 +272,7 @@ void process_tick()
         if(in_water)
         {
             frame = 0;
-            dead = true;
+            do_defeat();
         }
         in_water = true;
     }

@@ -1,4 +1,5 @@
 import vars;
+import saveload;
 
 u16 inc_amount(u8 index)
 {
@@ -90,11 +91,12 @@ void select_level_ui()
         $set_text_font(FONT_PIXELOIDSANS);
         char[40] name = level.name;
         $wrap_text(name, 117);
-        $draw_text(0, 26, name);
+        $draw_text(0, 23, name);
     }
 
     $set_text_font(FONT_BR5D);
-    $draw_textf(0, 50, "Difficulty: %s", DIFF_STRS[level.difficulty]);
+    $draw_textf(7, 45, "Author:  %s", level.author);
+    $draw_textf(0, 52, "Difficulty:  %s", DIFF_STRS[level.difficulty]);
 
     if(select_level > 0)
         $draw_sprite(120, 13 - arrow_off, ARROWS, 0);
@@ -103,10 +105,8 @@ void select_level_ui()
 
     $draw_hline(0, 56, 128, WHITE);
     $draw_textf(0, 63, "%u/%u", select_level + 1, num_levels);
-    {
-        u8 w = $text_width(level.author);
-        $draw_text(129 - w, 63, level.author);
-    }
+    if(is_completed(select_set, select_level))
+        $draw_text(94, 63, "Completed");
 
     if($just_pressed(A_BUTTON))
     {
