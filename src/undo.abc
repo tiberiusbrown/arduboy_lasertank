@@ -1,5 +1,6 @@
 import vars;
 
+// worst case compression should be 320 bytes
 u16 undo_compress_buffer(u8[256]& src, u16 ci)
 {
     u8 i = 0;
@@ -13,6 +14,7 @@ u16 undo_compress_buffer(u8[256]& src, u16 ci)
                 break;
             n += 1;
         }
+        //$debug_printf("ci=%u i=%u n=%u\n", ci, i, n);
         undo_data[ci] = t + n;
         ci += 1;
         i += n + 1;

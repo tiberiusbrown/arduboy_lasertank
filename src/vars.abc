@@ -134,8 +134,8 @@ u32 shots;
 //    1        tank dir
 //    2-5      moves
 //    6-9      shots
-//    10-299   compressed level
-u8[2+4+4+290] undo_data;
+//    10-331   compressed level
+u8[2+4+4+320] undo_data;
 u8 undo_num_moves;
 
 struct level_t

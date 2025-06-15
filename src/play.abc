@@ -270,6 +270,7 @@ void play()
 
     if(victory)
     {
+        adjust_to_tank();
         render_level();
         constexpr u8 W = 44;
         constexpr u8 H = 15;
@@ -304,6 +305,7 @@ void play()
 
     if(dead)
     {
+        adjust_to_tank();
         render_level();
         constexpr u8 W = 94;
         constexpr u8 H = 23;
