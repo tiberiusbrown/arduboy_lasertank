@@ -153,6 +153,9 @@ struct level_t
     char[] prog& hint;
     u8 hint_lines;
     u8 difficulty;
+    u16 hs_moves;
+    u16 hs_shots;
+    char[6] hs_name;
 };
 
 struct levelset_t

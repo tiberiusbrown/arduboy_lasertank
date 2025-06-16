@@ -1160,6 +1160,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "The block can be pushed using laser in\nfront of the tank. Push the block from\nits initial location at D12 into the\nwater at K12 to become a bridge.\nPassing over the bridge, the tank\nreaches the flag.\n\n86 moves & 23 shots.",
         8, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_1,
@@ -1167,6 +1168,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "Water breaks the path, so a bridge\nmust be built. The path from a block\nto the water must be cleared from\nother blocks. Sink blocks starting with\nthe block nearest to the water and\nending with the block farthest from\nthe water.\n\n275 moves & 73 shots.",
         9, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_2,
@@ -1174,6 +1176,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Ron Meijer",
         "Move all the blocks into the water to\nreach the flag. Of course, the blocks\nare not in a right position to move\neasily, you have to go around. If the\nmovable block comes into a corner of\nsolid blocks, you'll lose it. You need all\nthe blocks.\n\n609 / 433",
         9, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_3,
@@ -1181,6 +1184,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "The laser beam can pass through\nthe crystal blocks.\n\nShoot the F11 block from outside\nthe box. Push it into the water.\n\nMovable object can slide accross the\nice. It will stop if it hits another\nobject or it reaches the ground.\n\n105 moves & 19 shots",
         11, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_4,
@@ -1188,6 +1192,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "Blocks from left chamber must go\nthrough H9, so the H9 block must be\nshot to J9.\n\nThe other five blocks must be\nrearranged before you can shoot\nthe H9 block.\n\nSink the six blocks into the water.\n\n233 moves & 49 shots.",
         11, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_5,
@@ -1195,6 +1200,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "Bridge H3-H7 or N9-J9 is too short.\n\nBridge C9-G9 is useless because the\ntank cannot pass the tank mover.\n\nThe bridge must be built starting\nfrom H14 up to the flag.\n\nNo block is wasted.\n\nAt start, only H2 block is free.\n\n172 moves & 96 shots.",
         13, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_6,
@@ -1202,6 +1208,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "Place the bridge at\nF12-F11-G11-G10-H10. Bridges at\nother places need at least six\nblocks.\n\nNo block is wasted.\n\nAt the start, only C9 block is free.\nMore and more blocks can be freed\nas the bridge construction is\nunderway.\n\n192 moves & 53 shots.",
         13, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_7,
@@ -1209,6 +1216,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "If the four blocks are placed at\nG8-J8, the tank can ride on the\ntank movers and slide on the thin\nice (from D11 to K11.)\n\nThe four blocks prevent the tank\ngoes to the ground (G8-J8).\n\nNotice, how the thin ice turns into\nwater.\n\n23 moves & 9 shots.",
         12, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_8,
@@ -1216,6 +1224,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "Always avoid the deadlock\nsituation, i.e. some movable blocks\ncan't be freed forever.\n\nSometimes some movable blocks\nmust be parked at the safe places.\n\nPlan to make the bridge. There are\n29 movable blocks and 32 water\nspots.\n\n1225 mvs & 675 shots.",
         12, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_9,
@@ -1223,6 +1232,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "Movable block can be moved by being\nshot at with a laser if there is no\nother certain object (block, mirror,\nanti-tank, or bricks) just behind it. If\nit is pushed into water, it will form a\nbridge. A bridge acts like ground.\n\n98 moves & 23 shots.",
         8, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_10,
@@ -1230,6 +1240,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "The I12 block is blocking the tank. It\nshould be pushed to J6, so the bricks\nbehind it must be destroyed. To shoot\nthe bricks, the tank should go to the\nleft and right of the crystal box. More\n- but not all - bricks must be shot.\n\n78 moves & 44 shots.",
         8, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_11,
@@ -1237,6 +1248,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Ron Meijer",
         "The Tank mover will drop your tank\ninto water, therefore you must block\nit with block (N 15) or with A-tank (H\n10). The bricks can be shot. Ice must\nbe blocked by the two blocks (E 5, G 5)\nby putting them into the water (O 4,\nO 3).\n\n65 moves & 8 shots.",
         9, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_12,
@@ -1244,6 +1256,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "You can't control your tank while it's\nriding on the tank movers; you can\nonly wait until it stops. If you need to\nget off in the middle of one, push a\nblock onto the tank movers as the\nstopper before your tank gets on the\nmovers.\n\n87 moves & 3 shots.",
         9, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_13,
@@ -1251,6 +1264,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "The tank mover (TM) can move the\ntank only.\n\nTo stop the tank on the TM, place\nan object on the TM (to block the\ntank.)\n\nStopping on the TM is necessary if\nthe tank needs to shoot from or to\njump out of that square.\n\n8 moves & 29 shots.",
         12, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_14,
@@ -1258,6 +1272,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "Tank mover can form a closed path.\nIf the tank rides on such mover,\nthe tank will loop forever.\n\nTherefore, an object is needed to\nstop the tank. Usually, the\npreparation must be done before\nthe tank jumps onto the conveyor.\n\n24 moves & 8 shots.",
         10, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_15,
@@ -1265,6 +1280,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Takaken, Yoshio, and Yono",
         "Originally,  two independent pure\nsokoban levels: 1) \"rescue in the\nbay\" of \"Takaken\" level set by\nKen'ichiro Takahashi 2) \"Soko001\"\nof \"Handmade\" level set by Yoshio\nMurase\n\nPorted and adapted into LaserTank\nby Yono in Jkt.\n\n373 moves & 117 shots.",
         11, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_16,
@@ -1272,6 +1288,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Gonzalo Waszczuk",
         "You can use mirrors either to reflect\nlasers than moving them, but you can\nuse both of them.\n\n22 moves & 5 shots.",
         5, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_17,
@@ -1279,6 +1296,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Ron Meijer",
         "The P15 A-T (anti-tank) will shoot, so\nyou must go around the solid block\n(B15). The P10 A-T must be blocked\nwith the movable block (B11). The P7\nA-T must be shot through the crystal\nblock (B7). The P3 A-T must be shot\nusing the mirror (B3).\n\n132 / 16.",
         9, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_18,
@@ -1286,6 +1304,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Gonzalo Waszczuk",
         "You can destroy anti-tanks by\nshooting them at their laser, or\nmoving them by shooting on the\nother directions.\n\nIf you move them to the water,\nthey will sink!\n\nYou can also use them like blocks,\nyou can block them each other.\n\n50 moves & 7 shots.",
         12, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_19,
@@ -1293,6 +1312,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "The tank needs to stop on the tank\nmover if: * the mover would send it\nto the wrong location or into water /\nsingle tunnel, * it needs to shoot or\nget off the mover, * etc. (e.g. It\nshould wait the laser beam hits the\nstopper.)\n\n57 moves & 85 shots.",
         9, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_20,
@@ -1300,6 +1320,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Tina",
         "\nUse one of the A-tanks to reach the\nflag Think about your moves\n\n63m 8s",
         5, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_21,
@@ -1307,6 +1328,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "If the tank steps on F14 tank\nmover, the B14 anti-tank will see it\nand shoot. The laser beam will be\ndeflected around by four mirrors.\nIt will hit the anti-tank from\nbehind.\n\nTank at G9-G8 can be hit if the\ntiming is not right.\n\n61 moves & 8 shots.",
         11, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_22,
@@ -1314,6 +1336,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "One of several ways to destroy the\nanti-tank and the bricks in front of it\nfrom the front side is by provoking\nanother anti-tank to shoot. In this\nexample, the tank steps on the tank\nmover between the shooter and the\ntarget.\n\n166 moves & 49 shots.",
         9, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_23,
@@ -1321,6 +1344,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Gonzalo Waszczuk",
         "The thin ice transforms to water, so\nif you pass one time over it you cant't\npass another or stay still. You will\nhave to use a block sometimes.\n\n23 moves & 4 shots.",
         6, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_24,
@@ -1328,6 +1352,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Gonzalo Waszczuk",
         "You can also move objects with the\nice.\n\n20 moves & 6 shots.",
         4, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_25,
@@ -1335,6 +1360,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Gonzalo Waszczuk",
         "The ice also works as a tankmover,\nbut the difference with a tankmover\nis that in the ice you can move from\none direction to another.\n\n5 moves & 0 shot.",
         6, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_26,
@@ -1342,6 +1368,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Ron Meijer",
         "Shoot the P13 mirror to P8.\n\nYou will be moved by the H16 tank\nmover straight on up, but on H1 is\nanother tank mover that sends you\ndown, v.v.! \n\nThe A-tank will shoot you, but you\ngo too fast, therefore the laser\nhits the mirrors.\n\n7 mv / 6 sh.",
         12, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_27,
@@ -1349,6 +1376,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Ron Meijer",
         "If the tank slides back-and-forth on\nice, certain left anti-tanks will be\nshot. Each time the intended anti-tank\nhas been destroyed, go to the P\ncolumn to sink the anti-tank that is\nnot needed anymore. Go to the flag\nwhen safe.\n\n110 moves & 6 shots.",
         9, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_28,
@@ -1356,6 +1384,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "Any movable object (including tank)\nslides on ice or thin ice until it: *\nhits another object and stops on\nice, 1) * passes the end of the ice,\nor * is dead. 2)\n\n1) sinks if the ice is thin 2) if it's a\ntank and it's hit with laser\n\n68 m & 53 s.",
         10, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_29,
@@ -1363,6 +1392,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "4 anti-tanks must be paired.\n(Face-to-face.)\n\nThe upward anti-tank turns thin ice\n(H6, H4, and H2) into water. It\nenters the H1 tunnel. This sacrifice\nsaves one movable block.\n\nSink the 3 blocks into water to\nmake bridges.\n\n\n63 moves & 47 shots.",
         13, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_30,
@@ -1370,6 +1400,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "Push blocks O15, M15, K15, I15,\nand A15 to first row to make\nbridges.\n\nOne tank's extra trip through\ncolumn A and column I turns H1 thin\nice into water.\n\nSink the last three blocks into\nwater (H1, J1, and L1), one at a\ntime.\n\n63 moves & 57 shots.",
         13, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_31,
@@ -1377,6 +1408,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "The tank needs to go to D1 to shoot\nthe F1 mirror that can deflect the\nlaser beam to break the F16 bricks.\n\nThe C15 block is used as cover\nagainst the anti-tanks.\n\nIn the second chamber, I12 and\nK12 anti-tanks are the covers.\n\n229 moves & 103 shots",
         11, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_32,
@@ -1384,6 +1416,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Ron Meijer",
         "Scanning down: The right tunnels\nare entry tunnels and the left\ntunnels are exit tunnels.\n\nP16 is the turning point for the\ntank.\n\nScanning up: The left tunnels are\nentry tunnels and the right tunnels\nare exit tunnels.\n\n16 moves & 0 shot.",
         12, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_33,
@@ -1391,6 +1424,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Gonzalo Waszczuk",
         "You can use a tunnel to go to other\nparts of the level like transporting.\nYou can also use them for\ntransporting objects.\n\n37 moves & 3 shots.",
         6, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_34,
@@ -1398,6 +1432,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "All seven movable blocks should be\nsent into the water to make a\nbridge.\n\nThe blocks, as well as the tank,\nshould go through the tunnels. Any\nobject that enters a tunnel will exit\nat the other tunnel of the same\ncolor.\n\nAvoid deadlock.\n\n190m & 65s.",
         13, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_35,
@@ -1405,6 +1440,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "I8 tunnel is the entry tunnel. Other\neight tunnels are the exit tunnels.\n\nThe order of the exit tunnels is row\nby row from top to bottom and\nfrom left to right in the same row.\n\nPush the eight anti-tanks into the\nentry tunnel.\n\n82 moves & 14 shots.",
         11, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_36,
@@ -1412,6 +1448,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Ron Meijer",
         "Same colored tunnels match. The\nhigher row on your screen and left\ntunnel in the same row has higher\npriority. Push objects to any yellow\ntunnel; they'll fill in the tunnels from\nA1 to N1. Then step into any yellow\ntunnel. Tank will be at O1.\n\n25 / 28.",
         9, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_37,
@@ -1419,6 +1456,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "K10-K14 and A7-F7 tunnels are the\nentry tunnels. B2-G2 and J2-O2\ntunnels are the exit tunnels. Send the\nJ10 and A6 anti-tanks into the entry\ntunnels at the right times so they will\nappear at the proper exit tunnels (B2\nand O2.)\n\n140 moves & 34 shots.",
         9, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_38,
@@ -1426,6 +1464,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "F13, J11-J15, E7-H7, and J7-L7\ntunnels are the entry tunnels. E5-J5,\nE7-I7, and K7 tunnels are the exit\ntunnels. The three blocks must be sent\ninto J7 tunnel at the right times, so\nthey will appear at the K7 tunnel.\nPush them into water.\n\n53 m & 25 s",
         9, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_39,
@@ -1433,6 +1472,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "Any object enters single* tunnel\nwill vanish. If it is the tank, it will\nbe dead.\n\nEach block is used as bridge in the\nsame column.\n\nAt the end, the O2 and O3\nanti-tanks are sent to D2 and D3.\n\n- - -\n\n* no matching color\n\n307 moves & 130 shots.",
         15, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_40,
@@ -1440,6 +1480,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Gonzalo Waszczuk",
         "You can use tunnels that don't have\nanother end to destroy blocks,\nmirrors and anti-tank guns.\n\n32 moves & 8 shots.",
         5, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_41,
@@ -1447,6 +1488,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Ron Meijer",
         "Your tank goes always straight on.\nIt can slide in front of - but not too\nclose to - anti-tank. Some\nanti-tanks must be shot to: 1) open\nthe path, 2) become the stoppers,\nand 3) be destroyed.\n\nPrepare all the way your strategy.\n\n34 moves & 14 shots.",
         10, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_42,
@@ -1454,6 +1496,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "The tank or any other movable object\n(movable block/mirror or anti-tank)\ncan slide on ice until it reaches the\nground or until it hits another object.\nSometimes we should put an object on\nthe path to stop the moving object.\n\n158 moves & 44 shots",
         8, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_43,
@@ -1461,6 +1504,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "Shoot the three movable blocks from\noutside of the crystal box. Put them at\nthe proper places, so the tank can\nreach the flag safely. The blocks are\nused as stoppers. At the end, one\nblock becomes bridge. Avoid the single\ntunnels.\n\n190 moves & 16 shots",
         9, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_44,
@@ -1468,6 +1512,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "1) If a moving object hits another\nobject, the first object will stop at\nonce.\n\n2) If a movable object is adjacent\nto the tank that is on ice and the\nobject is hit by laser toward the\ntank, the object will slide under the\ntank.\n\n18 moves & 7 shots.",
         11, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_45,
@@ -1475,6 +1520,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "Tank may ride or slide in front of -\nbut not too close to - the anti-tank. If\nmore than one A-T see the tank at the\nsame time, only one will shoot. The\norder of the shooting priority is:\nright, left, lower, and upper A-T,\nrespectively.\n\n47 m & 30 s.",
         9, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_46,
@@ -1482,6 +1528,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "At the end, J4 anti-tank watches the\nflag too closely, so an upward\nanti-tank at J column is needed. The\nanti-tanks at J4 and J14 see the tank\nat J5 at the same time, but the J14\nA-T has higher shooting priority over\nthe J4 A-T.\n\n79 moves & 38 shots.",
         9, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_47,
@@ -1489,6 +1536,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "If the tank jumps onto the tank\nmover at A8, C8, E8, G8, I8, K8, or\nM8, the tank will be shot to death.\n\nThe tank can reach the flag safely if\nit jumps onto the tank mover at B8,\nD8, F8, H8, J8, L8, or N8.\n\n(Odd=hit, even=miss)\n\n95 moves & 42 shots",
         11, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_48,
@@ -1496,6 +1544,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Tina",
         "\nTry to use conveyor,tunnel and\nA-tank to reach the flag\n\n18m 8s",
         5, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_49,
@@ -1503,6 +1552,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "The main function of the movable\nmirror is to deflect the laser beam.\nThe deflected laser can be used to\ndestroy anti-tank or to move\nanother object.\n\nThe movable mirror can also be\nused as the tank's cover against\nanti-tank.\n\n180 moves & 40 shots.",
         11, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_50,
@@ -1510,6 +1560,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "If the laser hits: * the mirrored\nside of the mirror, it will be\ndeflected * the base of the mirror,\nthe mirror will turn 90\xb0\nclockwise.\n\nEvery two shots from left or\nbottom to the pack of mirrors will\nturn one mirror 180\xb0.\n\n83 moves & 136 shots.",
         11, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_51,
@@ -1517,6 +1568,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Ihab NAIRI",
         "At all time, you must avoid making a\nclosed contour with all of its mirrors\nfacing out. This rule applies to all\nlayers, including the innermost one.\n\n(At the end, the two movable blocks\nwill be on the A1 and P1 tunnels.)\n\n195 moves & 359 shots.",
         9, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_52,
@@ -1524,6 +1576,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Ihab NAIRI",
         "Rotary mirrors: helpful and save\nmoves. It's necessary to prepare\nthem at the beginning and during\nthe solution.\n\nUsually players push the block,\nwhereas one can make the shots\nthat bring back the block. It's like a\nboomerang.\n\n240 moves & 379 shots.",
         11, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_53,
@@ -1531,6 +1584,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Ihab NAIRI",
         "Shooting the blocks into the water is\nmore difficult than demolishing the\nbricks because some of the mirrors\nhave been used and sometimes we\nneed to set up the mirrors before we\ncan move the blocks. Minimize the\nnumber of roundtrips.\n\n138 mv & 207 sh.",
         9, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_54,
@@ -1538,6 +1592,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Ihab NAIRI",
         "A solution without D14 block is\nimpossible. Without stopping at K14,\nthe J13 mirror can't be turned. (The\nG9 G10 J9 J10 K10's orientations don't\npermit anything.) GHS of most levels\nwith many mirrors can be improved,\nso keep on trying.\n\n636 / 292.",
         9, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_55,
@@ -1545,6 +1600,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "Shoot all 71 mirrors into the B3\ntunnels. (First mirror: The tank at\nD1 shoots down once.)\n\nThe tutorial intention is not just to\nsolve the level (by reaching the\nflag) but - more importantly - to\noptimize the solution.\n\n861 moves & 631 shots.",
         10, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_56,
@@ -1552,6 +1608,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "Shoot all 71 mirrors into the B3\ntunnels. (First mirror: The tank at\nD1 shoots down once.)\n\nThe tutorial intention is not just to\nsolve the level (by reaching the\nflag) but - more importantly - to\noptimize the solution.\n\n230 moves & 659 shots.",
         10, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_57,
@@ -1559,6 +1616,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "H1 mirror, from O1 to C1, deflects\nthe laser down. C8 mirror, from C3\nto C12, deflects the laser to the right.\nO8 mirror, from O3 to O12, deflects\nthe laser to the left. Send the two\nblocks to O3 tunnel. Make the bridge\nat O14-O15.\n\n151 mv & 207 sh",
         9, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_58,
@@ -1566,6 +1624,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "G12 mirror moves along the\nhorizontal line E12-N12 and along the\nvertical line G14-G3. It is used to\ndeflect laser beam that breaks the\nbricks, sends the H11 block into the P3\ntunnel, and pushes the O2 block into\nthe P2 water.\n\n20 moves & 107 shots.",
         9, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_59,
@@ -1573,6 +1632,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "The H9 mirror is needed to deflect\nthe tank's laser beam to the left\nand right. The mirror can turn to\none direction only, clockwise. So,\nsometimes a loop of laser beam is\nneeded to turn the mirror.\n\nSend the F5 block to H16.\n\n3 moves & 32 shots.",
         10, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_60,
@@ -1580,6 +1640,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "HL = Horst Ledpeddle\n\nIt's a 3-digit T Counter\n\nWatch the \"Moves\" counter Every 1\n(=3^0) move the I9 mirror is hit\nEvery 3 (=3^1) moves the I7\nmirror is hit Every 9 (=3^2) moves\nthe I3 mirror is hit At move 27\n(=3^3) the H1 mirror is hit\n\n29/0.",
         12, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_61,
@@ -1587,6 +1648,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "Left: 3-digit counter needs 27\n(=3^3) shots -> C4 mirror is hit.\n(Tank starts at D14)\n\nRight: 4-digit counter needs 81\n(=3^4) shots -> L2 mirror is hit.\n(Tank starts at K14)\n\nTank rides on small loop for 53\n(=81-27-1) shots. (1 for D6 A-T)\n\n111 / 0",
         12, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_62,
@@ -1594,6 +1656,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "HL = Horst Ledpeddle.\n\nIt's a 2-digit Quinary Counter.\n\nLaser beam crosses river: 9th row\nevery 5^0 = 1 move, 6th row every\n5^1 = 5 moves, 3rd row every 5^2\n= 25 moves.\n\n(2 shooters -> 1 cycle = 2 x 25 = 50\nmoves.)\n\n2 x 3 x 25 + 4 = 154 m 0 s.",
         13, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_63,
@@ -1601,6 +1664,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "If the tank rides on the N14-O14\ntank mover, O15 A-T will shoot the\ntank to dead. The A-T has higher\npriority over O11 A-T.\n\nThe tank can ride on the N3-O3\ntank mover safely. O6 A-T has\nhigher priority over O2 A-T. The\nshot will miss.\n\n75 m & 26 s.",
         11, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_64,
@@ -1608,6 +1672,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "When a laser beam is traveling, no\nanti-tank can shoot although it sees\nthe tank sliding/riding in front of it.\nThe mirrors are used to deflect the\nlaser beam and to keep it traveling as\nlong as the tank is riding to the flag.\n\n77 moves & 35 shots.",
         8, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_65,
@@ -1615,6 +1680,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Ron Meijer",
         "C2 anti-tank must be destroyed.\nPush the O15 anti-tank to O14. Push\nthe O2 anti-tank to O3. Step onto\nC15 tank mover. -> Flag.\n\nIt's crucial to have the anti-tanks\nat O14 and O3. Without them, the\ntank will be shot to death.\n\n5 moves & 3 shots.",
         10, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_66,
@@ -1622,6 +1688,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "If any of the anti-tanks in columns G\nand O is given the chance to shoot the\ntank in front of it, the tank will be\nhit. They are too close to the tank.\nTherefore, the other ten anti-tanks\nmust shoot from the correct\ndistances.\n\n32 moves & 14 shots.",
         9, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_67,
@@ -1629,6 +1696,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "C12 A-T: Will shoot the tank.\n\nG13 A-T: No chance to shoot.\n\nC3 A-T: No chance to shoot because\nthe addition of E5 mirror.\n\nG3 A-T: No chance to shoot because\nthe addition of I5 crystal block.\n\nApply the theory in columns\nM-N-O-P.\n\n59 m & 26 s.",
         14, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_68,
@@ -1636,6 +1704,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "The tank needs to be at P4 yellow\ntunnel, so fill in all yellow tunnels\nwith anti-tanks except two, i.e. one\nentry- and one exit- (P4) tunnels.\n\nE1 is chosen as the yellow entry\ntunnel. Send the anti-tanks through\nthe cyan tunnels.\n\n91 m & 90 s.",
         10, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_69,
@@ -1643,6 +1712,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "Send 18 anti-tanks to the upper\nleft tunnels (A2-F2, A3-F3, and\nA6-F6.)\n\nAt A2-F2, the anti-tanks must be\ndownward. At A6-F6, they must be\nupward.\n\nThe tank must be safe when it is\nwalking from A7 red tunnel to A1\nflag.\n\n64 moves & 19 shots.",
         13, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_70,
@@ -1650,6 +1720,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Gonzalo Waszczuk",
         "I almost forgot to tell you!! When you\nhave a tunnel that goes to a dead end,\nput something there to you to avoid\nthe tunnel. This can help you with\nmirrors to.\n\n32 moves & 3 shots.",
         7, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_71,
@@ -1657,6 +1728,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Gonzalo Waszczuk",
         "You can also use mirrors to sink\nanother mirrors or to do the ''bug'',\nyou do this when you shoot a mirror\nand tit shoots another thing that\nblocks you.\n\n20 moves & 11 shots.",
         7, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_72,
@@ -1664,6 +1736,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "If all tunnels of the same color are\noccupied except one, the last and\nonly empty tunnel acts like ground.\n\nSend the 6 ATs to the red, green,\nand blue tunnels such that the I6,\nI5, and I4 tunnels are the last\nempty tunnels of each color.\n\n76 m & 61 s",
         10, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_73,
@@ -1671,6 +1744,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "Any object that occupies the last\nempty tunnel of certain color (RED)\nwill wait for the available exit tunnel.\nIf any (H6 tunnel) of the fully\noccupied tunnels is freed from object\non it, the waiting object will be sent\nto this (H6) tunnel.\n\n131 / 102.",
         9, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_74,
@@ -1678,6 +1752,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "If a movable object is adjacent to the\ntank that is not on ice and the object\nis hit by laser toward the tank, the\nobject will move to be under the tank.\n\nWhen the tank is on top of a movable\nobject, it can shoot a facing anti-tank.\n\n19 mv & 20 sht.",
         9, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_75,
@@ -1685,6 +1760,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "If a movable object is adjacent to the\ntank that is not on ice and the object\nis hit by laser toward the tank, the\nobject will move to be under the tank.\n\nWhen the tank is on top of a movable\nobject, it can shoot a facing anti-tank.\n\n35 mv & 47 sht.",
         9, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_76,
@@ -1692,6 +1768,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "If a movable object is adjacent to the\ntank that is not on ice and the object\nis hit by laser toward the tank, the\nobject will move to be under the tank.\n\nWhen the tank is on top of a movable\nobject, it can shoot a facing anti-tank.\n\n9 mv & 13 sht.",
         9, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_77,
@@ -1699,6 +1776,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Ron Meijer",
         "G1 anti-tank into the water. F4 block\ninto the water -> bridge at D1. D4\nanti-tank to C1 or D1. Make sure that\nthe four mirrors have been arranged\nas a rectangle. (A1-I1-I5-A5.) Make\nthe tank on top of the anti-tank at D1.\n\n40 moves & 17 shots.",
         8, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_78,
@@ -1706,6 +1784,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "Shoot all upward ATs into the red\ntunnels.\n\nFrom each green tunnel at row 4,\nshoot the downward AT. It will\nappear under the tank. Then shoot\nselective upward AT on the red\ntunnel. Repeat the routine while\nthe tank moves to the right.\n\n47 mv & 20 sh.",
         11, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_79,
@@ -1713,6 +1792,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "(msd = minimum safe distance from\nA-T.)\n\nP12: If the tank jumps from the\nground (P11), msd = 2. A12: If the\ntank is continuing from tank mover\n(A11), msd = 3. H12: If the tank is\non top of other object (A-T) at H13,\nmsd = 2.\n\n45 moves & 27 shots.",
         11, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_80,
@@ -1720,6 +1800,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "If tank jumps onto I12 or I11 tank\nmover, K10 A-T will shoot it to\ndeath. If it's on top of an object at\nI11, it can jump onto I10 safely.\n\nIf tank slides from N4 to N1, P2\nA-T will shoot it to death. If it\nslides from N2 to N1, it's safe.\n\n118 / 51.",
         10, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_81,
@@ -1727,6 +1808,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "To beat an AT (anti-tank): * block the\nAT with an object, * shoot the AT into\nwater or single tunnel, * shoot the\nmirror that deflects the laser beam\nto the AT, or * on top an object, the\ntank can shoot the AT without being\nshot.\n\n19 mv & 17 sh.",
         9, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_82,
@@ -1734,6 +1816,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "Make the P2 A-T shoots, but the laser\nhits another A-T, so it slides and stops\nunder the tank. (Hint: The A-T is\nbetween the tank and P2 A-T. Shoot\nthe A-T into H14 tunnel, so P2 A-T\nshoots. The laser hits the A-T that\nexits at D2 tunnel.)\n\n71 m & 32 s",
         9, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_83,
@@ -1741,6 +1824,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "i-s = 1 ice-segment = 1 or more\ncontiguous ice (thin ice) squares. If N\ni-s's are inserted in tank movers, the\ntank'll move N time units faster.\nB13-O13: One i-s: tank too slow\nB3-O3: Three i-s's: tank too fast\nB8-O8: Two i-s's: tank's on time\n\n4/0",
         9, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_84,
@@ -1748,6 +1832,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "In this level: * laser beam that has\nbeen deflected by a mirror can be\ndeflected by other mirrors such that\nit will hit and push the first mirror, *\neight (>= 4) mirrors that form a loop\nhelp the tank moves backward on\ntank mover.\n\n90 mv & 24 sh.",
         9, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_85,
@@ -1755,6 +1840,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "After the tank exits on a tunnel,\nanother movable object (movable\nblock, movable mirror, or anti-tank)\ncan exit on the same tunnel, so the\ntank is on top of the object. The tank\nis safe from anti-tanks. H9, I3, and\nM2 are exit tunnels.\n\n113 mv & 44 sh",
         9, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_86,
@@ -1762,6 +1848,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "The tank and the laser beam are\napproaching to each other in column A\nor P. When the laser beam reaches\nthe exit tunnel (A11 or P11), the tank\nenters the entry tunnel (A9 or P9).\nThe tank is safe sitting on the exit\ntunnel.\n\n121 moves & 25 shots.",
         9, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_87,
@@ -1769,6 +1856,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "Right anti-tank has higher shooting\npriority over Left A-T. Bottom A-T\nhas higher shooting priority over\nUpper A-T.\n\nRight or Left A-T has higher\nshooting priority over Bottom and\nUpper A-Ts.\n\nJ14 (Left) > N13 & N15. K6 (Right) >\nE7.\n\n136m & 70s.",
         13, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_88,
@@ -1776,6 +1864,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "A14 A-T (lower shooting priority)\nshoots two leftward anti-tanks (E15\nand P2). The A-T is face-to-face\nagainst P2 A-T when it's at J2. When\nthe tank rides on M2 tank mover, a\nmovable block is sliding on N2 ice\nobscuring P2 A-T's sight.\n\n157 mv & 85 sh.",
         9, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_89,
@@ -1783,6 +1872,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "G12 A-T (lower shooting priority) and\nO12 A-T are face-to-face. When the\nO12 A-T temporarily moves to O11,\nthe tank reaches J12. G12 A-T sees the\ntank and shoots, then the O12 A-T is\nback. Similarly, E4 (not D4) A-T shoots\nM4 A-T.\n\n110 mvs & 72 shots.",
         9, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_90,
@@ -1790,6 +1880,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "B3 A-T (not C3 A-T) shoots N3 A-T.\nFirst shot is to move the J3 A-T.\nWhen the moving A-T is at K3, the\ntank is on D3 tank mover. The B3\nA-T sees and shoots the tank before\nK3 A-T enter L3 tunnel.\n\nSimilarly, D12 A-T shoots O12 A-T.\n\n143 mv & 37 sh.",
         10, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_91,
@@ -1797,6 +1888,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "See Ihab NAIRI's \"Inverser Ordre\nTir Anti-Tk\" in Tutor.LVL.\n\nA leftward A-T is at O14. Tank is on\ntop a block at H14. Tank slides to\nthe left. A14 A-T shoots twice: one\nto hit the block, one to hit the O14\nA-T (A14 A-T sees when block at\nJ14.)\n\n49/41",
         11, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_92,
@@ -1804,6 +1896,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "See Ihab NAIRI's\n\"Auto-Destruction\" in Tutor.LVL.\n\nP8 anti-tank kills itself. It sees the\ntank is sliding at I8. The laser is\ndeflected by three mirrors at K8\n(sliding mirror), K10, N10, and N8\n(same mirror with the first one).\n\n137 moves & 85 shots.",
         10, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_93,
@@ -1811,6 +1904,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "E11 A-T shoots a moving mirror\nthat deflects the laser. Other\nmirrors deflect the laser back to\nthe A-T.\n\nK9 A-T goes up sliding. When it's at\nK6, it shoots the N6 mirror. N4\nmirror deflects the laser back to\nthe A-T that stops at K4.\n\n41 mv & 41 sh.",
         11, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_94,
@@ -1818,6 +1912,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "See Ihab NAIRI's \"Auto Coup de\nPouSSe\" in Tutor.LVL.\n\nJ8 A-T slides down at normal speed.\nThe tank slides down in column F at\naccelerated speed. The A-T shoots\nwhen it is at J12. It is hit by its own\nlaser when it exits on G12 tunnel.\n\n179 m & 39 s.",
         10, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_95,
@@ -1825,6 +1920,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "AT that occupies the last empty tunnel\nof certain color will wait for the\navailable exit tunnel. Destroy the AT.\nIf any of the fully occupied tunnels\n(the same color) is freed from object\non it, the dead AT will be sent to this\ntunnel.\n\n48 m & 9 s.",
         9, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_96,
@@ -1832,6 +1928,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "AT that occupies the last empty tunnel\nof certain color will wait for the\navailable exit tunnel. Destroy the AT.\nIf any of the fully occupied tunnels\n(the same color) is freed from object\non it, the dead AT will be sent to this\ntunnel.\n\n44 m & 24 s.",
         9, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_97,
@@ -1839,6 +1936,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Tina",
         "\nThere are several ways to solve this\none\n\nTry to get 92m 33s or better",
         5, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_98,
@@ -1846,6 +1944,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Tina",
         "\n\nTo give you some training, again\nSvens Trick But try to use as less\nmoves possible !\n\n183m 56s ",
         7, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_99,
@@ -1853,6 +1952,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Mic (G4B) & Yono in Jkt.",
         "Adaptation of Mic's Sokoban levels\n#6 of Javablue (\xa9 GAMES 4\nBRAINS) level set.\n\nPorted to LaserTank and modified\nby Yono in Jkt.\n\nAnti-tanks can be objects to be\npushed to three directions. They\ncan shoot the tank too.\n\n1109 moves & 309 shots.",
         12, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_100,
@@ -1860,6 +1960,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Mic (G4B) & Yono in Jkt.",
         "Adaptation of Mic's Sokoban levels\n#18 of Javablue (\xa9 GAMES 4\nBRAINS) level set.\n\nPorted to LaserTank and modified\nby Yono in Jkt.\n\nAnti-tanks can be objects to be\npushed to three directions. They\ncan shoot the tank too.\n\n1613 moves & 650 shots.",
         12, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_101,
@@ -1867,6 +1968,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Mic (G4B) & Yono in Jkt.",
         "Adaptation of Mic's Sokoban levels\n#33 and #37 of Javablue (\xa9\nGAMES 4 BRAINS) level set.\n\nPorted to LaserTank and modified\nby Yono in Jkt.\n\nAnti-tanks can be objects to be\npushed to three directions. They\ncan shoot the tank too.\n\n1724 mv & 548 sh.",
         12, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_102,
@@ -1874,6 +1976,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "In one move:\n\nThe movable block is moving on thin\nice when it hits the moving tank.\nThe block stops and becomes a\nbridge but the tank continues\nsliding on thin ice, rides on tank\nmover, and finally stops on the new\nbridge.\n\n41 moves & 25 shots.",
         11, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_103,
@@ -1881,6 +1984,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "In one move:\n\nThe tank is moving on ice when its\nnose hits a moving AT (anti-tank).\nThe tank stops but the AT continues\nsliding on thin ice and enters the\ngreen tunnel. Meanwhile another\nAT sees and shoots the tank but\nmisses.\n\n66 moves & 38 shots.",
         11, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_104,
@@ -1888,6 +1992,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "In one move:\n\nAn AT is hit from left, slides on thin\nice. Then it's hit from the bottom; it\nstops on ice. Another AT sees and\nshoots the tank but misses. The\ndeflected laser hits another AT that\nhas been blocking the tank\nface-to-face.\n\n64 mv & 24 sh",
         11, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_105,
@@ -1895,6 +2000,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "In one move:\n\nAn AT is hit from left, slides on thin\nice. Then it's hit from the bottom,\nenters a tunnel. At exit tunnel, it\nsees & shoots the tank but misses.\nThe deflected laser hits a block that\nbecomes bridge for the arriving\ntank.\n\n114 m & 57 s.",
         11, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_106,
@@ -1902,6 +2008,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "In one move:\n\nA movable block is hit from the left.\nIt slides on thin ice and solid ice.\nThen it is hit from the right so it\nslides back to the left. It becomes a\nbridge just on time when the tank\narrives and stops on it.\n\n131 moves & 58 shots.",
         10, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_107,
@@ -1909,6 +2016,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "The naive solution: Click on the flag.\nThe score is 53 moves & 0 shot.\n\n\nTo win the GHS (Global High Score),\nyou must get the smallest number\nof moves. More effort is needed to\nfind the SHORTEST PATH.\n\n\nThe winning solution: 11 moves & 26\nshots.",
         12, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_108,
@@ -1916,6 +2024,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Tina",
         "\nAs I said : Let them shoot There are\ntwo options to get 15m 8s",
         3, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_109,
@@ -1923,6 +2032,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "Tank's shot is cheaper than\nanti-tank's shot that cost you tank's\nmove.\n\nIf you use B15 A-T (step on B13),\nC13 A-T (step on E13), P9 A-T (slide\non ice), and B7 A-T (step on B5),\nyou need 39 moves & 3 shots.\n\nGHS solution is:\n\n30 moves & 36 shots.",
         12, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_110,
@@ -1930,6 +2040,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Yono in Jkt.",
         "The naive solution: Click on the flag.\nThe score is 30 moves & 0 shot.\n\n\nTo win the GHS (Global High Score),\nyou must get the smallest number\nof moves. The number of shots is\nused as TIEBREAKER only.\n\n\nThe winning solution: 27 moves & 64\nshots.",
         12, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_BEGINNER_111,
@@ -1937,6 +2048,7 @@ level_t[112] prog LEVELS_TUTORIAL_BEGINNER =
         "Ihab NAIRI",
         "The easy way is by clicking on the\nflag (24 moves & 0 shot.)\n\nTo win the GHS, you must shoot the\nmirrors until the laser hits the\nmovable block. So, the tank can use\nthe red tunnel to save the moves.\n\nThe winning score is:\n\n23 moves & 163 shots.",
         11, 0,
+        0, 0, "",
     },
 };
 

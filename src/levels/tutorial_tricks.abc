@@ -906,6 +906,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Donald Drouin",
         "Go anywhere between H-9 to H-14\nShoot to the left and the objet to\nyour right will be pushed under you.\nThen reach the flag.",
         4, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_1,
@@ -913,6 +914,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Horst Ledpeddle",
         "Move right, shoot right and block\nsqueezes past you and into tunnel. \nShoot up, move up, move down, move\nup, move right to flag.",
         4, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_2,
@@ -920,6 +922,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Horst Ledpeddle",
         "move right move left move right",
         1, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_3,
@@ -927,6 +930,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Horst Ledpeddle",
         "Move up, wait. Enemy fires as you\nbounce back and forth too fast to see.\nThe block stops you from vibrating.\nMove up to flag.",
         4, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_4,
@@ -934,6 +938,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Horst Ledpeddle",
         "The top two anti-tanks look too close\nespecially if you are sitting still. Move\nup 2 times. If you shoot the red\nbricks, you will die.",
         4, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_5,
@@ -941,6 +946,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Horst Ledpeddle",
         "Timing is important. Move up 6 times.\nMoves 1, 3 & 5 step directly into line\nof fire at an even distance from the\nenemy. Moves 2, 4 & 6 ride a mover\ninto line of fire at odd distances from\nthe enemy.",
         6, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_6,
@@ -948,6 +954,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Horst Ledpeddle",
         "The enemy is at exactly same distance\nfrom tank mover, but there's a\ndifference. 1) move up, move up, die.\n(reset - hit \"R\" key) 2) move up,\nshoot up, move up, live.",
         5, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_7,
@@ -955,6 +962,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Horst Ledpeddle",
         "Move up. Anti-tank laser shot is 3\nspaces behind you as you ride track\nand block goes under you. Move up.\nYou are ON the water, but you don't\ndie. The block goes under you and\nsaves you. Go to flag.",
         6, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_8,
@@ -962,6 +970,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Horst Ledpeddle",
         "Up, shoot down, block comes to be\nunder you. Move left, shoot right,\nmove up, go to flag.",
         3, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_9,
@@ -969,6 +978,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "R. Vigneault",
         "One step up, Shoot at the mirror, Get\nto the flag.",
         2, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_10,
@@ -976,6 +986,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "R. Vigneault",
         "Shoot on the bottom mirror, Get\ndown from the top of the block, Shoot\nat the top mirror, Move on the\ntankmover, Shoot at the top mirror,\netc...",
         5, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_11,
@@ -983,6 +994,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "R. Vigneault",
         "Shoot at the bottom mirror, Shoot to\nthe right, Shoot the antitank, Get to\nthe Flag. ",
         3, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_12,
@@ -990,6 +1002,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "R. Vigneault",
         "Shoot the block 2 steps down, Go\ndown 2 steps, Fire on the mirror and\ngo down on the tank mover.",
         3, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_13,
@@ -997,6 +1010,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "R. Vigneault",
         "Get on the tankmover, Wait 11\nseconds, Get to the flag",
         2, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_14,
@@ -1004,6 +1018,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "R. Vigneault",
         "Fire in order:  5 shots up, 5 shots left,\n4 shots down, Move one step right,\nFire 6 shots down, Move one step up,\nGet to the flag.\n",
         5, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_15,
@@ -1011,6 +1026,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Donald Drouin",
         "Order of shots :                                    \n\n                     1\n                4   +  2\n                     3 ...",
         5, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_16,
@@ -1018,6 +1034,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Ihab NAIRI",
         "H12 ---> TILT\n\nSolution ------------- G13, Shoot,\nK9, H12, Don't Shoot, E4. END.\n===================================\nG13, Tirez, K9, H12, Ne Tirez Pas, E4.\nFIN.",
         7, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_17,
@@ -1025,6 +1042,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Ihab NAIRI",
         "(B+P) / 2 = (H+J) / 2 = I          = OUF!\n==============================\n(C+P) / 2 = (I+J) /  2 = I+0,5    =\nBING!\n\nSolution ------------- B15, D13,\nF11, H9, J7, L5, Shoot Left then N3\n=====================================",
         8, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_18,
@@ -1032,6 +1050,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Ihab NAIRI",
         "G12 and nothing to do (GAME OVER)\n================================\nG12 et plus rien \xe0 faire (Partie\ntermin\xe9e)\n\nSolution ------------- F13, Shoot,\nM11, G12, Shoot, H4 ...\n============================\nF13, Tirez, M11, G12, Tirez, H4 ...",
         9, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_19,
@@ -1039,6 +1058,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Ihab NAIRI",
         "G12 ---> Smack\n\nSolution ------------- F13, Shoot,\nL11, G12 ... ===================\nF13, Tirez, L11, G12 ...",
         5, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_20,
@@ -1046,6 +1066,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Ihab NAIRI",
         "Move & Shoot To The Right...\n======================== Avancez\net Tirez \xe0 Droite...",
         3, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_21,
@@ -1053,6 +1074,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Ihab NAIRI",
         "G11, F8...",
         1, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_22,
@@ -1060,6 +1082,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Ihab NAIRI",
         "Try the 4 houses, you are welcome\nonly at the one with the Tank\nMover-Ice combination.\n(Top-Right) (Same thing for Thank\nMover-Thin Ice)\n\nEssayez les quatre portes, seul le\ncouple [Glace --> convoyeur] est\nhospitalier. (M\xeame chose avec la\nGlace Mince)",
         10, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_23,
@@ -1067,6 +1090,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Ihab NAIRI",
         "Shoot left, Move up. Record : 1 Shot /\n1 move\n\nTirez \xe0 gauche, Monter en haut\nRecord : 1 Tir  / 1 Pas",
         5, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_24,
@@ -1074,6 +1098,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Yono in Jkt.",
         "ON ICE: If a moving object hits the\ntank, it is stopped. If a moving object\nis shot when it is adjacent to the tank,\nit slides under the tank.\n\n3 moves & 3 shots.\n\nMove left 1x, Shoot up 3x, Move\ndown 1x, Move right 1x.",
         9, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_25,
@@ -1081,6 +1106,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Yono in Jkt.",
         "If ALL tunnels of the same (WHITE)\ncolor are occupied, the LAST object\n(MOVABLE BLOCK) on the tunnel (E3)\nwill exit at the FIRST freed tunnel\n(C3). = 20/12.\n\nShoot up at: A7(2x), C7(1x), D7(1x),\nE5(1x), E7(1x), E6(2x), C6(3x),\nA6(1x). A4, A3, C2, D1.",
         9, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_26,
@@ -1088,6 +1114,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Yono in Jkt.",
         "Ice in FRONT of tank mover makes\nthe tank saves 1 unit time / ice\nsegment. 1 segment = 1 or more\ngrids. 1st path: The tank is hit at E2.\n2nd path is 6 grids longer, but NEW 6\nsegments of ice are inserted, so the\ntank is still hit at M2. (Ice not at M3)",
         7, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_27,
@@ -1095,6 +1122,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Yono in Jkt.",
         "In 5 moves: 1-3: Click\nB2/D2/A3/E3/A5/E5/B6/D6/C7. 4:\nMove up. 5: Click the flag.\n\nThe anti-tank can't be closer to the\ntank's path.\n\nVia tunnels #3 (#4) & #5: This\nexplains the note in the level\n\"Useful for Level Creators\", i.e.\n\"(Ice not at M3)\"",
         11, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_28,
@@ -1102,6 +1130,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Ihab NAIRI",
         "Shoot & Move...\n\nTirez & Avancez...",
         3, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_29,
@@ -1109,6 +1138,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Ihab NAIRI",
         "Shoot, Move, shoot 2 times... The\nonly difference with previous level\nis at G10 (Tank Mover <> Ice) !!?\n(See Tutor 27)\n\n\n\nTirez, Avancez, Tirez 2 fois... Seule\ndiff\xe9rence avec le tableau\npr\xe9c\xe9dent est en G10\n(Convoyeur <> Glace) !!? (Voir\nTutor 27)",
         12, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_30,
@@ -1116,6 +1146,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Ihab NAIRI",
         "Shoot up, shoot left, shoot right, then\nride the Tankmover...\n\nTirez en haut, \xe0 gauche, \xe0\ndroite et prenez les convoyeurs...",
         5, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_31,
@@ -1123,6 +1154,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Ihab NAIRI",
         "Shoot right, then ride the\nTankmover...\n\nTirez \xe0 droite et prenez le\nconvoyeur...",
         5, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_32,
@@ -1130,6 +1162,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Ihab NAIRI",
         "Shoot right, shoot left, then ride the\nTankmover...\n\nTirez \xe0 droite et \xe0 gauche puis\nprenez le convoyeur...",
         5, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_33,
@@ -1137,6 +1170,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Ihab NAIRI",
         "Shoot right, shoot left, then ride the\nTankmover...\n\nTirez \xe0 droite et \xe0 gauche puis\nprenez le convoyeur...",
         5, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_34,
@@ -1144,6 +1178,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Ihab NAIRI",
         "Shot : Down Move : Down, Right, Up\nthen Left.\n\nTirez : en bas Allez : en bas, \xe0\ndroite, en haut et \xe0 gauche.",
         5, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_35,
@@ -1151,6 +1186,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Ihab NAIRI",
         "Shot : Down Move : Down, Right,\nDown then Left.\n==================================\nTirez : en bas Allez : en bas, \xe0\ndroite, en bas et \xe0 gauche.\n\n*\n\nThe only difference with previous\nlevel is at L10 (Ice<> Tank Mover)\n!!? (See Tutor 27, (29 & 30))",
         11, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_36,
@@ -1158,6 +1194,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Ihab NAIRI",
         "1 shot to the left & x shots to the\nright, get on Tank Mover then into\nthe H9 Tunnel...\n\n1 tir \xe0 gauche et x tirs \xe0\ndroite, prenez le convoyeur puis le\ntunnel H9...",
         7, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_37,
@@ -1165,6 +1202,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Ihab NAIRI d'apr\xe8s Schmidt",
         "Try the three Tunnels. You solve! Then\nlook at what happen on line 5.\n\nEssayez les trois tunnels. Si solution,\nobservez ce qui arrive \xe0 la ligne 5",
         5, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_38,
@@ -1172,6 +1210,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Ihab NAIRI",
         "1 shot up and left, O15, L2, 1 shot at\nleft...     Place a Block in D3 and Ground\nin A3 then replay Or Place Ice,\nWater, Tunnel or Ground in D4 and\nreplay",
         5, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_39,
@@ -1179,6 +1218,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Ihab NAIRI",
         "Shoot twice,  Move, Shoot twice, \nMove...\n\nTirez 2 fois, Avancez, Tirez 2 fois,\nAvancez...",
         5, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_40,
@@ -1186,6 +1226,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Ihab NAIRI",
         "A1, B2, A3 are solutions: A3:\nPerpetual reflection, start with\nslippery mirror A1, B2: Don't Shoot\n\n3 / 0\n\n=\n\nA1, B2, A3 sont solutions: A3:\nR\xe9flexion perp\xe9tuelle,\ncommence par miroir glissant A1,\nB2: Ne Tirez Pas\n\n3 / 0",
         14, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_41,
@@ -1193,6 +1234,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Ihab NAIRI",
         "3 tunnels = 3 solutions: (6 / 1) Go to\nGreen, Fire, Move... Go to Blue,\nFire, Move... Go to Red, Fire, Go\nLeft...\n\n=\n\n3 tunnels = 3 solutions : (6 / 1) Au\nVert, tirez, avancez... Au Bleu,\ntirez, avancez... Au Rouge, tirez,\nallez \xe0 gauche...",
         11, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_42,
@@ -1200,6 +1242,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Yono in Jkt.",
         "3 moves & 1 shot: move right, move\nright, shoot down, move left.\n\nThanks to: * Ihab NAIRI for\nintroducing the concept of perpetual\ndeflections. * Stephen Ryan for his\nidea that inspired me to look for the\nsmallest container to capture the\nlaser beam.",
         9, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_43,
@@ -1207,6 +1250,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Ihab NAIRI",
         "The bad and the good tank pass at the\nsame time on thin ice at F7 : Shoot Up,\nthen go to K10 and L9...\n\nLa Glace Mince F7 permet le passage\nsimultan\xe9 du M\xe9chant et du\nGentil Tanks : Tirez en Haut, puis allez\n\xe0 K10 et \xe0 L9...",
         8, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_44,
@@ -1214,6 +1258,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Ihab NAIRI",
         "Shoot Up once then go to J10...\n\nTirez en Haut une fois puis allez \xe0\nJ10...",
         4, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_45,
@@ -1221,6 +1266,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Ihab NAIRI",
         "Shoot, go to G8, Shoot, Shoot...\n\nTirez, allez \xe0 G8, Tirez, Tirez...",
         3, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_46,
@@ -1228,6 +1274,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Ihab NAIRI",
         "Shoot, go to G11, Shoot Left, Shoot\nUp...\n\nTirez, allez \xe0 G11, Tirez \xe0\nGauche, Tirez en Haut...",
         5, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_47,
@@ -1235,6 +1282,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Ihab NAIRI",
         "Shoot Right, go to G6...\n\nTirez \xe0 Droite, allez \xe0 G6...        \n       ",
         4, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_48,
@@ -1242,6 +1290,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Donald Drouin",
         "1 - Push the Block into the Red Tunnel\nand enter the Tunnel\n\n2 - Shoot Down and kill the Anti-Tank\nto your Left. 3 - Move Down, Shoot\nUp and Move Up\n\nRepeat step 2 and 3 until you reach\nthe top...",
         9, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_49,
@@ -1249,6 +1298,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Ihab NAIRI",
         "Shoot to the left, Move up, Move up\n\nTirez \xe0 gauche, Montez, Montez\n\n2/1",
         5, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_50,
@@ -1256,6 +1306,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Ihab NAIRI & Yono in Jkt.",
         "Shoot to the left, Go to H11...\n\nTirez \xe0 gauche, Allez \xe0 H11...     \n       \n\n5/1",
         6, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_51,
@@ -1263,6 +1314,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Ihab NAIRI",
         "Shoot to the left, Move down, Shoot\ndown, Go to B1...\n\nTirez \xe0 gauche, Prenez le\nconvoyeur, tirez vers le bas, allez\n\xe0 B1...\n\n3/2",
         8, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_52,
@@ -1270,6 +1322,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Ihab NAIRI",
         "Move up, Shoot to the left, Move\ndown\n\nAvancez, Tirez \xe0 gauche, Prenez le\nconvoyeur\n\n2/1",
         7, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_53,
@@ -1277,6 +1330,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Ihab NAIRI",
         "Shoot up, move Left\n\nTirez en haut, allez \xe0 gauche\n\n1/1",
         5, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_54,
@@ -1284,6 +1338,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Ihab NAIRI",
         "Shoot to the left, Go to J7, Shoot to\nthe left, F11, Shoot Down...     \n\nTirez \xe0 gauche, Allez \xe0 J7,\nTirez \xe0 gauche, F11, Tirez en bas...\n\n5/3",
         7, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_55,
@@ -1291,6 +1346,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Ihab NAIRI",
         "Shoot to the left, Go to M5...     \n\nTirez \xe0 gauche, Allez \xe0 M5...\n\n9/2",
         5, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_56,
@@ -1298,6 +1354,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Yono in Jkt.",
         "Only one A-T can shoot at a time.\n\nD2: Right A-T has higher shooting\npriority. M3: Left A-T sees the tank\nfirst. E8: Safe to enter the tunnel. M8:\nK8 A-T sees the tank first. F13: Left\nA-T sees the tank first. L14: Upper\nA-T sees the tank first.",
         8, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_57,
@@ -1305,6 +1362,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Yono in Jkt.",
         "Reach E4: At F4 shoot down 1x, shoot\nleft 1x, move left. Reach E14: Enter\nF12, shoot up 1x, shoot left 1x, move\nleft. Rotate 90\xb0: Can't reach L4\nand L14. A-T shooting priority: Right,\nLeft, Lower, Upper. (C4 > E5, C14 >\nE15; but K4 > L2, K14 > L12.)",
         7, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_58,
@@ -1312,6 +1370,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "LFE the FLE",
         "The antitank shooting left or up will\nshoot.\n\n(Y) --> K10 --> I11 --> E10 --> H5\n--> !'*'",
         5, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_59,
@@ -1319,6 +1378,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "LFE the FLE",
         "You get shot if you meet the laser at\nthe edge between two squares.    (go\ndown) You survive if you're going to\noccupy the same square at the same\ntime!     (go up) Similar to tutor\nlevels:  \"Many Lasers Through You\"\nand \"(B+P) / 2 = I\"",
         7, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_60,
@@ -1326,6 +1386,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "LFE the FLE",
         "When entering onto a tankmover, the\n1st square is skipped* ie. go up and\nthe skipped square is in the firing\nline; go down and it's not (and reach\nthe flag). This makes the timing of the\nshots different.\n\n *same for 1st ice square except for\nTM-->Ice",
         9, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_61,
@@ -1333,6 +1394,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "LFE the FLE",
         "The tankmovers are skipped but the\nice isn't because it's tankmover-->ice.\nIf they were all skipped the tank\nwould instantly appear at the end. \nYou wouldn't see it move! Use Row 9\nto reach the flag.\n\nNote: N9 is skipped because it's\nground-->ice.",
         9, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_62,
@@ -1340,6 +1402,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "LFE the FLE",
         "Here, three consecutive squares are\nskipped.  If they shoot, you die, so\ntry different block positions.   Note\nthat only the first two tanks can see\nyou, ie. you cannot make the third\ntank shoot.\n\nShoot left (x2) and right, move left\nthen up.",
         9, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_63,
@@ -1347,6 +1410,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Ihab NAIRI & Yono in Jkt.",
         "K10, Shoot up, J11... 4/1\n\n(Used in one of Yono in Jkt.'s levels.)",
         3, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_64,
@@ -1354,6 +1418,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Ihab NAIRI & Yono in Jkt.",
         "9/3.\n\nFrom I6: Shoot down. From J8: Shoot\nleft. From K8: Shoot left. From M7:\nEnter M8...",
         5, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_65,
@@ -1361,6 +1426,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Ihab NAIRI & Yono in Jkt.",
         "Shoot to the right, H10, Shoot down,\nShoot up, H6.\n\n3/3",
         4, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_66,
@@ -1368,6 +1434,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Ihab NAIRI & Yono in Jkt.",
         "4/4\n\nShoot to the right, I10, Shoot down,\nright & up, H7.\n\n(Used in one of Ihab NAIRI's levels.)",
         6, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_67,
@@ -1375,6 +1442,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Ihab NAIRI & Yono in Jkt.",
         "Solutions 6/2 : 1 - Red tunnel, Shoot\nup, B11... 2 - Green tunnel, J11... 3 -\nGreen tunnel, Shoot to the right then\nup, J11...\n\n(Used in one of Yono in Jkt.'s levels &\none of Sven Egevad's levels.)",
         7, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_68,
@@ -1382,6 +1450,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Ron Meijer",
         "Put the 3 blocks into tunnel D-8, so\nthey come into C-3, E-3 & G-3. Move\nthe A-Tank C-9 to D-8 and shoot it\nfrom D-6. Go now to D-3 shoot the\nblock C-3 to the left. The (now dead)\nA-Tank replace the block. Do the same\nwith the other A-Tank.",
         7, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_69,
@@ -1389,6 +1458,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Yono in Jkt.",
         "D2: Shot. (Use Up-Arrow key.) G2:\nShot. J2: Shot. M2: Shot. P2: Shot. D6:\nDrown. (Use Up-Arrow key.) H6:\nDrown. L6: Shot. P6: Shot. C10: Drown.\nG10: Drown. L10: Shot. P10: Shot. C14:\nDrown. G14: Drown. L14: Shot. P14:\nShot.",
         7, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_70,
@@ -1396,6 +1466,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Ron Meijer",
         "Just go! You are standing on a block,\nnow shoot the lower anti-tank, the\nrest is easy.",
         3, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_71,
@@ -1403,6 +1474,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "LFE the FLE",
         "When objects (tanks, blocks, mirrors)\ncollide (occupy same sqaure), the one\nthat's been moving for longer stops\nand the other continues, ie. tank\nALWAYS stops. (consider being still on\ntankmover as moving)",
         6, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_72,
@@ -1410,6 +1482,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "LFE the FLE",
         "Objects (D8, H5, L2) reach tunnels at\nthe same time. D8 moves before H5,\nand H5 before L2.  ie. L2 has priority\nover H5, and H5 over D8.Therefore,\nL2 goes to N5 and stops object H5 at\nM5, which allows D8 to go to N2.",
         6, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_73,
@@ -1417,6 +1490,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "LFE the FLE",
         "Multiple objects can enter the same\ntunnel simultaneously  because the\nsquare with the entry tunnel is\nalways skipped.\n\nshoot down, shoot left, move down",
         6, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_74,
@@ -1424,6 +1498,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Yono in Jkt.",
         "A2: AT doesn't see the tank. F1, J2,\nN2, A6, F6, K6: AT shoots but it's too\nfar. B9: Both AT's see the tank, but D9\nAT has higher priority to shoot. G11:\nsame. M12: K12 AT sees, shoots,\nmisses. E16, G16, I16, K16: Through\nlaser. Four ATs don't shoot",
         7, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_75,
@@ -1431,6 +1506,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "LFE the FLE",
         "To reach H6, the distance travelled by\nthe antitank laser must be changed by\nan odd number. The ONLY way is to\nmove the antitank. Moving/adding\nmirrors does not help (try it!). \n\nMove antitank to J9. Go to H9",
         7, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_76,
@@ -1438,6 +1514,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "LFE the FLE",
         "Move block to F10, move mirror to\nG7, move anti-tank to F8, go to G10,\nshoot up, OR Shoot N9, move block to\nL9, shoot L10, go to K9, shoot right\ntwice, THEN Go to the flag!",
         5, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_77,
@@ -1445,6 +1522,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "LFE the FLE",
         "Thin ice in a corner is normally the\nsame as water, but here's an\nexception. Objects sink slowly on ice. \nGo to L5 and E12 to see the difference\n(look at G4 and J13). Now ride the L8\nand E9 tankmovers.  On one of them\nyou'll stop next to the flag.",
         7, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_78,
@@ -1452,6 +1530,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "LFE the FLE",
         "As expected, the tank sinks more\nslowly for [Ice-->Thin Ice] and\n[TM-->Thin Ice] than [Ice-->Water].\nBut [TM-->Water] is also slow. Try\ncomparing the 4 sections in pairs.\n\nRide the tankmovers to reach the\nflags (E14 is unreachable).",
         8, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_79,
@@ -1459,6 +1538,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "LFE the FLE",
         "The antitank is repeatedly hit by its\nown laser (at O7, L7, I7, F7, C7) eg.\nThe second laser shot by the antitank\nhits it when it exits at tunnel L7\n\nMove the antitank to O7 then go to K7\nto reach B6.\n\nSee \"Auto Coup de PouSSe\" by Ihab.",
         9, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_80,
@@ -1466,6 +1546,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Ihab NAIRI",
         "B10, 1 Shot Up, C13, C9...\n===================== B10, 1 Tir\nHaut, C13, C9...",
         3, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_81,
@@ -1473,6 +1554,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Ihab NAIRI",
         "B10, 1 Shot Up, C13, C9...\n===================== B10, 1 Tir\nHaut, C13, C9...",
         3, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_82,
@@ -1480,6 +1562,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Ihab NAIRI",
         "B10, 1 Shot Up, C13, C9...\n===================== B10, 1 Tir\nHaut, C13, C9...",
         3, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_83,
@@ -1487,6 +1570,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Ihab NAIRI",
         "B10, 1 Shot Up, C13, C9...\n===================== B10, 1 Tir\nHaut, C13, C9...",
         3, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_84,
@@ -1494,6 +1578,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "LFE the FLE",
         "With the tank on an object on the final\n free tunnel, the object has priority.\n(develops idea from \"Fully occupied\ntunnels\")\n\nShoot up Shoot right Shoot up from\nJ11 Go to H11 2 x Shoot left 2 x Shoot\nup Go to flag",
         8, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_85,
@@ -1501,6 +1586,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "LFE the FLE",
         "The tank can be on top of a dead\nanti-tank\n\nAntitank E13 -> F9 Shoot  E12  Go to\nF12  Go to flag",
         5, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_86,
@@ -1508,6 +1594,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "LFE the FLE",
         "Reflection off a moving mirror is\nfaster than normal. It's like a\ntankmover for a laser.  (except that 2\nconsecutive reflections save 2 time\nunits, not 1)\n\nShoot F6 from the right and go to N8.",
         7, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_87,
@@ -1515,6 +1602,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "LFE the FLE",
         "The L11 antitank is hit from behind at\nH11 by a laser while it's moving. The\neffect is the same as being hit when\nnot moving.\n\n3 x Shoot J13 from J3 Go to M4",
         6, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_88,
@@ -1522,6 +1610,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "LFE the FLE",
         "One of the entrances will take you\nnext to the flag on a block.\n\nThanks to Nic01",
         4, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_89,
@@ -1529,6 +1618,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "Steve the stupid",
         "Question: \"Is it REALLY skipped?\"\nAnswer: \"No, it isn't!\"\n\nThe first ice/thin ice block\nencountered is not skipped; it is just\npassed over very quickly. Only entry\ntunnel is really skipped. (Remember,\nice = thin ice)",
         8, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_90,
@@ -1536,6 +1626,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "LFE the FLE",
         "Ice (K10) and thin ice (F10) both\nproduce fast reflections off a moving\nmirror.   But if F10 is ground, it is a\nslow reflection off a stationary\nmirror at F10.\n\nH7, shoot down, G7.",
         7, 0,
+        0, 0, "",
     },
     {
         LEVELS_TUTORIAL_TRICKS_91,
@@ -1543,6 +1634,7 @@ level_t[92] prog LEVELS_TUTORIAL_TRICKS =
         "LFE the FLE",
         "Try the 3 houses.  You're welcome at\nall of them, but only through the\ndoors on the left.\n\nTM next to flag (G13, N10, G6) --> die\nIce next to flag (C13, J10, E6) -->\nsurvive\n\nInspired by \"Glace --> Convoyeur\"",
         9, 0,
+        0, 0, "",
     },
 };
 

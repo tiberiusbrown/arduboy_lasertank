@@ -469,10 +469,13 @@ def compress(d):
 
 largest = 0
 
-def convert(fin, sym):
+def convert(fin, sym, fhs = None):
     global largest
     with open(fin, 'rb') as f:
         content = f.read()
+    if fhs is not None:
+        with open(fhs, 'rb') as f:
+            hs = f.read()
     fout = '../src/levels/%s.abc' % sym.lower()
     with open(fout, 'w') as f:
         n = len(content) // 576
@@ -496,6 +499,11 @@ def convert(fin, sym):
             name = d[256:256+31]
             hint = d[256+31:256+31+256]
             author = d[256+31+256:256+31+256+31]
+            if fhs is not None:
+                dhs = hs[i*10:(i+1)*10]
+                hs_moves = dhs[0] + dhs[1] * 256
+                hs_shots = dhs[2] + dhs[3] * 256
+                hs_name = format_str(dhs[4:10])
             diff = struct.unpack('H', d[-2:])
             f.write('    {\n')
             f.write('        LEVELS_%s_%u,\n' % (sym, i))
@@ -513,12 +521,16 @@ def convert(fin, sym):
             diff = diff[0]
             diff = { 0:0, 1:1, 2:2, 4:3, 8:4, 16:5 }[diff]
             f.write('        %u, %u,\n' % (hint_info[1], diff))
+            if fhs is not None:
+                f.write('        %u, %u, "%s",\n' % (hs_moves, hs_shots, hs_name))
+            else:
+                f.write('        0, 0, "",\n')
             f.write('    },\n')
         f.write('};\n\n')
 
 convert('ObjectsTutorial.lvl', 'TUTORIAL_OBJECTS')
 convert('Tutor-with-Playbacks.lvl', 'TUTORIAL_BEGINNER')
 convert('Tutor.lvl', 'TUTORIAL_TRICKS')
-convert('LaserTank.lvl', 'STANDARD')
+convert('LaserTank.lvl', 'STANDARD', 'LaserTank.ghs')
 
 print(largest)
