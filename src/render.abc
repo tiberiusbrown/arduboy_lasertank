@@ -143,7 +143,7 @@ void render_level()
             $draw_vline(96, 0, 64, WHITE);
             $set_text_font(FONT_BR5D);
             char[16] buf;
-            $format(buf, "%u/%u", current_level + 1, len(LEVELSETS[current_set].levels));
+            $format(buf, "%u", current_level + 1);
             u8 w = $text_width(buf);
             $draw_text(113-w/2, 5, buf);
             buf = DIFF_STRS[LEVELSETS[current_set].levels[current_level].difficulty];

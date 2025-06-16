@@ -71,6 +71,10 @@ void select_level_ui()
         select_level -= inc_amount(0);
     if(btn_just_pressed(DOWN_BUTTON))
         select_level += inc_amount(2);
+    if(btn_just_pressed(LEFT_BUTTON))
+        select_level -= 100;
+    if(btn_just_pressed(RIGHT_BUTTON))
+        select_level += 100;
     if(select_level < 0)
         select_level = 0;
     if(select_level >= num_levels)

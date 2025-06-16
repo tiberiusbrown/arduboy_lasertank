@@ -9,10 +9,14 @@ levelset_t[4] prog LEVELSETS =
 {
     {
         "LaserTank",
-        "The full base set of LaserTank levels.\n"
+        "The base set included with LaserTank\n"
+        "version 4.1.2 -- a total of 2030 levels.\n"
+        "\n"
+        "There are five difficulty levels:\n"
+        "    Kids, Easy, Normal, Hard, Deadly\n"
         "\n"
         "Press RIGHT for tutorial sets.",
-        3,
+        7,
         LEVELS_STANDARD
     },
     {
