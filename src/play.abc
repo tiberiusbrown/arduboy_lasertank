@@ -4,6 +4,7 @@ import render;
 import moving;
 import saveload;
 import undo;
+import sfx;
 
 // returns dir if laser reflected
 // returns 4 otherwise
@@ -63,6 +64,7 @@ void at_scan(u8 dir)
             }
             shootdir = dir;
             shooting = true;
+            $tones_play_auto(SFX_SHOOT);
             return;
         }
         if(objects[i] >= T_FIRST_SOLID)
@@ -101,6 +103,7 @@ void process_tank_oneway()
                 just_moved_dir = dir;
                 process_tank_tunnel();
                 anim_frame = anim_frames;
+                $tones_play_auto(SFX_MOVER);
             }
         }
     }
@@ -125,6 +128,7 @@ void process_tank_tunnel()
                 {
                     tanky = ti >> 4;
                     tankx = ti & 15;
+                    $tones_play_auto(SFX_TUNNEL);
                 }
             }
             else if(num_tunnels[u8(t - T_TUNNEL) >> 2] == 1)
@@ -195,6 +199,12 @@ void process_laser()
     {
         anim_frame = anim_frames;
     }
+    else if(shootx >= 16 || shooty >= 16)
+    {
+        shooting = false;
+        anim_frame = anim_frames;
+        just_moved = true;
+    }
     else
     {
         u8 si = shooty * 16 + shootx;
@@ -207,9 +217,13 @@ void process_laser()
             case(T_BLOCK_MOVE)
             {
                 add_moving_object({ shooty * 16 + shootx, shootdir });
+                $tones_play_auto(SFX_PUSH);
             }
             case(T_BLOCK_BRICK)
+            {
                 tiles[si] = T_DIRT;
+                $tones_play_auto(SFX_BREAK);
+            }
             case(T_MIRROR ... T_MIRROR + 15)
             {
                 u8 d = mirror_reflect((obj >> 2) & 3, shootdir);
@@ -217,10 +231,12 @@ void process_laser()
                 {
                     shooting = true;
                     shootdir = d;
+                    $tones_play_auto(SFX_REFLECT);
                 }
                 else
                 {
                     add_moving_object({ shooty * 16 + shootx, shootdir });
+                    $tones_play_auto(SFX_PUSH);
                 }
             }
             case(T_MIRROR_ROT ... T_MIRROR_ROT + 15)
@@ -230,6 +246,7 @@ void process_laser()
                 {
                     shooting = true;
                     shootdir = d;
+                    $tones_play_auto(SFX_REFLECT);
                 }
                 else
                 {
@@ -241,10 +258,14 @@ void process_laser()
             {
                 u8 tdir = u8(obj - T_ANTITANK) >> 2;
                 if(((tdir + 2) & 3) == shootdir)
+                {
                     objects[si] = T_ANTITANK_B + tdir * 4;
+                    $tones_play_auto(SFX_BREAK);
+                }
                 else
                 {
                     add_moving_object({ shooty * 16 + shootx, shootdir });
+                    $tones_play_auto(SFX_PUSH);
                 }
             }
             case(T_ANTITANK_B ... T_ANTITANK_B + 15)
@@ -366,7 +387,7 @@ void play()
     // INPUT AND RENDERING
     ////////////////////////////////////
 
-    bool busy = shooting || (num_moving_objects != 0) || just_moved;
+    bool busy = in_water || shooting || (num_moving_objects != 0) || just_moved;
 
     if(!busy && !$pressed(B_BUTTON))
     {
@@ -381,6 +402,7 @@ void play()
                 busy = true;
             first_move = true;
             shots += 1;
+            $tones_play_auto(SFX_SHOOT);
         }
         else if(btn_just_pressed(UP_BUTTON))
             process_tank_move(DIR_U);

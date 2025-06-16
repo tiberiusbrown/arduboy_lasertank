@@ -44,7 +44,8 @@ void do_save(u8 completed_set, u16 completed_level)
     u8 t_anim_frames = anim_frames;
     u8 t_tilesize = tilesize;
 
-    $load();
+    if(!$load())
+        undo_data = {};
 
     select_set = t_select_set;
     select_levels = t_select_levels;

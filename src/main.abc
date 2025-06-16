@@ -43,16 +43,11 @@ void main()
     select_set = 0;
 
     current_set = 2;
-    current_level = 71;
-    current_set = 0;
-    current_level = 12;
+    current_level = 80;
+    //current_set = 0;
+    //current_level = 0;
     load_level();
     state = STATE_PLAY;
-    anim_frames = 2;
-    tilesize = TILESIZE_6;
-
-    // TODO
-    // need support for up to 16 sliding objects for 35 (MAX_TICEMEM)
     
     while(true)
         loop();

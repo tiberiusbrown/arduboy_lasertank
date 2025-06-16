@@ -95,6 +95,7 @@ void process_moving_object(u8 index)
                 {
                     objects[ti] = obj1;
                     obj1 = T_DIRT;
+                    $tones_play_auto(SFX_TUNNEL);
                 }
                 last_tunneled[tnum] = ti;
             }
@@ -125,6 +126,7 @@ void process_moving_object(u8 index)
             {
                 objects[mi] = objects[obji];
                 objects[obji] = T_DIRT;
+                $tones_play_auto(SFX_TUNNEL);
             }
             else
                 occupied_tunnels[tnum] -= 1;
