@@ -55,6 +55,8 @@ void undo_compress()
     u16 ci = 10;
     ci = undo_compress_buffer(tiles, ci);
     ci = undo_compress_buffer(objects, ci);
+
+    undo_data[332] = tank_blocked_tunnel;
 }
 
 void undo_decompress()
@@ -75,6 +77,8 @@ void undo_decompress()
     u16 ci = 10;
     ci = undo_decompress_buffer(tiles, ci);
     ci = undo_decompress_buffer(objects, ci);
+
+    tank_blocked_tunnel = undo_data[332];
 }
 
 void undo_premove(u8 m)

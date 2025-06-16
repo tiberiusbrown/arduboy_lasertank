@@ -128,13 +128,15 @@ void process_moving_object(u8 index)
                 objects[obji] = T_DIRT;
                 $tones_play_auto(SFX_TUNNEL);
             }
-            else if(occupied_tunnels[tnum] == num_tunnels[tnum] &&
+            else if(tank_blocked_tunnel &&
+                occupied_tunnels[tnum] == num_tunnels[tnum] &&
                 tiles[tanky * 16 + tankx] == ti)
             {
                 // relevant trick: 85
                 tanky = mi >> 4;
                 tankx = mi & 15;
                 just_moved = false;
+                tank_blocked_tunnel = false;
                 $tones_play_auto(SFX_TUNNEL);
             }
             else

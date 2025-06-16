@@ -136,6 +136,11 @@ void process_tank_tunnel()
                 frame = 0;
                 do_defeat();
             }
+            else
+            {
+                // blocked tunnel
+                tank_blocked_tunnel = true;
+            }
         }
     }
 }
@@ -524,6 +529,8 @@ void process_tank_move(u8 dir)
 
     just_moved = true;
     just_moved_dir = dir;
+
+    tank_blocked_tunnel = false;
 
     moves += 1;
 

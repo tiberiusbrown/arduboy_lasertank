@@ -142,4 +142,5 @@ void load_level()
     shots = 0;
     undo_num_moves = 0;
     need_save = false;
+    tank_blocked_tunnel = false;
 }

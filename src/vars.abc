@@ -122,6 +122,9 @@ u8[256] objects;
 u8[8] num_tunnels;
 u8[8] occupied_tunnels;
 u8[8] last_tunneled;
+bool tank_blocked_tunnel;
+// TODO: need to store whether tank is on a blocked tunnel?
+// (correct handling of trick 85)
 
 u32 moves;
 u32 shots;
@@ -134,7 +137,8 @@ u32 shots;
 //    2-5      moves
 //    6-9      shots
 //    10-331   compressed level
-saved u8[2+4+4+322] undo_data;
+//    332      tank_blocked_tunnel
+saved u8[2+4+4+322+1] undo_data;
 u8 undo_num_moves;
 
 saved bool en_audio;
