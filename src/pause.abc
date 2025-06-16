@@ -4,8 +4,8 @@ import hint;
 import undo;
 import saveload;
 
-char[] prog&[3] SIZE_STRS = { "Large", "Normal", "Small" };
-char[] prog&[2] ANIM_STRS = { "Off", "On" };
+char[] prog&[3] SIZE_STRS = { "Normal", "Small", "Tiny" };
+char[] prog&[2] OFF_ON_STRS = { "Off", "On" };
 char[] prog&[4] SPEED_STRS = { "Turtle", "Slow", "Normal", "Fast" };
 
 u8[4] prog SPEEDS = { 7, 4, 2, 1 };
@@ -16,7 +16,7 @@ void pause()
 {
     if(pause_i > 0 && btn_just_pressed(UP_BUTTON))
         pause_i -= 1;
-    if(pause_i < 5 && btn_just_pressed(DOWN_BUTTON))
+    if(pause_i < 6 && btn_just_pressed(DOWN_BUTTON))
         pause_i += 1;
 
     u8 speed;
@@ -35,7 +35,12 @@ void pause()
 
     $set_text_font(FONT_BR5D);
 
-    $draw_text(85, 5, "Paused");
+    {
+        char[32] buf;
+        $format(buf, "M: %u   S: %u", moves, shots);
+        u8 w = $text_width(buf);
+        $draw_text(98 - w / 2, 5, buf);
+    }
     $draw_hline(66, 7, 62, WHITE);
 
     constexpr u8 X2 = 104;
@@ -45,16 +50,9 @@ void pause()
     $draw_text(75, 29, "Exit Level");
     $draw_hline(66, 31, 62, WHITE);
     $draw_text(75, 39, "Tiles:"); $draw_text(X2, 39, SIZE_STRS[tilesize]);
-    $draw_text(75, 46, "Anim:");  $draw_text(X2, 46, ANIM_STRS[tile_anim]);
+    $draw_text(75, 46, "Anim:");  $draw_text(X2, 46, OFF_ON_STRS[tile_anim]);
     $draw_text(75, 53, "Speed:"); $draw_text(X2, 53, SPEED_STRS[speed]);
-
-    $draw_hline(66, 55, 62, WHITE);
-    {
-        char[32] buf;
-        $format(buf, "M: %u   S: %u", moves, shots);
-        u8 w = $text_width(buf);
-        $draw_text(98 - w / 2, 63, buf);
-    }
+    $draw_text(75, 60, "Sound:"); $draw_text(X2, 60, OFF_ON_STRS[en_audio]);
 
     u8 cy = pause_i * 7 + 15;
     if(pause_i >= 3) cy += 3;
@@ -84,6 +82,12 @@ void pause()
             }
             case(4) tile_anim = !tile_anim;
             case(5) if(++speed >= len(SPEEDS)) speed = 0;
+            case(6)
+            {
+                en_audio = !en_audio;
+                if(en_audio != $audio_enabled())
+                    $audio_toggle();
+            }
         }
         if(pause_i <= 2)
             pause_i = 0;

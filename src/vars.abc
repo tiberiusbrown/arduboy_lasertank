@@ -137,6 +137,8 @@ u32 shots;
 saved u8[2+4+4+322] undo_data;
 u8 undo_num_moves;
 
+saved bool en_audio;
+
 bool need_save;
 
 struct level_t

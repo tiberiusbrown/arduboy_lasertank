@@ -20,6 +20,7 @@ bool is_completed(u8 set, u16 level)
         bool t_tile_anim = tile_anim;
         u8 t_anim_frames = anim_frames;
         u8 t_tilesize = tilesize;
+        bool t_en_audio = en_audio;
         
         if(!$load())
             undo_data = {};
@@ -29,6 +30,7 @@ bool is_completed(u8 set, u16 level)
         tile_anim = t_tile_anim;
         anim_frames = t_anim_frames;
         tilesize = t_tilesize;
+        en_audio = t_en_audio;
        
         return undo_data[index >> 3] & (1u << (index & 7));
     }
@@ -43,6 +45,7 @@ void do_save(u8 completed_set, u16 completed_level)
     bool t_tile_anim = tile_anim;
     u8 t_anim_frames = anim_frames;
     u8 t_tilesize = tilesize;
+    bool t_en_audio = en_audio;
 
     if(!$load())
         undo_data = {};
@@ -52,6 +55,7 @@ void do_save(u8 completed_set, u16 completed_level)
     tile_anim = t_tile_anim;
     anim_frames = t_anim_frames;
     tilesize = t_tilesize;
+    en_audio = t_en_audio;
 
     if(completed_set < NUM_LEVELSETS &&
         completed_level < len(LEVELSETS[completed_set].levels))
@@ -95,7 +99,11 @@ void do_load()
         select_set = 0;
         select_levels = {};
         undo_data = {};
+        en_audio = true;
     }
+
+    if(en_audio != $audio_enabled())
+        $audio_toggle();
 
     need_save = false;
 }

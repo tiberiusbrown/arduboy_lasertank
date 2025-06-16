@@ -29,8 +29,6 @@ void do_victory()
 
 void do_defeat()
 {
-    if(need_save)
-        do_save(0xff, 0xff);
     dead = true;
 }
 
@@ -282,6 +280,8 @@ void process_tick()
     process_laser();
 
     process_moving_objects();
+
+    all_at_scans();
 
     if(shooting || (num_moving_objects != 0) || just_moved)
         tank_update();
