@@ -45,18 +45,15 @@ void undo_compress()
 
     undo_data[2+0] = (moves >> (0 * 8));
     undo_data[2+1] = (moves >> (1 * 8));
-    undo_data[2+2] = (moves >> (2 * 8));
-    undo_data[2+3] = (moves >> (3 * 8));
-    undo_data[6+0] = (shots >> (0 * 8));
-    undo_data[6+1] = (shots >> (1 * 8));
-    undo_data[6+2] = (shots >> (2 * 8));
-    undo_data[6+3] = (shots >> (3 * 8));
+    undo_data[4+0] = (shots >> (0 * 8));
+    undo_data[4+1] = (shots >> (1 * 8));
 
-    u16 ci = 10;
+    u16 ci = 6;
     ci = undo_compress_buffer(tiles, ci);
     ci = undo_compress_buffer(objects, ci);
 
-    undo_data[332] = tank_blocked_tunnel;
+    undo_data[328] = tank_blocked_tunnel;
+    undo_data[329 +: 8] = last_tunneled;
 }
 
 void undo_decompress()
@@ -65,20 +62,25 @@ void undo_decompress()
     tankx = undo_data[0] & 15;
     tankdir = undo_data[1];
 
-    moves  = u32(undo_data[2+0]) << (0 * 8);
-    moves += u32(undo_data[2+1]) << (1 * 8);
-    moves += u32(undo_data[2+2]) << (2 * 8);
-    moves += u32(undo_data[2+3]) << (3 * 8);
-    shots  = u32(undo_data[6+0]) << (0 * 8);
-    shots += u32(undo_data[6+1]) << (1 * 8);
-    shots += u32(undo_data[6+2]) << (2 * 8);
-    shots += u32(undo_data[6+3]) << (3 * 8);
+    moves  = undo_data[2] + undo_data[3] * 256;
+    shots  = undo_data[4] + undo_data[5] * 256;
 
-    u16 ci = 10;
+    u16 ci = 6;
     ci = undo_decompress_buffer(tiles, ci);
     ci = undo_decompress_buffer(objects, ci);
 
-    tank_blocked_tunnel = undo_data[332];
+    tank_blocked_tunnel = undo_data[328];
+    last_tunneled = undo_data[329 +: 8];
+
+    occupied_tunnels = {};
+    u8 i = 0;
+    do
+    {
+        u8 t= tiles[i];
+        if(t >= T_TUNNEL && t < T_TUNNEL + 32)
+            occupied_tunnels[u8(t - T_TUNNEL) >> 2] += 1;
+        i += 1;
+    } while(i != 0);
 }
 
 void undo_premove(u8 m)
