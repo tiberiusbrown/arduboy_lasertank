@@ -34,6 +34,14 @@ void delete_moving_object_pos(u8 x, u8 y)
         }
 }
 
+bool is_moving_object_index(u8 index)
+{
+    for(u8 i = 0; i < num_moving_objects; ++i)
+        if(moving_objects[i].pos == index)
+            return true;
+    return false;
+}
+
 void process_moving_objects()
 {
     for(i8 i = num_moving_objects - 1; i >= 0; --i)

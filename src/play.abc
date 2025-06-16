@@ -215,6 +215,24 @@ void process_laser()
         u8 obj = objects[si];
         if(obj == T_DIRT)
             obj = tiles[si];
+        u8 d;
+
+        // special case: reflection off of a moving mirror gains an extra laser tick
+        // relevant tricks: 87, 88
+        while(is_moving_object_index(si) &&
+            obj >= T_MIRROR && obj < T_MIRROR_ROT + 16 &&
+            (d = mirror_reflect((obj >> 2) & 3, shootdir)) < 4)
+        {
+            shootdir = d;
+            shootx += DIRX[d];
+            shooty += DIRY[d];
+            if(shootx >= 16 || shooty >= 16)
+            {
+                shooting = false;
+                return;
+            }
+        }
+
         shooting = false;
         switch(obj)
         {
@@ -230,7 +248,7 @@ void process_laser()
             }
             case(T_MIRROR ... T_MIRROR + 15)
             {
-                u8 d = mirror_reflect((obj >> 2) & 3, shootdir);
+                d = mirror_reflect((obj >> 2) & 3, shootdir);
                 if(d < 4)
                 {
                     shooting = true;
