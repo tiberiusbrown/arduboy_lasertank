@@ -77,7 +77,7 @@ void select_level_ui()
         select_level = num_levels - 1;
     select_levels[select_set] = u16(select_level);
 
-    $draw_filled_rect(0, 10, 128, 2, WHITE);
+    $draw_filled_rect(0, 9, 128, 2, WHITE);
     {
         $set_text_font(FONT_PIXELOIDSANS);
         u8 w = $text_width(set.name);
@@ -91,15 +91,22 @@ void select_level_ui()
         $set_text_font(FONT_PIXELOIDSANS);
         char[40] name = level.name;
         $wrap_text(name, 117);
-        $draw_text(0, 23, name);
+        $draw_text(0, 19, name);
     }
 
     $set_text_font(FONT_BR5D);
-    $draw_textf(7, 45, "Author:  %s", level.author);
-    $draw_textf(0, 52, "Difficulty:  %s", DIFF_STRS[level.difficulty]);
+    if(level.hs_moves != 0)
+    {
+        $draw_textf(
+            0, 40,
+            "Global HS:  %uM, %uS by %s",
+            level.hs_moves, level.hs_shots, level.hs_name);
+    }
+    $draw_textf(7, 47, "Author:  %s", level.author);
+    $draw_textf(0, 54, "Difficulty:  %s", DIFF_STRS[level.difficulty]);
 
     if(select_level > 0)
-        $draw_sprite(120, 13 - arrow_off, ARROWS, 0);
+        $draw_sprite(120, 12 - arrow_off, ARROWS, 0);
     if(select_level < num_levels - 1)
         $draw_sprite(120, 46 + arrow_off, ARROWS, 2);
 

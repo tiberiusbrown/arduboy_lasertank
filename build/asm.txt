@@ -1,4 +1,4 @@
-.githash 979ca93b15a3b0b4e283db88657fa16cc176b184
+.githash 78962d1697b9deb9b86bf48977765f98f4f879c1
 .shades 2
 .global anim_frames 1
 .global en_audio 1

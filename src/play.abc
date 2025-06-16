@@ -30,6 +30,7 @@ void do_victory()
 
 void do_defeat()
 {
+    $tones_play_primary(SFX_DEFEAT);
     dead = true;
 }
 

@@ -27,6 +27,18 @@ constexpr tones SFX_VICTORY = tones{
     C5 300
 };
 
+constexpr tones SFX_DEFEAT = tones{
+    C5 70
+    -  30
+    A4 70
+    -  30
+    F4 70
+    -  30
+    D4 70
+    -  30
+    C4 300
+};
+
 constexpr tones SFX_TUNNEL = tones{
     C3  8
     C3# 8
