@@ -13,6 +13,20 @@ constexpr tones SFX_SHOOT = tones{
     A4  4
 };
 
+constexpr tones SFX_MOVE = tones{
+    C3 24
+};
+
+constexpr tones SFX_VICTORY = tones{
+    C4 150
+    -  50
+    C4 70
+    -  30
+    C4 70
+    -  30
+    C5 300
+};
+
 constexpr tones SFX_TUNNEL = tones{
     C3  8
     C3# 8

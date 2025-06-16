@@ -22,6 +22,7 @@ u8 mirror_reflect(u8 mirror_dir, u8 laser_dir)
 
 void do_victory()
 {
+    $tones_play_primary(SFX_VICTORY);
     if(need_save || !is_completed(current_set, current_level))
         do_save(current_set, current_level);
     victory = true;
@@ -494,6 +495,8 @@ void play()
 
 void process_tank_move(u8 dir)
 {
+    $tones_play_auto(SFX_MOVE);
+
     first_move = true;
 
     if(tankdir != dir)

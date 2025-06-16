@@ -113,7 +113,7 @@ u8 btns_pressed;
 constexpr u8 INITIAL_TICKS = 12;
 constexpr u8 REPEAT_TICKS = 4;
 
-constexpr u32 PAUSE_PRESS_MS = 400;
+constexpr u32 PAUSE_PRESS_MS = 300;
 u32 b_pressed_time;
 
 // RAM copy of level
