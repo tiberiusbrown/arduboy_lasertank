@@ -122,11 +122,6 @@ void main()
     do_load();
 
     state = STATE_MENU;
-
-    current_set = 3;
-    current_level = 91;
-    load_level();
-    state = STATE_PLAY;
     
     while(true)
         loop();
