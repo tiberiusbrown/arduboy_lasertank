@@ -87,8 +87,10 @@ void do_load()
         if(select_set >= len(LEVELSETS))
             select_set = 0;
         for(u8 i = 0; i < len(select_levels); ++i)
+        {
             if(select_levels[i] >= len(LEVELSETS[i].levels))
                 select_levels[i] = 0;
+        }
     }
     else
     {
