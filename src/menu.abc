@@ -12,7 +12,7 @@ void menu()
         switch(menu_index)
         {
             case(0) state = STATE_SELECT_SET;
-            case(1) state = STATE_HELP;
+            case(1) { undo_data[0] = 0; state = STATE_HELP; }
             case(2) state = STATE_CREDITS;
         }
     }

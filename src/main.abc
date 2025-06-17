@@ -39,15 +39,10 @@ void main()
     $set_frame_rate(30);
     do_load();
 
-    state = STATE_SELECT_SET;
-    select_set = 0;
+    state = STATE_MENU;
 
-    current_set = 2;
-    current_level = 86;
-    //current_set = 0;
-    //current_level = 0;
-    load_level();
-    state = STATE_PLAY;
+    //undo_data[0] = 24;
+    //state = STATE_HELP;
     
     while(true)
         loop();
