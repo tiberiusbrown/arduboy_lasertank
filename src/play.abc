@@ -22,6 +22,8 @@ u8 mirror_reflect(u8 mirror_dir, u8 laser_dir)
 
 void do_victory()
 {
+    if(dead) return;
+    frame = 0;
     $tones_play_primary(SFX_VICTORY);
     if(need_save || !is_completed(current_set, current_level))
         do_save(current_set, current_level);
@@ -30,6 +32,8 @@ void do_victory()
 
 void do_defeat()
 {
+    if(victory) return;
+    frame = 0;
     $tones_play_primary(SFX_DEFEAT);
     dead = true;
 }
@@ -58,10 +62,7 @@ void at_scan(u8 dir)
             shootx = x - dx;
             shooty = y - dy;
             if(shootx == tankx && shooty == tanky)
-            {
-                frame = 0;
                 do_defeat();
-            }
             shootdir = dir;
             shooting = true;
             $tones_play_auto(SFX_SHOOT);
@@ -134,7 +135,6 @@ void process_tank_tunnel()
             else if(num_tunnels[u8(t - T_TUNNEL) >> 2] == 1)
             {
                 // black hole
-                frame = 0;
                 do_defeat();
             }
             else
@@ -174,12 +174,9 @@ void tank_update()
                 just_moved = true;
             }
         }
-        case(T_FLAG)
-        {
-            frame = 0;
-            do_victory();
-        }
     }
+    if(tiles[tanky * 16 + tankx] == T_FLAG)
+        do_victory();
     all_at_scans();
     process_tank_oneway();
     all_at_scans();
@@ -193,13 +190,15 @@ void process_laser()
     u8 si = shooty * 16 + shootx;
     u8 t = tiles[si];
     u8 obj = objects[si];
-    shootx += DIRX[shootdir];
-    shooty += DIRY[shootdir];
-    if(shootx == tankx && shooty == tanky)
+    u8 nx = shootx + DIRX[shootdir];
+    u8 ny = shooty + DIRY[shootdir];
+    if(nx == tankx && ny == tanky)
     {
-        frame = 0;
         do_defeat();
+        return;
     }
+    shootx = nx;
+    shooty = ny;
     if(!opaque(shootx, shooty))
     {
         anim_frame = anim_frames;
@@ -316,10 +315,7 @@ void process_tick()
         // detecting a drowning tank is delayed by one tick
         // relevant trick level: "8. Actually, Tanks Sink Slowly!"
         if(in_water)
-        {
-            frame = 0;
             do_defeat();
-        }
         in_water = true;
     }
     else
