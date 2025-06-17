@@ -40,9 +40,6 @@ void main()
     do_load();
 
     state = STATE_MENU;
-
-    //undo_data[0] = 24;
-    //state = STATE_HELP;
     
     while(true)
         loop();

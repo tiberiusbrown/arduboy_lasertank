@@ -22,9 +22,11 @@ void menu()
     $draw_filled_rect(0, 14, 128, 2, WHITE);
 
     $set_text_font(FONT_PIXELOIDSANSBOLD);
-    $draw_text(34, 30, "Select Level");
-    $draw_text(34, 41, "Help");
-    $draw_text(34, 52, "Credits");
+    $draw_text(34, 27, "Select Level");
+    $draw_text(34, 38, "Help");
+    $draw_text(34, 49, "Credits");
 
-    $draw_filled_rect(24, menu_index * 11 + 24, 5, 5, WHITE);
+    $draw_filled_rect(24, menu_index * 11 + 21, 5, 5, WHITE);
+
+    $draw_sprite(frame & 0xf8, 57, TILES8, T_TANK + 1);
 }

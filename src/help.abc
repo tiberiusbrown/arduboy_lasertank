@@ -455,7 +455,7 @@ void help()
             $draw_text(33, 32, "Good Luck!");
             $set_text_font(FONT_BR5D);
             $draw_text(34, 41, "Press B to return.");
-            $draw_sprite(frame & 0xf8, 50, TILES8, T_TANK + 1);
+            $draw_sprite(frame & 0xf8, 57, TILES8, T_TANK + 1);
         }
     }
     if(undo_data[0] > 0)
