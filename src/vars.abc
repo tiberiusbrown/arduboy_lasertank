@@ -139,7 +139,7 @@ u16 shots;
 //    6-327    compressed level
 //    328      tank_blocked_tunnel
 //    329-336  last_tunneled;
-saved u8[2+2+2+322+1+8] undo_data;
+saved u8[2+2+2+326+1+8] undo_data;
 u8 undo_num_moves;
 
 saved bool en_audio;
